@@ -757,6 +757,33 @@
 ################################################################################
 #
 #'
+#' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
+#' Diseases Guideline Omnibus
+#'
+#' @format A tibble with 753 rows and 6 columns:
+#' \describe{
+#'   \item{\code{linenumber}}{Linenumber}
+#'   \item{\code{text}}{Character string of text about 70 characters}
+#'   \item{\code{source}}{Issuer of guideline}
+#'   \item{\code{type}}{Type of document}
+#'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{date}}{Date in <YYYY-MM-DD> format when guideline was issued}
+#' }
+#'
+#' @examples
+#' iatfGuidelineOmnibus
+#'
+#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/Omnibus-Guidelines-community-quarantine.pdf}
+#'
+#'
+#
+################################################################################
+"iatfGuidelineOmnibus"
+
+
+################################################################################
+#
+#'
 #' IATF resolutions URLs
 #'
 #' @format A tibble with 25 rows and 7 columns:
