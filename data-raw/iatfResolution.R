@@ -1014,3 +1014,36 @@ y <- data.frame(linenumber = 1:length(y),
 iatfResolution37 <- tibble::tibble(y)
 
 usethis::use_data(iatfResolution37, overwrite = TRUE, compress = "xz")
+
+## Omnibus #####################################################################
+
+x <- pdf_ocr_text(pdf = "data-raw/IATF/Omnibus-Guidelines-community-quarantine.pdf")
+
+## Restructure text
+y <- unlist(stringr::str_split(string = x, pattern = "\n"))
+
+y <- y[c(8:39, 49:83, 94:129, 138:168, 179:218, 226:266, 277:317,
+         328:369, 380:414, 424:456, 467:511, 520:578, 590:629, 639:677,
+         687:721, 732:767, 779:821, 829:871, 880:913, 921:957, 969:length(y))]
+
+y <- y[c(1:812, 820:851, 859:894, 901:938, 946:976)]
+
+y <- y[y != ""]
+
+y[751] <- "Francisco T. Duque III       Karlo Alexei B. Nograles"
+y[752] <- "Secretary, Department of Health     Cabinet Secretary, Office of the Cabinet Secretary"
+y[753] <- "IATF Chairperson         IATF Co-Chairperson"
+
+y <- stringr::str_trim(string = y, side = "both")
+
+y <- data.frame(linenumber = 1:length(y),
+                text = y,
+                source = "IATF",
+                type = "guideline",
+                id = NA,
+                date = as.Date("15/05/2020", format = "%d/%m/%y"),
+                stringsAsFactors = FALSE)
+
+iatfGuidelineOmnibus <- tibble::tibble(y)
+
+usethis::use_data(iatfGuidelineOmnibus, overwrite = TRUE, compress = "xz")
