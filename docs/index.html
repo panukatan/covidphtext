@@ -94,7 +94,7 @@
 <h3 class="hasAnchor">
 <a href="#datasets" class="anchor"></a>Datasets</h3>
 <p><code>covidphtext</code> currently has 28 datasets of COVID-19-related resolutions and policies in the Philippines. These datasets are 28 resolutions made by the Inter-Agency Task Force for the Management of Emerging Infectious Diseases (IATF).</p>
-<p>A description of the available datasets can be found <a href="https://como-ph.github.io/comotext/reference/index.html#section-datasets">here</a>.</p>
+<p>A description of the available datasets can be found <a href="https://como-ph.github.io/covidphtext/reference/index.html#section-datasets">here</a>.</p>
 <p>A table of the <code>29</code> IATF resolutions and the URLs to download them can be generated using the function <code><a href="reference/get_iatf_links.html">get_iatf_links()</a></code> as follows:</p>
 <div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="reference/get_iatf_links.html">get_iatf_links</a></span>()
 <span class="co">#&gt; # A tibble: 29 x 7</span>
@@ -113,7 +113,7 @@
 <span class="co">#&gt; # … with 19 more rows</span></pre></div>
 <p>The actual PDF of the IATF resolutions/s can be downloaded using the <code><a href="reference/get_iatf_pdf.html">get_iatf_pdf()</a></code> function. For example, to download IATF Resolution No. 29, the following command is issued:</p>
 <div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="reference/get_iatf_pdf.html">get_iatf_pdf</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="fl">29</span>)
-<span class="co">#&gt; [1] "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//Rtmp6ymN3W/iatfResolution29.pdf"</span></pre></div>
+<span class="co">#&gt; [1] "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//RtmpaPFOfc/iatfResolution29.pdf"</span></pre></div>
 <p>The command downloads the PDF of the specified IATF Resolution into a temporary directory (using <code><a href="https://rdrr.io/r/base/tempfile.html">tempdir()</a></code> function) and assigns it with a filename <code>iatfResolution</code> followed by the resolution number. For IATF Resolution 29, the filename is <code>iatfResolution29.pdf</code>. The output of the <code><a href="reference/get_iatf_pdf.html">get_iatf_pdf()</a></code> function is a character vector of directory path/s to downloaded PDFs as shown above. These paths can then be used when working with these files.</p>
 </div>
 <div id="concatenating-text-datasets" class="section level3">
