@@ -1,6 +1,6 @@
 ################################################################################
 #
-#' Combine specific documents available in the comotext package into a single
+#' Combine specific documents available in the covidphtext package into a single
 #' dataset
 #'
 #' @param docs A vector of terms to search for in the document names
@@ -29,11 +29,11 @@ combine_docs <- function(docs = c("resolution", "press release")) {
   x <- x[x != ""]
 
   ## Check whether dataset names in comotext matches search term
-  y <- stringr::str_detect(string = utils::data(package = "comotext")$results[ , "Item"],
+  y <- stringr::str_detect(string = utils::data(package = "covidphtext")$results[ , "Item"],
                            pattern = paste(x, collapse = "|"))
 
   ## Retrieve dataset names matching search terms
-  z <- utils::data(package = "comotext")$results[ , "Item"][y]
+  z <- utils::data(package = "covidphtext")$results[ , "Item"][y]
 
   ## Create concatenating data.frame
   allDocs <- data.frame()
