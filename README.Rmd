@@ -14,8 +14,6 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
-
-library(covidphtext)
 ```
 
 # covidphtext: Utilities to Extract Text Data From COVID-19-Related Resolutions and Policies From the Philippines
@@ -34,6 +32,12 @@ To assess possible impact of various COVID-19 prediction models on Philippine go
 ```{r install, echo = TRUE, eval = TRUE}
 if(!require(remotes)) install.packages("remotes")
 remotes::install_github("como-ph/covidphtext")
+```
+
+then load the package:
+
+```{r load, echo = FALSE, eval = TRUE}
+library(covidphtext)
 ```
 
 ## Usage

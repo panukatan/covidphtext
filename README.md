@@ -28,7 +28,18 @@ point is only possible through its development version via
 ``` r
 if(!require(remotes)) install.packages("remotes")
 remotes::install_github("como-ph/covidphtext")
+#> 
+#>      checking for file ‘/private/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T/RtmplpIwbY/remotes3a674e2ebbca/como-ph-covidphtext-2da34f1/DESCRIPTION’ ...  ✓  checking for file ‘/private/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T/RtmplpIwbY/remotes3a674e2ebbca/como-ph-covidphtext-2da34f1/DESCRIPTION’
+#>   ─  preparing ‘covidphtext’:
+#>      checking DESCRIPTION meta-information ...  ✓  checking DESCRIPTION meta-information
+#>   ─  checking for LF line-endings in source and make files and shell scripts
+#>   ─  checking for empty or unneeded directories
+#>   ─  building ‘covidphtext_0.1.0.tar.gz’
+#>      
+#> 
 ```
+
+then load the package:
 
 ## Usage
 
@@ -69,7 +80,7 @@ No. 29, the following command is issued:
 
 ``` r
 get_iatf_pdf(id = 29)
-#> [1] "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//Rtmp8ewjbc/iatfResolution29.pdf"
+#> [1] "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//RtmplpIwbY/iatfResolution29.pdf"
 ```
 
 The command downloads the PDF of the specified IATF Resolution into a
@@ -98,7 +109,7 @@ will be returned.
 
 ``` r
 combine_docs(docs = "resolution")
-#> # A tibble: 2,907 x 6
+#> # A tibble: 3,186 x 6
 #>    linenumber text                               source type       id date      
 #>         <int> <chr>                              <chr>  <chr>   <dbl> <date>    
 #>  1          1 WHEREAS, on January 31, 2020, upo… IATF   resolu…     9 2020-03-03
@@ -111,7 +122,7 @@ combine_docs(docs = "resolution")
 #>  8          8 exemptions in favor of certain cl… IATF   resolu…     9 2020-03-03
 #>  9          9 SAR, and Macau SAR;                IATF   resolu…     9 2020-03-03
 #> 10         10 WHEREAS, on February 26, 2020, fo… IATF   resolu…     9 2020-03-03
-#> # … with 2,897 more rows
+#> # … with 3,176 more rows
 ```
 
 The `combine_iatf` function is a specialised wrapper of the
