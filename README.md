@@ -27,42 +27,7 @@ point is only possible through its development version via
 
 ``` r
 if(!require(remotes)) install.packages("remotes")
-#> 
-#> The downloaded binary packages are in
-#>  /var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T//RtmpaMNbY7/downloaded_packages
 remotes::install_github("como-ph/covidphtext")
-#> tibble     (NA -> 3.0.1) [CRAN]
-#> xml2       (NA -> 1.3.2) [CRAN]
-#> rvest      (NA -> 0.3.5) [CRAN]
-#> lubridate  (NA -> 1.7.8) [CRAN]
-#> httr       (NA -> 1.4.1) [CRAN]
-#> curl       (NA -> 4.3  ) [CRAN]
-#> assertthat (NA -> 0.2.1) [CRAN]
-#> crayon     (NA -> 1.3.4) [CRAN]
-#> fansi      (NA -> 0.4.1) [CRAN]
-#> cli        (NA -> 2.0.2) [CRAN]
-#> utf8       (NA -> 1.1.4) [CRAN]
-#> vctrs      (NA -> 0.3.0) [CRAN]
-#> ellipsis   (NA -> 0.3.1) [CRAN]
-#> openssl    (NA -> 1.4.1) [CRAN]
-#> R6         (NA -> 2.4.1) [CRAN]
-#> askpass    (NA -> 1.1  ) [CRAN]
-#> sys        (NA -> 3.3  ) [CRAN]
-#> lifecycle  (NA -> 0.2.0) [CRAN]
-#> pillar     (NA -> 1.4.4) [CRAN]
-#> pkgconfig  (NA -> 2.0.3) [CRAN]
-#> selectr    (NA -> 0.4-2) [CRAN]
-#> generics   (NA -> 0.0.2) [CRAN]
-#> 
-#> The downloaded binary packages are in
-#>  /var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T//RtmpaMNbY7/downloaded_packages
-#> * checking for file ‘/private/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/RtmpaMNbY7/remotesa6f249ca722/como-ph-covidphtext-a5dd2ff/DESCRIPTION’ ... OK
-#> * preparing ‘covidphtext’:
-#> * checking DESCRIPTION meta-information ... OK
-#> * checking for LF line-endings in source and make files and shell scripts
-#> * checking for empty or unneeded directories
-#> * looking to see if a ‘data/datalist’ file should be added
-#> * building ‘covidphtext_0.1.0.tar.gz’
 ```
 
 then load the package:
@@ -84,20 +49,20 @@ be generated using the function `get_iatf_links()` as follows:
 
 ``` r
 get_iatf_links()
-#> [90m# A tibble: 29 x 7[39m
+#> # A tibble: 29 x 7
 #>       id title              date       source type  url               checked   
-#>    [3m[90m<dbl>[39m[23m [3m[90m<chr>[39m[23m              [3m[90m<date>[39m[23m     [3m[90m<chr>[39m[23m  [3m[90m<chr>[39m[23m [3m[90m<chr>[39m[23m             [3m[90m<date>[39m[23m    
-#> [90m 1[39m     9 Recommendations f… 2020-03-03 IATF   reso… https://doh.gov.… 2020-05-23
-#> [90m 2[39m    10 Recommendations f… 2020-03-09 IATF   reso… https://doh.gov.… 2020-05-23
-#> [90m 3[39m    11 Recommendations f… 2020-03-12 IATF   reso… https://doh.gov.… 2020-05-23
-#> [90m 4[39m    12 Recommendations f… 2020-03-13 IATF   reso… https://doh.gov.… 2020-05-23
-#> [90m 5[39m    13 Recommendations f… 2020-03-17 IATF   reso… https://doh.gov.… 2020-05-23
-#> [90m 6[39m    14 Resolutions Relat… 2020-03-20 IATF   reso… https://doh.gov.… 2020-05-23
-#> [90m 7[39m    15 Resolutions Relat… 2020-03-25 IATF   reso… https://doh.gov.… 2020-05-23
-#> [90m 8[39m    16 Additional Guidel… 2020-03-30 IATF   reso… https://doh.gov.… 2020-05-23
-#> [90m 9[39m    17 Recommendations R… 2020-03-30 IATF   reso… https://doh.gov.… 2020-05-23
-#> [90m10[39m    18 Recommendations R… 2020-04-01 IATF   reso… https://doh.gov.… 2020-05-23
-#> [90m# … with 19 more rows[39m
+#>    <dbl> <chr>              <date>     <chr>  <chr> <chr>             <date>    
+#>  1     9 Recommendations f… 2020-03-03 IATF   reso… https://doh.gov.… 2020-05-23
+#>  2    10 Recommendations f… 2020-03-09 IATF   reso… https://doh.gov.… 2020-05-23
+#>  3    11 Recommendations f… 2020-03-12 IATF   reso… https://doh.gov.… 2020-05-23
+#>  4    12 Recommendations f… 2020-03-13 IATF   reso… https://doh.gov.… 2020-05-23
+#>  5    13 Recommendations f… 2020-03-17 IATF   reso… https://doh.gov.… 2020-05-23
+#>  6    14 Resolutions Relat… 2020-03-20 IATF   reso… https://doh.gov.… 2020-05-23
+#>  7    15 Resolutions Relat… 2020-03-25 IATF   reso… https://doh.gov.… 2020-05-23
+#>  8    16 Additional Guidel… 2020-03-30 IATF   reso… https://doh.gov.… 2020-05-23
+#>  9    17 Recommendations R… 2020-03-30 IATF   reso… https://doh.gov.… 2020-05-23
+#> 10    18 Recommendations R… 2020-04-01 IATF   reso… https://doh.gov.… 2020-05-23
+#> # … with 19 more rows
 ```
 
 The actual PDF of the IATF resolutions/s can be downloaded using the
@@ -106,7 +71,7 @@ No. 29, the following command is issued:
 
 ``` r
 get_iatf_pdf(id = 29)
-#> [1] "/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T//RtmpaMNbY7/iatfResolution29.pdf"
+#> [1] "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//Rtmp6ymN3W/iatfResolution29.pdf"
 ```
 
 The command downloads the PDF of the specified IATF Resolution into a
@@ -135,20 +100,20 @@ will be returned.
 
 ``` r
 combine_docs(docs = "resolution")
-#> [90m# A tibble: 3,186 x 6[39m
+#> # A tibble: 3,186 x 6
 #>    linenumber text                               source type       id date      
-#>         [3m[90m<int>[39m[23m [3m[90m<chr>[39m[23m                              [3m[90m<chr>[39m[23m  [3m[90m<chr>[39m[23m   [3m[90m<dbl>[39m[23m [3m[90m<date>[39m[23m    
-#> [90m 1[39m          1 WHEREAS, on January 31, 2020, upo… IATF   resolu…     9 2020-03-03
-#> [90m 2[39m          2 Inter-Agency Task Force (IATF) fo… IATF   resolu…     9 2020-03-03
-#> [90m 3[39m          3 a travel ban covering China, Maca… IATF   resolu…     9 2020-03-03
-#> [90m 4[39m          4 SAR. On February 11, 2020, travel… IATF   resolu…     9 2020-03-03
-#> [90m 5[39m          5 that it was being used as a trans… IATF   resolu…     9 2020-03-03
-#> [90m 6[39m          6 WHEREAS, on February 14, 2020, tr… IATF   resolu…     9 2020-03-03
-#> [90m 7[39m          7 lifted. On February 18, 2020, the… IATF   resolu…     9 2020-03-03
-#> [90m 8[39m          8 exemptions in favor of certain cl… IATF   resolu…     9 2020-03-03
-#> [90m 9[39m          9 SAR, and Macau SAR;                IATF   resolu…     9 2020-03-03
-#> [90m10[39m         10 WHEREAS, on February 26, 2020, fo… IATF   resolu…     9 2020-03-03
-#> [90m# … with 3,176 more rows[39m
+#>         <int> <chr>                              <chr>  <chr>   <dbl> <date>    
+#>  1          1 WHEREAS, on January 31, 2020, upo… IATF   resolu…     9 2020-03-03
+#>  2          2 Inter-Agency Task Force (IATF) fo… IATF   resolu…     9 2020-03-03
+#>  3          3 a travel ban covering China, Maca… IATF   resolu…     9 2020-03-03
+#>  4          4 SAR. On February 11, 2020, travel… IATF   resolu…     9 2020-03-03
+#>  5          5 that it was being used as a trans… IATF   resolu…     9 2020-03-03
+#>  6          6 WHEREAS, on February 14, 2020, tr… IATF   resolu…     9 2020-03-03
+#>  7          7 lifted. On February 18, 2020, the… IATF   resolu…     9 2020-03-03
+#>  8          8 exemptions in favor of certain cl… IATF   resolu…     9 2020-03-03
+#>  9          9 SAR, and Macau SAR;                IATF   resolu…     9 2020-03-03
+#> 10         10 WHEREAS, on February 26, 2020, fo… IATF   resolu…     9 2020-03-03
+#> # … with 3,176 more rows
 ```
 
 The `combine_iatf` function is a specialised wrapper of the
@@ -159,38 +124,38 @@ the following call to `combine_iatf` is made as follows:
 
 ``` r
 combine_iatf(docs = "resolution", res = 10:12)
-#> [90m# A tibble: 324 x 6[39m
+#> # A tibble: 324 x 6
 #>    linenumber text                               source type       id date      
-#>         [3m[90m<int>[39m[23m [3m[90m<chr>[39m[23m                              [3m[90m<chr>[39m[23m  [3m[90m<chr>[39m[23m   [3m[90m<dbl>[39m[23m [3m[90m<date>[39m[23m    
-#> [90m 1[39m          1 WHEREAS, Section 15 of Article II… IATF   resolu…    10 2020-03-09
-#> [90m 2[39m          2 protect and promote the right to … IATF   resolu…    10 2020-03-09
-#> [90m 3[39m          3 them:                              IATF   resolu…    10 2020-03-09
-#> [90m 4[39m          4 WHEREAS, recognizing the need for… IATF   resolu…    10 2020-03-09
-#> [90m 5[39m          5 preparedness and ensure efficient… IATF   resolu…    10 2020-03-09
-#> [90m 6[39m          6 and prevent the spread of any pot… IATF   resolu…    10 2020-03-09
-#> [90m 7[39m          7 (IATF) for the Management of Emer… IATF   resolu…    10 2020-03-09
-#> [90m 8[39m          8 Executive Order No. 168, series o… IATF   resolu…    10 2020-03-09
-#> [90m 9[39m          9 WHEREAS, on January 7, 2020, Chin… IATF   resolu…    10 2020-03-09
-#> [90m10[39m         10 a viral pneumonia outbreak in the… IATF   resolu…    10 2020-03-09
-#> [90m# … with 314 more rows[39m
+#>         <int> <chr>                              <chr>  <chr>   <dbl> <date>    
+#>  1          1 WHEREAS, Section 15 of Article II… IATF   resolu…    10 2020-03-09
+#>  2          2 protect and promote the right to … IATF   resolu…    10 2020-03-09
+#>  3          3 them:                              IATF   resolu…    10 2020-03-09
+#>  4          4 WHEREAS, recognizing the need for… IATF   resolu…    10 2020-03-09
+#>  5          5 preparedness and ensure efficient… IATF   resolu…    10 2020-03-09
+#>  6          6 and prevent the spread of any pot… IATF   resolu…    10 2020-03-09
+#>  7          7 (IATF) for the Management of Emer… IATF   resolu…    10 2020-03-09
+#>  8          8 Executive Order No. 168, series o… IATF   resolu…    10 2020-03-09
+#>  9          9 WHEREAS, on January 7, 2020, Chin… IATF   resolu…    10 2020-03-09
+#> 10         10 a viral pneumonia outbreak in the… IATF   resolu…    10 2020-03-09
+#> # … with 314 more rows
 ```
 
 To check if only resolutions 10 to 12 have been returned:
 
 ``` r
 combine_iatf(docs = "resolution", res = 10:12)[ , c("type", "id")]
-#> [90m# A tibble: 324 x 2[39m
+#> # A tibble: 324 x 2
 #>    type          id
-#>    [3m[90m<chr>[39m[23m      [3m[90m<dbl>[39m[23m
-#> [90m 1[39m resolution    10
-#> [90m 2[39m resolution    10
-#> [90m 3[39m resolution    10
-#> [90m 4[39m resolution    10
-#> [90m 5[39m resolution    10
-#> [90m 6[39m resolution    10
-#> [90m 7[39m resolution    10
-#> [90m 8[39m resolution    10
-#> [90m 9[39m resolution    10
-#> [90m10[39m resolution    10
-#> [90m# … with 314 more rows[39m
+#>    <chr>      <dbl>
+#>  1 resolution    10
+#>  2 resolution    10
+#>  3 resolution    10
+#>  4 resolution    10
+#>  5 resolution    10
+#>  6 resolution    10
+#>  7 resolution    10
+#>  8 resolution    10
+#>  9 resolution    10
+#> 10 resolution    10
+#> # … with 314 more rows
 ```
