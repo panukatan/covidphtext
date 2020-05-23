@@ -6,11 +6,16 @@ output: github_document
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
+  error = FALSE,
+  warning = FALSE,
+  message = FALSE,
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
+
+library(covidphtext)
 ```
 
 # covidphtext: Utilities to Extract Text Data From COVID-19-Related Resolutions and Policies From the Philippines
@@ -25,10 +30,53 @@ To assess possible impact of various COVID-19 prediction models on Philippine go
 
 `covidphtext` is not yet available on CRAN. It is currently in experimental development stage. Installation of `covidphtext` at this point is only possible through its development version via [GitHub](https://github.com/como-ph/covidphtext):
 
-```{r install, echo = TRUE, eval = FALSE}
+```{r install, echo = TRUE, eval = TRUE}
 if(!require(remotes)) install.packages("remotes")
 remotes::install_github("como-ph/covidphtext")
 ```
 
 ## Usage
 
+### Datasets
+
+`covidphtext` currently has 28 datasets of COVID-19-related resolutions and policies in the Philippines. These datasets are 28 resolutions made by the Inter-Agency Task Force for the Management of Emerging Infectious Diseases (IATF).
+
+A description of the available datasets can be found [here](https://como-ph.github.io/comotext/reference/index.html#section-datasets).
+
+A table of the ```r nrow(iatfLinks)``` IATF resolutions and the URLs to download them can be generated using the function `get_iatf_links()` as follows:
+
+```{r usage1, echo = TRUE, eval = TRUE}
+get_iatf_links()
+```
+
+The actual PDF of the IATF resolutions/s can be downloaded using the `get_iatf_pdf()` function. For example, to download IATF Resolution No. 29, the following command is issued:
+
+```{r usage2, echo = TRUE, eval = TRUE}
+get_iatf_pdf(id = 29)
+```
+
+The command downloads the PDF of the specified IATF Resolution into a temporary directory (using `tempdir()` function) and assigns it with a filename `iatfResolution` followed by the resolution number. For IATF Resolution 29, the filename is `iatfResolution29.pdf`. The output of the `get_iatf_pdf()` function is a character vector of directory path/s to downloaded PDFs as shown above. These paths can then be used when working with these files.
+
+### Concatenating text datasets
+
+The datasets described above can be processed and analysed on their own or as a combined corpus of text data. `covidphtext` provides convenience functions that concatenates all or specific text datasets available from the `covidphtext` package.
+
+#### Concatenating datasets based on a specific search term
+
+The `combine_docs` function allows the user to specify search terms to use in identifying datasets provided by the `comotext` package. The `docs` argument allows the specification of a vector of search terms to use to identify the names of datasets to concatenate. If the name/s of the datasets contain these search terms, the datasets with these name/s will be returned.
+
+```{r usage5, echo = TRUE, eval = TRUE}
+combine_docs(docs = "resolution")
+```
+
+The `combine_iatf` function is a specialised wrapper of the `combine_docs` function that specifically returns datasets containing IATF resolutions. An additional argument `res` allows users to specify which IATF resolutions to return. To get IATF resolution 10, 11, and 12, the following call to `combine_iatf` is made as follows:
+
+```{r usage6, echo = TRUE, eval = TRUE}
+combine_iatf(docs = "resolution", res = 10:12)
+```
+
+To check if only resolutions 10 to 12 have been returned:
+
+```{r usage7, echo = TRUE, eval = TRUE}
+combine_iatf(docs = "resolution", res = 10:12)[ , c("type", "id")]
+```
