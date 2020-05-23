@@ -2,7 +2,7 @@
 % Please edit documentation in R/10-combine.R
 \name{combine_docs}
 \alias{combine_docs}
-\title{Combine specific documents available in the comotext package into a single
+\title{Combine specific documents available in the covidphtext package into a single
 dataset}
 \usage{
 combine_docs(docs = c("resolution", "press release"))
@@ -14,7 +14,7 @@ combine_docs(docs = c("resolution", "press release"))
 A tibble of all document types called for.
 }
 \description{
-Combine specific documents available in the comotext package into a single
+Combine specific documents available in the covidphtext package into a single
 dataset
 }
 \examples{
