@@ -31,7 +31,7 @@ reference:
   - combine_docs
   - combine_iatf
 
-- title: Datasets - IATF resolutions
+- title: IATF Datasets
   contents:
   - iatfLinks
   - iatfResolution09
@@ -62,3 +62,4 @@ reference:
   - iatfResolution35
   - iatfResolution36
   - iatfResolution37
+  - iatfGuidelineOmnibus
