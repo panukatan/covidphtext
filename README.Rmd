@@ -46,7 +46,7 @@ library(covidphtext)
 
 `covidphtext` currently has 28 datasets of COVID-19-related resolutions and policies in the Philippines. These datasets are 28 resolutions made by the Inter-Agency Task Force for the Management of Emerging Infectious Diseases (IATF).
 
-A description of the available datasets can be found [here](https://como-ph.github.io/comotext/reference/index.html#section-datasets).
+A description of the available datasets can be found [here](https://como-ph.github.io/covidphtext/reference/index.html#section-datasets).
 
 A table of the ```r nrow(iatfLinks)``` IATF resolutions and the URLs to download them can be generated using the function `get_iatf_links()` as follows:
 

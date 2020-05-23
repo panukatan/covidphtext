@@ -42,7 +42,7 @@ by the Inter-Agency Task Force for the Management of Emerging Infectious
 Diseases (IATF).
 
 A description of the available datasets can be found
-[here](https://como-ph.github.io/comotext/reference/index.html#section-datasets).
+[here](https://como-ph.github.io/covidphtext/reference/index.html#section-datasets).
 
 A table of the `29` IATF resolutions and the URLs to download them can
 be generated using the function `get_iatf_links()` as follows:
@@ -71,7 +71,7 @@ No. 29, the following command is issued:
 
 ``` r
 get_iatf_pdf(id = 29)
-#> [1] "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//Rtmp6ymN3W/iatfResolution29.pdf"
+#> [1] "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//RtmpaPFOfc/iatfResolution29.pdf"
 ```
 
 The command downloads the PDF of the specified IATF Resolution into a
