@@ -1,0 +1,64 @@
+title: covidphtext
+
+url: https://como-ph.github.io/covidphtext
+
+template:
+  params:
+    bootswatch: flatly
+    ganalytics:
+
+#home:
+  #strip_header: true
+#  links:
+#  - text: Read more about the WHO Growth Standards
+#    href: https://www.who.int/childgrowth/en/
+#
+#  - text: Read more about MUAC-for-age z-scores development
+#    href: https://doi.org/10.1136/bmj.j3423
+
+reference:
+- title: Description
+  contents:
+  - covidphtext
+
+- title: Extract
+  contents:
+  - get_iatf_links
+  - get_iatf_pdf
+
+- title: Combine
+  contents:
+  - combine_docs
+  - combine_iatf
+
+- title: Datasets - IATF resolutions
+  contents:
+  - iatfLinks
+  - iatfResolution09
+  - iatfResolution10
+  - iatfResolution11
+  - iatfResolution12
+  - iatfResolution13
+  - iatfResolution14
+  - iatfResolution15
+  - iatfResolution16
+  - iatfResolution17
+  - iatfResolution18
+  - iatfResolution19
+  - iatfResolution20
+  - iatfResolution21
+  - iatfResolution22
+  - iatfResolution23
+  - iatfResolution24
+  - iatfResolution25
+  - iatfResolution26
+  - iatfResolution27
+  - iatfResolution28
+  - iatfResolution29
+  - iatfResolution31
+  - iatfResolution32
+  - iatfResolution33
+  - iatfResolution34
+  - iatfResolution35
+  - iatfResolution36
+  - iatfResolution37
