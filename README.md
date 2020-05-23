@@ -7,6 +7,8 @@
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![R build
+status](https://github.com/como-ph/covidphtext/workflows/R-CMD-check/badge.svg)](https://github.com/como-ph/covidphtext/actions)
 <!-- badges: end -->
 
 To assess possible impact of various COVID-19 prediction models on
@@ -67,7 +69,7 @@ No. 29, the following command is issued:
 
 ``` r
 get_iatf_pdf(id = 29)
-#> [1] "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//Rtmp5i24ju/iatfResolution29.pdf"
+#> [1] "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//Rtmp8ewjbc/iatfResolution29.pdf"
 ```
 
 The command downloads the PDF of the specified IATF Resolution into a
