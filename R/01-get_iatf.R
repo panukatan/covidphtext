@@ -1,7 +1,7 @@
 ################################################################################
 #
 #'
-#' Get list of links to IATF resolutions
+#' Get list of links to IATF resolutions from Department of Health website
 #'
 #' @param base URL to the IATF resolutions webpage. This is currently at
 #'   \url{https://www.doh.gov.ph/COVID-19/IATF-Resolutions}
@@ -153,4 +153,108 @@ get_iatf_pdf <- function(base = "https://www.doh.gov.ph/COVID-19/IATF-Resolution
 }
 
 
+################################################################################
+#
+#'
+#' Get list of links to IATF resolutions from Philippines Officie Gazette
+#'
+#' @param base URL to the IATF resolutions webpage in the Official Gazette.
+#'   This is currently at \url{https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/}
+#' @param pages A vector of paginated webpages in which the IATF resolutions
+#'   are available. This currently defaults to 1:5 as there are currenlty 5
+#'   pages.
+#'
+#' @return A tibble containing absolute links to all the current IATF
+#'   resolutions at time of extraction from the Official Gazette. The tibble
+#'   contains the following information:
+#'
+#' \itemize{
+#'   \item \code{id}{Resolution number}
+#'   \item \code{title}{Title of resolution}
+#'   \item \code{date}{Date (in <YYYY-MM-DD> format) resolution was issued}
+#'   \item \code{source}{Source of resolution. This is by default from IATF}
+#'   \item \code{type}{Type of document. This is by default a resolution}
+#'   \item \code{url}{Absolute URL for PDF of resolution}
+#'   \item \code{checked}{Date (in <YYYY-MM-DD format) table was extracted. This
+#'     is by default provided by \code{Sys.Date()}}
+#' }
+#'
+#' @examples
+#' base <- "https://www.officialgazette.gov.ph/section/laws/other-issuances"
+#' agency <- "inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/"
+#'
+#' get_iatf_gazette(base = paste(base, agency, sep = "/"), pages = 1)
+#'
+#' @export
+#'
+#
+################################################################################
 
+
+get_iatf_gazette <- function(base, pages = 1:5) {
+  ## Create concatenating objects
+  iatfID <- NULL
+  iatfTitle <- NULL
+  iatfDate <- NULL
+  iatfURL <- NULL
+
+  ## Cycle through resolution pages
+  for(i in pages) {
+    ## Create current URL page
+    urlPage <- xml2::read_html(x = paste(base, "page", i,  sep = "/"))
+
+    ## Get current page resolutions ID
+    iatfID <- c(iatfID,
+                urlPage %>%
+                  rvest::html_nodes(css = ".large-8 .entry-title a") %>%
+                  rvest::html_text() %>%
+                  stringr::str_remove(pattern = "2020") %>%
+                  stringr::str_extract(pattern = "[0-9]+"))
+
+    ## Get current page resolutions Title
+    iatfTitle <- c(iatfTitle,
+                   urlPage %>%
+                     rvest::html_nodes(css = ".large-8 p") %>%
+                     rvest::html_text())
+
+    ## Get current page resolutions Date
+    iatfDate <- c(iatfDate,
+                  urlPage %>%
+                    rvest::html_nodes(css = ".large-8 .published") %>%
+                    rvest::html_text() %>%
+                    lubridate::mdy())
+
+    ## Get current page resolutions URL
+    iatfURL <- c(iatfURL,
+                 urlPage %>%
+                   rvest::html_nodes(css = ".large-8 .entry-title a") %>%
+                   rvest::html_attr(name = "href"))
+  }
+
+  iatfURLs <- NULL
+
+  for(i in iatfURL) {
+    resolutionPage <- xml2::read_html(x = i)
+
+    pdfLink <- resolutionPage %>%
+      rvest::html_nodes(css = "#resource a") %>%
+      rvest::html_attr(name = "href")
+
+    pdfLink <- pdfLink[1]
+
+    iatfURLs <- c(iatfURLs, pdfLink)
+  }
+
+  ## Concatenate IATF list
+  iatfLinksGazette <- data.frame(id = iatfID,
+                                 title = iatfTitle,
+                                 date = iatfDate,
+                                 source = "IATF",
+                                 type = "resolution",
+                                 url = iatfURLs,
+                                 checked = Sys.Date(),
+                                 stringsAsFactors = )
+
+  ## Return IATF list
+  return(iatfLinksGazette)
+}
