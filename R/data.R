@@ -1025,3 +1025,31 @@
 ################################################################################
 "iatfLinks"
 
+
+################################################################################
+#
+#'
+#' IATF resolutions URLs from the Official Gazette
+#'
+#' @format A tibble with 25 rows and 7 columns:
+#' \describe{
+#'   \item{\code{id}}{Unique identifier}
+#'   \item{\code{title}}{Title of resolution}
+#'   \item{\code{date}}{Date resolution released. Format <YYYY-MM-DD>}
+#'   \item{\code{source}}{Issuing agency. IATF by default}
+#'   \item{\code{type}}{Type of issuance. Resolution by default}
+#'   \item{\code{link}}{Absolute URL of IATF resolution}
+#'   \item{\code{checked}}{Date (in <YYYY-MM_DD> format) information was
+#'     extracted. Default is \code{Sys.Date()}}
+#' }
+#'
+#' @examples
+#' iatfLinks
+#'
+#' @source \url{https://www.officialgazette.gov.ph/}. Updated
+#'   as of 25 May 2020.
+#'
+#'
+#
+################################################################################
+"iatfLinksGazette"

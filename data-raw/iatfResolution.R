@@ -11,7 +11,8 @@ usethis::use_data(iatfLinks, overwrite = TRUE, compress = "xz")
 
 ## Resolutions table ###########################################################
 
-iatfLinksGazette <- get_iatf_gazette(pages = 1:5)
+iatfLinksGazette <- get_iatf_gazette(base = "https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/",
+                                     pages = 1:5)
 
 usethis::use_data(iatfLinksGazette, overwrite = TRUE, compress = "xz")
 
