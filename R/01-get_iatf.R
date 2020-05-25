@@ -190,7 +190,6 @@ get_iatf_pdf <- function(base = "https://www.doh.gov.ph/COVID-19/IATF-Resolution
 #
 ################################################################################
 
-
 get_iatf_gazette <- function(base, pages = 1:5) {
   ## Create concatenating objects
   iatfID <- NULL
@@ -254,6 +253,9 @@ get_iatf_gazette <- function(base, pages = 1:5) {
                                  url = iatfURLs,
                                  checked = Sys.Date(),
                                  stringsAsFactors = )
+
+  ## Convert to tibble
+  iatfLinksGazette <- tibble::tibble(iatfLinksGazette)
 
   ## Return IATF list
   return(iatfLinksGazette)
