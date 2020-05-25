@@ -2,6 +2,222 @@
 #
 #'
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
+#' Diseases Resolution Number 1
+#'
+#' @format A tibble with 43 rows and 6 columns:
+#' \describe{
+#'   \item{\code{linenumber}}{Linenumber}
+#'   \item{\code{text}}{Character string of text about 70 characters}
+#'   \item{\code{source}}{Issuer of resolution}
+#'   \item{\code{type}}{Type of document}
+#'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
+#' }
+#'
+#' @examples
+#' iatfResolution01
+#'
+#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/01jan/20200128-IATF-RESOLUTION-NO-1-RRD.pdf}
+#'
+#'
+#
+################################################################################
+"iatfResolution01"
+
+
+################################################################################
+#
+#'
+#' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
+#' Diseases Resolution Number 2
+#'
+#' @format A tibble with 76 rows and 6 columns:
+#' \describe{
+#'   \item{\code{linenumber}}{Linenumber}
+#'   \item{\code{text}}{Character string of text about 70 characters}
+#'   \item{\code{source}}{Issuer of resolution}
+#'   \item{\code{type}}{Type of document}
+#'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
+#' }
+#'
+#' @examples
+#' iatfResolution02
+#'
+#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/01jan/20200131-IATF-RESOLUTION-NO-2-RRD.pdf}
+#'
+#'
+#
+################################################################################
+"iatfResolution02"
+
+
+################################################################################
+#
+#'
+#' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
+#' Diseases Resolution Number 3
+#'
+#' @format A tibble with 44 rows and 6 columns:
+#' \describe{
+#'   \item{\code{linenumber}}{Linenumber}
+#'   \item{\code{text}}{Character string of text about 70 characters}
+#'   \item{\code{source}}{Issuer of resolution}
+#'   \item{\code{type}}{Type of document}
+#'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
+#' }
+#'
+#' @examples
+#' iatfResolution03
+#'
+#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/02feb/20200203-IATF-RESOLUTION-NO-3-RRD.pdf}
+#'
+#'
+#
+################################################################################
+"iatfResolution03"
+
+
+################################################################################
+#
+#'
+#' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
+#' Diseases Resolution Number 4
+#'
+#' @format A tibble with 60 rows and 6 columns:
+#' \describe{
+#'   \item{\code{linenumber}}{Linenumber}
+#'   \item{\code{text}}{Character string of text about 70 characters}
+#'   \item{\code{source}}{Issuer of resolution}
+#'   \item{\code{type}}{Type of document}
+#'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
+#' }
+#'
+#' @examples
+#' iatfResolution04
+#'
+#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/02feb/20200211-IATF-RESOLUTION-NO-4-RRD.pdf}
+#'
+#'
+#
+################################################################################
+"iatfResolution04"
+
+
+################################################################################
+#
+#'
+#' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
+#' Diseases Resolution Number 5
+#'
+#' @format A tibble with 75 rows and 6 columns:
+#' \describe{
+#'   \item{\code{linenumber}}{Linenumber}
+#'   \item{\code{text}}{Character string of text about 70 characters}
+#'   \item{\code{source}}{Issuer of resolution}
+#'   \item{\code{type}}{Type of document}
+#'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
+#' }
+#'
+#' @examples
+#' iatfResolution05
+#'
+#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/02feb/20200214-IATF-RESOLUTION-NO-5-RRD.pdf}
+#'
+#'
+#
+################################################################################
+"iatfResolution05"
+
+
+################################################################################
+#
+#'
+#' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
+#' Diseases Resolution Number 6
+#'
+#' @format A tibble with 71 rows and 6 columns:
+#' \describe{
+#'   \item{\code{linenumber}}{Linenumber}
+#'   \item{\code{text}}{Character string of text about 70 characters}
+#'   \item{\code{source}}{Issuer of resolution}
+#'   \item{\code{type}}{Type of document}
+#'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
+#' }
+#'
+#' @examples
+#' iatfResolution06
+#'
+#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/02feb/20200218-IATF-RESOLUTION-NO-6-RRD.pdf}
+#'
+#'
+#
+################################################################################
+"iatfResolution06"
+
+
+################################################################################
+#
+#'
+#' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
+#' Diseases Resolution Number 7
+#'
+#' @format A tibble with 71 rows and 6 columns:
+#' \describe{
+#'   \item{\code{linenumber}}{Linenumber}
+#'   \item{\code{text}}{Character string of text about 70 characters}
+#'   \item{\code{source}}{Issuer of resolution}
+#'   \item{\code{type}}{Type of document}
+#'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
+#' }
+#'
+#' @examples
+#' iatfResolution07
+#'
+#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/02feb/20200221-IATF-RESOLUTION-NO-7-RRD.pdf}
+#'
+#'
+#
+################################################################################
+"iatfResolution07"
+
+
+################################################################################
+#
+#'
+#' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
+#' Diseases Resolution Number 8
+#'
+#' @format A tibble with 87 rows and 6 columns:
+#' \describe{
+#'   \item{\code{linenumber}}{Linenumber}
+#'   \item{\code{text}}{Character string of text about 70 characters}
+#'   \item{\code{source}}{Issuer of resolution}
+#'   \item{\code{type}}{Type of document}
+#'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
+#' }
+#'
+#' @examples
+#' iatfResolution08
+#'
+#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/02feb/20200226-IATF-RESOLUTION-NO-8-RRD.pdf}
+#'
+#'
+#
+################################################################################
+"iatfResolution08"
+
+
+################################################################################
+#
+#'
+#' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 9
 #'
 #' @format A tibble with 60 rows and 6 columns:

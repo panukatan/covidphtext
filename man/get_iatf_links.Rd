@@ -2,7 +2,7 @@
 % Please edit documentation in R/01-get_iatf.R
 \name{get_iatf_links}
 \alias{get_iatf_links}
-\title{Get list of links to IATF resolutions}
+\title{Get list of links to IATF resolutions from Department of Health website}
 \usage{
 get_iatf_links(base = "https://www.doh.gov.ph/COVID-19/IATF-Resolutions")
 }
@@ -27,7 +27,7 @@ A tibble containing absolute links to all the current IATF
 }
 }
 \description{
-Get list of links to IATF resolutions
+Get list of links to IATF resolutions from Department of Health website
 }
 \examples{
 get_iatf_links(base = "http://www.doh.gov.ph/COVID-19/IATF-Resolutions")

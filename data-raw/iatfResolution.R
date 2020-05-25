@@ -8,6 +8,322 @@ iatfLinks <- get_iatf_links()
 
 usethis::use_data(iatfLinks, overwrite = TRUE, compress = "xz")
 
+
+## Resolutions table ###########################################################
+
+iatfLinksGazette <- get_iatf_gazette(pages = 1:5)
+
+usethis::use_data(iatfLinksGazette, overwrite = TRUE, compress = "xz")
+
+
+## Resolution 1 ################################################################
+
+## Read resolution
+x <- pdf_ocr_text(pdf = "data-raw/IATF/20200128-IATF-RESOLUTION-NO-1-RRD.pdf")
+
+## Restructure text
+y <- unlist(stringr::str_split(string = x, pattern = "\n"))
+
+## Clean-up
+
+y <- y[27:length(y)]
+y <- y[c(1:25, 29:35, 39:46, 61:69)]
+y <- y[y != ""]
+
+y <- stringr::str_remove_all(string = y, pattern = "[,|:!]$") %>%
+  stringr::str_remove_all(pattern = "[ |._]$") %>%
+  stringr::str_remove_all(pattern = "[ |._]$") %>%
+  stringr::str_remove_all(pattern = "[ |._]$") %>%
+  stringr::str_remove_all(pattern = "[ |._]$") %>%
+  stringr::str_remove(pattern = "eee __-") %>%
+  #stringr::str_remove(pattern = "^[©>-}]") %>%
+  stringr::str_trim(side = "both") %>%
+  stringr::str_remove(pattern = "— ") %>%
+  stringr::str_replace(pattern = "WHERKAS", "WHEREAS") %>%
+  stringr::str_replace(pattern = "atthe", "at the") %>%
+  stringr::str_remove(pattern = "©") %>%
+  stringr::str_remove(pattern = "\\}") %>%
+  stringr::str_remove(pattern = "\\>") %>%
+  stringr::str_remove(pattern = "= SS ") %>%
+  stringr::str_remove(pattern = "= ea") %>%
+  stringr::str_remove(pattern = "~ = lg") %>%
+  stringr::str_remove(pattern = "os 22 , ") %>%
+  stringr::str_remove(pattern = "= 50 Ee ") %>%
+  stringr::str_trim(side = "both")
+
+y[28] <- "FRANCISCO T. DUQUE III"
+y[29] <- "Secretary, Department of Health"
+y[30] <- "BRIGIDO J. DULAY"
+y[31] <- "Undersecretary, Department of Foreign Affairs"
+y[32] <- "FRANCISCO R. CRUZ"
+y[33] <- "Assistant Secretary, Department of Interior and Local Government"
+y[34] <- "ADONIS P. SULIT"
+y[35] <- "Assistant Secretary, Department of Justice"
+y[36] <- "MARCO ANTONIO S. VALEROS"
+y[37] <- "Medical Officer IV, Department of Labor and Employment"
+y[38] <- "BENJAMIN TERENCIO"
+y[39] <- "Assistant Office-in-Charge, Civial Aviation Authority of the Philippines"
+y[40] <- "CARMELO L. ARCILLA"
+y[41] <- "Executive Director, Civil Aeronautics Board"
+y[42] <- "ERIC STEVEN Y. GUIEB"
+y[43] <- "Command-Surgeon, Philippine Coast Guard"
+
+y <- data.frame(linenumber = 1:length(y),
+                text = y,
+                source = "IATF",
+                type = "resolution",
+                id = 1,
+                date = as.Date("28/01/2020", format = "%d/%m/%y"),
+                stringsAsFactors = FALSE)
+
+iatfResolution01 <- tibble::tibble(y)
+
+usethis::use_data(iatfResolution01, overwrite = TRUE, compress = "xz")
+
+
+## Resolution 2 ################################################################
+
+## Read resolution
+x <- pdf_ocr_text(pdf = "data-raw/IATF/20200131-IATF-RESOLUTION-NO-2-RRD.pdf")
+
+## Restructure text
+y <- unlist(stringr::str_split(string = x, pattern = "\n"))
+
+## Clean-up
+y <- y[c(14:40, 44:85, 90:100, 102:112)]
+y <- y[y != ""]
+
+y[71] <- "Arthur P. TUGADE"
+y[72] <- "Secretary, Department of Transportation"
+y[74] <- "BERNADETTE FATIMA P. ROMULA-PUYAT"
+y[75] <- "Secretary, Department of Tourism"
+
+y <- y[c(1:72, 74:77)]
+
+y <- data.frame(linenumber = 1:length(y),
+                text = y,
+                source = "IATF",
+                type = "resolution",
+                id = 2,
+                date = as.Date("31/01/2020", format = "%d/%m/%y"),
+                stringsAsFactors = FALSE)
+
+iatfResolution02 <- tibble::tibble(y)
+
+usethis::use_data(iatfResolution02, overwrite = TRUE, compress = "xz")
+
+
+## Resolution 3 ################################################################
+
+## Read resolution
+x <- pdf_ocr_text(pdf = "data-raw/IATF/20200203-IATF-RESOLUTION-NO-3-RRD.pdf")
+
+## Restructure text
+y <- unlist(stringr::str_split(string = x, pattern = "\n"))
+
+## Clean-up
+y <- y[c(16:43, 48:52)]
+y <- y[y != ""]
+
+y <- c(y, tail(iatfResolution02, 16)$text)
+
+y <- data.frame(linenumber = 1:length(y),
+                text = y,
+                source = "IATF",
+                type = "resolution",
+                id = 3,
+                date = as.Date("06/02/2020", format = "%d/%m/%y"),
+                stringsAsFactors = FALSE)
+
+iatfResolution03 <- tibble::tibble(y)
+
+usethis::use_data(iatfResolution03, overwrite = TRUE, compress = "xz")
+
+
+## Resolution 4 ################################################################
+
+## Read resolution
+x <- pdf_ocr_text(pdf = "data-raw/IATF/20200211-IATF-RESOLUTION-NO-4-RRD.pdf")
+
+## Restructure text
+y <- unlist(stringr::str_split(string = x, pattern = "\n"))
+
+## Clean-up
+y <- y[c(23:53, 59:81)]
+y <- y[y != ""]
+
+y <- c(y, tail(iatfResolution02, 16)$text)
+
+y <- data.frame(linenumber = 1:length(y),
+                text = y,
+                source = "IATF",
+                type = "resolution",
+                id = 4,
+                date = as.Date("11/02/2020", format = "%d/%m/%y"),
+                stringsAsFactors = FALSE)
+
+iatfResolution04 <- tibble::tibble(y)
+
+usethis::use_data(iatfResolution04, overwrite = TRUE, compress = "xz")
+
+
+## Resolution 5 ################################################################
+
+## Read resolution
+x <- pdf_ocr_text(pdf = "data-raw/IATF/20200214-IATF-RESOLUTION-NO-5-RRD.pdf")
+
+## Restructure text
+y <- unlist(stringr::str_split(string = x, pattern = "\n"))
+
+## Clean-up
+y <- y[c(15:45, 49:89, 92:94)]
+y <- y[y != ""]
+
+y <- c(y, tail(iatfResolution02, 16)$text)
+
+y[62] <- "BRIGIDO J. DULAY"
+y[63] <- "Undersecretary, Department of Foreign Affairs"
+y[74] <- "MANUEL ANTHONY Y. TAN"
+y[75] <- "OIC-Undersecretary, Department of Information and Communications Technology"
+
+y <- data.frame(linenumber = 1:length(y),
+                text = y,
+                source = "IATF",
+                type = "resolution",
+                id = 5,
+                date = as.Date("14/02/2020", format = "%d/%m/%y"),
+                stringsAsFactors = FALSE)
+
+iatfResolution05 <- tibble::tibble(y)
+
+usethis::use_data(iatfResolution05, overwrite = TRUE, compress = "xz")
+
+
+## Resolution 6 ################################################################
+
+## Read resolution
+x <- pdf_ocr_text(pdf = "data-raw/IATF/20200218-IATF-RESOLUTION-NO-6-RRD.pdf")
+
+## Restructure text
+y <- unlist(stringr::str_split(string = x, pattern = "\n"))
+
+## Clean-up
+y <- y[c(14:67, 71:73)]
+y <- y[y != ""]
+
+y <- y %>%
+  stringr::str_remove_all(pattern = "\\|") %>%
+  stringr::str_remove_all(pattern = "[\\)]$") %>%
+  stringr::str_trim(side = "both")
+
+y <- c(y, tail(iatfResolution02, 16)$text)
+
+y[58] <- y[60]
+y[59] <- y[61]
+y[60] <- y[68]
+y[61] <- y[69]
+y[62] <- "BRIGIDO J. DULAY"
+y[63] <- "Undersecretary, Department of Foreign Affairs"
+y[64] <- "MANUEL ANTONIO L. TAMAYO"
+y[65] <- "Undersecretary, Department of Tourism"
+y[66] <- "ADONIS P. SULIT"
+y[67] <- "Assistant Secretary, Department of Justic"
+y[68] <- "HANS LEO J. CACDAC"
+y[69] <- "Administrator, Overseas Workers Welfare Administration"
+y[70] <- "GREGORIO B. HONASAN"
+y[71] <- "Secretary, Department of Information and Communications Technology"
+
+y <- data.frame(linenumber = 1:length(y),
+                text = y,
+                source = "IATF",
+                type = "resolution",
+                id = 6,
+                date = as.Date("18/02/2020", format = "%d/%m/%y"),
+                stringsAsFactors = FALSE)
+
+iatfResolution06 <- tibble::tibble(y)
+
+usethis::use_data(iatfResolution06, overwrite = TRUE, compress = "xz")
+
+
+## Resolution 7 ################################################################
+
+## Read resolution
+x <- pdf_ocr_text(pdf = "data-raw/IATF/20200221-IATF-RESOLUTION-NO-7-RRD.pdf")
+
+## Restructure text
+y <- unlist(stringr::str_split(string = x, pattern = "\n"))
+
+## Clean-up
+y <- y[c(13:85, 97:99)]
+y <- y[y != ""]
+
+y <- c(y, tail(iatfResolution06, 16)$text)
+
+y[58] <- "EPIMACO DENSING III"
+y[59] <- "Undersecretary, Department of the Interior and Local Government"
+y[60] <- y[62]
+y[61] <- y[63]
+y[62] <- "MANUEL ANTONIO L. TAMAYO"
+y[63] <- "Undersecretary, Department of Tourism"
+y[64] <- "MARIA RICA C. BUENO"
+y[65] <- "Assistant Secretary, Department of Tourism"
+y[70] <- y[68]
+y[71] <- y[69]
+y[68] <- "MANUEL ANTHONY S. TAN"
+y[69] <- "OIC-Undersecretary, Department of Information and Communications Technology"
+
+y <- data.frame(linenumber = 1:length(y),
+                text = y,
+                source = "IATF",
+                type = "resolution",
+                id = 7,
+                date = as.Date("21/02/2020", format = "%d/%m/%y"),
+                stringsAsFactors = FALSE)
+
+iatfResolution07 <- tibble::tibble(y)
+
+usethis::use_data(iatfResolution07, overwrite = TRUE, compress = "xz")
+
+
+## Resolution 8 ################################################################
+
+## Read resolution
+x <- pdf_ocr_text(pdf = "data-raw/IATF/20200226-IATF-RESOLUTION-NO-8-RRD.pdf")
+
+## Restructure text
+y <- unlist(stringr::str_split(string = x, pattern = "\n"))
+
+## Clean-up
+y <- y[c(13:42, 51:89, 103:118)]
+y <- y[y != ""]
+
+y <- c(y, tail(iatfResolution07, 16)$text)
+
+y[74] <- "EDUARDO M. AÑO"
+y[75] <- "Secretary, Department of the Interior and Local Government"
+y[76] <- "BERNADETTE ROMULA-PUYAT"
+y[77] <- "Secretary, Department of Tourism"
+y[80] <- y[78]
+y[81] <- y[79]
+y[78] <- "MENARDO I. GUEVARRA"
+y[79] <- "Secretary, Department of Justice"
+y[82] <- "MANUEL ANTONIO L. TAMAYO"
+y[83] <- "Undersecretary, Department of Transportation"
+
+y <- data.frame(linenumber = 1:length(y),
+                text = y,
+                source = "IATF",
+                type = "resolution",
+                id = 8,
+                date = as.Date("26/02/2020", format = "%d/%m/%y"),
+                stringsAsFactors = FALSE)
+
+iatfResolution08 <- tibble::tibble(y)
+
+usethis::use_data(iatfResolution08, overwrite = TRUE, compress = "xz")
+
+
 ## Resolution 9 ################################################################
 
 ## Read resolution
