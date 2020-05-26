@@ -19,7 +19,7 @@ A tibble with 25 rows and 7 columns:
 }
 \source{
 \url{https://www.doh.gov.ph/COVID-19/IATF-Resolutions}. Updated
-  as of 19 May 2020.
+  as of 25 May 2020.
 }
 \usage{
 iatfLinks

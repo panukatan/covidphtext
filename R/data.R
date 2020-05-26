@@ -974,6 +974,60 @@
 #
 #'
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
+#' Diseases Resolution Number 38
+#'
+#' @format A tibble with 650 rows and 6 columns:
+#' \describe{
+#'   \item{\code{linenumber}}{Linenumber}
+#'   \item{\code{text}}{Character string of text about 70 characters}
+#'   \item{\code{source}}{Issuer of resolution}
+#'   \item{\code{type}}{Type of document}
+#'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
+#' }
+#'
+#' @examples
+#' iatfResolution38
+#'
+#' @source \url{https://doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-38.pdf}
+#'
+#'
+#
+################################################################################
+"iatfResolution38"
+
+
+################################################################################
+#
+#'
+#' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
+#' Diseases Resolution Number 39
+#'
+#' @format A tibble with 77 rows and 6 columns:
+#' \describe{
+#'   \item{\code{linenumber}}{Linenumber}
+#'   \item{\code{text}}{Character string of text about 70 characters}
+#'   \item{\code{source}}{Issuer of resolution}
+#'   \item{\code{type}}{Type of document}
+#'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
+#' }
+#'
+#' @examples
+#' iatfResolution39
+#'
+#' @source \url{https://doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-39.pdf}
+#'
+#'
+#
+################################################################################
+"iatfResolution39"
+
+
+################################################################################
+#
+#'
+#' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Guideline Omnibus
 #'
 #' @format A tibble with 753 rows and 6 columns:
@@ -1018,7 +1072,7 @@
 #' iatfLinks
 #'
 #' @source \url{https://www.doh.gov.ph/COVID-19/IATF-Resolutions}. Updated
-#'   as of 19 May 2020.
+#'   as of 25 May 2020.
 #'
 #'
 #

@@ -1364,3 +1364,133 @@ y <- data.frame(linenumber = 1:length(y),
 iatfGuidelineOmnibus <- tibble::tibble(y)
 
 usethis::use_data(iatfGuidelineOmnibus, overwrite = TRUE, compress = "xz")
+
+## Resolution 38 ###############################################################
+
+x <- pdf_ocr_text(pdf = "data-raw/IATF/IATF-Resolution-No.-38.pdf")
+
+## Restructure text
+y <- unlist(stringr::str_split(string = x, pattern = "\n"))
+
+y <- y[y != ""]
+y <- y[c(8:37, 42:69, 74:97, 102:129, 134:158, 162:190, 195:218, 225:248,
+         253:280, 287:310, 315:340, 346:369, 376:399, 405:433, 439:463,
+         469:497, 502:532, 537:561, 567:590, 596:623, 628:652, 660:687,
+         694:719, 725:767)]
+
+y[67]  <- "iii. Manufacturers of medicines, medical supplies, devices"
+y[76]  <- "essential goods. Delivery of clothing, accessories,"
+y[79]  <- "b. At a maximum of fifty percent (50%) operational capacity,"
+y[85]  <- "activities in the value chain related to food, medicine and"
+y[93]  <- "establishments insofar as take-out and delivery services,"
+y[113] <- "therapy services for Persons With Disabilities (PWDs) shall"
+y[119] <- "including their armored vehicle services, if any;"
+y[140] <- "maintenance and repair works;"
+y[150] <- "capacity necessary to maintain the prompt delivery of"
+y[191] <- "their residences to attend the wake or interment of the"
+y[215] <- "Foreign Affairs (DFA), whenever performing diplomatic"
+y[228] <- "those accommodating the following:"
+y[243] <- "services to guests through an an in-house skeleton"
+y[246] <- "shall not be allowed to operate or to provide room service;"
+y[256] <- "are essential for the provision of government services or"
+y[276] <- "passes specifically exempting persons from community"
+y[296] <- "All the following shall be allowed to operate at full operational capacity"
+y[297] <- "a. All establishments or activities permitted to operate or be"
+y[316] <- "Omnibus Guidelines, such as money exchange, insurance,"
+y[343] <- "Provided that in all of the foregoing, hotel operations"
+y[348] <- "shall not be allowed to operate or to provide roome service;"
+y[362] <- "modified through subsequent issuances of the IATF"
+y[395] <- "except when indispensible under the circumstances for obtaining essential goods and services or for work in establishment located"
+y[400] <- "Provided that in all of the foregoing, hotel operations shall be"
+y[403] <- "establishments within the premises, such as restaurants, cafés"
+y[469] <- "modified through subsequent issuances of the IATF"
+y[486] <- "skateboarding are allowed. Provided, that the minimum public"
+y[504] <- "pertinent Sections of this Omnibus Guidelines shall be allowed to operate or be undertaken at full operational capacity;"
+y[535] <- "permitted in the zone of destination, and going back home"
+y[541] <- "Repatriated OFWs or returning non-OFWs who have been"
+y[545] <- "for COVID-19 whichever is earlier, shall be granted unhampered"
+y[566] <- "the payment of all loans, including but not limited to salary,"
+y[569] <- "without incurring interests, penalties, fees or other charges."
+y[592] <- "including their future amendments, shall be considered sufficient"
+y[601] <- "combination thereof, which can effectively lessen the"
+
+y <- c(y[1:395], y[395:length(y)])
+y <- c(y[1:505], y[505:length(y)])
+
+y[395] <- "except when indispensible under the circumstances for obtaining"
+y[396] <- "essential goods and services or for work in establishment located"
+y[505] <- "pertinent Sections of this Omnibus Guidelines shall be allowed"
+y[506] <- "to operate or be undertaken at full operational capacity;"
+
+y <- y[c(1:627, 630:length(y))]
+
+y <- y %>%
+  stringr::str_replace_all(pattern = "_", replacement = " ") %>%
+  stringr::str_replace_all(pattern = "\\|", replacement = "I") %>%
+  stringr::str_replace_all(pattern = "\\[ATF", replacement = "IATF") %>%
+  stringr::str_replace_all(pattern = "SECTIO. I\\] SEPARABILIT\\} AU",
+                           replacement = "SECTION [9]: SEPARABILITY CLAUSE.") %>%
+  stringr::str_replace(pattern = "Iam", replacement = "I am") %>%
+  stringr::str_remove_all(pattern = "\\@")
+
+y[625] <- "Francisco T. Duque III       Karlo Alexei B. Nograles"
+y[626] <- "Secretary, Department of Health     Cabinet Secretary, Office of the Cabinet Secretary"
+y[627] <- "IATF Chairperson         IATF Co-Chairperson"
+y[649] <- "KENNETH G. RONQUILLO, MD, MPHM"
+
+y[574] <- "the ECQ or MECQ is lifted, whichever is later, for every loan."
+y <- y[c(1:541, 543:length(y))]
+
+y <- stringr::str_trim(string = y, side = "both")
+
+y <- data.frame(linenumber = 1:length(y),
+                text = y,
+                source = "IATF",
+                type = "resolution",
+                id = 38,
+                date = as.Date("22/05/2020", format = "%d/%m/%y"),
+                stringsAsFactors = FALSE)
+
+iatfResolution38 <- tibble::tibble(y)
+
+usethis::use_data(iatfResolution38, overwrite = TRUE, compress = "xz")
+
+## Resolution 39 ###############################################################
+
+x <- pdf_ocr_text(pdf = "data-raw/IATF/IATF-Resolution-No.-39.pdf")
+
+## Restructure text
+y <- unlist(stringr::str_split(string = x, pattern = "\n"))
+
+y <- y[c(11:47, 55:79, 84:118)]
+y <- y[y != ""]
+
+y[51] <- "Francisco T. Duque III       Karlo Alexei B. Nograles"
+y[52] <- "Secretary, Department of Health     Cabinet Secretary, Office of the Cabinet Secretary"
+y[53] <- "IATF Chairperson         IATF Co-Chairperson"
+y[75] <- "KENNETH G. RONQUILLO, MD, MPHM"
+y[77] <- "Secretariat Head, IATF"
+
+y <- y %>%
+  stringr::str_replace(pattern = "8. \\|", replacement = "8. I") %>%
+  stringr::str_replace_all(pattern = "\\[ATF", replacement = "IATF") %>%
+  stringr::str_replace_all(pattern = "\\|", replacement = "I") %>%
+  stringr::str_replace(pattern = "lam", replacement = "I am") %>%
+  stringr::str_replace(pattern = "li", replacement = "ii") %>%
+  stringr::str_replace(pattern = "ili", replacement = "iii") %>%
+  stringr::str_replace(pattern = "Ill", replacement = "III") %>%
+  stringr::str_remove(pattern = "_") %>%
+  stringr::str_trim(side = "both")
+
+y <- data.frame(linenumber = 1:length(y),
+                text = y,
+                source = "IATF",
+                type = "resolution",
+                id = 39,
+                date = as.Date("22/05/2020", format = "%d/%m/%y"),
+                stringsAsFactors = FALSE)
+
+iatfResolution39 <- tibble::tibble(y)
+
+usethis::use_data(iatfResolution39, overwrite = TRUE, compress = "xz")
+
