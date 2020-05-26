@@ -44,23 +44,37 @@ library(covidphtext)
 
 ### Datasets
 
-`covidphtext` currently has 28 datasets of COVID-19-related resolutions and policies in the Philippines. These datasets are 28 resolutions made by the Inter-Agency Task Force for the Management of Emerging Infectious Diseases (IATF).
+#### Inter-Agency Task Force for the Management of Emerging Infectious Diseases
+
+`covidphtext` currently has ```r nrow(utils::data(package = "covidphtext")$results)``` datasets of which ```r nrow(iatfLinksGazette[!is.na(iatfLinksGazette$id), ]) - 2``` are COVID-19-related resolutions and policies in the Philippines made by the Inter-Agency Task Force for the Management of Emerging Infectious Diseases (IATF), 1 is the Omnibus Guidelines on the Implementation of Community Quarantine in the Philippines released by the IATF and 2 are reference lists of links to these resolutions and guidelines.
 
 A description of the available datasets can be found [here](https://como-ph.github.io/covidphtext/reference/index.html#section-datasets).
 
-A table of the ```r nrow(iatfLinks)``` IATF resolutions and the URLs to download them can be generated using the function `get_iatf_links()` as follows:
+The IATF resolutions are officially available from two online sources: 1) The Department of Health (DOH) [website](https://www.doh.gov.ph/COVID-19/IATF-Resolutions); and, 2) The Philippines Official Gazette [website](https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/). The DOH website currenlty only holds IATF resolutions starting from resolution number 9 and later. The Official Gazette on the other hand contains resolutions 1 to the most current.
+
+To get a list of the IATF resolutions that are available from the DOH website, the function `get_iatf_links()` can be used as follows:
 
 ```{r usage1, echo = TRUE, eval = TRUE}
 get_iatf_links()
 ```
 
-The actual PDF of the IATF resolutions/s can be downloaded using the `get_iatf_pdf()` function. For example, to download IATF Resolution No. 29, the following command is issued:
+Given that the DOH website doesn't have the first 8 resolutions, this function will soon be deprecated in favour of the newer function below that interfaces with the Official Gazette.
+
+A table of all the IATF resolutions and the URLs to download them can be generated using the newer function `get_iatf_gazette()` as follows:
 
 ```{r usage2, echo = TRUE, eval = TRUE}
+get_iatf_gazette(base = "https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/")
+```
+
+The actual PDF of the IATF resolutions/s can be downloaded using the `get_iatf_pdf()` function. For example, to download IATF Resolution No. 29, the following command is issued:
+
+```{r usage3, echo = TRUE, eval = TRUE}
 get_iatf_pdf(id = 29)
 ```
 
 The command downloads the PDF of the specified IATF Resolution into a temporary directory (using `tempdir()` function) and assigns it with a filename `iatfResolution` followed by the resolution number. For IATF Resolution 29, the filename is `iatfResolution29.pdf`. The output of the `get_iatf_pdf()` function is a character vector of directory path/s to downloaded PDFs as shown above. These paths can then be used when working with these files.
+
+It should be noted that the `get_iatf_pdf()` function interfaces with the DOH website. An update is to follow which will allow this function to interface with the Official Gazette as well or instead of. This will be provided in the next release.
 
 ### Concatenating text datasets
 
@@ -68,7 +82,7 @@ The datasets described above can be processed and analysed on their own or as a 
 
 #### Concatenating datasets based on a specific search term
 
-The `combine_docs` function allows the user to specify search terms to use in identifying datasets provided by the `comotext` package. The `docs` argument allows the specification of a vector of search terms to use to identify the names of datasets to concatenate. If the name/s of the datasets contain these search terms, the datasets with these name/s will be returned.
+The `combine_docs` function allows the user to specify search terms to use in identifying datasets provided by the `covidphtext` package. The `docs` argument allows the specification of a vector of search terms to use to identify the names of datasets to concatenate. If the name/s of the datasets contain these search terms, the datasets with these name/s will be returned.
 
 ```{r usage5, echo = TRUE, eval = TRUE}
 combine_docs(docs = "resolution")
