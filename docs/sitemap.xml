@@ -13,6 +13,9 @@
     <loc>https://como-ph.github.io/covidphtext/reference/covidphtext.html</loc>
   </url>
   <url>
+    <loc>https://como-ph.github.io/covidphtext/reference/get_iatf_gazette.html</loc>
+  </url>
+  <url>
     <loc>https://como-ph.github.io/covidphtext/reference/get_iatf_links.html</loc>
   </url>
   <url>
@@ -23,6 +26,33 @@
   </url>
   <url>
     <loc>https://como-ph.github.io/covidphtext/reference/iatfLinks.html</loc>
+  </url>
+  <url>
+    <loc>https://como-ph.github.io/covidphtext/reference/iatfLinksGazette.html</loc>
+  </url>
+  <url>
+    <loc>https://como-ph.github.io/covidphtext/reference/iatfResolution01.html</loc>
+  </url>
+  <url>
+    <loc>https://como-ph.github.io/covidphtext/reference/iatfResolution02.html</loc>
+  </url>
+  <url>
+    <loc>https://como-ph.github.io/covidphtext/reference/iatfResolution03.html</loc>
+  </url>
+  <url>
+    <loc>https://como-ph.github.io/covidphtext/reference/iatfResolution04.html</loc>
+  </url>
+  <url>
+    <loc>https://como-ph.github.io/covidphtext/reference/iatfResolution05.html</loc>
+  </url>
+  <url>
+    <loc>https://como-ph.github.io/covidphtext/reference/iatfResolution06.html</loc>
+  </url>
+  <url>
+    <loc>https://como-ph.github.io/covidphtext/reference/iatfResolution07.html</loc>
+  </url>
+  <url>
+    <loc>https://como-ph.github.io/covidphtext/reference/iatfResolution08.html</loc>
   </url>
   <url>
     <loc>https://como-ph.github.io/covidphtext/reference/iatfResolution09.html</loc>
@@ -107,5 +137,11 @@
   </url>
   <url>
     <loc>https://como-ph.github.io/covidphtext/reference/iatfResolution37.html</loc>
+  </url>
+  <url>
+    <loc>https://como-ph.github.io/covidphtext/reference/iatfResolution38.html</loc>
+  </url>
+  <url>
+    <loc>https://como-ph.github.io/covidphtext/reference/iatfResolution39.html</loc>
   </url>
 </urlset>

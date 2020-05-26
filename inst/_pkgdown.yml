@@ -24,6 +24,7 @@ reference:
 - title: Extract
   contents:
   - get_iatf_links
+  - get_iatf_gazette
   - get_iatf_pdf
 
 - title: Combine
@@ -34,6 +35,15 @@ reference:
 - title: IATF Datasets
   contents:
   - iatfLinks
+  - iatfLinksGazette
+  - iatfResolution01
+  - iatfResolution02
+  - iatfResolution03
+  - iatfResolution04
+  - iatfResolution05
+  - iatfResolution06
+  - iatfResolution07
+  - iatfResolution08
   - iatfResolution09
   - iatfResolution10
   - iatfResolution11
@@ -62,4 +72,6 @@ reference:
   - iatfResolution35
   - iatfResolution36
   - iatfResolution37
+  - iatfResolution38
+  - iatfResolution39
   - iatfGuidelineOmnibus
