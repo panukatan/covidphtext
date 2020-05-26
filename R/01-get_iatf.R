@@ -252,7 +252,7 @@ get_iatf_gazette <- function(base, pages = 1:5) {
                                  type = "resolution",
                                  url = iatfURLs,
                                  checked = Sys.Date(),
-                                 stringsAsFactors = )
+                                 stringsAsFactors = FALSE)
 
   ## Convert to tibble
   iatfLinksGazette <- tibble::tibble(iatfLinksGazette)
