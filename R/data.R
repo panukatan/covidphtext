@@ -1218,7 +1218,7 @@
 #'
 #' IATF resolutions URLs
 #'
-#' @format A tibble with 25 rows and 7 columns:
+#' @format A tibble with 41 rows and 7 columns:
 #' \describe{
 #'   \item{\code{id}}{Unique identifier}
 #'   \item{\code{title}}{Title of resolution}
@@ -1234,7 +1234,7 @@
 #' iatfLinks
 #'
 #' @source \url{https://www.doh.gov.ph/COVID-19/IATF-Resolutions}. Updated
-#'   as of 25 May 2020.
+#'   as of 16 June 2020.
 #'
 #'
 #
@@ -1247,7 +1247,7 @@
 #'
 #' IATF resolutions URLs from the Official Gazette
 #'
-#' @format A tibble with 25 rows and 7 columns:
+#' @format A tibble with 53 rows and 7 columns:
 #' \describe{
 #'   \item{\code{id}}{Unique identifier}
 #'   \item{\code{title}}{Title of resolution}
@@ -1260,10 +1260,10 @@
 #' }
 #'
 #' @examples
-#' iatfLinks
+#' iatfLinksGazette
 #'
 #' @source \url{https://www.officialgazette.gov.ph/}. Updated
-#'   as of 25 May 2020.
+#'   as of 16 June 2020.
 #'
 #'
 #
