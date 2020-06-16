@@ -29,7 +29,7 @@ To assess possible impact of various COVID-19 prediction models on Philippine go
 
 `covidphtext` is not yet available on CRAN. It is currently in experimental development stage. Installation of `covidphtext` at this point is only possible through its development version via [GitHub](https://github.com/como-ph/covidphtext):
 
-```{r install, echo = TRUE, eval = TRUE}
+```{r install, echo = TRUE, eval = FALSE}
 if(!require(remotes)) install.packages("remotes")
 remotes::install_github("como-ph/covidphtext")
 ```
@@ -46,7 +46,7 @@ library(covidphtext)
 
 #### Inter-Agency Task Force for the Management of Emerging Infectious Diseases
 
-`covidphtext` currently has ```r nrow(utils::data(package = "covidphtext")$results)``` datasets of which ```r nrow(iatfLinksGazette[!is.na(iatfLinksGazette$id), ]) - 2``` are COVID-19-related resolutions and policies in the Philippines made by the Inter-Agency Task Force for the Management of Emerging Infectious Diseases (IATF), 1 is the Omnibus Guidelines on the Implementation of Community Quarantine in the Philippines released by the IATF and 2 are reference lists of links to these resolutions and guidelines.
+`covidphtext` currently has ```r nrow(utils::data(package = "covidphtext")$results)``` datasets of which ```r nrow(iatfLinksGazette[!is.na(iatfLinksGazette$id), ]) - 3``` are COVID-19-related resolutions and policies in the Philippines made by the Inter-Agency Task Force for the Management of Emerging Infectious Diseases (IATF), 1 is the Omnibus Guidelines on the Implementation of Community Quarantine in the Philippines released by the IATF and 2 are reference lists of links to these resolutions and guidelines.
 
 A description of the available datasets can be found [here](https://como-ph.github.io/covidphtext/reference/index.html#section-datasets).
 
@@ -62,8 +62,12 @@ Given that the DOH website doesn't have the first 8 resolutions, this function w
 
 A table of all the IATF resolutions and the URLs to download them can be generated using the newer function `get_iatf_gazette()` as follows:
 
-```{r usage2, echo = TRUE, eval = TRUE}
+```{r usage2, echo = TRUE, eval = FALSE}
 get_iatf_gazette(base = "https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/")
+```
+
+```{r usage2a, echo = FALSE, eval = TRUE}
+iatfLinksGazette
 ```
 
 The actual PDF of the IATF resolutions/s can be downloaded using the `get_iatf_pdf()` function. For example, to download IATF Resolution No. 29, the following command is issued:

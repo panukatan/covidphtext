@@ -39,7 +39,7 @@ package:
 
 #### Inter-Agency Task Force for the Management of Emerging Infectious Diseases
 
-`covidphtext` currently has `41` datasets of which `39` are
+`covidphtext` currently has `49` datasets of which `46` are
 COVID-19-related resolutions and policies in the Philippines made by the
 Inter-Agency Task Force for the Management of Emerging Infectious
 Diseases (IATF), 1 is the Omnibus Guidelines on the Implementation of
@@ -63,20 +63,20 @@ website, the function `get_iatf_links()` can be used as follows:
 
 ``` r
 get_iatf_links()
-#> # A tibble: 32 x 7
+#> # A tibble: 41 x 7
 #>       id title              date       source type  url               checked   
 #>    <dbl> <chr>              <date>     <chr>  <chr> <chr>             <date>    
-#>  1     9 Recommendations f… 2020-03-03 IATF   reso… https://doh.gov.… 2020-05-26
-#>  2    10 Recommendations f… 2020-03-09 IATF   reso… https://doh.gov.… 2020-05-26
-#>  3    11 Recommendations f… 2020-03-12 IATF   reso… https://doh.gov.… 2020-05-26
-#>  4    12 Recommendations f… 2020-03-13 IATF   reso… https://doh.gov.… 2020-05-26
-#>  5    13 Recommendations f… 2020-03-17 IATF   reso… https://doh.gov.… 2020-05-26
-#>  6    14 Resolutions Relat… 2020-03-20 IATF   reso… https://doh.gov.… 2020-05-26
-#>  7    15 Resolutions Relat… 2020-03-25 IATF   reso… https://doh.gov.… 2020-05-26
-#>  8    16 Additional Guidel… 2020-03-30 IATF   reso… https://doh.gov.… 2020-05-26
-#>  9    17 Recommendations R… 2020-03-30 IATF   reso… https://doh.gov.… 2020-05-26
-#> 10    18 Recommendations R… 2020-04-01 IATF   reso… https://doh.gov.… 2020-05-26
-#> # … with 22 more rows
+#>  1     9 Recommendations f… 2020-03-03 IATF   reso… https://doh.gov.… 2020-06-16
+#>  2    10 Recommendations f… 2020-03-09 IATF   reso… https://doh.gov.… 2020-06-16
+#>  3    11 Recommendations f… 2020-03-12 IATF   reso… https://doh.gov.… 2020-06-16
+#>  4    12 Recommendations f… 2020-03-13 IATF   reso… https://doh.gov.… 2020-06-16
+#>  5    13 Recommendations f… 2020-03-17 IATF   reso… https://doh.gov.… 2020-06-16
+#>  6    14 Resolutions Relat… 2020-03-20 IATF   reso… https://doh.gov.… 2020-06-16
+#>  7    15 Resolutions Relat… 2020-03-25 IATF   reso… https://doh.gov.… 2020-06-16
+#>  8    16 Additional Guidel… 2020-03-30 IATF   reso… https://doh.gov.… 2020-06-16
+#>  9    17 Recommendations R… 2020-03-30 IATF   reso… https://doh.gov.… 2020-06-16
+#> 10    18 Recommendations R… 2020-04-01 IATF   reso… https://doh.gov.… 2020-06-16
+#> # … with 31 more rows
 ```
 
 Given that the DOH website doesn’t have the first 8 resolutions, this
@@ -89,21 +89,22 @@ follows:
 
 ``` r
 get_iatf_gazette(base = "https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/")
-#> # A tibble: 44 x 7
-#>    id    title                 date source type   url                 checked   
-#>    <chr> <chr>                <dbl> <chr>  <chr>  <chr>               <date>    
-#>  1 <NA>  OMNIBUS GUIDELINES … 18404 IATF   resol… https://www.offici… 2020-05-26
-#>  2 39    RESOLUTION NO. 39, … 18404 IATF   resol… https://www.offici… 2020-05-26
-#>  3 38    RESOLUTION NO. 38, … 18404 IATF   resol… https://www.offici… 2020-05-26
-#>  4 <NA>  OMNIBUS GUIDELINES … 18397 IATF   resol… https://www.offici… 2020-05-26
-#>  5 37    RESOLUTION NO. 37, … 18397 IATF   resol… https://www.offici… 2020-05-26
-#>  6 36    RESOLUTION NO. 36, … 18395 IATF   resol… https://www.offici… 2020-05-26
-#>  7 35    RESOLUTION NO. 35-A… 18395 IATF   resol… https://www.offici… 2020-05-26
-#>  8 35    RESOLUTION NO. 35, … 18393 IATF   resol… https://www.offici… 2020-05-26
-#>  9 34    RESOLUTION NO. 34, … 18390 IATF   resol… https://www.offici… 2020-05-26
-#> 10 33    RESOLUTION NO. 33, … 18388 IATF   resol… https://www.offici… 2020-05-26
-#> # … with 34 more rows
 ```
+
+    #> # A tibble: 53 x 7
+    #>    id    title              date       source type  url               checked   
+    #>    <chr> <chr>              <date>     <chr>  <chr> <chr>             <date>    
+    #>  1 46    RESOLUTION NO. 46… 2020-06-15 IATF   reso… https://www.offi… 2020-06-16
+    #>  2 46    RESOLUTION NO. 46… 2020-06-15 IATF   reso… https://www.offi… 2020-06-16
+    #>  3 45    RESOLUTION NO. 45… 2020-06-10 IATF   reso… https://www.offi… 2020-06-16
+    #>  4 44    RESOLUTION NO. 44… 2020-06-08 IATF   reso… https://www.offi… 2020-06-16
+    #>  5 <NA>  OMNIBUS GUIDELINE… 2020-06-03 IATF   reso… https://www.offi… 2020-06-16
+    #>  6 43    RESOLUTION NO. 43… 2020-06-03 IATF   reso… https://www.offi… 2020-06-16
+    #>  7 42    RESOLUTION NO. 42… 2020-06-01 IATF   reso… https://www.offi… 2020-06-16
+    #>  8 41    RESOLUTION NO. 41… 2020-05-29 IATF   reso… https://www.offi… 2020-06-16
+    #>  9 40    RESOLUTION NO. 40… 2020-05-27 IATF   reso… https://www.offi… 2020-06-16
+    #> 10 <NA>  OMNIBUS GUIDELINE… 2020-05-22 IATF   reso… https://www.offi… 2020-06-16
+    #> # … with 43 more rows
 
 The actual PDF of the IATF resolutions/s can be downloaded using the
 `get_iatf_pdf()` function. For example, to download IATF Resolution
@@ -111,7 +112,7 @@ No. 29, the following command is issued:
 
 ``` r
 get_iatf_pdf(id = 29)
-#> [1] "/var/folders/fk/s0yv8hhn2cs_nfsmzhm4dmhc0000gn/T//Rtmp4SOdgd/iatfResolution29.pdf"
+#> [1] "/var/folders/fk/s0yv8hhn2cs_nfsmzhm4dmhc0000gn/T//RtmpaoS2Ch/iatfResolution29.pdf"
 ```
 
 The command downloads the PDF of the specified IATF Resolution into a
@@ -145,7 +146,7 @@ will be returned.
 
 ``` r
 combine_docs(docs = "resolution")
-#> # A tibble: 4,440 x 6
+#> # A tibble: 5,381 x 6
 #>    linenumber text                               source type       id date      
 #>         <int> <chr>                              <chr>  <chr>   <dbl> <date>    
 #>  1          1 WHEREAS, Executive Order No. 168,… IATF   resolu…     1 2020-01-28
@@ -158,7 +159,7 @@ combine_docs(docs = "resolution")
 #>  8          8 the viral pneumonia outbreak in W… IATF   resolu…     1 2020-01-28
 #>  9          9 (2019-nCoV) that has not been pre… IATF   resolu…     1 2020-01-28
 #> 10         10 WHEREAS, as of January 27, 2020, … IATF   resolu…     1 2020-01-28
-#> # … with 4,430 more rows
+#> # … with 5,371 more rows
 ```
 
 The `combine_iatf` function is a specialised wrapper of the
