@@ -5,7 +5,7 @@
 \alias{iatfLinksGazette}
 \title{IATF resolutions URLs from the Official Gazette}
 \format{
-A tibble with 25 rows and 7 columns:
+A tibble with 53 rows and 7 columns:
 \describe{
   \item{\code{id}}{Unique identifier}
   \item{\code{title}}{Title of resolution}
@@ -19,7 +19,7 @@ A tibble with 25 rows and 7 columns:
 }
 \source{
 \url{https://www.officialgazette.gov.ph/}. Updated
-  as of 25 May 2020.
+  as of 16 June 2020.
 }
 \usage{
 iatfLinksGazette
@@ -28,7 +28,7 @@ iatfLinksGazette
 IATF resolutions URLs from the Official Gazette
 }
 \examples{
-iatfLinks
+iatfLinksGazette
 
 }
 \keyword{datasets}
