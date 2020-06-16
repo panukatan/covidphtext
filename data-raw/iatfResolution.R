@@ -1,3 +1,4 @@
+## Libraries
 library(rvest)
 library(pdftools)
 library(stringr)
@@ -12,7 +13,7 @@ usethis::use_data(iatfLinks, overwrite = TRUE, compress = "xz")
 ## Resolutions table ###########################################################
 
 iatfLinksGazette <- get_iatf_gazette(base = "https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/",
-                                     pages = 1:5)
+                                     pages = 1:6)
 
 usethis::use_data(iatfLinksGazette, overwrite = TRUE, compress = "xz")
 
@@ -1493,4 +1494,213 @@ y <- data.frame(linenumber = 1:length(y),
 iatfResolution39 <- tibble::tibble(y)
 
 usethis::use_data(iatfResolution39, overwrite = TRUE, compress = "xz")
+
+## Resolution 40 ###############################################################
+
+x <- pdf_ocr_text(pdf = "data-raw/IATF/20200527-IATF-RESOLUTION-NO-40.pdf")
+
+## Restructure text
+y <- unlist(stringr::str_split(string = x, pattern = "\n"))
+
+y <- y[c(10:44, 50:89, 97:135, 145:179, 186:220)]
+y <- y[y != ""]
+
+y[126] <- "Francisco T. Duque III       Karlo Alexei B. Nograles"
+y[127] <- "Secretary, Department of Health     Cabinet Secretary, Office of the Cabinet Secretary"
+y[140] <- "In the Regular Meeting of the IATF held on 27 May 2020 via teleconference"
+y[150] <- "IN WITNESS WHEREOF, I have hereunto affixed my signature this 27th day of May"
+
+y <- y %>%
+  stringr::str_replace_all(pattern = "\\[ATF", replacement = "IATF") %>%
+  stringr::str_replace_all(pattern = "\\]", replacement = "I")
+  stringr::str_replace_all(pattern = "\\|", replacement = "I") %>%
+  stringr::str_replace(pattern = "-b", replacement = "b") %>%
+  stringr::str_remove(pattern = "\\/")
+
+y <- data.frame(linenumber = 1:length(y),
+                text = y,
+                source = "IATF",
+                type = "resolution",
+                id = 40,
+                date = as.Date("27/05/2020", format = "%d/%m/%y"),
+                stringsAsFactors = FALSE)
+
+iatfResolution40 <- tibble::tibble(y)
+
+usethis::use_data(iatfResolution40, overwrite = TRUE, compress = "xz")
+
+
+## Resolution 41 ###############################################################
+
+x <- pdf_ocr_text(pdf = "data-raw/IATF/20200529-IATF-RESOLUTION-NO-41.pdf")
+
+## Restructure text
+y <- unlist(stringr::str_split(string = x, pattern = "\n"))
+
+y <- y[c(10:44, 53:88, 96:133, 142:160, 162:174, 182:191, 199:224)]
+y <- y[y != ""]
+
+y[139] <- "Francisco T. Duque III       Karlo Alexei B. Nograles"
+y[140] <- "Secretary, Department of Health     Cabinet Secretary, Office of the Cabinet Secretary"
+y[165] <- "KENNETH G. RONQUILLO, MD, MPHM"
+
+y <- y %>%
+  stringr::str_replace_all(pattern = "\\[ATF", replacement = "IATF") %>%
+  stringr::str_replace_all(pattern = "\\]", replacement = "I") %>%
+  stringr::str_replace_all(pattern = "\\|", replacement = "I")
+
+y <- data.frame(linenumber = 1:length(y),
+                text = y,
+                source = "IATF",
+                type = "resolution",
+                id = 41,
+                date = as.Date("29/05/2020", format = "%d/%m/%y"),
+                stringsAsFactors = FALSE)
+
+iatfResolution41 <- tibble::tibble(y)
+
+usethis::use_data(iatfResolution41, overwrite = TRUE, compress = "xz")
+
+
+## Resolution 42 ###############################################################
+
+x <- pdf_ocr_text(pdf = "data-raw/IATF/20200601-IATF-RESOLUTION-NO-42.pdf")
+
+## Restructure text
+y <- unlist(stringr::str_split(string = x, pattern = "\n"))
+
+y <- y[c(10:43, 52:76, 84:109)]
+y <- y[y != ""]
+
+y[47] <- "minutes of the meeting, held this 1 June 2020 via video conference."
+y[48] <- "Francisco T. Duque III       Karlo Alexei B. Nograles"
+y[49] <- "Secretary, Department of Health     Cabinet Secretary, Office of the Cabinet Secretary"
+y[62] <- "5. In the Regular Meeting of the IATF held on 1 June 2020 via teleconference"
+y[73] <- "2020, Manila."
+y[74] <- "KENNETH G. RONQUILLO, MD, MPHM"
+
+y <- y %>%
+  stringr::str_replace_all(pattern = "\\[ATF", replacement = "IATF") %>%
+  stringr::str_replace_all(pattern = "\\[am", replacement = "I am") %>%
+  stringr::str_replace_all(pattern = "\\]", replacement = "I") %>%
+  stringr::str_replace_all(pattern = "\\|", replacement = "I") %>%
+  stringr::str_replace_all(pattern = "\\]s\\%", replacement = "29th")
+
+y <- data.frame(linenumber = 1:length(y),
+                text = y,
+                source = "IATF",
+                type = "resolution",
+                id = 42,
+                date = as.Date("01/06/2020", format = "%d/%m/%y"),
+                stringsAsFactors = FALSE)
+
+iatfResolution42 <- tibble::tibble(y)
+
+usethis::use_data(iatfResolution42, overwrite = TRUE, compress = "xz")
+
+
+## Resolution 43 ###############################################################
+
+x <- pdf_ocr_text(pdf = "data-raw/IATF/20200603-IATF-RESOLUTION-NO-43.pdf")
+
+## Restructure text
+y <- unlist(stringr::str_split(string = x, pattern = "\n"))
+
+y <- y[c(10:44, 51:52, 54:82, 91:123, 131:173, 183:201, 210:242)]
+y <- y[y != ""]
+
+y[141] <- "KARLO ALEXEI B. NOGRALES     ROY A. CIMATU"
+y[144] <- "IATF Co-Chairperson     IATF Co-Chairperson"
+y[145] <- "Francisco T. Duque III"
+y[150] <- "1. I am presently an Assistant Secretary of the Department of Health;"
+y[167] <- "IN WITNESS WHEREOF, I have hereunto affixed my signature this 3d day of June"
+
+y <- y %>%
+  stringr::str_replace_all(pattern = "\\[ATF", replacement = "IATF") %>%
+  stringr::str_replace_all(pattern = "\\]", replacement = "I") %>%
+  stringr::str_replace_all(pattern = "\\|", replacement = "I")
+
+y <- data.frame(linenumber = 1:length(y),
+                text = y,
+                source = "IATF",
+                type = "resolution",
+                id = 43,
+                date = as.Date("03/06/2020", format = "%d/%m/%y"),
+                stringsAsFactors = FALSE)
+
+iatfResolution43 <- tibble::tibble(y)
+
+usethis::use_data(iatfResolution43, overwrite = TRUE, compress = "xz")
+
+
+## Resolution 44 ###############################################################
+
+x <- pdf_ocr_text(pdf = "data-raw/IATF/20200608-IATF-RESOLUTION-NO-44.pdf")
+
+## Restructure text
+y <- unlist(stringr::str_split(string = x, pattern = "\n"))
+
+y <- y[c(9:52, 57:61, 74:96)]
+y <- y[y != ""]
+
+y[31] <- "Francisco T. Duque III       Karlo Alexei B. Nograles"
+y[32] <- "Secretary, Department of Health     Cabinet Secretary, Office of the Cabinet Secretary"
+y[33] <- "IATF Chairperson         IATF Co-Chairperson"
+y[44] <- "In the Regular Meeting of the IATF held on 8 June 2020 via teleconference during"
+y[52] <- "IN WITNESS WHEREOF, I have hereunto affixed my signature this 8th day of June"
+
+y <- y %>%
+  stringr::str_replace_all(pattern = "\\[ATF", replacement = "IATF") %>%
+  stringr::str_replace_all(pattern = "\\]", replacement = "I") %>%
+  stringr::str_remove_all(pattern = "\\|")
+
+y <- data.frame(linenumber = 1:length(y),
+                text = y,
+                source = "IATF",
+                type = "resolution",
+                id = 44,
+                date = as.Date("08/06/2020", format = "%d/%m/%y"),
+                stringsAsFactors = FALSE)
+
+iatfResolution44 <- tibble::tibble(y)
+
+usethis::use_data(iatfResolution44, overwrite = TRUE, compress = "xz")
+
+
+## Resolution 45 ###############################################################
+
+x <- pdf_ocr_text(pdf = "data-raw/IATF/20200610-IATF-RESOLUTION-NO-45.pdf")
+
+## Restructure text
+y <- unlist(stringr::str_split(string = x, pattern = "\n"))
+
+y <- y[c(8:45, 53:96, 103:109, 115:146)]
+y <- y[y != ""]
+
+y[71] <- "Francisco T. Duque III       Karlo Alexei B. Nograles"
+y[72] <- "Secretary, Department of Health     Cabinet Secretary, Office of the Cabinet Secretary"
+y[73] <- "IATF Chairperson         IATF Co-Chairperson"
+y[84] <- "5. In the Regular Meeting of the IATF held on 10th of JUNE 2020 via teleconference during"
+y[85] <- "which a quorum was present and acted throughout, IATF Resolution No. 45 was"
+y[92] <- "IN WITNESS WHEREOF, I have hereunto affixed my signature this 10th day of June"
+
+y <- y %>%
+  stringr::str_replace_all(pattern = "\\[ATF", replacement = "IATF") %>%
+  stringr::str_replace_all(pattern = "\\]", replacement = "I") %>%
+  stringr::str_remove_all(pattern = "\\|")
+
+y <- data.frame(linenumber = 1:length(y),
+                text = y,
+                source = "IATF",
+                type = "resolution",
+                id = 45,
+                date = as.Date("10/06/2020", format = "%d/%m/%y"),
+                stringsAsFactors = FALSE)
+
+iatfResolution45 <- tibble::tibble(y)
+
+usethis::use_data(iatfResolution45, overwrite = TRUE, compress = "xz")
+
+
+
 
