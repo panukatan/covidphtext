@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# covidphtext: Utilities to Extract Text Data From COVID-19-Related Resolutions and Policies From the Philippines
+# covidphtext: Utilities to Extract Text Data From COVID-19-Related Resolutions and Policies From the Philippines <img src="man/figures/covidphtext.png" width="200px" align="right" />
 
 <!-- badges: start -->
 
@@ -9,6 +9,8 @@
 maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![R build
 status](https://github.com/como-ph/covidphtext/workflows/R-CMD-check/badge.svg)](https://github.com/como-ph/covidphtext/actions)
+![test-coverage](https://github.com/como-ph/covidphtext/workflows/test-coverage/badge.svg)
+[![codecov](https://codecov.io/gh/como-ph/covidphtext/branch/master/graph/badge.svg)](https://codecov.io/gh/como-ph/covidphtext)
 <!-- badges: end -->
 
 To assess possible impact of various COVID-19 prediction models on
@@ -109,7 +111,7 @@ No. 29, the following command is issued:
 
 ``` r
 get_iatf_pdf(id = 29)
-#> [1] "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//RtmpmpjQBr/iatfResolution29.pdf"
+#> [1] "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//Rtmp7pAZBk/iatfResolution29.pdf"
 ```
 
 The command downloads the PDF of the specified IATF Resolution into a
