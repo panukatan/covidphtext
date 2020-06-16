@@ -220,8 +220,7 @@ get_iatf_gazette <- function(base, pages = 1:5) {
     iatfDate <- c(iatfDate,
                   urlPage %>%
                     rvest::html_nodes(css = ".large-8 .published") %>%
-                    rvest::html_text() %>%
-                    lubridate::mdy())
+                    rvest::html_text())
 
     ## Get current page resolutions URL
     iatfURL <- c(iatfURL,
@@ -245,9 +244,11 @@ get_iatf_gazette <- function(base, pages = 1:5) {
   }
 
   ## Concatenate IATF list
-  iatfLinksGazette <- data.frame(id = iatfID,
+  iatfLinksGazette <- data.frame(id = ifelse(stringr::str_detect(string = iatfTitle,
+                                                                 pattern = "OMNIBUS"),
+                                             NA, iatfID),
                                  title = iatfTitle,
-                                 date = iatfDate,
+                                 date = lubridate::mdy(iatfDate),
                                  source = "IATF",
                                  type = "resolution",
                                  url = iatfURLs,
