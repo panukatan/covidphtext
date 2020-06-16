@@ -8,10 +8,12 @@ Authors@R: c(person(given = "Ernest", family = "Guevarra",
                     comment = c(ORCID = "0000-0002-4887-4415")),
              person(given = "Chris", family = "Mercado", 
                     email = "cegmercado@gmail.com",
-                    role = "aut"),
+                    role = "aut",
+                    comment = c(ORCID = "0000-0002-5588-9543")),
              person(given = "Robert", family = "Medina", 
                     email = "jcmedina1@up.edu.ph",
-                    role = "aut"))
+                    role = "aut",
+                    comment = c(ORCID = "0000-0001-6647-5453")))
 Description: To assess possible impact of various COVID-19 prediction models on
     Philippine government response, text from various resolutions, press
     releases and legislation has been collected using data mining approaches
