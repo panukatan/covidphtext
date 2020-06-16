@@ -23,6 +23,7 @@ knitr::opts_chunk$set(
 [![R build status](https://github.com/como-ph/covidphtext/workflows/R-CMD-check/badge.svg)](https://github.com/como-ph/covidphtext/actions)
 [![test-coverage](https://github.com/como-ph/covidphtext/workflows/test-coverage/badge.svg)](https://github.com/como-ph/covidphtext/actions?query=workflow%3Atest-coverage)
 [![codecov](https://codecov.io/gh/como-ph/covidphtext/branch/master/graph/badge.svg)](https://codecov.io/gh/como-ph/covidphtext)
+[![DOI](https://zenodo.org/badge/265376181.svg)](https://zenodo.org/badge/latestdoi/265376181)
 <!-- badges: end -->
 
 To assess possible impact of various COVID-19 prediction models on Philippine government response, text from various resolutions issued by the Inter-agency Task Force for the Management of Emerging Infectious Diseases (IATF) has been collected using data mining approaches implemented in R. This package includes functions used for this data mining process and datasets of text that have been collected and processed for use in text analysis.
