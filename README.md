@@ -6,23 +6,24 @@
 <!-- badges: start -->
 
 [![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![R build
 status](https://github.com/como-ph/covidphtext/workflows/R-CMD-check/badge.svg)](https://github.com/como-ph/covidphtext/actions)
 <!-- badges: end -->
 
 To assess possible impact of various COVID-19 prediction models on
-Philippine government response, text from various resolutions, press
-releases and legislation has been collected using data mining approaches
+Philippine government response, text from various resolutions issued by
+the Inter-agency Task Force for the Management of Emerging Infectious
+Diseases (IATF) has been collected using data mining approaches
 implemented in R. This package includes functions used for this data
 mining process and datasets of text that have been collected and
 processed for use in text analysis.
 
 ## Installation
 
-`covidphtext` is not yet available on CRAN. It is currently in
-experimental development stage. Installation of `covidphtext` at this
-point is only possible through its development version via
+`covidphtext` is not yet available on CRAN. It is currently in active
+development stage. Installation of `covidphtext` at this point is only
+possible through its development version via
 [GitHub](https://github.com/como-ph/covidphtext):
 
 ``` r
@@ -30,14 +31,11 @@ if(!require(remotes)) install.packages("remotes")
 remotes::install_github("como-ph/covidphtext")
 ```
 
-then load the
-package:
+then load the package:
 
 ## Usage
 
 ### Datasets
-
-#### Inter-Agency Task Force for the Management of Emerging Infectious Diseases
 
 `covidphtext` currently has `49` datasets of which `46` are
 COVID-19-related resolutions and policies in the Philippines made by the
@@ -84,8 +82,7 @@ function will soon be deprecated in favour of the newer function below
 that interfaces with the Official Gazette.
 
 A table of all the IATF resolutions and the URLs to download them can be
-generated using the newer function `get_iatf_gazette()` as
-follows:
+generated using the newer function `get_iatf_gazette()` as follows:
 
 ``` r
 get_iatf_gazette(base = "https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/")
@@ -112,7 +109,7 @@ No. 29, the following command is issued:
 
 ``` r
 get_iatf_pdf(id = 29)
-#> [1] "/var/folders/fk/s0yv8hhn2cs_nfsmzhm4dmhc0000gn/T//RtmpaoS2Ch/iatfResolution29.pdf"
+#> [1] "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//RtmpmpjQBr/iatfResolution29.pdf"
 ```
 
 The command downloads the PDF of the specified IATF Resolution into a
