@@ -208,7 +208,8 @@ get_iatf_gazette <- function(base, pages = 1:5) {
                   rvest::html_nodes(css = ".large-8 .entry-title a") %>%
                   rvest::html_text() %>%
                   stringr::str_remove(pattern = "2020") %>%
-                  stringr::str_extract(pattern = "[0-9]+"))
+                  stringr::str_extract(pattern = "[0-9]+")) %>%
+                  as.numeric()
 
     ## Get current page resolutions Title
     iatfTitle <- c(iatfTitle,
