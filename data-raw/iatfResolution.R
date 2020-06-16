@@ -1702,5 +1702,87 @@ iatfResolution45 <- tibble::tibble(y)
 usethis::use_data(iatfResolution45, overwrite = TRUE, compress = "xz")
 
 
+## Resolution 46 ###############################################################
+
+x <- pdf_ocr_text(pdf = "data-raw/IATF/20200615-IATF-RESOLUTION-NO-46.pdf")
+
+## Restructure text
+y <- unlist(stringr::str_split(string = x, pattern = "\n"))
+
+y <- y[c(10:46, 54:62, 65:79, 87:118)]
+y <- y[y != ""]
+
+y[48] <- "Francisco T. Duque III       Karlo Alexei B. Nograles"
+y[49] <- "Secretary, Department of Health     Cabinet Secretary, Office of the Cabinet Secretary"
+y[50] <- "IATF Chairperson         IATF Co-Chairperson"
+y[61] <- "5. In the Regular Meeting of the IATF held on 15th of JUNE 2020 via teleconference during"
+y[62] <- "which a quorum was present and acted throughout, IATF Resolution No. 46 was"
+y[69] <- "IN WITNESS WHEREOF, I have hereunto affixed my signature this 15th day of June"
+y[71] <- "KENNETH G. RONQUILLO, MD, MPHM"
+
+y <- y %>%
+  stringr::str_replace_all(pattern = "\\[ATF", replacement = "IATF") %>%
+  stringr::str_replace_all(pattern = "\\]", replacement = "I") %>%
+  stringr::str_remove_all(pattern = "\\|") %>%
+  stringr::str_remove_all(pattern = "\\[")
+
+y <- data.frame(linenumber = 1:length(y),
+                text = y,
+                source = "IATF",
+                type = "resolution",
+                id = 46,
+                date = as.Date("15/06/2020", format = "%d/%m/%y"),
+                stringsAsFactors = FALSE)
+
+iatfResolution46 <- tibble::tibble(y)
+
+usethis::use_data(iatfResolution46, overwrite = TRUE, compress = "xz")
+
+
+## Resolution 46A ###############################################################
+
+x <- pdf_ocr_text(pdf = "data-raw/IATF/20200615-IATF-RESOLUTION-NO-46-A.pdf")
+
+## Restructure text
+y <- unlist(stringr::str_split(string = x, pattern = "\n"))
+
+y <- y[c(9:45, 54:91, 98:136, 146:174, 181:212)]
+y <- y[y != ""]
+
+y[36] <- "ii. Region I - Ilocos Norte, Ilocos Sur, La Union, Pangasinan,"
+y[38] <- "iii. Batanes;"
+y[39] <- "iv. Region III - Nueva Ecija, Pampanga, Zambales, Angeles"
+y[44] <- "vii. Region V - Albay, Camarines Norte, Camarines Sur,"
+y[50] <- "ii. Region VIII - Biliran, Eastern Samar, Leyte, Northern"
+y[59] <- "iii. Region XI - Davao de Oro, Davao del Norte, Davao del"
+y[72] <- "i. Region II - Cagayan, Isabela, Nueva Vizcaya, Quirino,"
+y[74] <- "ii. Region III - Aurora, Bataan, Bulacan, Tarlac, Olongapo"
+y[76] <- "iii. Region IV-A - Cavite, Laguna, Batangas, Rizal, Quezon;"
+y[84] <- "ii. Davao City."
+y[123] <- "Francisco T. Duque III       Karlo Alexei B. Nograles"
+y[124] <- "Secretary, Department of Health     Cabinet Secretary, Office of the Cabinet Secretary"
+y[125] <- "IATF Chairperson         IATF Co-Chairperson"
+y[136] <- "5. In the Regular Meeting of the IATF held on 15th of JUNE 2020 via teleconference during"
+y[137] <- "which a quorum was present and acted throughout, IATF Resolution No. 46A was"
+y[144] <- "IN WITNESS WHEREOF, I have hereunto affixed my signature this 15th day of June"
+y[71] <- "KENNETH G. RONQUILLO, MD, MPHM"
+
+y <- y %>%
+  stringr::str_replace_all(pattern = "\\[ATF", replacement = "IATF") %>%
+  stringr::str_replace_all(pattern = "\\]", replacement = "I") %>%
+  stringr::str_remove_all(pattern = "\\|") %>%
+  stringr::str_remove_all(pattern = "\\[")
+
+y <- data.frame(linenumber = 1:length(y),
+                text = y,
+                source = "IATF",
+                type = "resolution",
+                id = 46,
+                date = as.Date("15/06/2020", format = "%d/%m/%y"),
+                stringsAsFactors = FALSE)
+
+iatfResolution46A <- tibble::tibble(y)
+
+usethis::use_data(iatfResolution46A, overwrite = TRUE, compress = "xz")
 
 
