@@ -6,4 +6,6 @@
 
 * Added CI/CD configuration using Github Actions (https://github.com/como-ph/covidphtext/workflows/R-CMD-check/badge.svg)](https://github.com/como-ph/covidphtext/actions)
 
+* Added coverage tests ![test-coverage](https://github.com/como-ph/covidphtext/workflows/test-coverage/badge.svg)
+
 * Added a package website using `pkgdown`
