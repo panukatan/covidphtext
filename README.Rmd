@@ -39,7 +39,7 @@ remotes::install_github("como-ph/covidphtext")
 
 then load the package:
 
-```{r load, echo = FALSE, eval = TRUE}
+```{r load, echo = TRUE, eval = TRUE}
 library(covidphtext)
 ```
 

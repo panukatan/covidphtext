@@ -36,6 +36,10 @@ remotes::install_github("como-ph/covidphtext")
 
 then load the package:
 
+``` r
+library(covidphtext)
+```
+
 ## Usage
 
 ### Datasets
@@ -112,7 +116,7 @@ No. 29, the following command is issued:
 
 ``` r
 get_iatf_pdf(id = 29)
-#> [1] "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//RtmpLyNw5B/iatfResolution29.pdf"
+#> [1] "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//RtmpnwCZOV/iatfResolution29.pdf"
 ```
 
 The command downloads the PDF of the specified IATF Resolution into a
