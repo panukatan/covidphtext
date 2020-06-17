@@ -20,14 +20,14 @@ usethis::use_data(iatfLinksGazette, overwrite = TRUE, compress = "xz")
 
 ## Resolution 1 ################################################################
 
-## Read resolution
-x <- pdf_ocr_text(pdf = "data-raw/IATF/20200128-IATF-RESOLUTION-NO-1-RRD.pdf")
-
-## Restructure text
-y <- unlist(stringr::str_split(string = x, pattern = "\n"))
+## Read resolution and restructure line by line
+y <- iatfLinksGazette %>%
+  get_iatf_pdf(id = 1) %>%
+  pdf_ocr_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
 
 ## Clean-up
-
 y <- y[27:length(y)]
 y <- y[c(1:25, 29:35, 39:46, 61:69)]
 y <- y[y != ""]
@@ -70,11 +70,37 @@ y[41] <- "Executive Director, Civil Aeronautics Board"
 y[42] <- "ERIC STEVEN Y. GUIEB"
 y[43] <- "Command-Surgeon, Philippine Coast Guard"
 
+## Add heading
+y <- c(c("Republic of the Philippines",
+         "Department of Health",
+         "Office of the Secretary",
+         "Inter-Agency Task Force for the Management of",
+         "Emerging Infectious Diseases",
+         "28 January 2020",
+         "Resolution No. 01",
+         "Series of 2020",
+         "Recommendations for the Management of",
+         "Novel Coronavirus Situation"), y)
+
+## Identify sections for preamble and operative
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:9]              <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
+
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
                 id = 1,
+                section = section,
                 date = as.Date("28/01/2020", format = "%d/%m/%y"),
                 stringsAsFactors = FALSE)
 
@@ -86,10 +112,11 @@ usethis::use_data(iatfResolution01, overwrite = TRUE, compress = "xz")
 ## Resolution 2 ################################################################
 
 ## Read resolution
-x <- pdf_ocr_text(pdf = "data-raw/IATF/20200131-IATF-RESOLUTION-NO-2-RRD.pdf")
-
-## Restructure text
-y <- unlist(stringr::str_split(string = x, pattern = "\n"))
+y <- iatfLinksGazette %>%
+  get_iatf_pdf(id = 2) %>%
+  pdf_ocr_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
 
 ## Clean-up
 y <- y[c(14:40, 44:85, 90:100, 102:112)]
@@ -102,11 +129,38 @@ y[75] <- "Secretary, Department of Tourism"
 
 y <- y[c(1:72, 74:77)]
 
+## Add heading
+y <- c(c("Republic of the Philippines",
+         "Department of Health",
+         "Office of the Secretary",
+         "Inter-Agency Task Force for the Management of",
+         "Emerging Infectious Diseases",
+         "31 January 2020",
+         "Resolution No. 02",
+         "Series of 2020",
+         "Recommendations for the Management of 2019",
+         "Novel Coronavirus (nCoV) Acute Respiratory",
+         "Disease (ARD) Situation"), y)
+
+## Add sections
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:11]             <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
+
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
                 id = 2,
+                section = section,
                 date = as.Date("31/01/2020", format = "%d/%m/%y"),
                 stringsAsFactors = FALSE)
 
@@ -118,10 +172,11 @@ usethis::use_data(iatfResolution02, overwrite = TRUE, compress = "xz")
 ## Resolution 3 ################################################################
 
 ## Read resolution
-x <- pdf_ocr_text(pdf = "data-raw/IATF/20200203-IATF-RESOLUTION-NO-3-RRD.pdf")
-
-## Restructure text
-y <- unlist(stringr::str_split(string = x, pattern = "\n"))
+y <- iatfLinksGazette %>%
+  get_iatf_pdf(id = 3) %>%
+  pdf_ocr_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
 
 ## Clean-up
 y <- y[c(16:43, 48:52)]
@@ -129,11 +184,38 @@ y <- y[y != ""]
 
 y <- c(y, tail(iatfResolution02, 16)$text)
 
+## Add heading
+y <- c(c("Republic of the Philippines",
+         "Department of Health",
+         "Office of the Secretary",
+         "Inter-Agency Task Force for the Management of",
+         "Emerging Infectious Diseases",
+         "3 February 2020",
+         "Resolution No. 03",
+         "Series of 2020",
+         "Designation of the quarantine facility for the",
+         "Management of 2019 Novel Coronavirus Acute",
+         "Respiratory Disease (2019-NCOV ARD) Situation"), y)
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:11]             <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
+
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
                 id = 3,
+                section = section,
                 date = as.Date("06/02/2020", format = "%d/%m/%y"),
                 stringsAsFactors = FALSE)
 
@@ -145,10 +227,11 @@ usethis::use_data(iatfResolution03, overwrite = TRUE, compress = "xz")
 ## Resolution 4 ################################################################
 
 ## Read resolution
-x <- pdf_ocr_text(pdf = "data-raw/IATF/20200211-IATF-RESOLUTION-NO-4-RRD.pdf")
-
-## Restructure text
-y <- unlist(stringr::str_split(string = x, pattern = "\n"))
+y <- iatfLinksGazette %>%
+  get_iatf_pdf(id = 4) %>%
+  pdf_ocr_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
 
 ## Clean-up
 y <- y[c(23:53, 59:81)]
@@ -156,11 +239,39 @@ y <- y[y != ""]
 
 y <- c(y, tail(iatfResolution02, 16)$text)
 
+## Add heading
+y <- c(c("Republic of the Philippines",
+         "Department of Health",
+         "Office of the Secretary",
+         "Inter-Agency Task Force for the Management of",
+         "Emerging Infectious Diseases",
+         "11 February 2020",
+         "Resolution No. 04",
+         "Series of 2020",
+         "Implementing the Expanded Travel Ban for the",
+         "Management of the 2019 Novel Coronavirus Acute",
+         "Respiratory Disease Situation, Amending for the",
+         "Purpose Resolution No. 02"), y)
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:12]             <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
+
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
                 id = 4,
+                section = section,
                 date = as.Date("11/02/2020", format = "%d/%m/%y"),
                 stringsAsFactors = FALSE)
 
@@ -172,10 +283,11 @@ usethis::use_data(iatfResolution04, overwrite = TRUE, compress = "xz")
 ## Resolution 5 ################################################################
 
 ## Read resolution
-x <- pdf_ocr_text(pdf = "data-raw/IATF/20200214-IATF-RESOLUTION-NO-5-RRD.pdf")
-
-## Restructure text
-y <- unlist(stringr::str_split(string = x, pattern = "\n"))
+y <- iatfLinksGazette %>%
+  get_iatf_pdf(id = 5) %>%
+  pdf_ocr_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
 
 ## Clean-up
 y <- y[c(15:45, 49:89, 92:94)]
@@ -188,11 +300,36 @@ y[63] <- "Undersecretary, Department of Foreign Affairs"
 y[74] <- "MANUEL ANTHONY Y. TAN"
 y[75] <- "OIC-Undersecretary, Department of Information and Communications Technology"
 
+## Add heading
+y <- c(c("Republic of the Philippines",
+         "DOH DFA DILG DOJ DOLE DOT DOTr DICT",
+         "Inter-Agency Task Force for the Management of",
+         "Emerging Infectious Diseases",
+         "Resolution No. 05",
+         "Series of 2020",
+         "14 February 2020",
+         "Recommendations for the management of the coronavirus",
+         "disease 2019 (COVID-19) situation"), y)
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:9]             <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
+
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
                 id = 5,
+                section = section,
                 date = as.Date("14/02/2020", format = "%d/%m/%y"),
                 stringsAsFactors = FALSE)
 
@@ -204,10 +341,11 @@ usethis::use_data(iatfResolution05, overwrite = TRUE, compress = "xz")
 ## Resolution 6 ################################################################
 
 ## Read resolution
-x <- pdf_ocr_text(pdf = "data-raw/IATF/20200218-IATF-RESOLUTION-NO-6-RRD.pdf")
-
-## Restructure text
-y <- unlist(stringr::str_split(string = x, pattern = "\n"))
+y <- iatfLinksGazette %>%
+  get_iatf_pdf(id = 6) %>%
+  pdf_ocr_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
 
 ## Clean-up
 y <- y[c(14:67, 71:73)]
@@ -235,11 +373,36 @@ y[69] <- "Administrator, Overseas Workers Welfare Administration"
 y[70] <- "GREGORIO B. HONASAN"
 y[71] <- "Secretary, Department of Information and Communications Technology"
 
+## Add heading
+y <- c(c("Republic of the Philippines",
+         "DOH DFA DILG DOJ DOLE DOT DOTr DICT",
+         "Inter-Agency Task Force for the Management of",
+         "Emerging Infectious Diseases",
+         "Resolution No. 06",
+         "Series of 2020",
+         "18 February 2020",
+         "Recommendations for the management of the coronavirus",
+         "disease 2019 (COVID-19) situation"), y)
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:9]             <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
+
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
                 id = 6,
+                section = section,
                 date = as.Date("18/02/2020", format = "%d/%m/%y"),
                 stringsAsFactors = FALSE)
 
@@ -251,10 +414,11 @@ usethis::use_data(iatfResolution06, overwrite = TRUE, compress = "xz")
 ## Resolution 7 ################################################################
 
 ## Read resolution
-x <- pdf_ocr_text(pdf = "data-raw/IATF/20200221-IATF-RESOLUTION-NO-7-RRD.pdf")
-
-## Restructure text
-y <- unlist(stringr::str_split(string = x, pattern = "\n"))
+y <- iatfLinksGazette %>%
+  get_iatf_pdf(id = 7) %>%
+  pdf_ocr_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
 
 ## Clean-up
 y <- y[c(13:85, 97:99)]
@@ -275,11 +439,36 @@ y[71] <- y[69]
 y[68] <- "MANUEL ANTHONY S. TAN"
 y[69] <- "OIC-Undersecretary, Department of Information and Communications Technology"
 
+## Add heading
+y <- c(c("Republic of the Philippines",
+         "DOH DFA DILG DOJ DOLE DOT DOTr DICT",
+         "Inter-Agency Task Force for the Management of",
+         "Emerging Infectious Diseases",
+         "Resolution No. 07",
+         "Series of 2020",
+         "21 February 2020",
+         "Recommendations for the management of the coronavirus",
+         "disease 2019 (COVID-19) situation"), y)
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:9]             <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
+
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
                 id = 7,
+                section = section,
                 date = as.Date("21/02/2020", format = "%d/%m/%y"),
                 stringsAsFactors = FALSE)
 
@@ -291,10 +480,11 @@ usethis::use_data(iatfResolution07, overwrite = TRUE, compress = "xz")
 ## Resolution 8 ################################################################
 
 ## Read resolution
-x <- pdf_ocr_text(pdf = "data-raw/IATF/20200226-IATF-RESOLUTION-NO-8-RRD.pdf")
-
-## Restructure text
-y <- unlist(stringr::str_split(string = x, pattern = "\n"))
+y <- iatfLinksGazette %>%
+  get_iatf_pdf(id = 8) %>%
+  pdf_ocr_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
 
 ## Clean-up
 y <- y[c(13:42, 51:89, 103:118)]
@@ -313,11 +503,44 @@ y[79] <- "Secretary, Department of Justice"
 y[82] <- "MANUEL ANTONIO L. TAMAYO"
 y[83] <- "Undersecretary, Department of Transportation"
 
+y <- y %>%
+  stringr::str_replace_all(pattern = "DOT\\?", replacement = "DOT") %>%
+  stringr::str_replace_all(pattern = "IATE", replacement = "IATF") %>%
+  stringr::str_replace_all(pattern = "JATF", replacement = "IATF") %>%
+  stringr::str_replace_all(pattern = "\\[IATF", replacement = "IATF") %>%
+  stringr::str_replace_all(pattern = "LATE", replacement = "IATF") %>%
+  stringr::str_replace_all(pattern = "shail", replacement = "shall")
+
+## Add heading
+y <- c(c("Republic of the Philippines",
+         "DOH DFA DILG DOJ DOLE DOT DOTr DICT",
+         "Inter-Agency Task Force for the Management of",
+         "Emerging Infectious Diseases",
+         "Resolution No. 08",
+         "Series of 2020",
+         "26 February 2020",
+         "Recommendations for the management of the coronavirus",
+         "disease 2019 (COVID-19) situation"), y)
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:9]             <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
+
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
                 id = 8,
+                section = section,
                 date = as.Date("26/02/2020", format = "%d/%m/%y"),
                 stringsAsFactors = FALSE)
 
@@ -329,13 +552,13 @@ usethis::use_data(iatfResolution08, overwrite = TRUE, compress = "xz")
 ## Resolution 9 ################################################################
 
 ## Read resolution
-x <- pdf_ocr_text(pdf = "data-raw/IATF/IATF-RESO-9.pdf")
-
-## Restructure text
-y <- unlist(stringr::str_split(string = x, pattern = "\n"))
+y <- iatfLinks %>%
+  get_iatf_pdf(id = 9) %>%
+  pdf_ocr_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
 
 ## Clean-up
-
 y <- y[3:length(y)]
 y <- y[c(1:44, 56:length(y))]
 
@@ -369,11 +592,36 @@ y <- y[11:90]
 
 y <- y[y != ""]
 
+## Add heading
+y <- c(c("Republic of the Philippines",
+         "DOH DFA DILG DOJ DOLE DOT DOTr DICT",
+         "Inter-Agency Task Force for the Management of",
+         "Emerging Infectious Diseases",
+         "Resolution No. 09",
+         "Series of 2020",
+         "3 March 2020",
+         "Recommendations for the management of the coronavirus",
+         "disease 2019 (COVID-19) situation"), y)
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:9]             <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
+
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
                 id = 9,
+                section = section,
                 date = as.Date("03/03/2020", format = "%d/%m/%y"),
                 stringsAsFactors = FALSE)
 
@@ -385,10 +633,11 @@ usethis::use_data(iatfResolution09, overwrite = TRUE, compress = "xz")
 ## Resolution 10 ###############################################################
 
 ## Read resolution
-x <- pdf_ocr_text(pdf = "data-raw/IATF/IATF-RESO-10.pdf")
-
-## Restructure text
-y <- unlist(stringr::str_split(string = x, pattern = "\n"))
+y <- iatfLinks %>%
+  get_iatf_pdf(id = 10) %>%
+  pdf_ocr_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
 
 y <- y[6:length(y)]
 y[41] <- stringr::str_remove(string = y[41], pattern = " J")
@@ -440,11 +689,36 @@ y[80] <- stringr::str_replace(string = y[80], pattern = "Malacafiang", replaceme
 y <- y[c(11:41, 46:81, 87:length(y))]
 y <- y[y != ""]
 
+## Add heading
+y <- c(c("Republic of the Philippines",
+         "DOH DFA DILG DOJ DOLE DOT DOTr DICT",
+         "Inter-Agency Task Force for the Management of",
+         "Emerging Infectious Diseases",
+         "Resolution No. 10",
+         "Series of 2020",
+         "9 March 2020",
+         "Recommendations for the management of the coronavirus",
+         "disease 2019 (COVID-19) situation"), y)
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:9]             <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
+
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
                 id = 10,
+                section = section,
                 date = as.Date("09/03/2020", format = "%d/%m/%y"),
                 stringsAsFactors = FALSE)
 
@@ -455,20 +729,47 @@ usethis::use_data(iatfResolution10, overwrite = TRUE, compress = "xz")
 
 ## Resolution 11 ###############################################################
 
-x <- pdf_text(pdf = "data-raw/IATF/IATF-RESO-11.pdf")
+y <- iatfLinks %>%
+  get_iatf_pdf(id = 11) %>%
+  pdf_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
 
 ## Restructure text
-y <- unlist(stringr::str_split(string = x, pattern = "\n"))
-
 y <- y[c(10:32, 41:66, 75:101, 110:138, 147:161, 170:177)]
 
 y <- stringr::str_trim(string = y, side = "both")
+
+## Add heading
+y <- c(c("Republic of the Philippines",
+         "DOH DFA DILG DOJ DOLE DOT DOTr DICT",
+         "Inter-Agency Task Force for the Management of",
+         "Emerging Infectious Diseases",
+         "Resolution No. 11",
+         "Series of 2020",
+         "12 March 2020",
+         "Recommendations for the management of the coronavirus",
+         "disease 2019 (COVID-19) situation"), y)
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:9]             <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
 
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
                 id = 11,
+                section = section,
                 date = as.Date("12/03/2020", format = "%d/%m/%y"),
                 stringsAsFactors = FALSE)
 
@@ -479,11 +780,13 @@ usethis::use_data(iatfResolution11, overwrite = TRUE, compress = "xz")
 
 ## Resolution 12 ###############################################################
 
-x <- pdf_ocr_text(pdf = "data-raw/IATF/IATF-RESO-12.pdf")
+y <- iatfLinks %>%
+  get_iatf_pdf(id = 12) %>%
+  pdf_ocr_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
 
 ## Restructure text
-y <- unlist(stringr::str_split(string = x, pattern = "\n"))
-
 y <- y[c(8:45, 57:89, 103:127, 143:174, 191:227)]
 
 y[132] <- stringr::str_remove(string = y[132], pattern = " |")
@@ -510,11 +813,36 @@ y[56] <- stringr::str_remove(string = y[56], pattern = " \\|")
 y[75] <- stringr::str_remove(string = y[75], pattern = " \\|")
 y[110] <- stringr::str_remove(string = y[110], pattern = " \\|")
 
+## Add heading
+y <- c(c("Republic of the Philippines",
+         "DOH DFA DILG DOJ DOLE DOT DOTr DICT",
+         "Inter-Agency Task Force for the Management of",
+         "Emerging Infectious Diseases",
+         "Resolution No. 12",
+         "Series of 2020",
+         "13 March 2020",
+         "Recommendations for the management of the coronavirus",
+         "disease 2019 (COVID-19) situation"), y)
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:9]             <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
+
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
                 id = 12,
+                section = section,
                 date = as.Date("13/03/2020", format = "%d/%m/%y"),
                 stringsAsFactors = FALSE)
 
@@ -525,11 +853,13 @@ usethis::use_data(iatfResolution12, overwrite = TRUE, compress = "xz")
 
 ## Resolution 13 ###############################################################
 
-x <- pdf_ocr_text(pdf = "data-raw/IATF/IATF-RESO-13.pdf")
+y <- iatfLinks %>%
+  get_iatf_pdf(id = 13) %>%
+  pdf_ocr_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
 
 ## Restructure text
-y <- unlist(stringr::str_split(string = x, pattern = "\n"))
-
 y <- y[c(7:38, 46:59, 61:63, 65:81, 91:134, 143:175, 184:length(y))]
 
 y[166] <- "FRANCISCO T DUQUE III"
@@ -618,11 +948,35 @@ y[120] <- stringr::str_remove(string = y[120], pattern = "= ")
 y <- y[9:length(y)]
 y <- y[y != ""]
 
+## Add heading
+y <- c(c("Republic of the Philippines",
+         "Inter-Agency Task Force for the Management of",
+         "Emerging Infectious Diseases",
+         "Resolution No. 06",
+         "Series of 2020",
+         "17 March 2020",
+         "Recommendations for the management of the coronavirus",
+         "disease 2019 (COVID-19) situation"), y)
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:8]             <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
+
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
                 id = 13,
+                section = section,
                 date = as.Date("17/03/2020", format = "%d/%m/%y"),
                 stringsAsFactors = FALSE)
 
@@ -632,11 +986,13 @@ usethis::use_data(iatfResolution13, overwrite = TRUE, compress = "xz")
 
 ## Resolution 14 ###############################################################
 
-x <- pdf_ocr_text(pdf = "data-raw/IATF/IATF-RESO-14.pdf")
+y <- iatfLinks %>%
+  get_iatf_pdf(id = 14) %>%
+  pdf_ocr_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
 
 ## Restructure text
-y <- unlist(stringr::str_split(string = x, pattern = "\n"))
-
 y <- y[y != ""]
 
 y <- y[c(5:34, 36:69, 71:107, 109:146, 148:186, 188:length(y))]
@@ -698,11 +1054,36 @@ y[124] <- stringr::str_replace(string = y[124], pattern = "ui.", replacement = "
 
 y <- y[10:length(y)]
 
+## Add heading
+y <- c(c("Republic of the Philippines",
+         "DOH DFA DILG DOJ DOLE DOT DOTr DICT",
+         "Inter-Agency Task Force for the Management of",
+         "Emerging Infectious Diseases",
+         "Resolution No. 14",
+         "Series of 2020",
+         "20 March 2020",
+         "Recommendations for the management of the coronavirus",
+         "disease 2019 (COVID-19) situation"), y)
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:9]             <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
+
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
                 id = 14,
+                section = section,
                 date = as.Date("20/03/2020", format = "%d/%m/%y"),
                 stringsAsFactors = FALSE)
 
@@ -712,11 +1093,13 @@ usethis::use_data(iatfResolution14, overwrite = TRUE, compress = "xz")
 
 ## Resolution 15 ###############################################################
 
-x <- pdf_ocr_text(pdf = "data-raw/IATF/IATF-RESO-15.pdf")
+y <- iatfLinks %>%
+  get_iatf_pdf(id = 15) %>%
+  pdf_ocr_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
 
 ## Restructure text
-y <- unlist(stringr::str_split(string = x, pattern = "\n"))
-
 y <- stringr::str_remove_all(string = y, pattern = "\\| |\\||= |\\/ |\\|!")
 y <- y[y != ""]
 
@@ -734,11 +1117,35 @@ y <- y[c(9:143, 145:length(y))]
 y[101] <- stringr::str_replace(string = y[101], pattern = "OF Ws", replacement = "OFWs")
 y[104] <- stringr::str_replace(string = y[104], pattern = "OF Ws", replacement = "OFWs")
 
+## Add heading
+y <- c(c("Republic of the Philippines",
+         "Inter-Agency Task Force for the Management of",
+         "Emerging Infectious Diseases",
+         "Resolution No. 15",
+         "Series of 2020",
+         "24 March 2020",
+         "Recommendations for the management of the coronavirus",
+         "disease 2019 (COVID-19) situation"), y)
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:8]             <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
+
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
                 id = 15,
+                section = section,
                 date = as.Date("25/03/2020", format = "%d/%m/%y"),
                 stringsAsFactors = FALSE)
 
@@ -748,21 +1155,24 @@ usethis::use_data(iatfResolution15, overwrite = TRUE, compress = "xz")
 
 ## Resolution 16 ###############################################################
 
-x <- pdf_text(pdf = "data-raw/IATF/IATF-RESO-16.pdf")
+y <- iatfLinks %>%
+  get_iatf_pdf(id = 16) %>%
+  pdf_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
 
 ## Restructure text
-y <- unlist(stringr::str_split(string = x, pattern = "\n"))
-
-y <- y[c(5:length(y))]
 y <- y[y != ""]
-
 y <- stringr::str_trim(string = y, side = "both")
+
+section <- c(rep("heading", 4), rep("operative", length(6:length(y))))
 
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
                 id = 16,
+                section = section,
                 date = as.Date("30/03/2020", format = "%d/%m/%y"),
                 stringsAsFactors = FALSE)
 
@@ -772,24 +1182,39 @@ usethis::use_data(iatfResolution16, overwrite = TRUE, compress = "xz")
 
 ## Resolution 17 ###############################################################
 
-x <- pdf_text(pdf = "data-raw/IATF/IATF Resolution No. 17.pdf")
+y <- iatfLinks %>%
+  get_iatf_pdf(id = 17) %>%
+  pdf_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
 
 ## Restructure text
-y <- unlist(stringr::str_split(string = x, pattern = "\n"))
-
-y <- y[c(9:70, 74:75, 77:101, 104:119, 121, 124:139, 142:157, 160:165)]
-
+y <- y[c(1:70, 74:75, 77:101, 104:119, 121, 124:139, 142:157, 160:165)]
 y <- y[y != ""]
 
-y[104] <- "SALVADOR C. MEDIALDEA"
+y[112] <- "SALVADOR C. MEDIALDEA"
 
 y <- stringr::str_trim(string = y, side = "both")
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:8]             <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
 
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
                 id = 17,
+                section = section,
                 date = as.Date("30/03/2020", format = "%d/%m/%y"),
                 stringsAsFactors = FALSE)
 
@@ -799,11 +1224,13 @@ usethis::use_data(iatfResolution17, overwrite = TRUE, compress = "xz")
 
 ## Resolution 18 ###############################################################
 
-x <- pdf_ocr_text(pdf = "data-raw/IATF/IATF-RESO-18.pdf")
+y <- iatfLinks %>%
+  get_iatf_pdf(id = 18) %>%
+  pdf_ocr_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
 
 ## Restructure text
-y <- unlist(stringr::str_split(string = x, pattern = "\n"))
-
 y <- y[c(1:44, 51:91, 97:137)]
 y <- y[y != ""]
 
@@ -812,14 +1239,27 @@ y[2] <- "INTER-AGENCY TASK FORCE"
 y[3] <- "FOR THE MANAGEMENT OF EMERGING INFECTIOUS DISEASE"
 y[4] <- ""
 
-y <- y[y != ""]
-y <- y[9:length(y)]
+y <- y[y != ""] %>%
+  stringr::str_replace_all(pattern = "I\\[ATF", replacement = "IATF") %>%
+  stringr::str_replace_all(pattern = "OF Ws", replacement = "OFWs")
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+oEnd   <- length(y)
+
+section <- NULL
+section[1:8]             <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
 
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
                 id = 18,
+                section = section,
                 date = as.Date("01/04/2020", format = "%d/%m/%y"),
                 stringsAsFactors = FALSE)
 
@@ -829,26 +1269,41 @@ usethis::use_data(iatfResolution18, overwrite = TRUE, compress = "xz")
 
 ## Resolution 19 ###############################################################
 
-x <- pdf_text(pdf = "data-raw/IATF/IATF Resolution No. 19.pdf")
+y <- iatfLinks %>%
+  get_iatf_pdf(id = 19) %>%
+  pdf_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
 
 ## Restructure text
-y <- unlist(stringr::str_split(string = x, pattern = "\n"))
-
 y <- y[c(1:35, 41:70, 76:108, 114:129, 135:149, 155:169, 175:188)]
 
 y[140] <- "RYAN ALVIN R. ACOSTA"
 
 y[141] <- ""
 y <- y[y != ""]
-y <- y[9:length(y)]
 
 y <- stringr::str_trim(string = y, side = "both")
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:8]             <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
 
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
                 id = 19,
+                section = section,
                 date = as.Date("03/04/2020", format = "%d/%m/%y"),
                 stringsAsFactors = FALSE)
 
@@ -858,22 +1313,38 @@ usethis::use_data(iatfResolution19, overwrite = TRUE, compress = "xz")
 
 ## Resolution 20 ###############################################################
 
-x <- pdf_text(pdf = "data-raw/IATF/IATF-Resolution-No.-20.pdf")
+y <- iatfLinks %>%
+  get_iatf_pdf(id = 20) %>%
+  pdf_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
 
 ## Restructure text
-y <- unlist(stringr::str_split(string = x, pattern = "\n"))
+y <- y[c(1:36, 42:57, 64:77, 83:93, 95:97, 103:116)]
 
-y <- y[c(9:36, 42:57, 64:77, 83:93, 95:97, 103:116)]
-
-y[69] <- "RYAN ALVIN R. ACOSTA"
+y[77] <- "RYAN ALVIN R. ACOSTA"
 
 y <- stringr::str_trim(string = y, side = "both")
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:8]             <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
 
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
                 id = 20,
+                section = section,
                 date = as.Date("06/04/2020", format = "%d/%m/%y"),
                 stringsAsFactors = FALSE)
 
@@ -883,23 +1354,39 @@ usethis::use_data(iatfResolution20, overwrite = TRUE, compress = "xz")
 
 ## Resolution 21 ###############################################################
 
-x <- pdf_text(pdf = "data-raw/IATF/Revised-IATF-Resolution-No.-21.pdf")
+y <- iatfLinks %>%
+  get_iatf_pdf(id = 21) %>%
+  pdf_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
 
 ## Restructure text
-y <- unlist(stringr::str_split(string = x, pattern = "\n"))
+y <- y[c(1:35, 41:72, 78:111, 117:132, 138:152, 158:166, 168:173, 179:189)]
 
-y <- y[c(9:35, 41:72, 78:111, 117:132, 138:152, 158:166, 168:173, 179:189)]
-
-y[133] <- "RYAN ALVIN R. ACOSTA"
-y[30] <- "3. The Abok Kamay ang Pagtulong (AKAP) so OFWs program."
+y[141] <- "RYAN ALVIN R. ACOSTA"
+y[38] <- "3. The Abok Kamay ang Pagtulong (AKAP) so OFWs program."
 
 y <- stringr::str_trim(string = y, side = "both")
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:8]             <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
 
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
                 id = 21,
+                section = section,
                 date = as.Date("06/04/2020", format = "%d/%m/%y"),
                 stringsAsFactors = FALSE)
 
@@ -909,22 +1396,38 @@ usethis::use_data(iatfResolution21, overwrite = TRUE, compress = "xz")
 
 ## Resolution 22 ###############################################################
 
-x <- pdf_text(pdf = "data-raw/IATF/IATF-Resolution-No.-22.pdf")
+y <- iatfLinks %>%
+  get_iatf_pdf(id = 22) %>%
+  pdf_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
 
 ## Restructure text
-y <- unlist(stringr::str_split(string = x, pattern = "\n"))
-
 y[177] <- "RICARDO P. BERNABE III"
 
-y <- y[c(9:33, 38:68, 73:88, 90:93, 95:104, 109:131, 136:150, 155:168, 173:177, 179:189, 194:199)]
+y <- y[c(1:33, 38:68, 73:88, 90:93, 95:104, 109:131, 136:150, 155:168, 173:177, 179:189, 194:199)]
 
 y <- stringr::str_trim(string = y, side = "both")
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:8]             <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
 
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
                 id = 22,
+                section = section,
                 date = as.Date("08/04/2020", format = "%d/%m/%y"),
                 stringsAsFactors = FALSE)
 
@@ -934,24 +1437,40 @@ usethis::use_data(iatfResolution22, overwrite = TRUE, compress = "xz")
 
 ## Resolution 23 ###############################################################
 
-x <- pdf_text(pdf = "data-raw/IATF/Revised-IATF-Resolution-No.-23.pdf")
+y <- iatfLinks %>%
+  get_iatf_pdf(id = 23) %>%
+  pdf_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
 
 ## Restructure text
-y <- unlist(stringr::str_split(string = x, pattern = "\n"))
-
 y[143] <- "RICARDO P. BERNABE III"
 
-y <- y[c(9:36, 41:75, 80:99, 104:118, 123:137, 142:143, 145:156, 161:165)]
+y <- y[c(1:36, 41:75, 80:99, 104:118, 123:137, 142:143, 145:156, 161:165)]
 
 y[128] <- stringr::str_replace(string = y[128], pattern = "Comm\\\\nt", replacement = "Commandant")
 
 y <- stringr::str_trim(string = y, side = "both")
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:8]             <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
 
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
                 id = 23,
+                section = section,
                 date = as.Date("13/04/2020", format = "%d/%m/%y"),
                 stringsAsFactors = FALSE)
 
@@ -961,22 +1480,38 @@ usethis::use_data(iatfResolution23, overwrite = TRUE, compress = "xz")
 
 ## Resolution 24 ###############################################################
 
-x <- pdf_text(pdf = "data-raw/IATF/IATF-Resolution-No.-24.pdf")
+y <- iatfLinks %>%
+  get_iatf_pdf(id = 24) %>%
+  pdf_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
 
 ## Restructure text
-y <- unlist(stringr::str_split(string = x, pattern = "\n"))
-
 y[123] <- "RICARDO P. BERNABE III"
 
-y <- y[c(9:34, 39:67, 72:87, 92:104, 109:123, 125, 130:143, 148:149)]
+y <- y[c(1:34, 39:67, 72:87, 92:104, 109:123, 125, 130:143, 148:149)]
 
 y <- stringr::str_trim(string = y, side = "both")
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:8]             <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
 
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
                 id = 24,
+                section = section,
                 date = as.Date("15/04/2020", format = "%d/%m/%y"),
                 stringsAsFactors = FALSE)
 
@@ -986,20 +1521,36 @@ usethis::use_data(iatfResolution24, overwrite = TRUE, compress = "xz")
 
 ## Resolution 25 ###############################################################
 
-x <- pdf_text(pdf = "data-raw/IATF/IATF-Resolution-No.-25.pdf")
+y <- iatfLinks %>%
+  get_iatf_pdf(id = 25) %>%
+  pdf_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
 
 ## Restructure text
-y <- unlist(stringr::str_split(string = x, pattern = "\n"))
-
-y <- y[c(9:33, 40:45, 47:67, 75:95)]
+y <- y[c(1:33, 40:45, 47:67, 75:95)]
 
 y <- stringr::str_trim(string = y, side = "both")
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:8]             <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
 
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
                 id = 25,
+                section = section,
                 date = as.Date("17/04/2020", format = "%d/%m/%y"),
                 stringsAsFactors = FALSE)
 
@@ -1009,20 +1560,36 @@ usethis::use_data(iatfResolution25, overwrite = TRUE, compress = "xz")
 
 ## Resolution 26 ###############################################################
 
-x <- pdf_text(pdf = "data-raw/IATF/IATF-Resolution-No.-26.pdf")
+y <- iatfLinks %>%
+  get_iatf_pdf(id = 26) %>%
+  pdf_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
 
 ## Restructure text
-y <- unlist(stringr::str_split(string = x, pattern = "\n"))
-
-y <- y[c(9:34, 39:43, 50:70)]
+y <- y[c(1:34, 39:43, 50:70)]
 
 y <- stringr::str_trim(string = y, side = "both")
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:8]             <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
 
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
                 id = 26,
+                section = section,
                 date = as.Date("20/04/2020", format = "%d/%m/%y"),
                 stringsAsFactors = FALSE)
 
@@ -1032,20 +1599,36 @@ usethis::use_data(iatfResolution26, overwrite = TRUE, compress = "xz")
 
 ## Resolution 27 ###############################################################
 
-x <- pdf_text(pdf = "data-raw/IATF/IATF-Resolution-No.-27.pdf")
+y <- iatfLinks %>%
+  get_iatf_pdf(id = 27) %>%
+  pdf_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
 
 ## Restructure text
-y <- unlist(stringr::str_split(string = x, pattern = "\n"))
-
-y <- y[c(9:35, 40:70, 75:79, 86:106)]
+y <- y[c(1:35, 40:70, 75:79, 86:106)]
 
 y <- stringr::str_trim(string = y, side = "both")
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:8]             <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
 
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
                 id = 27,
+                section = section,
                 date = as.Date("22/04/2020", format = "%d/%m/%y"),
                 stringsAsFactors = FALSE)
 
@@ -1055,11 +1638,13 @@ usethis::use_data(iatfResolution27, overwrite = TRUE, compress = "xz")
 
 ## Resolution 28 ###############################################################
 
-x <- pdf_ocr_text(pdf = "data-raw/IATF/IATF-Resolution-No.-28.pdf")
+y <- iatfLinks %>%
+  get_iatf_pdf(id = 28) %>%
+  pdf_ocr_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
 
 ## Restructure text
-y <- unlist(stringr::str_split(string = x, pattern = "\n"))
-
 y <- y[c(12:46, 64:99, 109:131, 139:172)]
 
 y <- y[y != ""]
@@ -1071,11 +1656,35 @@ y[77] <- "IATF Chairperson         IATF Co-Chairperson"
 
 y <- stringr::str_trim(string = y, side = "both")
 
+## Add heading
+y <- c(c("Republic of the Philippines",
+         "Inter-Agency Task Force",
+         "for the Management of Emerging Infectious Diseases",
+         "Resolution No. 28",
+         "Series of 2020",
+         "23 April 2020",
+         "Recommendations relative to the management",
+         "of the coronavirus disease 2019 (COVID-19) situation"), y)
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:8]             <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
+
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
                 id = 28,
+                section = section,
                 date = as.Date("23/04/2020", format = "%d/%m/%y"),
                 stringsAsFactors = FALSE)
 
@@ -1085,11 +1694,13 @@ usethis::use_data(iatfResolution28, overwrite = TRUE, compress = "xz")
 
 ## Resolution 29 ###############################################################
 
-x <- pdf_ocr_text(pdf = "data-raw/IATF/IATF-Resolution-No.-29.pdf")
+y <- iatfLinks %>%
+  get_iatf_pdf(id = 29) %>%
+  pdf_ocr_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
 
 ## Restructure text
-y <- unlist(stringr::str_split(string = x, pattern = "\n"))
-
 y <- y[c(14:48, 55:90, 98:109, 115:149)]
 y <- y[y != ""]
 
@@ -1106,11 +1717,35 @@ y[97] <- stringr::str_replace(string = y[97], pattern = "\\[", replacement = "I"
 
 y <- stringr::str_trim(string = y, side = "both")
 
+## Add heading
+y <- c(c("Republic of the Philippines",
+         "Inter-Agency Task Force",
+         "for the Management of Emerging Infectious Diseases",
+         "Resolution No. 29",
+         "Series of 2020",
+         "27 April 2020",
+         "Recommendations relative to the management",
+         "of the coronavirus disease 2019 (COVID-19) situation"), y)
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:8]             <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
+
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
                 id = 29,
+                section = section,
                 date = as.Date("27/04/2020", format = "%d/%m/%y"),
                 stringsAsFactors = FALSE)
 
@@ -1120,11 +1755,13 @@ usethis::use_data(iatfResolution29, overwrite = TRUE, compress = "xz")
 
 ## Resolution 31 ###############################################################
 
-x <- pdf_ocr_text(pdf = "data-raw/IATF/IATF-Resolution-No.-31.pdf")
+y <- iatfLinks %>%
+  get_iatf_pdf(id = 31) %>%
+  pdf_ocr_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
 
 ## Restructure text
-y <- unlist(stringr::str_split(string = x, pattern = "\n"))
-
 y <- y[c(9:51, 63:97, 107:131)]
 y <- y[y != ""]
 
@@ -1137,11 +1774,33 @@ y[77] <- stringr::str_replace(string = y[77], pattern = "\\[", replacement = "I"
 
 y <- stringr::str_trim(string = y, side = "both")
 
+## Add heading
+y <- c(c("Republic of the Philippines",
+         "Inter-Agency Task Force",
+         "for the Management of Emerging Infectious Diseases",
+         "Resolution No. 31",
+         "Series of 2020",
+         "1 May 2020"), y)
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:6]             <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
+
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
                 id = 31,
+                section = section,
                 date = as.Date("01/05/2020", format = "%d/%m/%y"),
                 stringsAsFactors = FALSE)
 
