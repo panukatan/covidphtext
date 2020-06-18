@@ -75,7 +75,7 @@ Diseases Resolution Number 39" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covidphtext</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -130,12 +130,14 @@ Diseases Resolution Number 39</p>
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 77 rows and 6 columns:</p><dl'>
+    <p>A tibble with 83 rows and 7 columns:</p><dl'>
   <dt><code>linenumber</code></dt><dd><p>Linenumber</p></dd>
   <dt><code>text</code></dt><dd><p>Character string of text about 70 characters</p></dd>
   <dt><code>source</code></dt><dd><p>Issuer of resolution</p></dd>
   <dt><code>type</code></dt><dd><p>Type of document</p></dd>
   <dt><code>id</code></dt><dd><p>Text document identifier</p></dd>
+  <dt><code>section</code></dt><dd><p>Resolution section - heading, preamble, operative,
+    endorsement, or certification</p></dd>
   <dt><code>date</code></dt><dd><p>Date in &lt;YYYY-MM-DD&gt; format when resolution was made</p></dd>
 
 </dl>
@@ -145,20 +147,20 @@ Diseases Resolution Number 39</p>
     <p><a href='https://doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-39.pdf'>https://doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-39.pdf</a></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>iatfResolution39</span></div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 77 x 6</span><span>
-#&gt;    linenumber text                               source type       id date      
-#&gt;         </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                              </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>    
-#&gt; </span><span style='color: #555555;'> 1</span><span>          1 WHEREAS, on 30 April 2020, the Pr… IATF   resolu…    39 2020-05-22
-#&gt; </span><span style='color: #555555;'> 2</span><span>          2 an Enhanced Community Quarantine … IATF   resolu…    39 2020-05-22
-#&gt; </span><span style='color: #555555;'> 3</span><span>          3 General Community Quarantine in t… IATF   resolu…    39 2020-05-22
-#&gt; </span><span style='color: #555555;'> 4</span><span>          4 The Omnibus Guideiines On The Imp… IATF   resolu…    39 2020-05-22
-#&gt; </span><span style='color: #555555;'> 5</span><span>          5 WHEREAS, on 11 May 2020, the IATF… IATF   resolu…    39 2020-05-22
-#&gt; </span><span style='color: #555555;'> 6</span><span>          6 apply the parameters to determine… IATF   resolu…    39 2020-05-22
-#&gt; </span><span style='color: #555555;'> 7</span><span>          7 measures that should be implement… IATF   resolu…    39 2020-05-22
-#&gt; </span><span style='color: #555555;'> 8</span><span>          8 independent component cities (ICC… IATF   resolu…    39 2020-05-22
-#&gt; </span><span style='color: #555555;'> 9</span><span>          9 WHEREAS, as of 22 May 2020, there… IATF   resolu…    39 2020-05-22
-#&gt; </span><span style='color: #555555;'>10</span><span>         10 (13,597) confirmed cases of COVID… IATF   resolu…    39 2020-05-22
-#&gt; </span><span style='color: #555555;'># … with 67 more rows</span><span></div><div class='input'>
+    <pre class="examples"><div class='input'><span class='no'>iatfResolution39</span></div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 83 x 7</span><span>
+#&gt;    linenumber text                        source type      id section date      
+#&gt;         </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                       </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>    
+#&gt; </span><span style='color: #555555;'> 1</span><span>          1 Republic of the Philippines IATF   resol…    39 heading 2020-05-22
+#&gt; </span><span style='color: #555555;'> 2</span><span>          2 Inter-Agency Task Force     IATF   resol…    39 heading 2020-05-22
+#&gt; </span><span style='color: #555555;'> 3</span><span>          3 for the Management of Emer… IATF   resol…    39 heading 2020-05-22
+#&gt; </span><span style='color: #555555;'> 4</span><span>          4 Resolution No. 39           IATF   resol…    39 heading 2020-05-22
+#&gt; </span><span style='color: #555555;'> 5</span><span>          5 Series of 2020              IATF   resol…    39 heading 2020-05-22
+#&gt; </span><span style='color: #555555;'> 6</span><span>          6 22 May 2020                 IATF   resol…    39 heading 2020-05-22
+#&gt; </span><span style='color: #555555;'> 7</span><span>          7 WHEREAS, on 30 April 2020,… IATF   resol…    39 preamb… 2020-05-22
+#&gt; </span><span style='color: #555555;'> 8</span><span>          8 an Enhanced Community Quar… IATF   resol…    39 preamb… 2020-05-22
+#&gt; </span><span style='color: #555555;'> 9</span><span>          9 General Community Quaranti… IATF   resol…    39 preamb… 2020-05-22
+#&gt; </span><span style='color: #555555;'>10</span><span>         10 The Omnibus Guideiines On … IATF   resol…    39 preamb… 2020-05-22
+#&gt; </span><span style='color: #555555;'># … with 73 more rows</span><span></div><div class='input'>
 </div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">covidphtext</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -98,7 +98,7 @@
 <div id="datasets" class="section level3">
 <h3 class="hasAnchor">
 <a href="#datasets" class="anchor"></a>Datasets</h3>
-<p><code>covidphtext</code> currently has <code>49</code> datasets of which <code>46</code> are COVID-19-related resolutions and policies in the Philippines made by the Inter-Agency Task Force for the Management of Emerging Infectious Diseases (IATF), 1 is the Omnibus Guidelines on the Implementation of Community Quarantine in the Philippines released by the IATF and 2 are reference lists of links to these resolutions and guidelines.</p>
+<p><code>covidphtext</code> currently has <code>51</code> datasets of which <code>46</code> are COVID-19-related resolutions and policies in the Philippines made by the Inter-Agency Task Force for the Management of Emerging Infectious Diseases (IATF), 1 is the Omnibus Guidelines on the Implementation of Community Quarantine in the Philippines released by the IATF and 2 are reference lists of links to these resolutions and guidelines.</p>
 <p>A description of the available datasets can be found <a href="https://como-ph.github.io/covidphtext/reference/index.html#section-datasets">here</a>.</p>
 <p>The IATF resolutions are officially available from two online sources: 1) The Department of Health (DOH) <a href="https://www.doh.gov.ph/COVID-19/IATF-Resolutions">website</a>; and, 2) The Philippines Official Gazette <a href="https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/">website</a>. The DOH website currenlty only holds IATF resolutions starting from resolution number 9 and later. The Official Gazette on the other hand contains resolutions 1 to the most current.</p>
 <p>To get a list of the IATF resolutions that are available from the DOH website, the function <code><a href="reference/get_iatf_links.html">get_iatf_links()</a></code> can be used as follows:</p>
@@ -106,39 +106,39 @@
 <span class="co">#&gt; # A tibble: 41 x 7</span>
 <span class="co">#&gt;       id title              date       source type  url               checked   </span>
 <span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;              &lt;date&gt;     &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;             &lt;date&gt;    </span>
-<span class="co">#&gt;  1     9 Recommendations f… 2020-03-03 IATF   reso… https://doh.gov.… 2020-06-16</span>
-<span class="co">#&gt;  2    10 Recommendations f… 2020-03-09 IATF   reso… https://doh.gov.… 2020-06-16</span>
-<span class="co">#&gt;  3    11 Recommendations f… 2020-03-12 IATF   reso… https://doh.gov.… 2020-06-16</span>
-<span class="co">#&gt;  4    12 Recommendations f… 2020-03-13 IATF   reso… https://doh.gov.… 2020-06-16</span>
-<span class="co">#&gt;  5    13 Recommendations f… 2020-03-17 IATF   reso… https://doh.gov.… 2020-06-16</span>
-<span class="co">#&gt;  6    14 Resolutions Relat… 2020-03-20 IATF   reso… https://doh.gov.… 2020-06-16</span>
-<span class="co">#&gt;  7    15 Resolutions Relat… 2020-03-25 IATF   reso… https://doh.gov.… 2020-06-16</span>
-<span class="co">#&gt;  8    16 Additional Guidel… 2020-03-30 IATF   reso… https://doh.gov.… 2020-06-16</span>
-<span class="co">#&gt;  9    17 Recommendations R… 2020-03-30 IATF   reso… https://doh.gov.… 2020-06-16</span>
-<span class="co">#&gt; 10    18 Recommendations R… 2020-04-01 IATF   reso… https://doh.gov.… 2020-06-16</span>
+<span class="co">#&gt;  1     9 Recommendations f… 2020-03-03 IATF   reso… https://doh.gov.… 2020-06-18</span>
+<span class="co">#&gt;  2    10 Recommendations f… 2020-03-09 IATF   reso… https://doh.gov.… 2020-06-18</span>
+<span class="co">#&gt;  3    11 Recommendations f… 2020-03-12 IATF   reso… https://doh.gov.… 2020-06-18</span>
+<span class="co">#&gt;  4    12 Recommendations f… 2020-03-13 IATF   reso… https://doh.gov.… 2020-06-18</span>
+<span class="co">#&gt;  5    13 Recommendations f… 2020-03-17 IATF   reso… https://doh.gov.… 2020-06-18</span>
+<span class="co">#&gt;  6    14 Resolutions Relat… 2020-03-20 IATF   reso… https://doh.gov.… 2020-06-18</span>
+<span class="co">#&gt;  7    15 Resolutions Relat… 2020-03-25 IATF   reso… https://doh.gov.… 2020-06-18</span>
+<span class="co">#&gt;  8    16 Additional Guidel… 2020-03-30 IATF   reso… https://doh.gov.… 2020-06-18</span>
+<span class="co">#&gt;  9    17 Recommendations R… 2020-03-30 IATF   reso… https://doh.gov.… 2020-06-18</span>
+<span class="co">#&gt; 10    18 Recommendations R… 2020-04-01 IATF   reso… https://doh.gov.… 2020-06-18</span>
 <span class="co">#&gt; # … with 31 more rows</span></pre></div>
 <p>Given that the DOH website doesn’t have the first 8 resolutions, this function will soon be deprecated in favour of the newer function below that interfaces with the Official Gazette.</p>
 <p>A table of all the IATF resolutions and the URLs to download them can be generated using the newer function <code><a href="reference/get_iatf_gazette.html">get_iatf_gazette()</a></code> as follows:</p>
 <div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="reference/get_iatf_gazette.html">get_iatf_gazette</a></span>(<span class="kw">base</span> <span class="kw">=</span> <span class="st">"https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/"</span>)</pre></div>
 <div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">#&gt; # A tibble: 53 x 7</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="co">#&gt;    id    title              date       source type  url               checked   </span></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="co">#&gt;    &lt;chr&gt; &lt;chr&gt;              &lt;date&gt;     &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;             &lt;date&gt;    </span></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="co">#&gt;  1 46    RESOLUTION NO. 46… 2020-06-15 IATF   reso… https://www.offi… 2020-06-16</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="co">#&gt;  2 46    RESOLUTION NO. 46… 2020-06-15 IATF   reso… https://www.offi… 2020-06-16</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a><span class="co">#&gt;  3 45    RESOLUTION NO. 45… 2020-06-10 IATF   reso… https://www.offi… 2020-06-16</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a><span class="co">#&gt;  4 44    RESOLUTION NO. 44… 2020-06-08 IATF   reso… https://www.offi… 2020-06-16</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a><span class="co">#&gt;  5 &lt;NA&gt;  OMNIBUS GUIDELINE… 2020-06-03 IATF   reso… https://www.offi… 2020-06-16</span></span>
-<span id="cb5-9"><a href="#cb5-9"></a><span class="co">#&gt;  6 43    RESOLUTION NO. 43… 2020-06-03 IATF   reso… https://www.offi… 2020-06-16</span></span>
-<span id="cb5-10"><a href="#cb5-10"></a><span class="co">#&gt;  7 42    RESOLUTION NO. 42… 2020-06-01 IATF   reso… https://www.offi… 2020-06-16</span></span>
-<span id="cb5-11"><a href="#cb5-11"></a><span class="co">#&gt;  8 41    RESOLUTION NO. 41… 2020-05-29 IATF   reso… https://www.offi… 2020-06-16</span></span>
-<span id="cb5-12"><a href="#cb5-12"></a><span class="co">#&gt;  9 40    RESOLUTION NO. 40… 2020-05-27 IATF   reso… https://www.offi… 2020-06-16</span></span>
-<span id="cb5-13"><a href="#cb5-13"></a><span class="co">#&gt; 10 &lt;NA&gt;  OMNIBUS GUIDELINE… 2020-05-22 IATF   reso… https://www.offi… 2020-06-16</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="co">#&gt;       id title              date       source type  url               checked   </span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;              &lt;date&gt;     &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;             &lt;date&gt;    </span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="co">#&gt;  1    46 RESOLUTION NO. 46… 2020-06-15 IATF   reso… https://www.offi… 2020-06-17</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="co">#&gt;  2    46 RESOLUTION NO. 46… 2020-06-15 IATF   reso… https://www.offi… 2020-06-17</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="co">#&gt;  3    45 RESOLUTION NO. 45… 2020-06-10 IATF   reso… https://www.offi… 2020-06-17</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="co">#&gt;  4    44 RESOLUTION NO. 44… 2020-06-08 IATF   reso… https://www.offi… 2020-06-17</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="co">#&gt;  5    NA OMNIBUS GUIDELINE… 2020-06-03 IATF   reso… https://www.offi… 2020-06-17</span></span>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="co">#&gt;  6    43 RESOLUTION NO. 43… 2020-06-03 IATF   reso… https://www.offi… 2020-06-17</span></span>
+<span id="cb5-10"><a href="#cb5-10"></a><span class="co">#&gt;  7    42 RESOLUTION NO. 42… 2020-06-01 IATF   reso… https://www.offi… 2020-06-17</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a><span class="co">#&gt;  8    41 RESOLUTION NO. 41… 2020-05-29 IATF   reso… https://www.offi… 2020-06-17</span></span>
+<span id="cb5-12"><a href="#cb5-12"></a><span class="co">#&gt;  9    40 RESOLUTION NO. 40… 2020-05-27 IATF   reso… https://www.offi… 2020-06-17</span></span>
+<span id="cb5-13"><a href="#cb5-13"></a><span class="co">#&gt; 10    NA OMNIBUS GUIDELINE… 2020-05-22 IATF   reso… https://www.offi… 2020-06-17</span></span>
 <span id="cb5-14"><a href="#cb5-14"></a><span class="co">#&gt; # … with 43 more rows</span></span></code></pre></div>
 <p>The actual PDF of the IATF resolutions/s can be downloaded using the <code><a href="reference/get_iatf_pdf.html">get_iatf_pdf()</a></code> function. For example, to download IATF Resolution No. 29, the following command is issued:</p>
-<div class="sourceCode" id="cb6"><pre class="r"><span class="fu"><a href="reference/get_iatf_pdf.html">get_iatf_pdf</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="fl">29</span>)
-<span class="co">#&gt; [1] "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//RtmpnwCZOV/iatfResolution29.pdf"</span></pre></div>
+<div class="sourceCode" id="cb6"><pre class="r"><span class="fu"><a href="reference/get_iatf_pdf.html">get_iatf_pdf</a></span>(<span class="kw">links</span> <span class="kw">=</span> <span class="no">iatfLinks</span>, <span class="kw">id</span> <span class="kw">=</span> <span class="fl">29</span>)
+<span class="co">#&gt; [1] "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//RtmpfmHEGE/iatfResolution29.pdf"</span></pre></div>
 <p>The command downloads the PDF of the specified IATF Resolution into a temporary directory (using <code><a href="https://rdrr.io/r/base/tempfile.html">tempdir()</a></code> function) and assigns it with a filename <code>iatfResolution</code> followed by the resolution number. For IATF Resolution 29, the filename is <code>iatfResolution29.pdf</code>. The output of the <code><a href="reference/get_iatf_pdf.html">get_iatf_pdf()</a></code> function is a character vector of directory path/s to downloaded PDFs as shown above. These paths can then be used when working with these files.</p>
-<p>It should be noted that the <code><a href="reference/get_iatf_pdf.html">get_iatf_pdf()</a></code> function interfaces with the DOH website. An update is to follow which will allow this function to interface with the Official Gazette as well or instead of. This will be provided in the next release.</p>
+<p>The <code><a href="reference/get_iatf_pdf.html">get_iatf_pdf()</a></code> function interfaces with both the DOH and The Official Gazette website.</p>
 </div>
 <div id="concatenating-text-datasets" class="section level3">
 <h3 class="hasAnchor">
@@ -149,39 +149,39 @@
 <a href="#concatenating-datasets-based-on-a-specific-search-term" class="anchor"></a>Concatenating datasets based on a specific search term</h4>
 <p>The <code>combine_docs</code> function allows the user to specify search terms to use in identifying datasets provided by the <code>covidphtext</code> package. The <code>docs</code> argument allows the specification of a vector of search terms to use to identify the names of datasets to concatenate. If the name/s of the datasets contain these search terms, the datasets with these name/s will be returned.</p>
 <div class="sourceCode" id="cb7"><pre class="r"><span class="fu"><a href="reference/combine_docs.html">combine_docs</a></span>(<span class="kw">docs</span> <span class="kw">=</span> <span class="st">"resolution"</span>)
-<span class="co">#&gt; # A tibble: 5,381 x 6</span>
-<span class="co">#&gt;    linenumber text                               source type       id date      </span>
-<span class="co">#&gt;         &lt;int&gt; &lt;chr&gt;                              &lt;chr&gt;  &lt;chr&gt;   &lt;dbl&gt; &lt;date&gt;    </span>
-<span class="co">#&gt;  1          1 WHEREAS, Executive Order No. 168,… IATF   resolu…     1 2020-01-28</span>
-<span class="co">#&gt;  2          2 for the Management of Emerging In… IATF   resolu…     1 2020-01-28</span>
-<span class="co">#&gt;  3          3 WHEREAS, the Inter-agency Task Fo… IATF   resolu…     1 2020-01-28</span>
-<span class="co">#&gt;  4          4 identify, screen, and assist Fili… IATF   resolu…     1 2020-01-28</span>
-<span class="co">#&gt;  5          5 prevent and/or minimize the entry… IATF   resolu…     1 2020-01-28</span>
-<span class="co">#&gt;  6          6 as prevent and/or minimize local … IATF   resolu…     1 2020-01-28</span>
-<span class="co">#&gt;  7          7 WHEREAS, on January 7, 2020, Chin… IATF   resolu…     1 2020-01-28</span>
-<span class="co">#&gt;  8          8 the viral pneumonia outbreak in W… IATF   resolu…     1 2020-01-28</span>
-<span class="co">#&gt;  9          9 (2019-nCoV) that has not been pre… IATF   resolu…     1 2020-01-28</span>
-<span class="co">#&gt; 10         10 WHEREAS, as of January 27, 2020, … IATF   resolu…     1 2020-01-28</span>
-<span class="co">#&gt; # … with 5,371 more rows</span></pre></div>
+<span class="co">#&gt; # A tibble: 5,861 x 7</span>
+<span class="co">#&gt;    linenumber text                       source type       id section date      </span>
+<span class="co">#&gt;         &lt;int&gt; &lt;chr&gt;                      &lt;chr&gt;  &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;   &lt;date&gt;    </span>
+<span class="co">#&gt;  1          1 Republic of the Philippin… IATF   resolu…     1 heading 2020-01-28</span>
+<span class="co">#&gt;  2          2 Department of Health       IATF   resolu…     1 heading 2020-01-28</span>
+<span class="co">#&gt;  3          3 Office of the Secretary    IATF   resolu…     1 heading 2020-01-28</span>
+<span class="co">#&gt;  4          4 Inter-Agency Task Force f… IATF   resolu…     1 heading 2020-01-28</span>
+<span class="co">#&gt;  5          5 Emerging Infectious Disea… IATF   resolu…     1 heading 2020-01-28</span>
+<span class="co">#&gt;  6          6 28 January 2020            IATF   resolu…     1 heading 2020-01-28</span>
+<span class="co">#&gt;  7          7 Resolution No. 01          IATF   resolu…     1 heading 2020-01-28</span>
+<span class="co">#&gt;  8          8 Series of 2020             IATF   resolu…     1 heading 2020-01-28</span>
+<span class="co">#&gt;  9          9 Recommendations for the M… IATF   resolu…     1 heading 2020-01-28</span>
+<span class="co">#&gt; 10         10 Novel Coronavirus Situati… IATF   resolu…     1 &lt;NA&gt;    2020-01-28</span>
+<span class="co">#&gt; # … with 5,851 more rows</span></pre></div>
 <p>The <code>combine_iatf</code> function is a specialised wrapper of the <code>combine_docs</code> function that specifically returns datasets containing IATF resolutions. An additional argument <code>res</code> allows users to specify which IATF resolutions to return. To get IATF resolution 10, 11, and 12, the following call to <code>combine_iatf</code> is made as follows:</p>
 <div class="sourceCode" id="cb8"><pre class="r"><span class="fu"><a href="reference/combine_iatf.html">combine_iatf</a></span>(<span class="kw">docs</span> <span class="kw">=</span> <span class="st">"resolution"</span>, <span class="kw">res</span> <span class="kw">=</span> <span class="fl">10</span>:<span class="fl">12</span>)
-<span class="co">#&gt; # A tibble: 324 x 6</span>
-<span class="co">#&gt;    linenumber text                               source type       id date      </span>
-<span class="co">#&gt;         &lt;int&gt; &lt;chr&gt;                              &lt;chr&gt;  &lt;chr&gt;   &lt;dbl&gt; &lt;date&gt;    </span>
-<span class="co">#&gt;  1          1 WHEREAS, Section 15 of Article II… IATF   resolu…    10 2020-03-09</span>
-<span class="co">#&gt;  2          2 protect and promote the right to … IATF   resolu…    10 2020-03-09</span>
-<span class="co">#&gt;  3          3 them:                              IATF   resolu…    10 2020-03-09</span>
-<span class="co">#&gt;  4          4 WHEREAS, recognizing the need for… IATF   resolu…    10 2020-03-09</span>
-<span class="co">#&gt;  5          5 preparedness and ensure efficient… IATF   resolu…    10 2020-03-09</span>
-<span class="co">#&gt;  6          6 and prevent the spread of any pot… IATF   resolu…    10 2020-03-09</span>
-<span class="co">#&gt;  7          7 (IATF) for the Management of Emer… IATF   resolu…    10 2020-03-09</span>
-<span class="co">#&gt;  8          8 Executive Order No. 168, series o… IATF   resolu…    10 2020-03-09</span>
-<span class="co">#&gt;  9          9 WHEREAS, on January 7, 2020, Chin… IATF   resolu…    10 2020-03-09</span>
-<span class="co">#&gt; 10         10 a viral pneumonia outbreak in the… IATF   resolu…    10 2020-03-09</span>
-<span class="co">#&gt; # … with 314 more rows</span></pre></div>
+<span class="co">#&gt; # A tibble: 351 x 7</span>
+<span class="co">#&gt;    linenumber text                        source type      id section date      </span>
+<span class="co">#&gt;         &lt;int&gt; &lt;chr&gt;                       &lt;chr&gt;  &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;   &lt;date&gt;    </span>
+<span class="co">#&gt;  1          1 Republic of the Philippines IATF   resol…    10 heading 2020-03-09</span>
+<span class="co">#&gt;  2          2 DOH DFA DILG DOJ DOLE DOT … IATF   resol…    10 heading 2020-03-09</span>
+<span class="co">#&gt;  3          3 Inter-Agency Task Force fo… IATF   resol…    10 heading 2020-03-09</span>
+<span class="co">#&gt;  4          4 Emerging Infectious Diseas… IATF   resol…    10 heading 2020-03-09</span>
+<span class="co">#&gt;  5          5 Resolution No. 10           IATF   resol…    10 heading 2020-03-09</span>
+<span class="co">#&gt;  6          6 Series of 2020              IATF   resol…    10 heading 2020-03-09</span>
+<span class="co">#&gt;  7          7 9 March 2020                IATF   resol…    10 heading 2020-03-09</span>
+<span class="co">#&gt;  8          8 Recommendations for the ma… IATF   resol…    10 heading 2020-03-09</span>
+<span class="co">#&gt;  9          9 disease 2019 (COVID-19) si… IATF   resol…    10 heading 2020-03-09</span>
+<span class="co">#&gt; 10         10 WHEREAS, Section 15 of Art… IATF   resol…    10 preamb… 2020-03-09</span>
+<span class="co">#&gt; # … with 341 more rows</span></pre></div>
 <p>To check if only resolutions 10 to 12 have been returned:</p>
 <div class="sourceCode" id="cb9"><pre class="r"><span class="fu"><a href="reference/combine_iatf.html">combine_iatf</a></span>(<span class="kw">docs</span> <span class="kw">=</span> <span class="st">"resolution"</span>, <span class="kw">res</span> <span class="kw">=</span> <span class="fl">10</span>:<span class="fl">12</span>)[ , <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"type"</span>, <span class="st">"id"</span>)]
-<span class="co">#&gt; # A tibble: 324 x 2</span>
+<span class="co">#&gt; # A tibble: 351 x 2</span>
 <span class="co">#&gt;    type          id</span>
 <span class="co">#&gt;    &lt;chr&gt;      &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 resolution    10</span>
@@ -194,7 +194,7 @@
 <span class="co">#&gt;  8 resolution    10</span>
 <span class="co">#&gt;  9 resolution    10</span>
 <span class="co">#&gt; 10 resolution    10</span>
-<span class="co">#&gt; # … with 314 more rows</span></pre></div>
+<span class="co">#&gt; # … with 341 more rows</span></pre></div>
 </div>
 </div>
 </div>

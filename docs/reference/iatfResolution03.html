@@ -75,7 +75,7 @@ Diseases Resolution Number 3" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covidphtext</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -130,12 +130,14 @@ Diseases Resolution Number 3</p>
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 44 rows and 6 columns:</p><dl'>
+    <p>A tibble with 55 rows and 7 columns:</p><dl'>
   <dt><code>linenumber</code></dt><dd><p>Linenumber</p></dd>
   <dt><code>text</code></dt><dd><p>Character string of text about 70 characters</p></dd>
   <dt><code>source</code></dt><dd><p>Issuer of resolution</p></dd>
   <dt><code>type</code></dt><dd><p>Type of document</p></dd>
   <dt><code>id</code></dt><dd><p>Text document identifier</p></dd>
+  <dt><code>section</code></dt><dd><p>Resolution section - heading, preamble, operative,
+    endorsement, or certification</p></dd>
   <dt><code>date</code></dt><dd><p>Date in &lt;YYYY-MM-DD&gt; format when resolution was made</p></dd>
 
 </dl>
@@ -145,20 +147,20 @@ Diseases Resolution Number 3</p>
     <p><a href='https://www.officialgazette.gov.ph/downloads/2020/02feb/20200203-IATF-RESOLUTION-NO-3-RRD.pdf'>https://www.officialgazette.gov.ph/downloads/2020/02feb/20200203-IATF-RESOLUTION-NO-3-RRD.pdf</a></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>iatfResolution03</span></div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 44 x 6</span><span>
-#&gt;    linenumber text                               source type       id date      
-#&gt;         </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                              </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>    
-#&gt; </span><span style='color: #555555;'> 1</span><span>          1 WHEREAS, to address the threat po… IATF   resolu…     3 2020-02-06
-#&gt; </span><span style='color: #555555;'> 2</span><span>          2 Department of Health on January 2… IATF   resolu…     3 2020-02-06
-#&gt; </span><span style='color: #555555;'> 3</span><span>          3 Management of Emerging Infectious… IATF   resolu…     3 2020-02-06
-#&gt; </span><span style='color: #555555;'> 4</span><span>          4 Order (E.O.) No. 168, s. 2014;     IATF   resolu…     3 2020-02-06
-#&gt; </span><span style='color: #555555;'> 5</span><span>          5 WHEREAS, in the Ist IATF EID meet… IATF   resolu…     3 2020-02-06
-#&gt; </span><span style='color: #555555;'> 6</span><span>          6 resolved to ensure comprehensive … IATF   resolu…     3 2020-02-06
-#&gt; </span><span style='color: #555555;'> 7</span><span>          7 Hubei Province who opt to volunta… IATF   resolu…     3 2020-02-06
-#&gt; </span><span style='color: #555555;'> 8</span><span>          8 14-day quarantine period;          IATF   resolu…     3 2020-02-06
-#&gt; </span><span style='color: #555555;'> 9</span><span>          9 WHEREAS, in the 2nd IATF EID meet… IATF   resolu…     3 2020-02-06
-#&gt; </span><span style='color: #555555;'>10</span><span>         10 designate Fort Magsaysay in Nueva… IATF   resolu…     3 2020-02-06
-#&gt; </span><span style='color: #555555;'># … with 34 more rows</span><span></div><div class='input'>
+    <pre class="examples"><div class='input'><span class='no'>iatfResolution03</span></div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 55 x 7</span><span>
+#&gt;    linenumber text                       source type       id section date      
+#&gt;         </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>    
+#&gt; </span><span style='color: #555555;'> 1</span><span>          1 Republic of the Philippin… IATF   resolu…     3 heading 2020-02-06
+#&gt; </span><span style='color: #555555;'> 2</span><span>          2 Department of Health       IATF   resolu…     3 heading 2020-02-06
+#&gt; </span><span style='color: #555555;'> 3</span><span>          3 Office of the Secretary    IATF   resolu…     3 heading 2020-02-06
+#&gt; </span><span style='color: #555555;'> 4</span><span>          4 Inter-Agency Task Force f… IATF   resolu…     3 heading 2020-02-06
+#&gt; </span><span style='color: #555555;'> 5</span><span>          5 Emerging Infectious Disea… IATF   resolu…     3 heading 2020-02-06
+#&gt; </span><span style='color: #555555;'> 6</span><span>          6 3 February 2020            IATF   resolu…     3 heading 2020-02-06
+#&gt; </span><span style='color: #555555;'> 7</span><span>          7 Resolution No. 03          IATF   resolu…     3 heading 2020-02-06
+#&gt; </span><span style='color: #555555;'> 8</span><span>          8 Series of 2020             IATF   resolu…     3 heading 2020-02-06
+#&gt; </span><span style='color: #555555;'> 9</span><span>          9 Designation of the quaran… IATF   resolu…     3 heading 2020-02-06
+#&gt; </span><span style='color: #555555;'>10</span><span>         10 Management of 2019 Novel … IATF   resolu…     3 heading 2020-02-06
+#&gt; </span><span style='color: #555555;'># … with 45 more rows</span><span></div><div class='input'>
 </div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
