@@ -1165,7 +1165,7 @@ y <- iatfLinks %>%
 y <- y[y != ""]
 y <- stringr::str_trim(string = y, side = "both")
 
-section <- c(rep("heading", 4), rep("operative", length(6:length(y))))
+section <- c(rep("heading", 4), rep("operative", length(5:length(y))))
 
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
@@ -1681,7 +1681,7 @@ oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
 pEnd   <- oStart - 1
 eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
 oEnd   <- eStart - 1
-cStart <- which(stringr::str_detect(string = y, pattern = "CERTIFICATE"))
+cStart <- which(stringr::str_detect(string = y, pattern = "CERTIFICATE|CERTIFICATION"))
 eEnd   <- cStart - 1
 
 section <- NULL
@@ -1745,7 +1745,7 @@ oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
 pEnd   <- oStart - 1
 eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
 oEnd   <- eStart - 1
-cStart <- which(stringr::str_detect(string = y, pattern = "CERTIFICATE"))
+cStart <- which(stringr::str_detect(string = y, pattern = "CERTIFICATE|CERTIFICATION"))
 eEnd   <- cStart - 1
 
 section <- NULL
@@ -1767,6 +1767,119 @@ y <- data.frame(linenumber = 1:length(y),
 iatfResolution29 <- tibble::tibble(y)
 
 usethis::use_data(iatfResolution29, overwrite = TRUE, compress = "xz")
+
+## Resolution 30 ###############################################################
+
+y <- iatfLinksGazette %>%
+  dplyr::filter(date == "2020-04-29" & id == 30) %>%
+  get_iatf_pdf(id = 30) %>%
+  pdf_ocr_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
+
+## Clean-up
+y <- y[c(15:56, 66:82, 85:97, 104:108)]
+y <- y[y != ""]
+
+y <- y %>%
+  stringr::str_replace_all(pattern = "\\[ATF", replacement = "IATF") %>%
+  stringr::str_replace_all(pattern = "\\|", replacement = "1") %>%
+
+y[60] <- "Francisco T. Duque III       Karlo Alexei B. Nograles"
+y[61] <- "Secretary, Department of Health     Cabinet Secretary, Office of the Cabinet Secretary"
+y[62] <- "IATF Chairperson         IATF Co-Chairperson"
+
+## Add heading
+y <- c(c("Republic of the Philippines",
+         "Inter-Agency Task Force",
+         "for the Management of Emerging Infectious Diseases",
+         "Resolution No. 30",
+         "Series of 2020",
+         "29 April 2020",
+         "Recommendations relative to the management",
+         "of the coronavirus disease 2019 (COVID-19) situation"), y)
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:8]              <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
+
+y <- data.frame(linenumber = 1:length(y),
+                text = y,
+                source = "IATF",
+                type = "resolution",
+                id = 30,
+                section = section,
+                date = as.Date("29/04/2020", format = "%d/%m/%y"),
+                stringsAsFactors = FALSE)
+
+iatfResolution30 <- tibble::tibble(y)
+
+usethis::use_data(iatfResolution30, overwrite = TRUE, compress = "xz")
+
+## Resolution 30A ##############################################################
+
+y <- iatfLinksGazette %>%
+  dplyr::filter(date != "2020-04-29" & id == 30) %>%
+  get_iatf_pdf(id = 30) %>%
+  pdf_ocr_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
+
+## Clean-up
+y <- y[c(8:40, 49, 51:54, 56, 58:62, 64, 66:72, 82:87)]
+y <- y[y != ""]
+
+y <- y %>%
+  stringr::str_replace_all(pattern = "\\[ATF", replacement = "IATF") %>%
+  stringr::str_replace_all(pattern = "Ist", replacement = "1st")
+
+y[51] <- "Francisco T. Duque III       Karlo Alexei B. Nograles"
+y[52] <- "Secretary, Department of Health     Cabinet Secretary, Office of the Cabinet Secretary"
+y[53] <- "IATF Chairperson         IATF Co-Chairperson"
+
+## Add heading
+y <- c(c("Republic of the Philippines",
+         "Inter-Agency Task Force",
+         "for the Management of Emerging Infectious Diseases",
+         "Resolution No. 30A",
+         "Series of 2020",
+         "1 May 2020"), y)
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "NOW, THEREFORE"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:6]              <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
+
+y <- data.frame(linenumber = 1:length(y),
+                text = y,
+                source = "IATF",
+                type = "resolution",
+                id = 30,
+                section = section,
+                date = as.Date("1/05/2020", format = "%d/%m/%y"),
+                stringsAsFactors = FALSE)
+
+iatfResolution30A <- tibble::tibble(y)
+
+usethis::use_data(iatfResolution30A, overwrite = TRUE, compress = "xz")
+
 
 ## Resolution 31 ###############################################################
 
@@ -2094,15 +2207,12 @@ oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
 pEnd   <- oStart - 1
 eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
 oEnd   <- eStart - 1
-cStart <- which(stringr::str_detect(string = y, pattern = "CERTIFICATE|CERTIFICATION"))
-eEnd   <- cStart - 1
 
 section <- NULL
 section[1:6]              <- "heading"
 section[pStart:pEnd]      <- "preamble"
 section[oStart:oEnd]      <- "operative"
-section[eStart:eEnd]      <- "endorsement"
-section[cStart:length(y)] <- "certification"
+section[eStart:length(y)] <- "endorsement"
 
 y <- data.frame(linenumber = 1:length(y),
                 text = y,
