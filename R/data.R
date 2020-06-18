@@ -843,6 +843,63 @@
 #
 #'
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
+#' Diseases Resolution Number 30
+#'
+#' @format A tibble with 70 rows and 7 columns:
+#' \describe{
+#'   \item{\code{linenumber}}{Linenumber}
+#'   \item{\code{text}}{Character string of text about 70 characters}
+#'   \item{\code{source}}{Issuer of resolution}
+#'   \item{\code{type}}{Type of document}
+#'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
+#'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
+#' }
+#'
+#' @examples
+#' iatfResolution30
+#'
+#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/04apr/20200429-IATF-RESOLUTION-NO-30-RRD.pdf}
+#'
+#'
+#
+################################################################################
+"iatfResolution30"
+
+################################################################################
+#
+#'
+#' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
+#' Diseases Resolution Number 30A
+#'
+#' @format A tibble with 59 rows and 7 columns:
+#' \describe{
+#'   \item{\code{linenumber}}{Linenumber}
+#'   \item{\code{text}}{Character string of text about 70 characters}
+#'   \item{\code{source}}{Issuer of resolution}
+#'   \item{\code{type}}{Type of document}
+#'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
+#'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
+#' }
+#'
+#' @examples
+#' iatfResolution30A
+#'
+#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/05may/20200501-IATF-RESOLUTION-NO-30A-RRD.pdf}
+#'
+#'
+#
+################################################################################
+"iatfResolution30A"
+
+
+################################################################################
+#
+#'
+#' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 31
 #'
 #' @format A tibble with 92 rows and 7 columns:
@@ -1415,3 +1472,4 @@
 #
 ################################################################################
 "iatfLinksGazette"
+
