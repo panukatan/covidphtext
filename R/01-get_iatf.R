@@ -78,37 +78,33 @@ get_iatf_links <- function(base = "https://www.doh.gov.ph/COVID-19/IATF-Resoluti
 #'
 #' Get a specific IATF resolution PDF file
 #'
-#' @param base URL to the IATF resolutions webpage. This is currently at
-#'   \url{https://www.doh.gov.ph/COVID-19/IATF-Resolutions}
+#' @param links A links/URLs tibble produced by either \code{get_iatf_links()}
+#'   or \code{get_iatf_gazette()} functions
 #' @param id A vector of number/s of IATF resolution/s to be retrieved
 #'
-#' @return A temporary directory path pointing to a temporary file for PDF
-#'   of IATF resolution required
+#' @return A temporary directory path or a vector of temporary directory paths
+#'   pointing to a temporary file/s for PDF of IATF resolution/s required
 #'
 #' @examples
-#' get_iatf_pdf(id = 29)
+#' links <- get_iatf_links()
+#' get_iatf_pdf(links = links, id = 29)
 #'
 #' @export
 #'
 #
 ################################################################################
 
-get_iatf_pdf <- function(base = "https://www.doh.gov.ph/COVID-19/IATF-Resolutions",
-                         id) {
+get_iatf_pdf <- function(links, id) {
   ## Check that id is numeric
   if(class(id) == "character" | class(id) == "factor") {
     stop("Numeric value required for id. Please try again.", .call = TRUE)
   }
 
   ## Get href links per resolution
-  href <- xml2::read_html(base) %>%
-    rvest::html_nodes(css = ".panel .view-content .views-field a") %>%
-    rvest::html_attr(name = "href")
+  href <- links$url
 
   ## Get available resolutions by resolution ID
-  availableIDs <- stringr::str_remove_all(string = href, pattern = "%20") %>%
-    stringr::str_extract(pattern = "[0-9]+") %>%
-    as.numeric()
+  availableIDs <- links$id
 
   idText <- paste(availableIDs, collapse = ", ")
 
@@ -138,9 +134,6 @@ get_iatf_pdf <- function(base = "https://www.doh.gov.ph/COVID-19/IATF-Resolution
     link <- href[which(availableIDs == i)]
 
     ## Download resolution with current id
-    #utils::download.file(url = link,
-    #                     destfile = paste(tempdir(), destfile, sep = "/"),
-    #                     method = "libcurl")
     curl::curl_download(url = link,
                         destfile = paste(tempdir(), destfile, sep = "/"))
   }

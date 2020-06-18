@@ -1,3 +1,4 @@
+## Test get_iatf_links #########################################################
 base <- "http://www.doh.gov.ph/COVID-19/IATF-Resolutions"
 
 x <- get_iatf_links(base = base)
@@ -26,21 +27,27 @@ test_that("url is a url", {
   expect_true(all(stringr::str_detect(x$url, "http")))
 })
 
+
+## Test get_iatf_pdf ###########################################################
+
+links <- iatfLinks
+
 test_that("error message shows", {
-  expect_error(get_iatf_pdf(base = base, id = "1"))
-  expect_error(get_iatf_pdf(base = base, id = 1))
-  expect_warning(get_iatf_pdf(base = base, id = c(1, 10)))
+  expect_error(get_iatf_pdf(links = links, id = "1"))
+  expect_error(get_iatf_pdf(links = links, id = 1))
+  expect_warning(get_iatf_pdf(links = links, id = c(1, 10)))
 })
 
 test_that("path is character", {
-  expect_is(get_iatf_pdf(base = base, id = 10), "character")
+  expect_is(get_iatf_pdf(links = links, id = 10), "character")
 })
 
 test_that("filename is correct", {
-  expect_true(stringr::str_detect(get_iatf_pdf(base = base, id = 10),
+  expect_true(stringr::str_detect(get_iatf_pdf(links = links, id = 10),
                                   pattern = "iatfResolution10.pdf"))
 })
 
+## Test get_iatf_gazette #######################################################
 base <- "https://www.officialgazette.gov.ph/section/laws/other-issuances"
 
 x <- get_iatf_gazette(base = base, pages = 1)

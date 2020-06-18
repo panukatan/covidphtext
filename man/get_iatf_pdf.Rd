@@ -4,22 +4,23 @@
 \alias{get_iatf_pdf}
 \title{Get a specific IATF resolution PDF file}
 \usage{
-get_iatf_pdf(base = "https://www.doh.gov.ph/COVID-19/IATF-Resolutions", id)
+get_iatf_pdf(links, id)
 }
 \arguments{
-\item{base}{URL to the IATF resolutions webpage. This is currently at
-\url{https://www.doh.gov.ph/COVID-19/IATF-Resolutions}}
+\item{links}{A links/URLs tibble produced by either \code{get_iatf_links()}
+or \code{get_iatf_gazette()} functions}
 
 \item{id}{A vector of number/s of IATF resolution/s to be retrieved}
 }
 \value{
-A temporary directory path pointing to a temporary file for PDF
-  of IATF resolution required
+A temporary directory path or a vector of temporary directory paths
+  pointing to a temporary file/s for PDF of IATF resolution/s required
 }
 \description{
 Get a specific IATF resolution PDF file
 }
 \examples{
-get_iatf_pdf(id = 29)
+links <- get_iatf_links()
+get_iatf_pdf(links = links, id = 29)
 
 }

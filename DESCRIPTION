@@ -2,7 +2,7 @@ Package: covidphtext
 Type: Package
 Title: Utilities to Extract Text Data From COVID-19-Related Resolutions and 
     Policies From the Philippines
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: c(person(given = "Ernest", family = "Guevarra", 
                     email = "ernest@guevarra.io", role = c("aut", "cre"),
                     comment = c(ORCID = "0000-0002-4887-4415")),

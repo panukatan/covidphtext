@@ -1,4 +1,12 @@
-# covidphtext 0.1.0
+# covidphtext v0.2.0
+
+* Updated `get_iatf_pdf` syntax such that is now takes on as first argument a links table produced when making a call to either `get_iatf_links` or `get_iatf_gazette` allowing for piped operations between these set of functions
+
+* Updated IATF resolutions datasets structre to include sections of resolutions
+
+* Added missing resolutions no. 30 and 30A
+
+# covidphtext v0.1.0
 
 * Created functions to extract download information for the various IATF resolutions issued either through [DoH](https://www.doh.gov.ph) or the [Official Gazette](https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/)
 

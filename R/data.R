@@ -4,13 +4,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 1
 #'
-#' @format A tibble with 43 rows and 6 columns:
+#' @format A tibble with 53 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -31,13 +33,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 2
 #'
-#' @format A tibble with 76 rows and 6 columns:
+#' @format A tibble with 87 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -58,13 +62,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 3
 #'
-#' @format A tibble with 44 rows and 6 columns:
+#' @format A tibble with 55 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -85,13 +91,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 4
 #'
-#' @format A tibble with 60 rows and 6 columns:
+#' @format A tibble with 72 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -112,13 +120,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 5
 #'
-#' @format A tibble with 75 rows and 6 columns:
+#' @format A tibble with 84 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -139,13 +149,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 6
 #'
-#' @format A tibble with 71 rows and 6 columns:
+#' @format A tibble with 80 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -166,13 +178,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 7
 #'
-#' @format A tibble with 71 rows and 6 columns:
+#' @format A tibble with 80 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -193,13 +207,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 8
 #'
-#' @format A tibble with 87 rows and 6 columns:
+#' @format A tibble with 96 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -220,13 +236,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 9
 #'
-#' @format A tibble with 60 rows and 6 columns:
+#' @format A tibble with 69 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -247,18 +265,20 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 10
 #'
-#' @format A tibble with 69 rows and 6 columns:
+#' @format A tibble with 78 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
 #' @examples
-#' iatfResolution09
+#' iatfResolution10
 #'
 #' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-RESO-10.pdf}
 #'
@@ -274,13 +294,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 11
 #'
-#' @format A tibble with 128 rows and 6 columns:
+#' @format A tibble with 137 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -301,13 +323,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 12
 #'
-#' @format A tibble with 127 rows and 6 columns:
+#' @format A tibble with 136 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -328,13 +352,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 13
 #'
-#' @format A tibble with 196 rows and 6 columns:
+#' @format A tibble with 204 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -355,13 +381,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 14
 #'
-#' @format A tibble with 222 rows and 6 columns:
+#' @format A tibble with 231 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -382,13 +410,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 15
 #'
-#' @format A tibble with 157 rows and 6 columns:
+#' @format A tibble with 165 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -409,13 +439,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 16
 #'
-#' @format A tibble with 83 rows and 6 columns:
+#' @format A tibble with 87 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -436,13 +468,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 17
 #'
-#' @format A tibble with 143 rows and 6 columns:
+#' @format A tibble with 151 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -463,13 +497,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 18
 #'
-#' @format A tibble with 100 rows and 6 columns:
+#' @format A tibble with 108 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -490,13 +526,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 19
 #'
-#' @format A tibble with 149 rows and 6 columns:
+#' @format A tibble with 157 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -517,13 +555,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 20
 #'
-#' @format A tibble with 86 rows and 6 columns:
+#' @format A tibble with 94 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -544,13 +584,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 21
 #'
-#' @format A tibble with 150 rows and 6 columns:
+#' @format A tibble with 158 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -571,13 +613,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 22
 #'
-#' @format A tibble with 160 rows and 6 columns:
+#' @format A tibble with 168 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -598,13 +642,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 23
 #'
-#' @format A tibble with 132 rows and 6 columns:
+#' @format A tibble with 140 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -625,13 +671,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 24
 #'
-#' @format A tibble with 116 rows and 6 columns:
+#' @format A tibble with 124 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -652,13 +700,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 25
 #'
-#' @format A tibble with 73 rows and 6 columns:
+#' @format A tibble with 81 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -679,13 +729,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 26
 #'
-#' @format A tibble with 52 rows and 6 columns:
+#' @format A tibble with 60 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -706,13 +758,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 27
 #'
-#' @format A tibble with 84 rows and 6 columns:
+#' @format A tibble with 92 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -733,13 +787,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 28
 #'
-#' @format A tibble with 100 rows and 6 columns:
+#' @format A tibble with 108 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -760,13 +816,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 29
 #'
-#' @format A tibble with 97 rows and 6 columns:
+#' @format A tibble with 105 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -785,15 +843,74 @@
 #
 #'
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
-#' Diseases Resolution Number 31
+#' Diseases Resolution Number 30
 #'
-#' @format A tibble with 86 rows and 6 columns:
+#' @format A tibble with 70 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
+#'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
+#' }
+#'
+#' @examples
+#' iatfResolution30
+#'
+#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/04apr/20200429-IATF-RESOLUTION-NO-30-RRD.pdf}
+#'
+#'
+#
+################################################################################
+"iatfResolution30"
+
+################################################################################
+#
+#'
+#' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
+#' Diseases Resolution Number 30A
+#'
+#' @format A tibble with 59 rows and 7 columns:
+#' \describe{
+#'   \item{\code{linenumber}}{Linenumber}
+#'   \item{\code{text}}{Character string of text about 70 characters}
+#'   \item{\code{source}}{Issuer of resolution}
+#'   \item{\code{type}}{Type of document}
+#'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
+#'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
+#' }
+#'
+#' @examples
+#' iatfResolution30A
+#'
+#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/05may/20200501-IATF-RESOLUTION-NO-30A-RRD.pdf}
+#'
+#'
+#
+################################################################################
+"iatfResolution30A"
+
+
+################################################################################
+#
+#'
+#' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
+#' Diseases Resolution Number 31
+#'
+#' @format A tibble with 92 rows and 7 columns:
+#' \describe{
+#'   \item{\code{linenumber}}{Linenumber}
+#'   \item{\code{text}}{Character string of text about 70 characters}
+#'   \item{\code{source}}{Issuer of resolution}
+#'   \item{\code{type}}{Type of document}
+#'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -814,13 +931,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 32
 #'
-#' @format A tibble with 108 rows and 6 columns:
+#' @format A tibble with 114 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -841,13 +960,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 33
 #'
-#' @format A tibble with 107 rows and 6 columns:
+#' @format A tibble with 113 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -868,13 +989,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 34
 #'
-#' @format A tibble with 122 rows and 6 columns:
+#' @format A tibble with 128 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -895,13 +1018,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 35
 #'
-#' @format A tibble with 140 rows and 6 columns:
+#' @format A tibble with 146 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -922,13 +1047,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 36
 #'
-#' @format A tibble with 90 rows and 6 columns:
+#' @format A tibble with 96 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -949,13 +1076,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 37
 #'
-#' @format A tibble with 49 rows and 6 columns:
+#' @format A tibble with 55 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -976,13 +1105,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 38
 #'
-#' @format A tibble with 650 rows and 6 columns:
+#' @format A tibble with 656 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -1003,13 +1134,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 39
 #'
-#' @format A tibble with 77 rows and 6 columns:
+#' @format A tibble with 83 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -1030,13 +1163,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 40
 #'
-#' @format A tibble with 154 rows and 6 columns:
+#' @format A tibble with 160 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -1057,13 +1192,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 41
 #'
-#' @format A tibble with 167 rows and 6 columns:
+#' @format A tibble with 173 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -1084,13 +1221,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 42
 #'
-#' @format A tibble with 76 rows and 6 columns:
+#' @format A tibble with 82 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -1111,13 +1250,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 43
 #'
-#' @format A tibble with 171 rows and 6 columns:
+#' @format A tibble with 177 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -1138,13 +1279,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 44
 #'
-#' @format A tibble with 56 rows and 6 columns:
+#' @format A tibble with 62 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -1165,13 +1308,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 45
 #'
-#' @format A tibble with 96 rows and 6 columns:
+#' @format A tibble with 102 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -1192,13 +1337,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 46
 #'
-#' @format A tibble with 73 rows and 6 columns:
+#' @format A tibble with 79 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -1219,13 +1366,15 @@
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Resolution Number 46A
 #'
-#' @format A tibble with 148 rows and 6 columns:
+#' @format A tibble with 154 rows and 7 columns:
 #' \describe{
 #'   \item{\code{linenumber}}{Linenumber}
 #'   \item{\code{text}}{Character string of text about 70 characters}
 #'   \item{\code{source}}{Issuer of resolution}
 #'   \item{\code{type}}{Type of document}
 #'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
 #'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
 #' }
 #'
@@ -1323,3 +1472,4 @@
 #
 ################################################################################
 "iatfLinksGazette"
+

@@ -5,8 +5,8 @@ test_that("x is a tibble", {
   expect_is(x, "tbl")
 })
 
-test_that("x has 6 columns", {
-  expect_equal(ncol(x), 6)
+test_that("x has 7 columns", {
+  expect_equal(ncol(x), 7)
 })
 
 test_that("id is numeric", {
@@ -27,8 +27,8 @@ test_that("x is a tibble", {
   expect_is(x, "tbl")
 })
 
-test_that("x has 6 columns", {
-  expect_equal(ncol(x), 6)
+test_that("x has 7 columns", {
+  expect_equal(ncol(x), 7)
 })
 
 test_that("id is numeric", {
