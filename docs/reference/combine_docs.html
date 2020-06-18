@@ -75,7 +75,7 @@ dataset" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">covidphtext</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -141,20 +141,20 @@ dataset</p>
     <p>A tibble of all document types called for.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>combine_docs</span>(<span class='kw'>docs</span> <span class='kw'>=</span> <span class='st'>"resolution"</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 5,381 x 6</span><span>
-#&gt;    linenumber text                               source type       id date      
-#&gt;         </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                              </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>    
-#&gt; </span><span style='color: #555555;'> 1</span><span>          1 WHEREAS, Executive Order No. 168,… IATF   resolu…     1 2020-01-28
-#&gt; </span><span style='color: #555555;'> 2</span><span>          2 for the Management of Emerging In… IATF   resolu…     1 2020-01-28
-#&gt; </span><span style='color: #555555;'> 3</span><span>          3 WHEREAS, the Inter-agency Task Fo… IATF   resolu…     1 2020-01-28
-#&gt; </span><span style='color: #555555;'> 4</span><span>          4 identify, screen, and assist Fili… IATF   resolu…     1 2020-01-28
-#&gt; </span><span style='color: #555555;'> 5</span><span>          5 prevent and/or minimize the entry… IATF   resolu…     1 2020-01-28
-#&gt; </span><span style='color: #555555;'> 6</span><span>          6 as prevent and/or minimize local … IATF   resolu…     1 2020-01-28
-#&gt; </span><span style='color: #555555;'> 7</span><span>          7 WHEREAS, on January 7, 2020, Chin… IATF   resolu…     1 2020-01-28
-#&gt; </span><span style='color: #555555;'> 8</span><span>          8 the viral pneumonia outbreak in W… IATF   resolu…     1 2020-01-28
-#&gt; </span><span style='color: #555555;'> 9</span><span>          9 (2019-nCoV) that has not been pre… IATF   resolu…     1 2020-01-28
-#&gt; </span><span style='color: #555555;'>10</span><span>         10 WHEREAS, as of January 27, 2020, … IATF   resolu…     1 2020-01-28
-#&gt; </span><span style='color: #555555;'># … with 5,371 more rows</span><span></div><div class='input'>
+    <pre class="examples"><div class='input'><span class='fu'>combine_docs</span>(<span class='kw'>docs</span> <span class='kw'>=</span> <span class='st'>"resolution"</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 5,861 x 7</span><span>
+#&gt;    linenumber text                       source type       id section date      
+#&gt;         </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>    
+#&gt; </span><span style='color: #555555;'> 1</span><span>          1 Republic of the Philippin… IATF   resolu…     1 heading 2020-01-28
+#&gt; </span><span style='color: #555555;'> 2</span><span>          2 Department of Health       IATF   resolu…     1 heading 2020-01-28
+#&gt; </span><span style='color: #555555;'> 3</span><span>          3 Office of the Secretary    IATF   resolu…     1 heading 2020-01-28
+#&gt; </span><span style='color: #555555;'> 4</span><span>          4 Inter-Agency Task Force f… IATF   resolu…     1 heading 2020-01-28
+#&gt; </span><span style='color: #555555;'> 5</span><span>          5 Emerging Infectious Disea… IATF   resolu…     1 heading 2020-01-28
+#&gt; </span><span style='color: #555555;'> 6</span><span>          6 28 January 2020            IATF   resolu…     1 heading 2020-01-28
+#&gt; </span><span style='color: #555555;'> 7</span><span>          7 Resolution No. 01          IATF   resolu…     1 heading 2020-01-28
+#&gt; </span><span style='color: #555555;'> 8</span><span>          8 Series of 2020             IATF   resolu…     1 heading 2020-01-28
+#&gt; </span><span style='color: #555555;'> 9</span><span>          9 Recommendations for the M… IATF   resolu…     1 heading 2020-01-28
+#&gt; </span><span style='color: #555555;'>10</span><span>         10 Novel Coronavirus Situati… IATF   resolu…     1 </span><span style='color: #BB0000;'>NA</span><span>      2020-01-28
+#&gt; </span><span style='color: #555555;'># … with 5,851 more rows</span><span></div><div class='input'>
 </div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
