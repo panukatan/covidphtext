@@ -2,6 +2,9 @@
 
 * Updated `get_iatf_pdf` syntax such that is now takes on as first argument a links table produced when making a call to either `get_iatf_links` or `get_iatf_gazette` allowing for piped operations between these set of functions
 
+* Updated IATF resolutions datasets structre to include sections of resolutions
+
+* Added missing resolutions no. 30 and 30A
 
 # covidphtext v0.1.0
 
