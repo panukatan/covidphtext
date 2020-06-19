@@ -43,6 +43,8 @@ combine_docs <- function(docs = c("resolution", "press release")) {
     allDocs <- rbind(allDocs, eval(parse(text = i)))
   }
 
+  allDocs$linenumber <- 1:nrow(allDocs)
+
   allDocs <- tibble::tibble(allDocs)
 
   ## Return allDocs
@@ -56,7 +58,7 @@ combine_docs <- function(docs = c("resolution", "press release")) {
 #' infectious diseases (IATF) resolutions datasets into a single dataset
 #'
 #' @param docs A vector of terms to search for in the document names
-#' @param res A vector of document identifiers to concatenate. Default is 9:19.
+#' @param res A vector of document identifiers to concatenate. Default is 1:46.
 #'
 #' @return A tibble of all the IATF resolutions
 #'
