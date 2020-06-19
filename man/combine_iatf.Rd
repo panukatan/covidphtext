@@ -10,7 +10,7 @@ combine_iatf(docs = "iatfResolution", res = 9:19)
 \arguments{
 \item{docs}{A vector of terms to search for in the document names}
 
-\item{res}{A vector of document identifiers to concatenate. Default is 9:19.}
+\item{res}{A vector of document identifiers to concatenate. Default is 1:46.}
 }
 \value{
 A tibble of all the IATF resolutions
