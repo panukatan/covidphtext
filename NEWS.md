@@ -1,6 +1,8 @@
 # covidphtext v0.2.1
 
-* re-assigned linenumbers to concatenated datasets when using `combine_` functions
+* Re-assigned linenumbers to concatenated datasets when using `combine_` functions
+
+* Added codefactor checking [![CodeFactor](https://www.codefactor.io/repository/github/como-ph/covidphtext/badge)](https://www.codefactor.io/repository/github/como-ph/covidphtext)
 
 # covidphtext v0.2.0
 
