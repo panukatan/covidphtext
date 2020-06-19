@@ -43,7 +43,7 @@ combine_docs <- function(docs = c("resolution", "press release")) {
     allDocs <- rbind(allDocs, eval(parse(text = i)))
   }
 
-  allDocs$linenumber <- 1:nrow(allDocs)
+  allDocs$linenumber <- seq_len(nrow(allDocs))
 
   allDocs <- tibble::tibble(allDocs)
 
