@@ -90,7 +90,7 @@ eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
 oEnd   <- eStart - 1
 
 section <- NULL
-section[1:9]              <- "heading"
+section[1:10]              <- "heading"
 section[pStart:pEnd]      <- "preamble"
 section[oStart:oEnd]      <- "operative"
 section[eStart:length(y)] <- "endorsement"
