@@ -148,12 +148,12 @@ get_iatf_pdf <- function(links, id) {
 ################################################################################
 #
 #'
-#' Get list of links to IATF resolutions from Philippines Officie Gazette
+#' Get list of links to IATF resolutions from Philippines Official Gazette
 #'
 #' @param base URL to the IATF resolutions webpage in the Official Gazette.
 #'   This is currently at \url{https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/}
 #' @param pages A vector of paginated webpages in which the IATF resolutions
-#'   are available. This currently defaults to 1:5 as there are currenlty 5
+#'   are available. This currently defaults to 1:6 as there are currently 6
 #'   pages.
 #'
 #' @return A tibble containing absolute links to all the current IATF
