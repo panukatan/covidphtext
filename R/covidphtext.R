@@ -28,3 +28,6 @@
 #
 ################################################################################
 "_PACKAGE"
+
+## quiets concerns of R CMD check re: iatfLinksGazette
+if(getRversion() >= "2.15.1")  utils::globalVariables("iatfLinksGazette")
