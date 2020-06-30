@@ -11,7 +11,6 @@ maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www
 status](https://github.com/como-ph/covidphtext/workflows/R-CMD-check/badge.svg)](https://github.com/como-ph/covidphtext/actions)
 [![test-coverage](https://github.com/como-ph/covidphtext/workflows/test-coverage/badge.svg)](https://github.com/como-ph/covidphtext/actions?query=workflow%3Atest-coverage)
 [![codecov](https://codecov.io/gh/como-ph/covidphtext/branch/master/graph/badge.svg)](https://codecov.io/gh/como-ph/covidphtext)
-[![CodeFactor](https://www.codefactor.io/repository/github/como-ph/covidphtext/badge)](https://www.codefactor.io/repository/github/como-ph/covidphtext)
 [![DOI](https://zenodo.org/badge/265376181.svg)](https://zenodo.org/badge/latestdoi/265376181)
 <!-- badges: end -->
 
@@ -56,15 +55,13 @@ A description of the available datasets can be found
 [here](https://como-ph.github.io/covidphtext/reference/index.html#section-datasets).
 
 The IATF resolutions are officially available from two online sources:
-
-1.  The Department of Health (DOH)
-    [website](https://www.doh.gov.ph/COVID-19/IATF-Resolutions); and,
-
-2.  The Philippines Official Gazette
-    [website](https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/).
-    The DOH website currenlty only holds IATF resolutions starting from
-    resolution number 9 and later. The Official Gazette on the other
-    hand contains resolutions 1 to the most current.
+1) The Department of Health (DOH)
+[website](https://www.doh.gov.ph/COVID-19/IATF-Resolutions); and, 2) The
+Philippines Official Gazette
+[website](https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/).
+The DOH website currenlty only holds IATF resolutions starting from
+resolution number 9 and later. The Official Gazette on the other hand
+contains resolutions 1 to the most current.
 
 To get a list of the IATF resolutions that are available from the DOH
 website, the function `get_iatf_links()` can be used as follows:
@@ -74,16 +71,16 @@ get_iatf_links()
 #> # A tibble: 41 x 7
 #>       id title              date       source type  url               checked   
 #>    <dbl> <chr>              <date>     <chr>  <chr> <chr>             <date>    
-#>  1     9 Recommendations f… 2020-03-03 IATF   reso… https://doh.gov.… 2020-06-19
-#>  2    10 Recommendations f… 2020-03-09 IATF   reso… https://doh.gov.… 2020-06-19
-#>  3    11 Recommendations f… 2020-03-12 IATF   reso… https://doh.gov.… 2020-06-19
-#>  4    12 Recommendations f… 2020-03-13 IATF   reso… https://doh.gov.… 2020-06-19
-#>  5    13 Recommendations f… 2020-03-17 IATF   reso… https://doh.gov.… 2020-06-19
-#>  6    14 Resolutions Relat… 2020-03-20 IATF   reso… https://doh.gov.… 2020-06-19
-#>  7    15 Resolutions Relat… 2020-03-25 IATF   reso… https://doh.gov.… 2020-06-19
-#>  8    16 Additional Guidel… 2020-03-30 IATF   reso… https://doh.gov.… 2020-06-19
-#>  9    17 Recommendations R… 2020-03-30 IATF   reso… https://doh.gov.… 2020-06-19
-#> 10    18 Recommendations R… 2020-04-01 IATF   reso… https://doh.gov.… 2020-06-19
+#>  1     9 Recommendations f… 2020-03-03 IATF   reso… https://doh.gov.… 2020-06-18
+#>  2    10 Recommendations f… 2020-03-09 IATF   reso… https://doh.gov.… 2020-06-18
+#>  3    11 Recommendations f… 2020-03-12 IATF   reso… https://doh.gov.… 2020-06-18
+#>  4    12 Recommendations f… 2020-03-13 IATF   reso… https://doh.gov.… 2020-06-18
+#>  5    13 Recommendations f… 2020-03-17 IATF   reso… https://doh.gov.… 2020-06-18
+#>  6    14 Resolutions Relat… 2020-03-20 IATF   reso… https://doh.gov.… 2020-06-18
+#>  7    15 Resolutions Relat… 2020-03-25 IATF   reso… https://doh.gov.… 2020-06-18
+#>  8    16 Additional Guidel… 2020-03-30 IATF   reso… https://doh.gov.… 2020-06-18
+#>  9    17 Recommendations R… 2020-03-30 IATF   reso… https://doh.gov.… 2020-06-18
+#> 10    18 Recommendations R… 2020-04-01 IATF   reso… https://doh.gov.… 2020-06-18
 #> # … with 31 more rows
 ```
 
@@ -119,7 +116,7 @@ No. 29, the following command is issued:
 
 ``` r
 get_iatf_pdf(links = iatfLinks, id = 29)
-#> [1] "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//RtmpcuQPsX/iatfResolution29.pdf"
+#> [1] "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//RtmpfmHEGE/iatfResolution29.pdf"
 ```
 
 The command downloads the PDF of the specified IATF Resolution into a
@@ -163,7 +160,7 @@ combine_docs(docs = "resolution")
 #>  7          7 Resolution No. 01          IATF   resolu…     1 heading 2020-01-28
 #>  8          8 Series of 2020             IATF   resolu…     1 heading 2020-01-28
 #>  9          9 Recommendations for the M… IATF   resolu…     1 heading 2020-01-28
-#> 10         10 Novel Coronavirus Situati… IATF   resolu…     1 heading 2020-01-28
+#> 10         10 Novel Coronavirus Situati… IATF   resolu…     1 <NA>    2020-01-28
 #> # … with 5,851 more rows
 ```
 
