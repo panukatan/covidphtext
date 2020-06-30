@@ -116,7 +116,7 @@ No. 29, the following command is issued:
 
 ``` r
 get_iatf_pdf(links = iatfLinks, id = 29)
-#> [1] "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//RtmpSS3EMS/iatfResolution29.pdf"
+#> [1] "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//RtmpBOktnC/iatfResolution29.pdf"
 ```
 
 The command downloads the PDF of the specified IATF Resolution into a
@@ -160,7 +160,7 @@ combine_docs(docs = "resolution")
 #>  7          7 Resolution No. 01          IATF   resolu…     1 heading 2020-01-28
 #>  8          8 Series of 2020             IATF   resolu…     1 heading 2020-01-28
 #>  9          9 Recommendations for the M… IATF   resolu…     1 heading 2020-01-28
-#> 10         10 Novel Coronavirus Situati… IATF   resolu…     1 <NA>    2020-01-28
+#> 10         10 Novel Coronavirus Situati… IATF   resolu…     1 heading 2020-01-28
 #> # … with 6,329 more rows
 ```
 
