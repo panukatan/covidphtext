@@ -29,7 +29,6 @@ Imports:
     rvest,
     magrittr,
     lubridate,
-    httr,
     curl
 Suggests: 
     testthat,
