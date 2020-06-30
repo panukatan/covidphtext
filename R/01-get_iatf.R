@@ -86,8 +86,7 @@ get_iatf_links <- function(base = "https://www.doh.gov.ph/COVID-19/IATF-Resoluti
 #'   pointing to a temporary file/s for PDF of IATF resolution/s required
 #'
 #' @examples
-#' links <- get_iatf_links()
-#' get_iatf_pdf(links = links, id = 29)
+#' get_iatf_pdf(links = iatfLinks, id = 29)
 #'
 #' @export
 #'

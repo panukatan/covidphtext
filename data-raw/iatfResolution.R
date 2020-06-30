@@ -90,12 +90,12 @@ eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
 oEnd   <- eStart - 1
 
 section <- NULL
-section[1:10]             <- "heading"
+section[1:9]              <- "heading"
 section[pStart:pEnd]      <- "preamble"
 section[oStart:oEnd]      <- "operative"
 section[eStart:length(y)] <- "endorsement"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -155,7 +155,7 @@ section[pStart:pEnd]      <- "preamble"
 section[oStart:oEnd]      <- "operative"
 section[eStart:length(y)] <- "endorsement"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -210,7 +210,7 @@ section[pStart:pEnd]      <- "preamble"
 section[oStart:oEnd]      <- "operative"
 section[eStart:length(y)] <- "endorsement"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -266,7 +266,7 @@ section[pStart:pEnd]      <- "preamble"
 section[oStart:oEnd]      <- "operative"
 section[eStart:length(y)] <- "endorsement"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -324,7 +324,7 @@ section[pStart:pEnd]      <- "preamble"
 section[oStart:oEnd]      <- "operative"
 section[eStart:length(y)] <- "endorsement"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -397,7 +397,7 @@ section[pStart:pEnd]      <- "preamble"
 section[oStart:oEnd]      <- "operative"
 section[eStart:length(y)] <- "endorsement"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -463,7 +463,7 @@ section[pStart:pEnd]      <- "preamble"
 section[oStart:oEnd]      <- "operative"
 section[eStart:length(y)] <- "endorsement"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -535,7 +535,7 @@ section[pStart:pEnd]      <- "preamble"
 section[oStart:oEnd]      <- "operative"
 section[eStart:length(y)] <- "endorsement"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -616,7 +616,7 @@ section[pStart:pEnd]      <- "preamble"
 section[oStart:oEnd]      <- "operative"
 section[eStart:length(y)] <- "endorsement"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -713,7 +713,7 @@ section[pStart:pEnd]      <- "preamble"
 section[oStart:oEnd]      <- "operative"
 section[eStart:length(y)] <- "endorsement"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -764,7 +764,7 @@ section[pStart:pEnd]      <- "preamble"
 section[oStart:oEnd]      <- "operative"
 section[eStart:length(y)] <- "endorsement"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -837,7 +837,7 @@ section[pStart:pEnd]      <- "preamble"
 section[oStart:oEnd]      <- "operative"
 section[eStart:length(y)] <- "endorsement"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -971,7 +971,7 @@ section[pStart:pEnd]      <- "preamble"
 section[oStart:oEnd]      <- "operative"
 section[eStart:length(y)] <- "endorsement"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -1078,7 +1078,7 @@ section[pStart:pEnd]      <- "preamble"
 section[oStart:oEnd]      <- "operative"
 section[eStart:length(y)] <- "endorsement"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -1140,7 +1140,7 @@ section[pStart:pEnd]      <- "preamble"
 section[oStart:oEnd]      <- "operative"
 section[eStart:length(y)] <- "endorsement"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -1167,7 +1167,7 @@ y <- stringr::str_trim(string = y, side = "both")
 
 section <- c(rep("heading", 4), rep("operative", length(5:length(y))))
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -1209,7 +1209,7 @@ section[pStart:pEnd]      <- "preamble"
 section[oStart:oEnd]      <- "operative"
 section[eStart:length(y)] <- "endorsement"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -1254,7 +1254,7 @@ section[1:8]             <- "heading"
 section[pStart:pEnd]      <- "preamble"
 section[oStart:oEnd]      <- "operative"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -1298,7 +1298,7 @@ section[pStart:pEnd]      <- "preamble"
 section[oStart:oEnd]      <- "operative"
 section[eStart:length(y)] <- "endorsement"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -1339,7 +1339,7 @@ section[pStart:pEnd]      <- "preamble"
 section[oStart:oEnd]      <- "operative"
 section[eStart:length(y)] <- "endorsement"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -1381,7 +1381,7 @@ section[pStart:pEnd]      <- "preamble"
 section[oStart:oEnd]      <- "operative"
 section[eStart:length(y)] <- "endorsement"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -1422,7 +1422,7 @@ section[pStart:pEnd]      <- "preamble"
 section[oStart:oEnd]      <- "operative"
 section[eStart:length(y)] <- "endorsement"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -1465,7 +1465,7 @@ section[pStart:pEnd]      <- "preamble"
 section[oStart:oEnd]      <- "operative"
 section[eStart:length(y)] <- "endorsement"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -1506,7 +1506,7 @@ section[pStart:pEnd]      <- "preamble"
 section[oStart:oEnd]      <- "operative"
 section[eStart:length(y)] <- "endorsement"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -1548,7 +1548,7 @@ section[oStart:oEnd]      <- "operative"
 section[eStart:eEnd]      <- "endorsement"
 section[cStart:length(y)] <- "certification"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -1590,7 +1590,7 @@ section[oStart:oEnd]      <- "operative"
 section[eStart:eEnd]      <- "endorsement"
 section[cStart:length(y)] <- "certification"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -1632,7 +1632,7 @@ section[oStart:oEnd]      <- "operative"
 section[eStart:eEnd]      <- "endorsement"
 section[cStart:length(y)] <- "certification"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -1691,7 +1691,7 @@ section[oStart:oEnd]      <- "operative"
 section[eStart:eEnd]      <- "endorsement"
 section[cStart:length(y)] <- "certification"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -1755,7 +1755,7 @@ section[oStart:oEnd]      <- "operative"
 section[eStart:eEnd]      <- "endorsement"
 section[cStart:length(y)] <- "certification"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -1812,7 +1812,7 @@ section[pStart:pEnd]      <- "preamble"
 section[oStart:oEnd]      <- "operative"
 section[eStart:length(y)] <- "endorsement"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -1867,7 +1867,7 @@ section[pStart:pEnd]      <- "preamble"
 section[oStart:oEnd]      <- "operative"
 section[eStart:length(y)] <- "endorsement"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -1926,7 +1926,7 @@ section[oStart:oEnd]      <- "operative"
 section[eStart:eEnd]      <- "endorsement"
 section[cStart:length(y)] <- "certification"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -1986,7 +1986,7 @@ section[oStart:oEnd]      <- "operative"
 section[eStart:eEnd]      <- "endorsement"
 section[cStart:length(y)] <- "certification"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -2046,7 +2046,7 @@ section[oStart:oEnd]      <- "operative"
 section[eStart:eEnd]      <- "endorsement"
 section[cStart:length(y)] <- "certification"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -2103,7 +2103,7 @@ section[oStart:oEnd]      <- "operative"
 section[eStart:eEnd]      <- "endorsement"
 section[cStart:length(y)] <- "certification"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -2162,7 +2162,7 @@ section[oStart:oEnd]      <- "operative"
 section[eStart:eEnd]      <- "endorsement"
 section[cStart:length(y)] <- "certification"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -2214,7 +2214,7 @@ section[pStart:pEnd]      <- "preamble"
 section[oStart:oEnd]      <- "operative"
 section[eStart:length(y)] <- "endorsement"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -2266,7 +2266,7 @@ section[pStart:pEnd]      <- "preamble"
 section[oStart:oEnd]      <- "operative"
 section[eStart:length(y)] <- "endorsement"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -2300,7 +2300,7 @@ y[753] <- "IATF Chairperson         IATF Co-Chairperson"
 
 y <- stringr::str_trim(string = y, side = "both")
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "guideline",
@@ -2416,7 +2416,7 @@ section[oStart:oEnd]      <- "operative"
 section[eStart:eEnd]      <- "endorsement"
 section[cStart:length(y)] <- "certification"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -2482,7 +2482,7 @@ section[oStart:oEnd]      <- "operative"
 section[eStart:eEnd]      <- "endorsement"
 section[cStart:length(y)] <- "certification"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -2543,7 +2543,7 @@ section[oStart:oEnd]      <- "operative"
 section[eStart:eEnd]      <- "endorsement"
 section[cStart:length(y)] <- "certification"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -2602,7 +2602,7 @@ section[oStart:oEnd]      <- "operative"
 section[eStart:eEnd]      <- "endorsement"
 section[cStart:length(y)] <- "certification"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -2666,7 +2666,7 @@ section[oStart:oEnd]      <- "operative"
 section[eStart:eEnd]      <- "endorsement"
 section[cStart:length(y)] <- "certification"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -2727,7 +2727,7 @@ section[oStart:oEnd]      <- "operative"
 section[eStart:eEnd]      <- "endorsement"
 section[cStart:length(y)] <- "certification"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -2788,7 +2788,7 @@ section[oStart:oEnd]      <- "operative"
 section[eStart:eEnd]      <- "endorsement"
 section[cStart:length(y)] <- "certification"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -2850,7 +2850,7 @@ section[oStart:oEnd]      <- "operative"
 section[eStart:eEnd]      <- "endorsement"
 section[cStart:length(y)] <- "certification"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -2912,7 +2912,7 @@ section[oStart:oEnd]      <- "operative"
 section[eStart:eEnd]      <- "endorsement"
 section[cStart:length(y)] <- "certification"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -2926,7 +2926,7 @@ iatfResolution46 <- tibble::tibble(y)
 usethis::use_data(iatfResolution46, overwrite = TRUE, compress = "xz")
 
 
-## Resolution 46A ###############################################################
+## Resolution 46A ##############################################################
 
 x <- pdf_ocr_text(pdf = "data-raw/IATF/20200615-IATF-RESOLUTION-NO-46-A.pdf")
 
@@ -2984,7 +2984,7 @@ section[oStart:oEnd]      <- "operative"
 section[eStart:eEnd]      <- "endorsement"
 section[cStart:length(y)] <- "certification"
 
-y <- data.frame(linenumber = seq_len(length(y)),
+y <- data.frame(linenumber = 1:length(y),
                 text = y,
                 source = "IATF",
                 type = "resolution",
@@ -2997,4 +2997,243 @@ iatfResolution46A <- tibble::tibble(y)
 
 usethis::use_data(iatfResolution46A, overwrite = TRUE, compress = "xz")
 
+## Resolution 47 ###############################################################
 
+y <- iatfLinksGazette %>%
+  get_iatf_pdf(id = 47) %>%
+  pdf_ocr_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
+
+## Restructure text
+y <- y[c(1:3, 5:7, 9:47, 57:96, 104:137, 145:173, 180:184, 191:222)]
+y <- y[y != ""]
+
+y[1:3] <- c("Republic of the Philippines",
+            "Inter-Agency Task Force",
+            "for the Management of Emerging Infectious Diseases")
+
+y <- y %>%
+  stringr::str_replace_all(pattern = "\\[ATF", replacement = "IATF") %>%
+  stringr::str_replace_all(pattern = "\\_and\\_", replacement = "and") %>%
+  stringr::str_replace_all(pattern = "\\_\\_\\_", replacement = " ")
+
+y[126] <- "Francisco T. Duque III       Karlo Alexei B. Nograles"
+y[127] <- "Secretary, Department of Health     Cabinet Secretary, Office of the Cabinet Secretary"
+y[128] <- "IATF Chairperson         IATF Co-Chairperson"
+y[139] <- "5. In the Regular Meeting of the IATF held on 19th of JUNE 2020 via teleconference during"
+y[147] <- "IN WITNESS WHEREOF, I have hereunto affixed my signature this 19th day of June"
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+cStart <- which(stringr::str_detect(string = y, pattern = "CERTIFICATE|CERTIFICATION"))
+eEnd   <- cStart - 1
+
+section <- NULL
+section[1:6]              <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:eEnd]      <- "endorsement"
+section[cStart:length(y)] <- "certification"
+
+y <- data.frame(linenumber = 1:length(y),
+                text = y,
+                source = "IATF",
+                type = "resolution",
+                id = 47,
+                section = section,
+                date = as.Date("19/06/2020", format = "%d/%m/%y"),
+                stringsAsFactors = FALSE)
+
+iatfResolution47 <- tibble::tibble(y)
+
+usethis::use_data(iatfResolution47, overwrite = TRUE, compress = "xz")
+
+## Resolution 48 ###############################################################
+
+y <- iatfLinksGazette %>%
+  get_iatf_pdf(id = 48) %>%
+  pdf_ocr_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
+
+## Restructure text
+y <- y[c(1:3, 5:7, 9:46, 53:96, 104:142, 149:152, 154:173, 180:208, 210:212)]
+y <- y[y != ""]
+
+y[1:3] <- c("Republic of the Philippines",
+            "Inter-Agency Task Force",
+            "for the Management of Emerging Infectious Diseases")
+
+y <- y %>%
+  stringr::str_replace_all(pattern = "\\[ATF", replacement = "IATF") %>%
+  stringr::str_replace_all(pattern = "\\_at\\_", replacement = "at") %>%
+  stringr::str_replace_all(pattern = "\\@\\.", replacement = "e.") %>%
+  stringr::str_replace_all(pattern = "\\!3", replacement = "13") %>%
+  stringr::str_replace_all(pattern = "l\\\\\\,", replacement = "1.") %>%
+  stringr::str_replace_all(pattern = "2\\:", replacement = "3.") %>%
+  stringr::str_replace_all(pattern = "\\|", replacement = "I")
+
+y[93]  <- "e. Non-OFWs who may be required to undergo mandatory"
+y[131] <- "Francisco T. Duque III       Karlo Alexei B. Nograles"
+y[132] <- "Secretary, Department of Health     Cabinet Secretary, Office of the Cabinet Secretary"
+y[133] <- "IATF Chairperson         IATF Co-Chairperson"
+y[144] <- "5. In the Regular Meeting of the IATF held on 22nd of JUNE 2020 via teleconference during"
+y[145] <- "which a quorum was present and acted throughout, IATF Resolution No. 48 was"
+y[152] <- "IN WITNESS WHEREOF, I have hereunto affixed my signature this 19th day of June"
+y[154] <- "KENNETH G. RONQUILLO, MD, MPHM"
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+cStart <- which(stringr::str_detect(string = y, pattern = "CERTIFICATE|CERTIFICATION"))
+eEnd   <- cStart - 1
+
+section <- NULL
+section[1:6]              <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:eEnd]      <- "endorsement"
+section[cStart:length(y)] <- "certification"
+
+y <- data.frame(linenumber = 1:length(y),
+                text = y,
+                source = "IATF",
+                type = "resolution",
+                id = 48,
+                section = section,
+                date = as.Date("22/06/2020", format = "%d/%m/%y"),
+                stringsAsFactors = FALSE)
+
+iatfResolution48 <- tibble::tibble(y)
+
+usethis::use_data(iatfResolution48, overwrite = TRUE, compress = "xz")
+
+## Resolution 49 ###############################################################
+
+y <- iatfLinksGazette %>%
+  get_iatf_pdf(id = 49) %>%
+  pdf_ocr_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
+
+## Restructure text
+y <- y[c(1:6, 8:41, 49:57, 60:75, 78:86, 94:111, 118:149)]
+y <- y[y != ""]
+
+y[1:3] <- c("Republic of the Philippines",
+            "Inter-Agency Task Force",
+            "for the Management of Emerging Infectious Diseases")
+
+y <- y %>%
+  stringr::str_replace_all(pattern = "\\[ATF", replacement = "IATF") %>%
+  stringr::str_replace_all(pattern = "l\\.", replacement = "1.") %>%
+  stringr::str_replace_all(pattern = "fo ", replacement = "to ") %>%
+  stringr::str_replace_all(pattern = "2\\%", replacement = "3.") %>%
+  stringr::str_replace_all(pattern = "\\|", replacement = "I")
+
+y[81] <- "Francisco T. Duque III       Karlo Alexei B. Nograles"
+y[82] <- "Secretary, Department of Health     Cabinet Secretary, Office of the Cabinet Secretary"
+y[83] <- "IATF Chairperson         IATF Co-Chairperson"
+y[94] <- "5. In the Regular Meeting of the IATF held on 25th of JUNE 2020 via teleconference during"
+y[95] <- "which a quorum was present and acted throughout, IATF Resolution No. 49 was"
+y[102] <- "IN WITNESS WHEREOF, I have hereunto affixed my signature this 25th day of June"
+y[103] <- "2020, Manila."
+y[104] <- "KENNETH G. RONQUILLO, MD, MPHM"
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+cStart <- which(stringr::str_detect(string = y, pattern = "CERTIFICATE|CERTIFICATION"))
+eEnd   <- cStart - 1
+
+section <- NULL
+section[1:6]              <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:eEnd]      <- "endorsement"
+section[cStart:length(y)] <- "certification"
+
+y <- data.frame(linenumber = 1:length(y),
+                text = y,
+                source = "IATF",
+                type = "resolution",
+                id = 49,
+                section = section,
+                date = as.Date("25/06/2020", format = "%d/%m/%y"),
+                stringsAsFactors = FALSE)
+
+iatfResolution49 <- tibble::tibble(y)
+
+usethis::use_data(iatfResolution49, overwrite = TRUE, compress = "xz")
+
+## Resolution 49 ###############################################################
+
+y <- iatfLinksGazette %>%
+  get_iatf_pdf(id = 50) %>%
+  pdf_ocr_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
+
+## Restructure text
+y <- y[c(1:3, 5:7, 9:56, 64:95)]
+y <- y[y != ""]
+
+y[1:3] <- c("Republic of the Philippines",
+            "Inter-Agency Task Force",
+            "for the Management of Emerging Infectious Diseases")
+
+y <- y %>%
+  stringr::str_replace_all(pattern = "\\[ATF", replacement = "IATF") %>%
+  stringr::str_replace_all(pattern = "lg ", replacement = "1.") %>%
+  stringr::str_replace_all(pattern = "\\|", replacement = "I")
+
+y[30] <- "ii. Ensuring the protection of vulnerable populations;"
+y[37] <- "economy."
+y[40] <- "Francisco T. Duque III       Karlo Alexei B. Nograles"
+y[41] <- "Secretary, Department of Health     Cabinet Secretary, Office of the Cabinet Secretary"
+y[42] <- "IATF Chairperson         IATF Co-Chairperson"
+y[53] <- "5. In the Regular Meeting of the IATF held on 14th of JUNE 2020 via teleconference during"
+y[58] <- "7. The aforesaid resolution has not been altered, modified nor revoked and the same is"
+y[61] <- "IN WITNESS WHEREOF, I have hereunto affixed my signature this 29th day of June"
+y[63] <- "KENNETH G. RONQUILLO, MD, MPHM"
+y[64] <- "Assistant Secretary, Department of Health"
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+cStart <- which(stringr::str_detect(string = y, pattern = "CERTIFICATE|CERTIFICATION"))
+eEnd   <- cStart - 1
+
+section <- NULL
+section[1:6]              <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:eEnd]      <- "endorsement"
+section[cStart:length(y)] <- "certification"
+
+y <- data.frame(linenumber = 1:length(y),
+                text = y,
+                source = "IATF",
+                type = "resolution",
+                id = 50,
+                section = section,
+                date = as.Date("29/06/2020", format = "%d/%m/%y"),
+                stringsAsFactors = FALSE)
+
+iatfResolution50 <- tibble::tibble(y)
+
+usethis::use_data(iatfResolution50, overwrite = TRUE, compress = "xz")

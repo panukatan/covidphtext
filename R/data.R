@@ -1393,6 +1393,122 @@
 #
 #'
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
+#' Diseases Resolution Number 47
+#'
+#' @format A tibble with 151 rows and 7 columns:
+#' \describe{
+#'   \item{\code{linenumber}}{Linenumber}
+#'   \item{\code{text}}{Character string of text about 70 characters}
+#'   \item{\code{source}}{Issuer of resolution}
+#'   \item{\code{type}}{Type of document}
+#'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
+#'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
+#' }
+#'
+#' @examples
+#' iatfResolution47
+#'
+#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/06jun/20200619-IATF-RESOLUTION-NO-47.pdf}
+#'
+#'
+#
+################################################################################
+"iatfResolution47"
+
+
+################################################################################
+#
+#'
+#' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
+#' Diseases Resolution Number 48
+#'
+#' @format A tibble with 156 rows and 7 columns:
+#' \describe{
+#'   \item{\code{linenumber}}{Linenumber}
+#'   \item{\code{text}}{Character string of text about 70 characters}
+#'   \item{\code{source}}{Issuer of resolution}
+#'   \item{\code{type}}{Type of document}
+#'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
+#'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
+#' }
+#'
+#' @examples
+#' iatfResolution48
+#'
+#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/06jun/20200622-IATF-RESOLUTION-NO-48.pdf}
+#'
+#'
+#
+################################################################################
+"iatfResolution48"
+
+
+################################################################################
+#
+#'
+#' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
+#' Diseases Resolution Number 49
+#'
+#' @format A tibble with 106 rows and 7 columns:
+#' \describe{
+#'   \item{\code{linenumber}}{Linenumber}
+#'   \item{\code{text}}{Character string of text about 70 characters}
+#'   \item{\code{source}}{Issuer of resolution}
+#'   \item{\code{type}}{Type of document}
+#'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
+#'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
+#' }
+#'
+#' @examples
+#' iatfResolution49
+#'
+#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/06jun/20200625-IATF-RESOLUTION-NO-49.pdf}
+#'
+#'
+#
+################################################################################
+"iatfResolution49"
+
+
+################################################################################
+#
+#'
+#' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
+#' Diseases Resolution Number 50
+#'
+#' @format A tibble with 65 rows and 7 columns:
+#' \describe{
+#'   \item{\code{linenumber}}{Linenumber}
+#'   \item{\code{text}}{Character string of text about 70 characters}
+#'   \item{\code{source}}{Issuer of resolution}
+#'   \item{\code{type}}{Type of document}
+#'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
+#'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
+#' }
+#'
+#' @examples
+#' iatfResolution50
+#'
+#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/06jun/20200629-IATF-RESOLUTION-NO-50.pdf}
+#'
+#'
+#
+################################################################################
+"iatfResolution50"
+
+
+################################################################################
+#
+#'
+#' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Guideline Omnibus
 #'
 #' @format A tibble with 753 rows and 6 columns:
@@ -1421,7 +1537,7 @@
 #'
 #' IATF resolutions URLs
 #'
-#' @format A tibble with 41 rows and 7 columns:
+#' @format A tibble with 48 rows and 7 columns:
 #' \describe{
 #'   \item{\code{id}}{Unique identifier}
 #'   \item{\code{title}}{Title of resolution}
@@ -1437,7 +1553,7 @@
 #' iatfLinks
 #'
 #' @source \url{https://www.doh.gov.ph/COVID-19/IATF-Resolutions}. Updated
-#'   as of 16 June 2020.
+#'   as of 30 June 2020.
 #'
 #'
 #
@@ -1450,7 +1566,7 @@
 #'
 #' IATF resolutions URLs from the Official Gazette
 #'
-#' @format A tibble with 53 rows and 7 columns:
+#' @format A tibble with 58 rows and 7 columns:
 #' \describe{
 #'   \item{\code{id}}{Unique identifier}
 #'   \item{\code{title}}{Title of resolution}
@@ -1466,7 +1582,7 @@
 #' iatfLinksGazette
 #'
 #' @source \url{https://www.officialgazette.gov.ph/}. Updated
-#'   as of 16 June 2020.
+#'   as of 30 June 2020.
 #'
 #'
 #
