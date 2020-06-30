@@ -86,8 +86,7 @@ get_iatf_links <- function(base = "https://www.doh.gov.ph/COVID-19/IATF-Resoluti
 #'   pointing to a temporary file/s for PDF of IATF resolution/s required
 #'
 #' @examples
-#' links <- get_iatf_links()
-#' get_iatf_pdf(links = links, id = 29)
+#' get_iatf_pdf(links = iatfLinks, id = 29)
 #'
 #' @export
 #'
@@ -134,8 +133,10 @@ get_iatf_pdf <- function(links, id) {
     link <- href[which(availableIDs == i)]
 
     ## Download resolution with current id
-    curl::curl_download(url = link,
-                        destfile = paste(tempdir(), destfile, sep = "/"))
+    #curl::curl_download(url = link,
+    #                    destfile = paste(tempdir(), destfile, sep = "/"))
+    download.file(url = link,
+                  destfile = paste(tempdir(), destfile, sep = "/"))
   }
 
   ## Create vector of directory paths of temporary files
