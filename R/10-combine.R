@@ -58,7 +58,8 @@ combine_docs <- function(docs = c("resolution", "press release")) {
 #' infectious diseases (IATF) resolutions datasets into a single dataset
 #'
 #' @param docs A vector of terms to search for in the document names
-#' @param res A vector of document identifiers to concatenate. Default is 1:46.
+#' @param res A vector of document identifiers to concatenate. Default is
+#'   sequence of resolution IDs found in \code{iatfLinksGazette}
 #'
 #' @return A tibble of all the IATF resolutions
 #'
@@ -71,7 +72,7 @@ combine_docs <- function(docs = c("resolution", "press release")) {
 ################################################################################
 
 combine_iatf <- function(docs = "iatfResolution",
-                         res = 9:19) {
+                         res = seq_len(max(iatfLinksGazette$id, na.rm = TRUE))) {
   ##
   x <- ifelse(res < 10, paste("0", res, sep = ""), res)
 
