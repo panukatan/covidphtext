@@ -5,12 +5,16 @@
 \title{Combine all Inter-Agency Task Force for the management of emerging
 infectious diseases (IATF) resolutions datasets into a single dataset}
 \usage{
-combine_iatf(docs = "iatfResolution", res = 9:19)
+combine_iatf(
+  docs = "iatfResolution",
+  res = seq_len(max(iatfLinksGazette$id, na.rm = TRUE))
+)
 }
 \arguments{
 \item{docs}{A vector of terms to search for in the document names}
 
-\item{res}{A vector of document identifiers to concatenate. Default is 1:46.}
+\item{res}{A vector of document identifiers to concatenate. Default is
+sequence of resolution IDs found in \code{iatfLinksGazette}}
 }
 \value{
 A tibble of all the IATF resolutions
