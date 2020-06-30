@@ -2,7 +2,7 @@
 % Please edit documentation in R/01-get_iatf.R
 \name{get_iatf_gazette}
 \alias{get_iatf_gazette}
-\title{Get list of links to IATF resolutions from Philippines Officie Gazette}
+\title{Get list of links to IATF resolutions from Philippines Official Gazette}
 \usage{
 get_iatf_gazette(base, pages = 1:5)
 }
@@ -11,7 +11,7 @@ get_iatf_gazette(base, pages = 1:5)
 This is currently at \url{https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/}}
 
 \item{pages}{A vector of paginated webpages in which the IATF resolutions
-are available. This currently defaults to 1:5 as there are currenlty 5
+are available. This currently defaults to 1:6 as there are currently 6
 pages.}
 }
 \value{
@@ -31,7 +31,7 @@ A tibble containing absolute links to all the current IATF
 }
 }
 \description{
-Get list of links to IATF resolutions from Philippines Officie Gazette
+Get list of links to IATF resolutions from Philippines Official Gazette
 }
 \examples{
 base <- "https://www.officialgazette.gov.ph/section/laws/other-issuances"

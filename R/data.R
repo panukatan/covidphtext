@@ -657,7 +657,7 @@
 #' @examples
 #' iatfResolution23
 #'
-#' @source \url{https://doh.gov.ph/sites/default/files/health-update/Revised-IATF-Resolution-No.-23.pdf}
+#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/Revised-IATF-Resolution-No.-23.pdf}
 #'
 #'
 #
@@ -686,7 +686,7 @@
 #' @examples
 #' iatfResolution24
 #'
-#' @source \url{https://doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-24.pdf}
+#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-24.pdf}
 #'
 #'
 #
@@ -715,7 +715,7 @@
 #' @examples
 #' iatfResolution25
 #'
-#' @source \url{https://doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-25.pdf}
+#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-25.pdf}
 #'
 #'
 #
@@ -744,7 +744,7 @@
 #' @examples
 #' iatfResolution26
 #'
-#' @source \url{https://doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-26.pdf}
+#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-26.pdf}
 #'
 #'
 #
@@ -773,7 +773,7 @@
 #' @examples
 #' iatfResolution27
 #'
-#' @source \url{https://doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-27.pdf}
+#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-27.pdf}
 #'
 #'
 #
@@ -802,7 +802,7 @@
 #' @examples
 #' iatfResolution28
 #'
-#' @source \url{https://doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-28.pdf}
+#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-28.pdf}
 #'
 #'
 #
@@ -831,7 +831,7 @@
 #' @examples
 #' iatfResolution29
 #'
-#' @source \url{https://doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-29.pdf}
+#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-29.pdf}
 #'
 #'
 #
@@ -917,7 +917,7 @@
 #' @examples
 #' iatfResolution31
 #'
-#' @source \url{https://doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-31.pdf}
+#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-31.pdf}
 #'
 #'
 #
@@ -946,7 +946,7 @@
 #' @examples
 #' iatfResolution32
 #'
-#' @source \url{https://doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-32.pdf}
+#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-32.pdf}
 #'
 #'
 #
@@ -975,7 +975,7 @@
 #' @examples
 #' iatfResolution33
 #'
-#' @source \url{https://doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-33.pdf}
+#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-33.pdf}
 #'
 #'
 #
@@ -1004,7 +1004,7 @@
 #' @examples
 #' iatfResolution34
 #'
-#' @source \url{https://doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-34.pdf}
+#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-34.pdf}
 #'
 #'
 #
@@ -1033,7 +1033,7 @@
 #' @examples
 #' iatfResolution35
 #'
-#' @source \url{https://doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-35.pdf}
+#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-35.pdf}
 #'
 #'
 #
@@ -1062,7 +1062,7 @@
 #' @examples
 #' iatfResolution36
 #'
-#' @source \url{https://doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-36.pdf}
+#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-36.pdf}
 #'
 #'
 #
@@ -1091,7 +1091,7 @@
 #' @examples
 #' iatfResolution37
 #'
-#' @source \url{https://doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-37.pdf}
+#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-37.pdf}
 #'
 #'
 #
@@ -1120,7 +1120,7 @@
 #' @examples
 #' iatfResolution38
 #'
-#' @source \url{https://doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-38.pdf}
+#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-38.pdf}
 #'
 #'
 #
@@ -1149,7 +1149,7 @@
 #' @examples
 #' iatfResolution39
 #'
-#' @source \url{https://doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-39.pdf}
+#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-39.pdf}
 #'
 #'
 #

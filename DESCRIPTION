@@ -1,7 +1,7 @@
 Package: covidphtext
 Type: Package
-Title: Utilities to Extract Text Data From COVID-19-Related Resolutions and 
-    Policies From the Philippines
+Title: Utilities to Extract Text Data from COVID-19-Related Resolutions and 
+    Policies from the Philippines
 Version: 0.2.1
 Authors@R: c(person(given = "Ernest", family = "Guevarra", 
                     email = "ernest@guevarra.io", role = c("aut", "cre"),
@@ -34,6 +34,7 @@ Suggests:
     testthat,
     covr
 Encoding: UTF-8
+Language: en-gb
 LazyData: true
 RoxygenNote: 7.1.1
 URL: https://github.com/como-ph/covidphtext

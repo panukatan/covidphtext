@@ -19,7 +19,7 @@ A tibble with 92 rows and 7 columns:
 }
 }
 \source{
-\url{https://doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-27.pdf}
+\url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-27.pdf}
 }
 \usage{
 iatfResolution27

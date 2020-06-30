@@ -2,7 +2,7 @@
 
 * Re-assigned linenumbers to concatenated datasets when using `combine_` functions
 
-* Added new resolutions up to 30th of June 2020
+* Added new resolutions up to 30 June 2020
 
 # covidphtext v0.2.0
 
@@ -18,7 +18,7 @@
 
 * Added text datasets for each available IATF resolution (as of 16 June 2020, there were 46 resolutions)
 
-* Added CI/CD configuration using Github Actions [![R build status](https://github.com/como-ph/covidphtext/workflows/R-CMD-check/badge.svg)](https://github.com/como-ph/covidphtext/actions)
+* Added CI/CD configuration using GitHub Actions [![R build status](https://github.com/como-ph/covidphtext/workflows/R-CMD-check/badge.svg)](https://github.com/como-ph/covidphtext/actions)
 
 * Added coverage tests ![test-coverage](https://github.com/como-ph/covidphtext/workflows/test-coverage/badge.svg) [![codecov](https://codecov.io/gh/como-ph/covidphtext/branch/master/graph/badge.svg)](https://codecov.io/gh/como-ph/covidphtext)
 
