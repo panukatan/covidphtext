@@ -44,7 +44,7 @@ library(covidphtext)
 
 ### Datasets
 
-`covidphtext` currently has `55` datasets of which `50` are
+`covidphtext` currently has `55` datasets of which `52` are
 COVID-19-related resolutions and policies in the Philippines made by the
 Inter-Agency Task Force for the Management of Emerging Infectious
 Diseases (IATF), 1 is the Omnibus Guidelines on the Implementation of
@@ -116,7 +116,7 @@ No. 29, the following command is issued:
 
 ``` r
 get_iatf_pdf(links = iatfLinks, id = 29)
-#> [1] "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//RtmpBOktnC/iatfResolution29.pdf"
+#> [1] "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//RtmpOKsYTT/iatfResolution29.pdf"
 ```
 
 The command downloads the PDF of the specified IATF Resolution into a

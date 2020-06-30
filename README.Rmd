@@ -47,7 +47,7 @@ library(covidphtext)
 
 ### Datasets
 
-`covidphtext` currently has ```r nrow(utils::data(package = "covidphtext")$results)``` datasets of which ```r nrow(iatfLinksGazette[!is.na(iatfLinksGazette$id), ]) - 3``` are COVID-19-related resolutions and policies in the Philippines made by the Inter-Agency Task Force for the Management of Emerging Infectious Diseases (IATF), 1 is the Omnibus Guidelines on the Implementation of Community Quarantine in the Philippines released by the IATF and 2 are reference lists of links to these resolutions and guidelines.
+`covidphtext` currently has ```r nrow(utils::data(package = "covidphtext")$results)``` datasets of which ```r nrow(iatfLinksGazette[!is.na(iatfLinksGazette$id), ]) - 1``` are COVID-19-related resolutions and policies in the Philippines made by the Inter-Agency Task Force for the Management of Emerging Infectious Diseases (IATF), 1 is the Omnibus Guidelines on the Implementation of Community Quarantine in the Philippines released by the IATF and 2 are reference lists of links to these resolutions and guidelines.
 
 A description of the available datasets can be found [here](https://como-ph.github.io/covidphtext/reference/index.html#section-datasets).
 
