@@ -133,10 +133,8 @@ get_iatf_pdf <- function(links, id) {
     link <- href[which(availableIDs == i)]
 
     ## Download resolution with current id
-    #curl::curl_download(url = link,
-    #                    destfile = paste(tempdir(), destfile, sep = "/"))
-    download.file(url = link,
-                  destfile = paste(tempdir(), destfile, sep = "/"))
+    curl::curl_download(url = link,
+                        destfile = paste(tempdir(), destfile, sep = "/"))
   }
 
   ## Create vector of directory paths of temporary files
