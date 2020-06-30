@@ -5,16 +5,15 @@ url: https://como-ph.github.io/covidphtext
 template:
   params:
     bootswatch: flatly
-    ganalytics:
+    ganalytics: UA-171282455-2
 
-#home:
-  #strip_header: true
-#  links:
-#  - text: Read more about the WHO Growth Standards
-#    href: https://www.who.int/childgrowth/en/
-#
-#  - text: Read more about MUAC-for-age z-scores development
-#    href: https://doi.org/10.1136/bmj.j3423
+home:
+  links:
+  - text: See the DoH page for IATF Resolutions
+    href: http://doh.gov.ph/COVID-19/IATF-Resolutions
+
+  - text: See the Official Gazette pages for IATF Resolutions
+    href: https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/
 
 reference:
 - title: Description
@@ -84,4 +83,8 @@ reference:
   - iatfResolution45
   - iatfResolution46
   - iatfResolution46A
+  - iatfResolution47
+  - iatfResolution48
+  - iatfResolution49
+  - iatfResolution50
   - iatfGuidelineOmnibus
