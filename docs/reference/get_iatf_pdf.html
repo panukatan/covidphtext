@@ -55,6 +55,16 @@
 <![endif]-->
 
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171282455-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-171282455-2');
+</script>
+
 
   </head>
 
@@ -142,8 +152,12 @@ or <code><a href='get_iatf_gazette.html'>get_iatf_gazette()</a></code> functions
   pointing to a temporary file/s for PDF of IATF resolution/s required</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+<<<<<<< HEAD
     <pre class="examples"><div class='input'><span class='no'>links</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='get_iatf_links.html'>get_iatf_links</a></span>()
 <span class='fu'>get_iatf_pdf</span>(<span class='kw'>links</span> <span class='kw'>=</span> <span class='no'>links</span>, <span class='kw'>id</span> <span class='kw'>=</span> <span class='fl'>29</span>)</div><div class='output co'>#&gt; [1] "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//RtmphHgLBY/iatfResolution29.pdf"</div><div class='input'>
+=======
+    <pre class="examples"><div class='input'><span class='no'>links</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='get_iatf_links.html'>get_iatf_links</a></span>()</div><div class='output co'>#&gt; <span class='warning'>Warning: NAs introduced by coercion</span></div><div class='input'><span class='fu'>get_iatf_pdf</span>(<span class='kw'>links</span> <span class='kw'>=</span> <span class='no'>links</span>, <span class='kw'>id</span> <span class='kw'>=</span> <span class='fl'>29</span>)</div><div class='output co'>#&gt; [1] "/var/folders/fk/s0yv8hhn2cs_nfsmzhm4dmhc0000gn/T//Rtmpl6vIdN/iatfResolution29.pdf"</div><div class='input'>
+>>>>>>> 70172fc196460ac72e2c31adf15dc960e841e6b9
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

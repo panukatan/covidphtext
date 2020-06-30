@@ -54,6 +54,16 @@
 <![endif]-->
 
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171282455-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-171282455-2');
+</script>
+
 
   </head>
 
@@ -114,12 +124,23 @@
       <small>Source: <a href='https://github.com/como-ph/covidphtext/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
+<<<<<<< HEAD
+=======
+    <div id="covidphtext-v021" class="section level1">
+<h1 class="page-header" data-toc-text="0.2.1">
+<a href="#covidphtext-v021" class="anchor"></a>covidphtext v0.2.1</h1>
+<ul>
+<li><p>Re-assigned linenumbers to concatenated datasets when using <code>combine_</code> functions</p></li>
+<li><p>Added new resolutions up to 30th of June 2020</p></li>
+</ul>
+</div>
+>>>>>>> 70172fc196460ac72e2c31adf15dc960e841e6b9
     <div id="covidphtext-v020" class="section level1">
 <h1 class="page-header" data-toc-text="0.2.0">
 <a href="#covidphtext-v020" class="anchor"></a>covidphtext v0.2.0</h1>
 <ul>
 <li><p>Updated <code>get_iatf_pdf</code> syntax such that is now takes on as first argument a links table produced when making a call to either <code>get_iatf_links</code> or <code>get_iatf_gazette</code> allowing for piped operations between these set of functions</p></li>
-<li><p>Updated IATF resolutions datasets structre to include sections of resolutions</p></li>
+<li><p>Updated IATF resolutions datasets structure to include sections of resolutions</p></li>
 <li><p>Added missing resolutions no. 30 and 30A</p></li>
 </ul>
 </div>

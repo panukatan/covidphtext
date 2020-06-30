@@ -20,7 +20,6 @@ A temporary directory path or a vector of temporary directory paths
 Get a specific IATF resolution PDF file
 }
 \examples{
-links <- get_iatf_links()
-get_iatf_pdf(links = links, id = 29)
+get_iatf_pdf(links = iatfLinks, id = 29)
 
 }

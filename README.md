@@ -68,9 +68,10 @@ website, the function `get_iatf_links()` can be used as follows:
 
 ``` r
 get_iatf_links()
-#> # A tibble: 41 x 7
+#> # A tibble: 48 x 7
 #>       id title              date       source type  url               checked   
 #>    <dbl> <chr>              <date>     <chr>  <chr> <chr>             <date>    
+<<<<<<< HEAD
 #>  1     9 Recommendations f… 2020-03-03 IATF   reso… https://doh.gov.… 2020-06-18
 #>  2    10 Recommendations f… 2020-03-09 IATF   reso… https://doh.gov.… 2020-06-18
 #>  3    11 Recommendations f… 2020-03-12 IATF   reso… https://doh.gov.… 2020-06-18
@@ -82,6 +83,19 @@ get_iatf_links()
 #>  9    17 Recommendations R… 2020-03-30 IATF   reso… https://doh.gov.… 2020-06-18
 #> 10    18 Recommendations R… 2020-04-01 IATF   reso… https://doh.gov.… 2020-06-18
 #> # … with 31 more rows
+=======
+#>  1     9 Recommendations f… 2020-03-03 IATF   reso… https://doh.gov.… 2020-06-30
+#>  2    10 Recommendations f… 2020-03-09 IATF   reso… https://doh.gov.… 2020-06-30
+#>  3    11 Recommendations f… 2020-03-12 IATF   reso… https://doh.gov.… 2020-06-30
+#>  4    12 Recommendations f… 2020-03-13 IATF   reso… https://doh.gov.… 2020-06-30
+#>  5    13 Recommendations f… 2020-03-17 IATF   reso… https://doh.gov.… 2020-06-30
+#>  6    14 Resolutions Relat… 2020-03-20 IATF   reso… https://doh.gov.… 2020-06-30
+#>  7    15 Resolutions Relat… 2020-03-25 IATF   reso… https://doh.gov.… 2020-06-30
+#>  8    16 Additional Guidel… 2020-03-30 IATF   reso… https://doh.gov.… 2020-06-30
+#>  9    17 Recommendations R… 2020-03-30 IATF   reso… https://doh.gov.… 2020-06-30
+#> 10    18 Recommendations R… 2020-04-01 IATF   reso… https://doh.gov.… 2020-06-30
+#> # … with 38 more rows
+>>>>>>> 70172fc196460ac72e2c31adf15dc960e841e6b9
 ```
 
 Given that the DOH website doesn’t have the first 8 resolutions, this
@@ -116,7 +130,11 @@ No. 29, the following command is issued:
 
 ``` r
 get_iatf_pdf(links = iatfLinks, id = 29)
+<<<<<<< HEAD
 #> [1] "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//RtmpfmHEGE/iatfResolution29.pdf"
+=======
+#> [1] "/var/folders/fk/s0yv8hhn2cs_nfsmzhm4dmhc0000gn/T//RtmptC92gt/iatfResolution29.pdf"
+>>>>>>> 70172fc196460ac72e2c31adf15dc960e841e6b9
 ```
 
 The command downloads the PDF of the specified IATF Resolution into a
