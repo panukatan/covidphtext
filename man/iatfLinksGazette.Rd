@@ -19,7 +19,7 @@ A tibble with 58 rows and 7 columns:
 }
 \source{
 \url{https://www.officialgazette.gov.ph/}. Updated
-  as of 30 June 2020.
+  as of 7 July 2020.
 }
 \usage{
 iatfLinksGazette
