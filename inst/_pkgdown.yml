@@ -23,6 +23,8 @@ reference:
 - title: Extract
   contents:
   - get_iatf_links
+  - list_iatf_pages
+  - get_iatf_pages
   - get_iatf_gazette
   - get_iatf_pdf
 
@@ -87,4 +89,7 @@ reference:
   - iatfResolution48
   - iatfResolution49
   - iatfResolution50
+  - iatfResolution50A
+  - iatfResolution51
+  - iatfResolution52
   - iatfGuidelineOmnibus
