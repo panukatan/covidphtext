@@ -17,7 +17,7 @@ A tibble with 753 rows and 6 columns:
 }
 }
 \source{
-\url{https://www.doh.gov.ph/sites/default/files/health-update/Omnibus-Guidelines-community-quarantine.pdf}
+The Official Gazette of the Republic of the Philippines
 }
 \usage{
 iatfGuidelineOmnibus
