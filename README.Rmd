@@ -64,7 +64,10 @@ Given that the DOH website doesn't have the first 8 resolutions, this function w
 A table of all the IATF resolutions and the URLs to download them can be generated using the newer function `get_iatf_gazette()` as follows:
 
 ```{r usage2, echo = TRUE, eval = FALSE}
-get_iatf_gazette(base = "https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/")
+list_iatf_pages(base = "https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/", 
+                pages = 1:6) %>%
+  get_iatf_pages() %>%
+  get_iatf_gazette()
 ```
 
 ```{r usage2a, echo = FALSE, eval = TRUE}

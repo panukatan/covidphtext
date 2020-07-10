@@ -29,7 +29,8 @@ Imports:
     rvest,
     magrittr,
     lubridate,
-    curl
+    curl,
+    dplyr
 Suggests: 
     testthat,
     covr

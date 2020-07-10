@@ -19,7 +19,7 @@ A tibble with 70 rows and 7 columns:
 }
 }
 \source{
-\url{https://www.officialgazette.gov.ph/downloads/2020/04apr/20200429-IATF-RESOLUTION-NO-30-RRD.pdf}
+The Official Gazette of the Republic of the Philippines
 }
 \usage{
 iatfResolution30

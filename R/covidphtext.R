@@ -24,6 +24,7 @@
 #' @importFrom magrittr %>%
 #' @importFrom lubridate mdy dmy
 #' @importFrom curl curl_download
+#' @importFrom dplyr bind_rows
 #'
 #
 ################################################################################

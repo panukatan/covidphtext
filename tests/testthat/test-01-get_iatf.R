@@ -42,15 +42,16 @@ test_that("path is character", {
   expect_is(get_iatf_pdf(links = links, id = 10), "character")
 })
 
-test_that("filename is correct", {
-  expect_true(stringr::str_detect(get_iatf_pdf(links = links, id = 10),
-                                  pattern = "iatfResolution10.pdf"))
+test_that("name of filename vector is correct", {
+  expect_true(names(get_iatf_pdf(links = links, id = 10)) == "iatfResolution10")
 })
 
 ## Test get_iatf_gazette #######################################################
 base <- "https://www.officialgazette.gov.ph/section/laws/other-issuances"
-
-x <- get_iatf_gazette(base = base, pages = 1)
+agency <- "inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/"
+pages <- list_iatf_pages(base = paste(base, agency, sep = "/"), pages = 1)
+iatfPages <- get_iatf_pages(pages = pages)
+x <- get_iatf_gazette(iatfPages)
 
 test_that("x is a tibble", {
   expect_is(x, "tbl")

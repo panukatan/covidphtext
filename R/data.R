@@ -19,7 +19,7 @@
 #' @examples
 #' iatfResolution01
 #'
-#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/01jan/20200128-IATF-RESOLUTION-NO-1-RRD.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -48,7 +48,7 @@
 #' @examples
 #' iatfResolution02
 #'
-#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/01jan/20200131-IATF-RESOLUTION-NO-2-RRD.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -77,7 +77,7 @@
 #' @examples
 #' iatfResolution03
 #'
-#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/02feb/20200203-IATF-RESOLUTION-NO-3-RRD.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -106,7 +106,7 @@
 #' @examples
 #' iatfResolution04
 #'
-#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/02feb/20200211-IATF-RESOLUTION-NO-4-RRD.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -135,7 +135,7 @@
 #' @examples
 #' iatfResolution05
 #'
-#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/02feb/20200214-IATF-RESOLUTION-NO-5-RRD.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -164,7 +164,7 @@
 #' @examples
 #' iatfResolution06
 #'
-#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/02feb/20200218-IATF-RESOLUTION-NO-6-RRD.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -193,7 +193,7 @@
 #' @examples
 #' iatfResolution07
 #'
-#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/02feb/20200221-IATF-RESOLUTION-NO-7-RRD.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -222,7 +222,7 @@
 #' @examples
 #' iatfResolution08
 #'
-#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/02feb/20200226-IATF-RESOLUTION-NO-8-RRD.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -251,7 +251,7 @@
 #' @examples
 #' iatfResolution09
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-RESO-9.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -280,7 +280,7 @@
 #' @examples
 #' iatfResolution10
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-RESO-10.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -309,7 +309,7 @@
 #' @examples
 #' iatfResolution11
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-RESO-11.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -338,7 +338,7 @@
 #' @examples
 #' iatfResolution12
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-RESO-12.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -367,7 +367,7 @@
 #' @examples
 #' iatfResolution13
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-RESO-13.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -396,7 +396,7 @@
 #' @examples
 #' iatfResolution14
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-RESO-14.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -425,7 +425,7 @@
 #' @examples
 #' iatfResolution15
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-RESO-15.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -454,7 +454,7 @@
 #' @examples
 #' iatfResolution16
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-RESO-16.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -483,7 +483,7 @@
 #' @examples
 #' iatfResolution17
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF\%20Resolution\%20No.\%2017.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -512,7 +512,7 @@
 #' @examples
 #' iatfResolution18
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-RESO-18.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -541,7 +541,7 @@
 #' @examples
 #' iatfResolution19
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF\%20Resolution\%20No.\%2019.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -570,7 +570,7 @@
 #' @examples
 #' iatfResolution20
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-20.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -599,7 +599,7 @@
 #' @examples
 #' iatfResolution21
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/Revised-IATF-Resolution-No.-21.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -628,7 +628,7 @@
 #' @examples
 #' iatfResolution22
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-22.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -657,7 +657,7 @@
 #' @examples
 #' iatfResolution23
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/Revised-IATF-Resolution-No.-23.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -686,7 +686,7 @@
 #' @examples
 #' iatfResolution24
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-24.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -715,7 +715,7 @@
 #' @examples
 #' iatfResolution25
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-25.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -744,7 +744,7 @@
 #' @examples
 #' iatfResolution26
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-26.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -773,7 +773,7 @@
 #' @examples
 #' iatfResolution27
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-27.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -802,7 +802,7 @@
 #' @examples
 #' iatfResolution28
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-28.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -831,8 +831,7 @@
 #' @examples
 #' iatfResolution29
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-29.pdf}
-#'
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #
 ################################################################################
@@ -860,7 +859,7 @@
 #' @examples
 #' iatfResolution30
 #'
-#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/04apr/20200429-IATF-RESOLUTION-NO-30-RRD.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -888,7 +887,7 @@
 #' @examples
 #' iatfResolution30A
 #'
-#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/05may/20200501-IATF-RESOLUTION-NO-30A-RRD.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -917,7 +916,7 @@
 #' @examples
 #' iatfResolution31
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-31.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -946,7 +945,7 @@
 #' @examples
 #' iatfResolution32
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-32.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -975,7 +974,7 @@
 #' @examples
 #' iatfResolution33
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-33.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -1004,7 +1003,7 @@
 #' @examples
 #' iatfResolution34
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-34.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -1033,7 +1032,7 @@
 #' @examples
 #' iatfResolution35
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-35.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -1062,7 +1061,7 @@
 #' @examples
 #' iatfResolution36
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-36.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -1091,7 +1090,7 @@
 #' @examples
 #' iatfResolution37
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-37.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -1120,7 +1119,7 @@
 #' @examples
 #' iatfResolution38
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-38.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -1149,7 +1148,7 @@
 #' @examples
 #' iatfResolution39
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-39.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -1178,7 +1177,7 @@
 #' @examples
 #' iatfResolution40
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF-Resolution-No.-40.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -1207,7 +1206,7 @@
 #' @examples
 #' iatfResolution41
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF_Resolution_No._41.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -1236,7 +1235,7 @@
 #' @examples
 #' iatfResolution42
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF_Resolution_No._42_0.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -1265,7 +1264,7 @@
 #' @examples
 #' iatfResolution43
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF_Resolution_No._43.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -1294,7 +1293,7 @@
 #' @examples
 #' iatfResolution44
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/IATF_Resolution_No._44.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -1323,7 +1322,7 @@
 #' @examples
 #' iatfResolution45
 #'
-#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/06jun/20200610-IATF-RESOLUTION-NO-45.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -1352,7 +1351,7 @@
 #' @examples
 #' iatfResolution46
 #'
-#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/06jun/20200615-IATF-RESOLUTION-NO-46.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -1381,7 +1380,7 @@
 #' @examples
 #' iatfResolution46A
 #'
-#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/06jun/20200615-IATF-RESOLUTION-NO-46-A.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -1410,7 +1409,7 @@
 #' @examples
 #' iatfResolution47
 #'
-#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/06jun/20200619-IATF-RESOLUTION-NO-47.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -1439,7 +1438,7 @@
 #' @examples
 #' iatfResolution48
 #'
-#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/06jun/20200622-IATF-RESOLUTION-NO-48.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -1468,7 +1467,7 @@
 #' @examples
 #' iatfResolution49
 #'
-#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/06jun/20200625-IATF-RESOLUTION-NO-49.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -1497,7 +1496,7 @@
 #' @examples
 #' iatfResolution50
 #'
-#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/06jun/20200629-IATF-RESOLUTION-NO-50.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -1526,7 +1525,7 @@
 #' @examples
 #' iatfResolution50A
 #'
-#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/06jun/20200629-IATF-RESOLUTION-NO-50A.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -1555,7 +1554,7 @@
 #' @examples
 #' iatfResolution51
 #'
-#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/06jun/20200702-IATF-RESOLUTION-NO-51.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -1584,7 +1583,7 @@
 #' @examples
 #' iatfResolution52
 #'
-#' @source \url{https://www.officialgazette.gov.ph/downloads/2020/07jul/20200706-IATF-RESOLUTION-NO-52.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
@@ -1611,7 +1610,7 @@
 #' @examples
 #' iatfGuidelineOmnibus
 #'
-#' @source \url{https://www.doh.gov.ph/sites/default/files/health-update/Omnibus-Guidelines-community-quarantine.pdf}
+#' @source The Official Gazette of the Republic of the Philippines
 #'
 #'
 #
