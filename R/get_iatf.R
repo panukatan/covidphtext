@@ -247,12 +247,13 @@ get_iatf_pages <- function(pages) {
                           rvest::html_nodes(css = ".large-8 .entry-title a") %>%
                           rvest::html_attr(name = "href")
 
-                        source  <- "IATF"
-                        type    <- "resolution"
-                        checked <- Sys.Date()
-
-                        tibble::tibble(iatfID, iatfTitle, iatfDate,
-                                       source, type, iatfURL, checked)
+                        tibble::tibble(iatfID,
+                                       iatfTitle,
+                                       iatfDate,
+                                       source = "IATF",
+                                       type = "resolution",
+                                       iatfURL,
+                                       checked = Sys.Date())
                       })
 
   ## Unlist
