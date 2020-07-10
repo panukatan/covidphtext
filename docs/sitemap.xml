@@ -19,6 +19,9 @@
     <loc>https://como-ph.github.io/covidphtext/reference/get_iatf_links.html</loc>
   </url>
   <url>
+    <loc>https://como-ph.github.io/covidphtext/reference/get_iatf_pages.html</loc>
+  </url>
+  <url>
     <loc>https://como-ph.github.io/covidphtext/reference/get_iatf_pdf.html</loc>
   </url>
   <url>
@@ -185,5 +188,17 @@
   </url>
   <url>
     <loc>https://como-ph.github.io/covidphtext/reference/iatfResolution50.html</loc>
+  </url>
+  <url>
+    <loc>https://como-ph.github.io/covidphtext/reference/iatfResolution50A.html</loc>
+  </url>
+  <url>
+    <loc>https://como-ph.github.io/covidphtext/reference/iatfResolution51.html</loc>
+  </url>
+  <url>
+    <loc>https://como-ph.github.io/covidphtext/reference/iatfResolution52.html</loc>
+  </url>
+  <url>
+    <loc>https://como-ph.github.io/covidphtext/reference/list_iatf_pages.html</loc>
   </url>
 </urlset>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get list of links to IATF resolutions from Department of Health website — get_iatf_links • covidphtext</title>
+<title>Get contents of the IATF pages from the Official Gazette — get_iatf_pages • covidphtext</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Get list of links to IATF resolutions from Department of Health website — get_iatf_links" />
-<meta property="og:description" content="Get list of links to IATF resolutions from Department of Health website" />
+<meta property="og:title" content="Get contents of the IATF pages from the Official Gazette — get_iatf_pages" />
+<meta property="og:description" content="Get contents of the IATF pages from the Official Gazette" />
 
 
 
@@ -121,59 +121,71 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get list of links to IATF resolutions from Department of Health website</h1>
+    <h1>Get contents of the IATF pages from the Official Gazette</h1>
     <small class="dont-index">Source: <a href='https://github.com/como-ph/covidphtext/blob/master/R/get_iatf.R'><code>R/get_iatf.R</code></a></small>
-    <div class="hidden name"><code>get_iatf_links.Rd</code></div>
+    <div class="hidden name"><code>get_iatf_pages.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Get list of links to IATF resolutions from Department of Health website</p>
+    <p>Get contents of the IATF pages from the Official Gazette</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_iatf_links</span>(<span class='kw'>base</span> <span class='kw'>=</span> <span class='st'>"https://www.doh.gov.ph/COVID-19/IATF-Resolutions"</span>)</pre>
+    <pre class="usage"><span class='fu'>get_iatf_pages</span>(<span class='no'>pages</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>base</th>
-      <td><p>URL to the IATF resolutions webpage. This is currently at
-<a href='https://www.doh.gov.ph/COVID-19/IATF-Resolutions'>https://www.doh.gov.ph/COVID-19/IATF-Resolutions</a></p></td>
+      <th>pages</th>
+      <td><p>A character vector of URLs of all pages of the IATF Resolutions
+in the Official Gazette. This can be created using <code>list_iatf_pages</code></p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A tibble containing absolute links to all the current IATF
-  resolutions at time of extraction. The tibble contains the following
-  information:</p>
+  resolutions at time of extraction from the Official Gazette. The tibble
+  contains the following information:</p>
 <ul>
 <li><p><code>id</code>Resolution number</p></li>
 <li><p><code>title</code>Title of resolution</p></li>
 <li><p><code>date</code>Date (in &lt;YYYY-MM-DD&gt; format) resolution was issued</p></li>
 <li><p><code>source</code>Source of resolution. This is by default from IATF</p></li>
 <li><p><code>type</code>Type of document. This is by default a resolution</p></li>
-<li><p><code>url</code>Absolute URL for PDF of resolution</p></li>
+<li><p><code>url</code>Absolute URL for the webpage of the resolution</p></li>
 <li><p><code>checked</code>Date (in &lt;YYYY-MM-DD format) table was extracted. This
     is by default provided by <code><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date()</a></code></p></li>
 </ul>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>get_iatf_links</span>(<span class='kw'>base</span> <span class='kw'>=</span> <span class='st'>"http://www.doh.gov.ph/COVID-19/IATF-Resolutions"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: NAs introduced by coercion</span></div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 59 x 7</span><span>
+    <pre class="examples"><div class='input'><span class='no'>base</span> <span class='kw'>&lt;-</span> <span class='st'>"https://www.officialgazette.gov.ph/section/laws/other-issuances"</span>
+<span class='no'>agency</span> <span class='kw'>&lt;-</span> <span class='st'>"inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/"</span>
+<span class='no'>pages</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='list_iatf_pages.html'>list_iatf_pages</a></span>(<span class='kw'>base</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span>(<span class='no'>base</span>, <span class='no'>agency</span>, <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>"/"</span>), <span class='kw'>pages</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>2</span>)
+<span class='fu'>get_iatf_pages</span>(<span class='kw'>pages</span> <span class='kw'>=</span> <span class='no'>pages</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 20 x 7</span><span>
 #&gt;       id title              date       source type  url               checked   
 #&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>              </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>    
-#&gt; </span><span style='color: #555555;'> 1</span><span>     9 Recommendations f… 2020-03-03 IATF   reso… https://doh.gov.… 2020-07-10
-#&gt; </span><span style='color: #555555;'> 2</span><span>    10 Recommendations f… 2020-03-09 IATF   reso… https://doh.gov.… 2020-07-10
-#&gt; </span><span style='color: #555555;'> 3</span><span>    11 Recommendations f… 2020-03-12 IATF   reso… https://doh.gov.… 2020-07-10
-#&gt; </span><span style='color: #555555;'> 4</span><span>    12 Recommendations f… 2020-03-13 IATF   reso… https://doh.gov.… 2020-07-10
-#&gt; </span><span style='color: #555555;'> 5</span><span>    13 Recommendations f… 2020-03-17 IATF   reso… https://doh.gov.… 2020-07-10
-#&gt; </span><span style='color: #555555;'> 6</span><span>    14 Resolutions Relat… 2020-03-20 IATF   reso… https://doh.gov.… 2020-07-10
-#&gt; </span><span style='color: #555555;'> 7</span><span>    15 Resolutions Relat… 2020-03-25 IATF   reso… https://doh.gov.… 2020-07-10
-#&gt; </span><span style='color: #555555;'> 8</span><span>    16 Additional Guidel… 2020-03-30 IATF   reso… https://doh.gov.… 2020-07-10
-#&gt; </span><span style='color: #555555;'> 9</span><span>    17 Recommendations R… 2020-03-30 IATF   reso… https://doh.gov.… 2020-07-10
-#&gt; </span><span style='color: #555555;'>10</span><span>    18 Recommendations R… 2020-04-01 IATF   reso… https://doh.gov.… 2020-07-10
-#&gt; </span><span style='color: #555555;'># … with 49 more rows</span><span></div><div class='input'>
+#&gt; </span><span style='color: #555555;'> 1</span><span>    53 RESOLUTION NO. 53… 2020-07-09 IATF   reso… https://www.offi… 2020-07-10
+#&gt; </span><span style='color: #555555;'> 2</span><span>    52 RESOLUTION NO. 52… 2020-07-06 IATF   reso… https://www.offi… 2020-07-10
+#&gt; </span><span style='color: #555555;'> 3</span><span>    51 RESOLUTION NO. 51… 2020-07-02 IATF   reso… https://www.offi… 2020-07-10
+#&gt; </span><span style='color: #555555;'> 4</span><span>    </span><span style='color: #BB0000;'>NA</span><span> OMNIBUS GUIDELINE… 2020-07-02 IATF   reso… https://www.offi… 2020-07-10
+#&gt; </span><span style='color: #555555;'> 5</span><span>    50 RESOLUTION NO. 50… 2020-06-29 IATF   reso… https://www.offi… 2020-07-10
+#&gt; </span><span style='color: #555555;'> 6</span><span>    50 RESOLUTION NO. 50… 2020-06-29 IATF   reso… https://www.offi… 2020-07-10
+#&gt; </span><span style='color: #555555;'> 7</span><span>    </span><span style='color: #BB0000;'>NA</span><span> OMNIBUS GUIDELINE… 2020-06-25 IATF   reso… https://www.offi… 2020-07-10
+#&gt; </span><span style='color: #555555;'> 8</span><span>    49 RESOLUTION NO. 49… 2020-06-25 IATF   reso… https://www.offi… 2020-07-10
+#&gt; </span><span style='color: #555555;'> 9</span><span>    48 RESOLUTION NO. 48… 2020-06-22 IATF   reso… https://www.offi… 2020-07-10
+#&gt; </span><span style='color: #555555;'>10</span><span>    47 RESOLUTION NO. 47… 2020-06-19 IATF   reso… https://www.offi… 2020-07-10
+#&gt; </span><span style='color: #555555;'>11</span><span>    46 RESOLUTION NO. 46… 2020-06-15 IATF   reso… https://www.offi… 2020-07-10
+#&gt; </span><span style='color: #555555;'>12</span><span>    46 RESOLUTION NO. 46… 2020-06-15 IATF   reso… https://www.offi… 2020-07-10
+#&gt; </span><span style='color: #555555;'>13</span><span>    45 RESOLUTION NO. 45… 2020-06-10 IATF   reso… https://www.offi… 2020-07-10
+#&gt; </span><span style='color: #555555;'>14</span><span>    44 RESOLUTION NO. 44… 2020-06-08 IATF   reso… https://www.offi… 2020-07-10
+#&gt; </span><span style='color: #555555;'>15</span><span>    </span><span style='color: #BB0000;'>NA</span><span> OMNIBUS GUIDELINE… 2020-06-03 IATF   reso… https://www.offi… 2020-07-10
+#&gt; </span><span style='color: #555555;'>16</span><span>    43 RESOLUTION NO. 43… 2020-06-03 IATF   reso… https://www.offi… 2020-07-10
+#&gt; </span><span style='color: #555555;'>17</span><span>    42 RESOLUTION NO. 42… 2020-06-01 IATF   reso… https://www.offi… 2020-07-10
+#&gt; </span><span style='color: #555555;'>18</span><span>    41 RESOLUTION NO. 41… 2020-05-29 IATF   reso… https://www.offi… 2020-07-10
+#&gt; </span><span style='color: #555555;'>19</span><span>    40 RESOLUTION NO. 40… 2020-05-27 IATF   reso… https://www.offi… 2020-07-10
+#&gt; </span><span style='color: #555555;'>20</span><span>    </span><span style='color: #BB0000;'>NA</span><span> OMNIBUS GUIDELINE… 2020-05-22 IATF   reso… https://www.offi… 2020-07-10</div><div class='input'>
 </div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

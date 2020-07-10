@@ -6,8 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
-Diseases Resolution Number 28 — iatfResolution28 • covidphtext</title>
+<title>List the URL of all pages of the IATF Resolutions in the Official Gazette — list_iatf_pages • covidphtext</title>
 
 
 <!-- jquery -->
@@ -40,10 +39,8 @@ Diseases Resolution Number 28 — iatfResolution28 • covidphtext</title>
 
 
 
-<meta property="og:title" content="COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
-Diseases Resolution Number 28 — iatfResolution28" />
-<meta property="og:description" content="COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
-Diseases Resolution Number 28" />
+<meta property="og:title" content="List the URL of all pages of the IATF Resolutions in the Official Gazette — list_iatf_pages" />
+<meta property="og:description" content="List the URL of all pages of the IATF Resolutions in the Official Gazette" />
 
 
 
@@ -124,54 +121,44 @@ Diseases Resolution Number 28" />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
-Diseases Resolution Number 28</h1>
-    <small class="dont-index">Source: <a href='https://github.com/como-ph/covidphtext/blob/master/R/data.R'><code>R/data.R</code></a></small>
-    <div class="hidden name"><code>iatfResolution28.Rd</code></div>
+    <h1>List the URL of all pages of the IATF Resolutions in the Official Gazette</h1>
+    <small class="dont-index">Source: <a href='https://github.com/como-ph/covidphtext/blob/master/R/get_iatf.R'><code>R/get_iatf.R</code></a></small>
+    <div class="hidden name"><code>list_iatf_pages.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
-Diseases Resolution Number 28</p>
+    <p>List the URL of all pages of the IATF Resolutions in the Official Gazette</p>
     </div>
 
-    <pre class="usage"><span class='no'>iatfResolution28</span></pre>
+    <pre class="usage"><span class='fu'>list_iatf_pages</span>(<span class='no'>base</span>, <span class='no'>pages</span>)</pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>base</th>
+      <td><p>URL to the IATF resolutions webpage in the Official Gazette.
+This is currently at <a href='https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/'>https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/</a></p></td>
+    </tr>
+    <tr>
+      <th>pages</th>
+      <td><p>A vector of paginated webpages in which the IATF resolutions
+are available. This currently defaults to 1:6 as there are currently 6
+pages.</p></td>
+    </tr>
+    </table>
 
-    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble with 108 rows and 7 columns:</p><dl'>
-  <dt><code>linenumber</code></dt><dd><p>Linenumber</p></dd>
-  <dt><code>text</code></dt><dd><p>Character string of text about 70 characters</p></dd>
-  <dt><code>source</code></dt><dd><p>Issuer of resolution</p></dd>
-  <dt><code>type</code></dt><dd><p>Type of document</p></dd>
-  <dt><code>id</code></dt><dd><p>Text document identifier</p></dd>
-  <dt><code>section</code></dt><dd><p>Resolution section - heading, preamble, operative,
-    endorsement, or certification</p></dd>
-  <dt><code>date</code></dt><dd><p>Date in &lt;YYYY-MM-DD&gt; format when resolution was made</p></dd>
-
-</dl>
-
-    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
-
-    <p>The Official Gazette of the Republic of the Philippines</p>
+    <p>A character vector of URLs of all pages of the IATF Resolutions in
+  the Official Gazette</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>iatfResolution28</span></div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 108 x 7</span><span>
-#&gt;    linenumber text                        source type      id section date      
-#&gt;         </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                       </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>    
-#&gt; </span><span style='color: #555555;'> 1</span><span>          1 Republic of the Philippines IATF   resol…    28 heading 2020-04-23
-#&gt; </span><span style='color: #555555;'> 2</span><span>          2 Inter-Agency Task Force     IATF   resol…    28 heading 2020-04-23
-#&gt; </span><span style='color: #555555;'> 3</span><span>          3 for the Management of Emer… IATF   resol…    28 heading 2020-04-23
-#&gt; </span><span style='color: #555555;'> 4</span><span>          4 Resolution No. 28           IATF   resol…    28 heading 2020-04-23
-#&gt; </span><span style='color: #555555;'> 5</span><span>          5 Series of 2020              IATF   resol…    28 heading 2020-04-23
-#&gt; </span><span style='color: #555555;'> 6</span><span>          6 23 April 2020               IATF   resol…    28 heading 2020-04-23
-#&gt; </span><span style='color: #555555;'> 7</span><span>          7 Recommendations relative t… IATF   resol…    28 heading 2020-04-23
-#&gt; </span><span style='color: #555555;'> 8</span><span>          8 of the coronavirus disease… IATF   resol…    28 heading 2020-04-23
-#&gt; </span><span style='color: #555555;'> 9</span><span>          9 WHEREAS, on March 16, 2020… IATF   resol…    28 preamb… 2020-04-23
-#&gt; </span><span style='color: #555555;'>10</span><span>         10 country, the President pla… IATF   resol…    28 preamb… 2020-04-23
-#&gt; </span><span style='color: #555555;'># … with 98 more rows</span><span></div><div class='input'>
-</div></span></pre>
+    <pre class="examples"><div class='input'><span class='no'>base</span> <span class='kw'>&lt;-</span> <span class='st'>"https://www.officialgazette.gov.ph/section/laws/other-issuances"</span>
+<span class='no'>agency</span> <span class='kw'>&lt;-</span> <span class='st'>"inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/"</span>
+<span class='fu'>list_iatf_pages</span>(<span class='kw'>base</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span>(<span class='no'>base</span>, <span class='no'>agency</span>, <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>"/"</span>), <span class='kw'>pages</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>2</span>)</div><div class='output co'>#&gt; [1] "https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions//page/1"
+#&gt; [2] "https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions//page/2"</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
