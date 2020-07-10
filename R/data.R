@@ -1638,7 +1638,7 @@
 #' @examples
 #' iatfLinks
 #'
-#' @source \url{https://www.doh.gov.ph/COVID-19/IATF-Resolutions/}. Updated
+#' @source \url{http://www.doh.gov.ph/COVID-19/IATF-Resolutions/}. Updated
 #'   as of 7 July 2020.
 #'
 #'
