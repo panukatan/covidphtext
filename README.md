@@ -56,7 +56,7 @@ A description of the available datasets can be found
 
 The IATF resolutions are officially available from two online sources:
 1) The Department of Health (DoH)
-[website](https://www.doh.gov.ph/COVID-19/IATF-Resolutions); and, 2) The
+[website](http://www.doh.gov.ph/COVID-19/IATF-Resolutions/); and, 2) The
 Philippines Official Gazette
 [website](https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/).
 The DOH website currently only holds IATF resolutions starting from
@@ -120,16 +120,15 @@ No. 29, the following command is issued:
 ``` r
 get_iatf_pdf(links = iatfLinks, id = 29)
 #>                                                                iatfResolution29 
-#> "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//Rtmpf2abFc/filef32772e75638"
+#> "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//RtmpNPqHrQ/filef67f2f577c85"
 ```
 
 The command downloads the PDF of the specified IATF Resolution into a
-temporary directory (using `tempdir()` function) and assigns it with a
-filename `iatfResolution` followed by the resolution number. For IATF
-Resolution 29, the filename is `iatfResolution29.pdf`. The output of the
-`get_iatf_pdf()` function is a character vector of directory path/s to
-downloaded PDFs as shown above. These paths can then be used when
-working with these files.
+temporary directory (using `tempdir()` function). The output of the
+`get_iatf_pdf()` function is a named character vector of directory
+path/s to downloaded PDFs as shown above. The names of the character
+vector correspond to the resolution number. These paths can then be used
+when working with these files.
 
 The `get_iatf_pdf()` function interfaces with both the DOH and The
 Official Gazette website.

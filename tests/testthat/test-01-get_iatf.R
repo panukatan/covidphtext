@@ -1,5 +1,5 @@
 ## Test get_iatf_links #########################################################
-base <- "http://www.doh.gov.ph/COVID-19/IATF-Resolutions"
+base <- "http://www.doh.gov.ph/COVID-19/IATF-Resolutions/"
 
 x <- get_iatf_links(base = base)
 

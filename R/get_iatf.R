@@ -4,7 +4,7 @@
 #' Get list of links to IATF resolutions from Department of Health website
 #'
 #' @param base URL to the IATF resolutions webpage. This is currently at
-#'   \url{https://www.doh.gov.ph/COVID-19/IATF-Resolutions}
+#'   \url{http://www.doh.gov.ph/COVID-19/IATF-Resolutions/}
 #'
 #' @return A tibble containing absolute links to all the current IATF
 #'   resolutions at time of extraction. The tibble contains the following
@@ -22,7 +22,7 @@
 #' }
 #'
 #' @examples
-#' get_iatf_links(base = "http://www.doh.gov.ph/COVID-19/IATF-Resolutions")
+#' get_iatf_links(base = "http://www.doh.gov.ph/COVID-19/IATF-Resolutions/")
 #'
 #' @export
 #'
