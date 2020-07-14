@@ -7,12 +7,7 @@
 
 [![Lifecycle:
 maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-<!--- 
-[![CRAN status](https://www.r-pkg.org/badges/version/covidphtext)](https://CRAN.R-project.org/package=covidphtext)
-[![CRAN](https://img.shields.io/cran/l/covidphtext.svg)](https://CRAN.R-project.org/package=covidphtext)
-[![CRAN](http://cranlogs.r-pkg.org/badges/covidphtext)]((https://CRAN.R-project.org/package=covidphtext))
-[![CRAN](http://cranlogs.r-pkg.org/badges/grand-total/covidphtext)]((https://CRAN.R-project.org/package=covidphtext))
----> [![R build
+[![R build
 status](https://github.com/como-ph/covidphtext/workflows/R-CMD-check/badge.svg)](https://github.com/como-ph/covidphtext/actions)
 [![test-coverage](https://github.com/como-ph/covidphtext/workflows/test-coverage/badge.svg)](https://github.com/como-ph/covidphtext/actions?query=workflow%3Atest-coverage)
 [![codecov](https://codecov.io/gh/como-ph/covidphtext/branch/master/graph/badge.svg)](https://codecov.io/gh/como-ph/covidphtext)
@@ -125,7 +120,7 @@ No. 29, the following command is issued:
 ``` r
 get_iatf_pdf(links = iatfLinks, id = 29)
 #>                                                                 iatfResolution29 
-#> "/var/folders/fk/s0yv8hhn2cs_nfsmzhm4dmhc0000gn/T//RtmpGF2ok7/file170865ea5b270"
+#> "/var/folders/fk/s0yv8hhn2cs_nfsmzhm4dmhc0000gn/T//RtmpfNe3t4/file1732865cf0868"
 ```
 
 The command downloads the PDF of the specified IATF Resolution into a
