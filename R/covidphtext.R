@@ -14,7 +14,7 @@
 #' @docType package
 #' @name covidphtext
 #' @keywords internal
-#' @importFrom utils data download.file
+#' @importFrom utils data
 #' @importFrom stringr str_to_title str_detect str_wrap str_trim str_subset
 #'   str_split str_split_fixed str_remove_all str_extract str_to_upper
 #'   str_replace
