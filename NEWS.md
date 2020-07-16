@@ -4,6 +4,8 @@
 
 * Added new resolutions up to 30 June 2020
 
+* Added `codefactor` check
+
 # covidphtext v0.2.0
 
 * Updated `get_iatf_pdf` syntax such that is now takes on as first argument a links table produced when making a call to either `get_iatf_links` or `get_iatf_gazette` allowing for piped operations between these set of functions

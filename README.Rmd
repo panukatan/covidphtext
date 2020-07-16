@@ -20,9 +20,14 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+[![CRAN status](https://www.r-pkg.org/badges/version/covidphtext)](https://CRAN.R-project.org/package=covidphtext)
+[![CRAN](https://img.shields.io/cran/l/covidphtext.svg)](https://CRAN.R-project.org/package=covidphtext)
+[![CRAN](http://cranlogs.r-pkg.org/badges/covidphtext)](https://CRAN.R-project.org/package=covidphtext)
+[![CRAN](http://cranlogs.r-pkg.org/badges/grand-total/covidphtext)](https://CRAN.R-project.org/package=covidphtext)
 [![R build status](https://github.com/como-ph/covidphtext/workflows/R-CMD-check/badge.svg)](https://github.com/como-ph/covidphtext/actions)
 [![test-coverage](https://github.com/como-ph/covidphtext/workflows/test-coverage/badge.svg)](https://github.com/como-ph/covidphtext/actions?query=workflow%3Atest-coverage)
 [![codecov](https://codecov.io/gh/como-ph/covidphtext/branch/master/graph/badge.svg)](https://codecov.io/gh/como-ph/covidphtext)
+[![CodeFactor](https://www.codefactor.io/repository/github/como-ph/covidphtext/badge)](https://www.codefactor.io/repository/github/como-ph/covidphtext)
 [![DOI](https://zenodo.org/badge/265376181.svg)](https://zenodo.org/badge/latestdoi/265376181)
 <!-- badges: end -->
 

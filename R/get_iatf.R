@@ -203,7 +203,7 @@ list_iatf_pages <- function(base, pages) {
 #' @examples
 #' base <- "https://www.officialgazette.gov.ph/section/laws/other-issuances"
 #' agency <- "inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/"
-#' pages <- list_iatf_pages(base = paste(base, agency, sep = "/"), pages = 1:2)
+#' pages <- list_iatf_pages(base = paste(base, agency, sep = "/"), pages = 1)
 #' get_iatf_pages(pages = pages)
 #'
 #' @export
@@ -293,7 +293,7 @@ get_iatf_pages <- function(pages) {
 #' @examples
 #' base <- "https://www.officialgazette.gov.ph/section/laws/other-issuances"
 #' agency <- "inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/"
-#' pages <- list_iatf_pages(base = paste(base, agency, sep = "/"), pages = 1:2)
+#' pages <- list_iatf_pages(base = paste(base, agency, sep = "/"), pages = 1)
 #' iatfPages <- get_iatf_pages(pages = pages)
 #' get_iatf_gazette(iatfPages)
 #'

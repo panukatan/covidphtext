@@ -32,7 +32,7 @@ Get contents of the IATF pages from the Official Gazette
 \examples{
 base <- "https://www.officialgazette.gov.ph/section/laws/other-issuances"
 agency <- "inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/"
-pages <- list_iatf_pages(base = paste(base, agency, sep = "/"), pages = 1:2)
+pages <- list_iatf_pages(base = paste(base, agency, sep = "/"), pages = 1)
 get_iatf_pages(pages = pages)
 
 }

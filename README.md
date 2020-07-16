@@ -7,10 +7,16 @@
 
 [![Lifecycle:
 maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/covidphtext)](https://CRAN.R-project.org/package=covidphtext)
+[![CRAN](https://img.shields.io/cran/l/covidphtext.svg)](https://CRAN.R-project.org/package=covidphtext)
+[![CRAN](http://cranlogs.r-pkg.org/badges/covidphtext)](https://CRAN.R-project.org/package=covidphtext)
+[![CRAN](http://cranlogs.r-pkg.org/badges/grand-total/covidphtext)](https://CRAN.R-project.org/package=covidphtext)
 [![R build
 status](https://github.com/como-ph/covidphtext/workflows/R-CMD-check/badge.svg)](https://github.com/como-ph/covidphtext/actions)
 [![test-coverage](https://github.com/como-ph/covidphtext/workflows/test-coverage/badge.svg)](https://github.com/como-ph/covidphtext/actions?query=workflow%3Atest-coverage)
 [![codecov](https://codecov.io/gh/como-ph/covidphtext/branch/master/graph/badge.svg)](https://codecov.io/gh/como-ph/covidphtext)
+[![CodeFactor](https://www.codefactor.io/repository/github/como-ph/covidphtext/badge)](https://www.codefactor.io/repository/github/como-ph/covidphtext)
 [![DOI](https://zenodo.org/badge/265376181.svg)](https://zenodo.org/badge/latestdoi/265376181)
 <!-- badges: end -->
 
@@ -68,20 +74,20 @@ website, the function `get_iatf_links()` can be used as follows:
 
 ``` r
 get_iatf_links()
-#> # A tibble: 59 x 7
+#> # A tibble: 61 x 7
 #>       id title              date       source type  url               checked   
 #>    <dbl> <chr>              <date>     <chr>  <chr> <chr>             <date>    
-#>  1     9 Recommendations f… 2020-03-03 IATF   reso… https://doh.gov.… 2020-07-10
-#>  2    10 Recommendations f… 2020-03-09 IATF   reso… https://doh.gov.… 2020-07-10
-#>  3    11 Recommendations f… 2020-03-12 IATF   reso… https://doh.gov.… 2020-07-10
-#>  4    12 Recommendations f… 2020-03-13 IATF   reso… https://doh.gov.… 2020-07-10
-#>  5    13 Recommendations f… 2020-03-17 IATF   reso… https://doh.gov.… 2020-07-10
-#>  6    14 Resolutions Relat… 2020-03-20 IATF   reso… https://doh.gov.… 2020-07-10
-#>  7    15 Resolutions Relat… 2020-03-25 IATF   reso… https://doh.gov.… 2020-07-10
-#>  8    16 Additional Guidel… 2020-03-30 IATF   reso… https://doh.gov.… 2020-07-10
-#>  9    17 Recommendations R… 2020-03-30 IATF   reso… https://doh.gov.… 2020-07-10
-#> 10    18 Recommendations R… 2020-04-01 IATF   reso… https://doh.gov.… 2020-07-10
-#> # … with 49 more rows
+#>  1     9 Recommendations f… 2020-03-03 IATF   reso… https://doh.gov.… 2020-07-16
+#>  2    10 Recommendations f… 2020-03-09 IATF   reso… https://doh.gov.… 2020-07-16
+#>  3    11 Recommendations f… 2020-03-12 IATF   reso… https://doh.gov.… 2020-07-16
+#>  4    12 Recommendations f… 2020-03-13 IATF   reso… https://doh.gov.… 2020-07-16
+#>  5    13 Recommendations f… 2020-03-17 IATF   reso… https://doh.gov.… 2020-07-16
+#>  6    14 Resolutions Relat… 2020-03-20 IATF   reso… https://doh.gov.… 2020-07-16
+#>  7    15 Resolutions Relat… 2020-03-25 IATF   reso… https://doh.gov.… 2020-07-16
+#>  8    16 Additional Guidel… 2020-03-30 IATF   reso… https://doh.gov.… 2020-07-16
+#>  9    17 Recommendations R… 2020-03-30 IATF   reso… https://doh.gov.… 2020-07-16
+#> 10    18 Recommendations R… 2020-04-01 IATF   reso… https://doh.gov.… 2020-07-16
+#> # … with 51 more rows
 ```
 
 Given that the DOH website doesn’t have the first 8 resolutions, this
@@ -119,8 +125,8 @@ No. 29, the following command is issued:
 
 ``` r
 get_iatf_pdf(links = iatfLinks, id = 29)
-#>                                                                iatfResolution29 
-#> "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//RtmpNPqHrQ/filef67f2f577c85"
+#>                                                               iatfResolution29 
+#> "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//Rtmpf5HZsQ/file441b1d06ffa"
 ```
 
 The command downloads the PDF of the specified IATF Resolution into a

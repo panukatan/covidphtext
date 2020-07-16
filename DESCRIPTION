@@ -38,5 +38,5 @@ Encoding: UTF-8
 Language: en-gb
 LazyData: true
 RoxygenNote: 7.1.1
-URL: https://github.com/como-ph/covidphtext
+URL: https://github.com/como-ph/covidphtext, https://como-ph.github.io/covidphtext
 BugReports: https://github.com/como-ph/covidphtext/issues
