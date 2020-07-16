@@ -126,7 +126,7 @@ No. 29, the following command is issued:
 ``` r
 get_iatf_pdf(links = iatfLinks, id = 29)
 #>                                                               iatfResolution29 
-#> "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//Rtmpf5HZsQ/file441b1d06ffa"
+#> "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//Rtmpcp8QbW/file4c947abe8dd"
 ```
 
 The command downloads the PDF of the specified IATF Resolution into a
