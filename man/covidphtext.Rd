@@ -18,6 +18,7 @@ for use in text analysis.
 Useful links:
 \itemize{
   \item \url{https://github.com/como-ph/covidphtext}
+  \item \url{https://como-ph.github.io/covidphtext}
   \item Report bugs at \url{https://github.com/como-ph/covidphtext/issues}
 }
 
