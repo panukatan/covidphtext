@@ -123,14 +123,22 @@ get_iatf_pdf <- function(links, id) {
   ## Get URLs for specified resolution ids
   link <- href[which(availableIDs %in% linksID)]
 
+  handle <- curl::new_handle()
+
+  handle <- curl::handle_setopt(handle,
+                                useragent = "https://como-ph.github.io/covidphtext")
+
   paths <- lapply(X = link,
                   FUN = function(x) {
+                    ##
+                    Sys.sleep(time = 2)
                     ##
                     destfile <- tempfile()
 
                     ## Download resolution with current id
                     curl::curl_download(url = link,
-                                        destfile = destfile)
+                                        destfile = destfile,
+                                        handle = handle)
 
                     ## Return path
                     return(destfile)

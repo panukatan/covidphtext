@@ -23,7 +23,7 @@
 #' @importFrom rvest html_nodes html_text html_attr html_table
 #' @importFrom magrittr %>%
 #' @importFrom lubridate mdy dmy
-#' @importFrom curl curl_download
+#' @importFrom curl curl_download new_handle handle_setopt
 #' @importFrom dplyr bind_rows
 #'
 #
