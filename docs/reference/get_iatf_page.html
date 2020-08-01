@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get contents of the IATF pages from the Official Gazette — get_iatf_pages • covidphtext</title>
+<title>Get contents of an IATF page from the Official Gazette — get_iatf_page • covidphtext</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Get contents of the IATF pages from the Official Gazette — get_iatf_pages" />
-<meta property="og:description" content="Get contents of the IATF pages from the Official Gazette" />
+<meta property="og:title" content="Get contents of an IATF page from the Official Gazette — get_iatf_page" />
+<meta property="og:description" content="Get contents of an IATF page from the Official Gazette" />
 
 
 
@@ -121,32 +121,32 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get contents of the IATF pages from the Official Gazette</h1>
+    <h1>Get contents of an IATF page from the Official Gazette</h1>
     <small class="dont-index">Source: <a href='https://github.com/como-ph/covidphtext/blob/master/R/get_iatf.R'><code>R/get_iatf.R</code></a></small>
-    <div class="hidden name"><code>get_iatf_pages.Rd</code></div>
+    <div class="hidden name"><code>get_iatf_page.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Get contents of the IATF pages from the Official Gazette</p>
+    <p>Get contents of an IATF page from the Official Gazette</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_iatf_pages</span>(<span class='no'>pages</span>)</pre>
+    <pre class="usage"><span class='fu'>get_iatf_page</span>(<span class='no'>page</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>pages</th>
-      <td><p>A character vector of URLs of all pages of the IATF Resolutions
-in the Official Gazette. This can be created using <code>list_iatf_pages</code></p></td>
+      <th>page</th>
+      <td><p>A URL of a page of the IATF Resolutions in the Official Gazette
+website.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A tibble containing absolute links to all the current IATF
-  resolutions at time of extraction from the Official Gazette. The tibble
-  contains the following information:</p>
+  resolutions from specified page at time of extraction from the Official
+  Gazette. The tibble contains the following information:</p>
 <ul>
 <li><p><code>id</code>Resolution number</p></li>
 <li><p><code>title</code>Title of resolution</p></li>
@@ -161,7 +161,7 @@ in the Official Gazette. This can be created using <code>list_iatf_pages</code><
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='no'>pages</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='list_iatf_pages.html'>list_iatf_pages</a></span>(<span class='kw'>pages</span> <span class='kw'>=</span> <span class='fl'>1</span>)
-<span class='fu'>get_iatf_pages</span>(<span class='kw'>pages</span> <span class='kw'>=</span> <span class='no'>pages</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 10 x 7</span><span>
+<span class='fu'><a href='get_iatf_pages.html'>get_iatf_pages</a></span>(<span class='kw'>pages</span> <span class='kw'>=</span> <span class='no'>pages</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 10 x 7</span><span>
 #&gt;       id title              date       source type  url               checked   
 #&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>              </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>    
 #&gt; </span><span style='color: #555555;'> 1</span><span>    60 RESOLUTION NO. 60… 2020-07-30 IATF   reso… https://www.offi… 2020-08-01
