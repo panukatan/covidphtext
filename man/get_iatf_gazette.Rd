@@ -29,8 +29,6 @@ A tibble containing absolute links to the PDF of the current IATF
 Get list of links to IATF resolutions from Philippines Official Gazette
 }
 \examples{
-pages <- list_iatf_pages(pages = 1)
-iatfPages <- get_iatf_pages(pages = pages)
 get_iatf_gazette(iatfPages[1, ])
 
 

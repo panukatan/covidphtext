@@ -1659,7 +1659,36 @@
 #'   \item{\code{date}}{Date resolution released. Format <YYYY-MM-DD>}
 #'   \item{\code{source}}{Issuing agency. IATF by default}
 #'   \item{\code{type}}{Type of issuance. Resolution by default}
-#'   \item{\code{link}}{Absolute URL of IATF resolution}
+#'   \item{\code{link}}{Absolute URL of IATF resolution page}
+#'   \item{\code{checked}}{Date (in <YYYY-MM_DD> format) information was
+#'     extracted. Default is \code{Sys.Date()}}
+#' }
+#'
+#' @examples
+#' iatfPages
+#'
+#' @source \url{https://www.officialgazette.gov.ph/}. Updated
+#'   as of 1 August 2020.
+#'
+#'
+#
+################################################################################
+"iatfPages"
+
+
+################################################################################
+#
+#'
+#' IATF resolutions URLs for PDF download from the Official Gazette
+#'
+#' @format A tibble with 73 rows and 7 columns:
+#' \describe{
+#'   \item{\code{id}}{Unique identifier}
+#'   \item{\code{title}}{Title of resolution}
+#'   \item{\code{date}}{Date resolution released. Format <YYYY-MM-DD>}
+#'   \item{\code{source}}{Issuing agency. IATF by default}
+#'   \item{\code{type}}{Type of issuance. Resolution by default}
+#'   \item{\code{link}}{Absolute URL of IATF resolution PDF}
 #'   \item{\code{checked}}{Date (in <YYYY-MM_DD> format) information was
 #'     extracted. Default is \code{Sys.Date()}}
 #' }
