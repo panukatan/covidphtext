@@ -2,24 +2,20 @@
 % Please edit documentation in R/get_iatf.R
 \name{get_iatf_pdf}
 \alias{get_iatf_pdf}
-\title{Get a specific IATF resolution PDF file}
+\title{Get a specific IATF resolution PDF file given a link}
 \usage{
-get_iatf_pdf(links, id)
+get_iatf_pdf(link)
 }
 \arguments{
-\item{links}{A links/URLs tibble produced by either \code{get_iatf_links()}
-or \code{get_iatf_gazette()} functions}
-
-\item{id}{A vector of number/s of IATF resolution/s to be retrieved}
+\item{link}{A URL to an IATF resolution PDF}
 }
 \value{
-A temporary directory path or a vector of temporary directory paths
-  pointing to a temporary file/s for PDF of IATF resolution/s required
+A temporary directory path for PDF of IATF resolution specified
 }
 \description{
-Get a specific IATF resolution PDF file
+Get a specific IATF resolution PDF file given a link
 }
 \examples{
-get_iatf_pdf(links = iatfLinksGazette, id = 29)
+get_iatf_pdf(link = iatfLinksGazette$url)
 
 }

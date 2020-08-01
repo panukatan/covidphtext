@@ -2,6 +2,7 @@
 library(rvest)
 library(pdftools)
 library(stringr)
+library(magrittr)
 
 ## Resolutions table ###########################################################
 
@@ -12,8 +13,10 @@ usethis::use_data(iatfLinks, overwrite = TRUE, compress = "xz")
 
 ## Resolutions table ###########################################################
 
-iatfLinksGazette <- get_iatf_gazette(base = "https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/",
-                                     pages = 1:7)
+iatfLinksGazette <- list_iatf_pages(base = "https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/",
+                pages = 1:8) %>%
+  get_iatf_pages() %>%
+  get_iatf_gazette()
 
 usethis::use_data(iatfLinksGazette, overwrite = TRUE, compress = "xz")
 

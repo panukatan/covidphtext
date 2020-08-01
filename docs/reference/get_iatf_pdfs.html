@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Changelog • covidphtext</title>
+<title>Get a specific IATF resolution PDF file — get_iatf_pdfs • covidphtext</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,8 @@
 
 
 
-<meta property="og:title" content="Changelog" />
+<meta property="og:title" content="Get a specific IATF resolution PDF file — get_iatf_pdfs" />
+<meta property="og:description" content="Get a specific IATF resolution PDF file" />
 
 
 
@@ -68,7 +69,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-news">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -120,47 +121,46 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1 data-toc-skip>Changelog <small></small></h1>
-      <small>Source: <a href='https://github.com/como-ph/covidphtext/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
+    <h1>Get a specific IATF resolution PDF file</h1>
+    <small class="dont-index">Source: <a href='https://github.com/como-ph/covidphtext/blob/master/R/get_iatf.R'><code>R/get_iatf.R</code></a></small>
+    <div class="hidden name"><code>get_iatf_pdfs.Rd</code></div>
     </div>
 
-    <div id="covidphtext-v021" class="section level1">
-<h1 class="page-header" data-toc-text="0.2.1">
-<a href="#covidphtext-v021" class="anchor"></a>covidphtext v0.2.1</h1>
-<ul>
-<li><p>Re-assigned linenumbers to concatenated datasets when using <code>combine_</code> functions</p></li>
-<li><p>Added new resolutions up to 30 June 2020</p></li>
-<li><p>Added <code>codefactor</code> check</p></li>
-</ul>
-</div>
-    <div id="covidphtext-v020" class="section level1">
-<h1 class="page-header" data-toc-text="0.2.0">
-<a href="#covidphtext-v020" class="anchor"></a>covidphtext v0.2.0</h1>
-<ul>
-<li><p>Updated <code>get_iatf_pdf</code> syntax such that is now takes on as first argument a links table produced when making a call to either <code>get_iatf_links</code> or <code>get_iatf_gazette</code> allowing for piped operations between these set of functions</p></li>
-<li><p>Updated IATF resolutions datasets structure to include sections of resolutions</p></li>
-<li><p>Added missing resolutions no. 30 and 30A</p></li>
-</ul>
-</div>
-    <div id="covidphtext-v010" class="section level1">
-<h1 class="page-header" data-toc-text="0.1.0">
-<a href="#covidphtext-v010" class="anchor"></a>covidphtext v0.1.0</h1>
-<ul>
-<li><p>Created functions to extract download information for the various IATF resolutions issued either through the Department of Health or the Official Gazette of the Republic of the Philippines</p></li>
-<li><p>Added text datasets for each available IATF resolution (as of 16 June 2020, there were 46 resolutions)</p></li>
-<li><p>Added CI/CD configuration using GitHub Actions <a href="https://github.com/como-ph/covidphtext/actions"><img src="https://github.com/como-ph/covidphtext/workflows/R-CMD-check/badge.svg" alt="R build status"></a></p></li>
-<li><p>Added coverage tests <img src="https://github.com/como-ph/covidphtext/workflows/test-coverage/badge.svg" alt="test-coverage"><a href="https://codecov.io/gh/como-ph/covidphtext"><img src="https://codecov.io/gh/como-ph/covidphtext/branch/master/graph/badge.svg" alt="codecov"></a></p></li>
-<li><p>Added a package website using <code>pkgdown</code></p></li>
-</ul>
-</div>
-  </div>
+    <div class="ref-description">
+    <p>Get a specific IATF resolution PDF file</p>
+    </div>
 
+    <pre class="usage"><span class='fu'>get_iatf_pdfs</span>(<span class='no'>links</span>, <span class='no'>id</span>)</pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>links</th>
+      <td><p>A links/URLs tibble produced by either <code><a href='get_iatf_links.html'>get_iatf_links()</a></code>
+or <code><a href='get_iatf_gazette.html'>get_iatf_gazette()</a></code> functions</p></td>
+    </tr>
+    <tr>
+      <th>id</th>
+      <td><p>A vector of number/s of IATF resolution/s to be retrieved</p></td>
+    </tr>
+    </table>
+
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A temporary directory path or a vector of temporary directory paths
+  pointing to a temporary file/s for PDF of IATF resolution/s required</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>get_iatf_pdfs</span>(<span class='kw'>links</span> <span class='kw'>=</span> <span class='no'>iatfLinksGazette</span>, <span class='kw'>id</span> <span class='kw'>=</span> <span class='fl'>29</span>)</div><div class='output co'>#&gt;                                                                iatfResolution29 
+#&gt; "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//RtmpL4LogS/filea79742e1ee6f" </div><div class='input'>
+</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
     </nav>
   </div>
-
 </div>
 
 

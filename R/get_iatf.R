@@ -22,7 +22,9 @@
 #' }
 #'
 #' @examples
-#' get_iatf_links(base = "http://www.doh.gov.ph/COVID-19/IATF-Resolutions/")
+#' \dontrun{
+#'   get_iatf_links(base = "http://www.doh.gov.ph/COVID-19/IATF-Resolutions/")
+#' }
 #'
 #' @export
 #'
@@ -72,6 +74,45 @@ get_iatf_links <- function(base = "https://www.doh.gov.ph/COVID-19/IATF-Resoluti
 }
 
 
+################################################################################
+#
+#'
+#' Get a specific IATF resolution PDF file given a link
+#'
+#' @param link A URL to an IATF resolution PDF
+#'
+#' @return A temporary directory path for PDF of IATF resolution specified
+#'
+#' @examples
+#' get_iatf_pdf(link = iatfLinksGazette$url)
+#'
+#' @export
+#'
+#
+################################################################################
+
+get_iatf_pdf <- function(link) {
+  destfile <- tempfile()
+
+  handle <- curl::new_handle()
+
+  handle <- curl::handle_setopt(handle,
+                                useragent = "https://como-ph.github.io/covidphtext")
+
+  ## Download resolution with current id
+  x <- try(curl::curl_download(url = link,
+                               destfile = destfile,
+                               handle = handle))
+
+  if(class(x) == "try-error") {
+    message("Unable to download PDF. Returning NA.")
+    destfile <- NA
+  }
+
+  ## Return path
+  return(destfile)
+}
+
 
 ################################################################################
 #
@@ -86,14 +127,14 @@ get_iatf_links <- function(base = "https://www.doh.gov.ph/COVID-19/IATF-Resoluti
 #'   pointing to a temporary file/s for PDF of IATF resolution/s required
 #'
 #' @examples
-#' get_iatf_pdf(links = iatfLinksGazette, id = 29)
+#' get_iatf_pdfs(links = iatfLinksGazette, id = 29)
 #'
 #' @export
 #'
 #
 ################################################################################
 
-get_iatf_pdf <- function(links, id) {
+get_iatf_pdfs <- function(links, id) {
   ## Check that id is numeric
   if(class(id) == "character" | class(id) == "factor") {
     stop("Numeric value required for id. Please try again.", .call = TRUE)
@@ -124,17 +165,7 @@ get_iatf_pdf <- function(links, id) {
   link <- href[which(availableIDs %in% linksID)]
 
   paths <- lapply(X = link,
-                  FUN = function(x) {
-                    ##
-                    destfile <- tempfile()
-
-                    ## Download resolution with current id
-                    curl::curl_download(url = link,
-                                        destfile = destfile)
-
-                    ## Return path
-                    return(destfile)
-                  })
+                  FUN = get_iatf_pdf)
 
   ## Unlist
   paths <- unlist(paths)
@@ -291,11 +322,15 @@ get_iatf_pages <- function(pages) {
 #' }
 #'
 #' @examples
-#' base <- "https://www.officialgazette.gov.ph/section/laws/other-issuances"
-#' agency <- "inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/"
-#' pages <- list_iatf_pages(base = paste(base, agency, sep = "/"), pages = 1)
-#' iatfPages <- get_iatf_pages(pages = pages)
-#' get_iatf_gazette(iatfPages)
+#' \dontrun{
+#'   base <- "https://www.officialgazette.gov.ph/section/laws/other-issuances"
+#'   agency1 <- "inter-agency-task-force-for-the-management-"
+#'   agency2 <- "of-emerging-infectious-diseases-resolutions/"
+#'   pages <- list_iatf_pages(base = paste(base, agency1, agency2, sep = "/"),
+#'                            pages = 1)
+#'   iatfPages <- get_iatf_pages(pages = pages)
+#'   get_iatf_gazette(iatfPages)
+#' }
 #'
 #' @export
 #'

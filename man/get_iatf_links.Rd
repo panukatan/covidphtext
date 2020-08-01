@@ -30,6 +30,8 @@ A tibble containing absolute links to all the current IATF
 Get list of links to IATF resolutions from Department of Health website
 }
 \examples{
-get_iatf_links(base = "http://www.doh.gov.ph/COVID-19/IATF-Resolutions/")
+\dontrun{
+  get_iatf_links(base = "http://www.doh.gov.ph/COVID-19/IATF-Resolutions/")
+}
 
 }

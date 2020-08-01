@@ -15,6 +15,9 @@ home:
   - text: See the Official Gazette pages for IATF Resolutions
     href: https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/
 
+  - text: Learn more about CoMo-PH
+    href: https://como-ph.github.io
+
 reference:
 - title: Description
   contents:
@@ -27,6 +30,7 @@ reference:
   - get_iatf_pages
   - get_iatf_gazette
   - get_iatf_pdf
+  - get_iatf_pdfs
 
 - title: Combine
   contents:
