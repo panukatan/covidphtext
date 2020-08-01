@@ -30,7 +30,7 @@ A tibble containing absolute links to all the current IATF
 Get list of links to IATF resolutions from Department of Health website
 }
 \examples{
-get_iatf_links(base = system.file("extdata", "iatf.html",
-                                  package = "covidphtext"))
+base <- system.file("extdata", "iatf.html", package = "covidphtext")
+get_iatf_links(base = base)
 
 }
