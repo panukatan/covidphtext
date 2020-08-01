@@ -1,3 +1,6 @@
+library(httr)
+set_config(config(ssl_verifypeer = 0L))
+
 ## Test get_iatf_links #########################################################
 base <- "http://www.doh.gov.ph/COVID-19/IATF-Resolutions/"
 
@@ -30,20 +33,20 @@ test_that("url is a url", {
 
 ## Test get_iatf_pdf ###########################################################
 
-links <- iatfLinks
+links <- iatfLinksGazette
 
-test_that("error message shows", {
-  expect_error(get_iatf_pdf(links = links, id = "1"))
-  expect_error(get_iatf_pdf(links = links, id = 1))
-  expect_warning(get_iatf_pdf(links = links, id = c(1, 10)))
-})
+x <- get_iatf_pdfs(links = links, id = 10)
 
 test_that("path is character", {
-  expect_is(get_iatf_pdf(links = links, id = 10), "character")
+  expect_is(x, "character")
 })
 
 test_that("name of filename vector is correct", {
-  expect_true(names(get_iatf_pdf(links = links, id = 10)) == "iatfResolution10")
+  expect_true(names(x) == "iatfResolution10")
+})
+
+test_that("error message shows", {
+  expect_error(get_iatf_pdfs(links = links, id = "1"))
 })
 
 ## Test get_iatf_gazette #######################################################
