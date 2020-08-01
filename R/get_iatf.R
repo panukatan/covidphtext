@@ -18,13 +18,11 @@
 #'   \item \code{type}{Type of document. This is by default a resolution}
 #'   \item \code{url}{Absolute URL for PDF of resolution}
 #'   \item \code{checked}{Date (in <YYYY-MM-DD format) table was extracted. This
-#'     is by default provided by \code{Sys.Date()}}
+#'     is by default provided by \link{Sys.Date}}
 #' }
 #'
 #' @examples
-#' \dontrun{
-#'   get_iatf_links()
-#' }
+#' get_iatf_links()
 #'
 #' @export
 #'
@@ -84,7 +82,7 @@ get_iatf_links <- function(base = base_urls[[1]]) {
 #' @return A temporary directory path for PDF of IATF resolution specified
 #'
 #' @examples
-#' get_iatf_pdf(link = iatfLinksGazette$url)
+#' get_iatf_pdf(link = iatfLinksGazette$url[1])
 #'
 #' @export
 #'
@@ -119,17 +117,15 @@ get_iatf_pdf <- function(link) {
 #'
 #' Get a specific IATF resolution PDF file
 #'
-#' @param links A links/URLs tibble produced by either \code{get_iatf_links()}
-#'   or \code{get_iatf_gazette()} functions
+#' @param links A links/URLs tibble produced by either \link{get_iatf_links}
+#'   or \link{get_iatf_gazette} functions
 #' @param id A vector of number/s of IATF resolution/s to be retrieved
 #'
 #' @return A temporary directory path or a vector of temporary directory paths
 #'   pointing to a temporary file/s for PDF of IATF resolution/s required
 #'
 #' @examples
-#' \dontrun{
-#'   get_iatf_pdfs(links = iatfLinksGazette, id = 29)
-#' }
+#' get_iatf_pdfs(links = iatfLinksGazette, id = 29)
 #'
 #' @export
 #'
@@ -189,14 +185,13 @@ get_iatf_pdfs <- function(links, id) {
 #' @param base URL to the IATF resolutions webpage in the Official Gazette.
 #'   This is currently at \url{https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/}
 #' @param pages A vector of paginated webpages in which the IATF resolutions
-#'   are available. This currently defaults to 1:6 as there are currently 6
-#'   pages.
+#'   are available. There are currently 8 pages.
 #'
 #' @return A character vector of URLs of all pages of the IATF Resolutions in
 #'   the Official Gazette
 #'
 #' @examples
-#' list_iatf_pages(pages = 1:2)
+#' list_iatf_pages(pages = 1)
 #'
 #' @export
 #'
@@ -229,12 +224,12 @@ list_iatf_pages <- function(base = base_urls[[2]],
 #'   \item \code{type}{Type of document. This is by default a resolution}
 #'   \item \code{url}{Absolute URL for the webpage of the resolution}
 #'   \item \code{checked}{Date (in <YYYY-MM-DD format) table was extracted. This
-#'     is by default provided by \code{Sys.Date()}}
+#'     is by default provided by \link{Sys.Date}}
 #' }
 #'
 #' @examples
 #' pages <- list_iatf_pages(pages = 1)
-#' get_iatf_pages(pages = pages)
+#' get_iatf_page(page = pages)
 #'
 #' @export
 #'
@@ -300,7 +295,7 @@ get_iatf_page <- function(page) {
 #' Get contents of the IATF pages from the Official Gazette
 #'
 #' @param pages A character vector of URLs of all pages of the IATF Resolutions
-#'   in the Official Gazette. This can be created using \code{list_iatf_pages}
+#'   in the Official Gazette. This can be created using \link{list_iatf_pages}
 #'
 #' @return A tibble containing absolute links to all the current IATF
 #'   resolutions at time of extraction from the Official Gazette. The tibble
@@ -314,7 +309,7 @@ get_iatf_page <- function(page) {
 #'   \item \code{type}{Type of document. This is by default a resolution}
 #'   \item \code{url}{Absolute URL for the webpage of the resolution}
 #'   \item \code{checked}{Date (in <YYYY-MM-DD format) table was extracted. This
-#'     is by default provided by \code{Sys.Date()}}
+#'     is by default provided by \link{Sys.Date}}
 #' }
 #'
 #' @examples
@@ -348,7 +343,7 @@ get_iatf_pages <- function(pages) {
 #'
 #' Get list of links to IATF resolutions from Philippines Official Gazette
 #'
-#' @param iatfPages A tibble created by a call to \code{get_iatf_pages}.
+#' @param iatfPages A tibble created by a call to \link{get_iatf_pages}.
 #'
 #' @return A tibble containing absolute links to the PDF of the current IATF
 #'   resolutions at time of extraction from the Official Gazette. The tibble
@@ -362,15 +357,14 @@ get_iatf_pages <- function(pages) {
 #'   \item \code{type}{Type of document. This is by default a resolution}
 #'   \item \code{url}{Absolute URL for PDF of resolution}
 #'   \item \code{checked}{Date (in <YYYY-MM-DD format) table was extracted. This
-#'     is by default provided by \code{Sys.Date()}}
+#'     is by default provided by \link{Sys.Date}}
 #' }
 #'
 #' @examples
-#' \dontrun{
-#'   pages <- list_iatf_pages(pages = 1)
-#'   iatfPages <- get_iatf_pages(pages = pages)
-#'   get_iatf_gazette(iatfPages)
-#' }
+#' pages <- list_iatf_pages(pages = 1)
+#' iatfPages <- get_iatf_pages(pages = pages)
+#' get_iatf_gazette(iatfPages[1, ])
+#'
 #'
 #' @export
 #'

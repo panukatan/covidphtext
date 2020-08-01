@@ -104,7 +104,7 @@
 <div id="datasets" class="section level3">
 <h3 class="hasAnchor">
 <a href="#datasets" class="anchor"></a>Datasets</h3>
-<p><code>covidphtext</code> currently has <code>58</code> datasets of which <code>55</code> are COVID-19-related resolutions and policies in the Philippines made by the Inter-Agency Task Force for the Management of Emerging Infectious Diseases (IATF), 1 is the Omnibus Guidelines on the Implementation of Community Quarantine in the Philippines released by the IATF and 2 are reference lists of links to these resolutions and guidelines.</p>
+<p><code>covidphtext</code> currently has <code>58</code> datasets of which <code>65</code> are COVID-19-related resolutions and policies in the Philippines made by the Inter-Agency Task Force for the Management of Emerging Infectious Diseases (IATF), 1 is the Omnibus Guidelines on the Implementation of Community Quarantine in the Philippines released by the IATF and 2 are reference lists of links to these resolutions and guidelines.</p>
 <p>A description of the available datasets can be found <a href="https://como-ph.github.io/covidphtext/reference/index.html#section-datasets">here</a>.</p>
 <p>The IATF resolutions are officially available from two online sources: 1) The Department of Health (DoH) <a href="http://www.doh.gov.ph/COVID-19/IATF-Resolutions/">website</a>; and, 2) The Philippines Official Gazette <a href="https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/">website</a>. The DOH website currently only holds IATF resolutions starting from resolution number 9 and later. The Official Gazette on the other hand contains resolutions 1 to the most current.</p>
 <p>To get a list of the IATF resolutions that are available from the DOH website, the function <code><a href="reference/get_iatf_links.html">get_iatf_links()</a></code> can be used as follows:</p>
@@ -129,24 +129,24 @@
                 <span class="kw">pages</span> <span class="kw">=</span> <span class="fl">1</span>:<span class="fl">6</span>) <span class="kw">%&gt;%</span>
   <span class="fu"><a href="reference/get_iatf_pages.html">get_iatf_pages</a></span>() <span class="kw">%&gt;%</span>
   <span class="fu"><a href="reference/get_iatf_gazette.html">get_iatf_gazette</a></span>()</pre></div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">#&gt; # A tibble: 62 x 7</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="co">#&gt;       id title              date       source type  url               checked   </span></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;              &lt;date&gt;     &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;             &lt;date&gt;    </span></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="co">#&gt;  1    52 RESOLUTION NO. 52… 2020-07-06 IATF   reso… https://www.offi… 2020-07-07</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="co">#&gt;  2    51 RESOLUTION NO. 51… 2020-07-02 IATF   reso… https://www.offi… 2020-07-07</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a><span class="co">#&gt;  3    NA OMNIBUS GUIDELINE… 2020-07-02 IATF   reso… https://www.offi… 2020-07-07</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a><span class="co">#&gt;  4    50 RESOLUTION NO. 50… 2020-06-29 IATF   reso… https://www.offi… 2020-07-07</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a><span class="co">#&gt;  5    50 RESOLUTION NO. 50… 2020-06-29 IATF   reso… https://www.offi… 2020-07-07</span></span>
-<span id="cb5-9"><a href="#cb5-9"></a><span class="co">#&gt;  6    NA OMNIBUS GUIDELINE… 2020-06-25 IATF   reso… https://www.offi… 2020-07-07</span></span>
-<span id="cb5-10"><a href="#cb5-10"></a><span class="co">#&gt;  7    49 RESOLUTION NO. 49… 2020-06-25 IATF   reso… https://www.offi… 2020-07-07</span></span>
-<span id="cb5-11"><a href="#cb5-11"></a><span class="co">#&gt;  8    48 RESOLUTION NO. 48… 2020-06-22 IATF   reso… https://www.offi… 2020-07-07</span></span>
-<span id="cb5-12"><a href="#cb5-12"></a><span class="co">#&gt;  9    47 RESOLUTION NO. 47… 2020-06-19 IATF   reso… https://www.offi… 2020-07-07</span></span>
-<span id="cb5-13"><a href="#cb5-13"></a><span class="co">#&gt; 10    46 RESOLUTION NO. 46… 2020-06-15 IATF   reso… https://www.offi… 2020-07-07</span></span>
-<span id="cb5-14"><a href="#cb5-14"></a><span class="co">#&gt; # … with 52 more rows</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">#&gt; # A tibble: 73 x 7</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="co">#&gt;       id title                        date       source type   url    checked   </span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;                        &lt;date&gt;     &lt;chr&gt;  &lt;chr&gt;  &lt;list&gt; &lt;date&gt;    </span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="co">#&gt;  1    60 RESOLUTION NO. 60-A, s 2020  2020-07-30 IATF   resol… &lt;chr … 2020-08-01</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="co">#&gt;  2    60 RESOLUTION NO. 60, s 2020    2020-07-30 IATF   resol… &lt;chr … 2020-08-01</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="co">#&gt;  3    59 RESOLUTION NO. 59, s 2020    2020-07-28 IATF   resol… &lt;chr … 2020-08-01</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="co">#&gt;  4    58 RESOLUTION NO. 58, s 2020    2020-07-23 IATF   resol… &lt;chr … 2020-08-01</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="co">#&gt;  5    57 RESOLUTION NO. 57, s 2020    2020-07-21 IATF   resol… &lt;chr … 2020-08-01</span></span>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="co">#&gt;  6    NA OMNIBUS GUIDELINES ON THE I… 2020-07-16 IATF   resol… &lt;chr … 2020-08-01</span></span>
+<span id="cb5-10"><a href="#cb5-10"></a><span class="co">#&gt;  7    56 RESOLUTION NO. 56, s 2020    2020-07-16 IATF   resol… &lt;chr … 2020-08-01</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a><span class="co">#&gt;  8    55 RESOLUTION NO. 55-A, s 2020  2020-07-14 IATF   resol… &lt;chr … 2020-08-01</span></span>
+<span id="cb5-12"><a href="#cb5-12"></a><span class="co">#&gt;  9    55 RESOLUTION NO. 55, s 2020    2020-07-14 IATF   resol… &lt;chr … 2020-08-01</span></span>
+<span id="cb5-13"><a href="#cb5-13"></a><span class="co">#&gt; 10    54 RESOLUTION NO. 54, s 2020    2020-07-11 IATF   resol… &lt;chr … 2020-08-01</span></span>
+<span id="cb5-14"><a href="#cb5-14"></a><span class="co">#&gt; # … with 63 more rows</span></span></code></pre></div>
 <p>The actual PDF of the IATF resolutions/s can be downloaded using the <code><a href="reference/get_iatf_pdfs.html">get_iatf_pdfs()</a></code> function. For example, to download IATF Resolution No. 29, the following command is issued:</p>
 <div class="sourceCode" id="cb6"><pre class="r"><span class="fu"><a href="reference/get_iatf_pdfs.html">get_iatf_pdfs</a></span>(<span class="kw">links</span> <span class="kw">=</span> <span class="no">iatfLinks</span>, <span class="kw">id</span> <span class="kw">=</span> <span class="fl">29</span>)
 <span class="co">#&gt;                                                                iatfResolution29 </span>
-<span class="co">#&gt; "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//RtmplDWg8B/file9fee64a946f5"</span></pre></div>
+<span class="co">#&gt; "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//RtmpgZDXeh/filece2b2f80182b"</span></pre></div>
 <p>The command downloads the PDF of the specified IATF Resolution into a temporary directory (using <code><a href="https://rdrr.io/r/base/tempfile.html">tempdir()</a></code> function). The output of the <code><a href="reference/get_iatf_pdfs.html">get_iatf_pdfs()</a></code> function is a named character vector of directory path/s to downloaded PDFs as shown above. The names of the character vector correspond to the resolution number. These paths can then be used when working with these files.</p>
 <p>The <code><a href="reference/get_iatf_pdfs.html">get_iatf_pdfs()</a></code> function interfaces with both the DOH and The Official Gazette website.</p>
 </div>
@@ -252,7 +252,7 @@
 <li><a href="https://CRAN.R-project.org/package=covidphtext"><img src="http://cranlogs.r-pkg.org/badges/grand-total/covidphtext" alt="CRAN"></a></li>
 <li><a href="https://github.com/como-ph/covidphtext/actions"><img src="https://github.com/como-ph/covidphtext/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
 <li><a href="https://github.com/como-ph/covidphtext/actions?query=workflow%3Atest-coverage"><img src="https://github.com/como-ph/covidphtext/workflows/test-coverage/badge.svg" alt="test-coverage"></a></li>
-<li><a href="https://codecov.io/gh/como-ph/covidphtext"><img src="https://codecov.io/gh/como-ph/covidphtext/branch/master/graph/badge.svg" alt="codecov"></a></li>
+<li><a href="https://codecov.io/gh/como-ph/covidphtext?branch=master"><img src="https://codecov.io/gh/como-ph/covidphtext/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
 <li><a href="https://www.codefactor.io/repository/github/como-ph/covidphtext"><img src="https://www.codefactor.io/repository/github/como-ph/covidphtext/badge" alt="CodeFactor"></a></li>
 <li><a href="https://zenodo.org/badge/latestdoi/265376181"><img src="https://zenodo.org/badge/265376181.svg" alt="DOI"></a></li>
 </ul>

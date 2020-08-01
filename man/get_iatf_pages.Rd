@@ -8,7 +8,7 @@ get_iatf_pages(pages)
 }
 \arguments{
 \item{pages}{A character vector of URLs of all pages of the IATF Resolutions
-in the Official Gazette. This can be created using \code{list_iatf_pages}}
+in the Official Gazette. This can be created using \link{list_iatf_pages}}
 }
 \value{
 A tibble containing absolute links to all the current IATF
@@ -23,7 +23,7 @@ A tibble containing absolute links to all the current IATF
   \item \code{type}{Type of document. This is by default a resolution}
   \item \code{url}{Absolute URL for the webpage of the resolution}
   \item \code{checked}{Date (in <YYYY-MM-DD format) table was extracted. This
-    is by default provided by \code{Sys.Date()}}
+    is by default provided by \link{Sys.Date}}
 }
 }
 \description{

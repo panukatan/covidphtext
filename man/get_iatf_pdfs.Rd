@@ -7,8 +7,8 @@
 get_iatf_pdfs(links, id)
 }
 \arguments{
-\item{links}{A links/URLs tibble produced by either \code{get_iatf_links()}
-or \code{get_iatf_gazette()} functions}
+\item{links}{A links/URLs tibble produced by either \link{get_iatf_links}
+or \link{get_iatf_gazette} functions}
 
 \item{id}{A vector of number/s of IATF resolution/s to be retrieved}
 }
@@ -20,8 +20,6 @@ A temporary directory path or a vector of temporary directory paths
 Get a specific IATF resolution PDF file
 }
 \examples{
-\dontrun{
-  get_iatf_pdfs(links = iatfLinksGazette, id = 29)
-}
+get_iatf_pdfs(links = iatfLinksGazette, id = 29)
 
 }

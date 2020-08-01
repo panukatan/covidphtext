@@ -23,7 +23,7 @@ A tibble containing absolute links to all the current IATF
   \item \code{type}{Type of document. This is by default a resolution}
   \item \code{url}{Absolute URL for the webpage of the resolution}
   \item \code{checked}{Date (in <YYYY-MM-DD format) table was extracted. This
-    is by default provided by \code{Sys.Date()}}
+    is by default provided by \link{Sys.Date}}
 }
 }
 \description{
@@ -31,6 +31,6 @@ Get contents of an IATF page from the Official Gazette
 }
 \examples{
 pages <- list_iatf_pages(pages = 1)
-get_iatf_pages(pages = pages)
+get_iatf_page(page = pages)
 
 }

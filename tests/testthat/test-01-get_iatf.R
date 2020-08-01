@@ -58,7 +58,7 @@ test_that("message shows", {
 ## Test get_iatf_gazette #######################################################
 pages <- list_iatf_pages(pages = 1)
 iatfPages <- get_iatf_pages(pages = pages)
-x <- get_iatf_gazette(iatfPages)
+x <- get_iatf_gazette(iatfPages[1, ])
 
 test_that("x is a tibble", {
   expect_is(x, "tbl")
@@ -84,19 +84,8 @@ test_that("url is a url", {
   expect_true(all(stringr::str_detect(x$url, "http")))
 })
 
-
 test_that("x is NA", {
   expect_true(is.na(get_iatf_page(page = list_iatf_pages(pages = 9))))
 })
 
-pages <- list_iatf_pages(pages = 9)
-iatfPages <- get_iatf_page(page = pages)
 
-pages <- list_iatf_pages(pages = 1)
-iatfPages <- rbind(iatfPages, get_iatf_pages(pages = pages))
-
-x <- get_iatf_gazette(iatfPages)
-
-test_that("x is NA", {
-  expect_true(any(is.na(x$url)))
-})

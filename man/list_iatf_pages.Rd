@@ -11,8 +11,7 @@ list_iatf_pages(base = base_urls[[2]], pages)
 This is currently at \url{https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/}}
 
 \item{pages}{A vector of paginated webpages in which the IATF resolutions
-are available. This currently defaults to 1:6 as there are currently 6
-pages.}
+are available. There are currently 8 pages.}
 }
 \value{
 A character vector of URLs of all pages of the IATF Resolutions in
@@ -22,6 +21,6 @@ A character vector of URLs of all pages of the IATF Resolutions in
 List the URL of all pages of the IATF Resolutions in the Official Gazette
 }
 \examples{
-list_iatf_pages(pages = 1:2)
+list_iatf_pages(pages = 1)
 
 }

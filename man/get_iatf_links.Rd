@@ -23,15 +23,13 @@ A tibble containing absolute links to all the current IATF
   \item \code{type}{Type of document. This is by default a resolution}
   \item \code{url}{Absolute URL for PDF of resolution}
   \item \code{checked}{Date (in <YYYY-MM-DD format) table was extracted. This
-    is by default provided by \code{Sys.Date()}}
+    is by default provided by \link{Sys.Date}}
 }
 }
 \description{
 Get list of links to IATF resolutions from Department of Health website
 }
 \examples{
-\dontrun{
-  get_iatf_links()
-}
+get_iatf_links()
 
 }

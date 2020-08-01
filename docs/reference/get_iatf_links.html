@@ -155,14 +155,26 @@
 <li><p><code>type</code>Type of document. This is by default a resolution</p></li>
 <li><p><code>url</code>Absolute URL for PDF of resolution</p></li>
 <li><p><code>checked</code>Date (in &lt;YYYY-MM-DD format) table was extracted. This
-    is by default provided by <code><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date()</a></code></p></li>
+    is by default provided by <a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></p></li>
 </ul>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-  <span class='fu'>get_iatf_links</span>()
-}</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>get_iatf_links</span>()</div><div class='output co'>#&gt; <span class='warning'>Warning: NAs introduced by coercion</span></div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 74 x 7</span><span>
+#&gt;       id title              date       source type  url               checked   
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>              </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>    
+#&gt; </span><span style='color: #555555;'> 1</span><span>     9 Recommendations f… 2020-03-03 IATF   reso… https://doh.gov.… 2020-08-01
+#&gt; </span><span style='color: #555555;'> 2</span><span>    10 Recommendations f… 2020-03-09 IATF   reso… https://doh.gov.… 2020-08-01
+#&gt; </span><span style='color: #555555;'> 3</span><span>    11 Recommendations f… 2020-03-12 IATF   reso… https://doh.gov.… 2020-08-01
+#&gt; </span><span style='color: #555555;'> 4</span><span>    12 Recommendations f… 2020-03-13 IATF   reso… https://doh.gov.… 2020-08-01
+#&gt; </span><span style='color: #555555;'> 5</span><span>    13 Recommendations f… 2020-03-17 IATF   reso… https://doh.gov.… 2020-08-01
+#&gt; </span><span style='color: #555555;'> 6</span><span>    14 Resolutions Relat… 2020-03-20 IATF   reso… https://doh.gov.… 2020-08-01
+#&gt; </span><span style='color: #555555;'> 7</span><span>    15 Resolutions Relat… 2020-03-25 IATF   reso… https://doh.gov.… 2020-08-01
+#&gt; </span><span style='color: #555555;'> 8</span><span>    16 Additional Guidel… 2020-03-30 IATF   reso… https://doh.gov.… 2020-08-01
+#&gt; </span><span style='color: #555555;'> 9</span><span>    17 Recommendations R… 2020-03-30 IATF   reso… https://doh.gov.… 2020-08-01
+#&gt; </span><span style='color: #555555;'>10</span><span>    18 Recommendations R… 2020-04-01 IATF   reso… https://doh.gov.… 2020-08-01
+#&gt; </span><span style='color: #555555;'># … with 64 more rows</span><span></div><div class='input'>
+</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

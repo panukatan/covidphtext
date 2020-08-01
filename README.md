@@ -15,7 +15,8 @@ status](https://www.r-pkg.org/badges/version/covidphtext)](https://CRAN.R-projec
 [![R build
 status](https://github.com/como-ph/covidphtext/workflows/R-CMD-check/badge.svg)](https://github.com/como-ph/covidphtext/actions)
 [![test-coverage](https://github.com/como-ph/covidphtext/workflows/test-coverage/badge.svg)](https://github.com/como-ph/covidphtext/actions?query=workflow%3Atest-coverage)
-[![codecov](https://codecov.io/gh/como-ph/covidphtext/branch/master/graph/badge.svg)](https://codecov.io/gh/como-ph/covidphtext)
+[![Codecov test
+coverage](https://codecov.io/gh/como-ph/covidphtext/branch/master/graph/badge.svg)](https://codecov.io/gh/como-ph/covidphtext?branch=master)
 [![CodeFactor](https://www.codefactor.io/repository/github/como-ph/covidphtext/badge)](https://www.codefactor.io/repository/github/como-ph/covidphtext)
 [![DOI](https://zenodo.org/badge/265376181.svg)](https://zenodo.org/badge/latestdoi/265376181)
 <!-- badges: end -->
@@ -50,7 +51,7 @@ library(covidphtext)
 
 ### Datasets
 
-`covidphtext` currently has `58` datasets of which `55` are
+`covidphtext` currently has `58` datasets of which `65` are
 COVID-19-related resolutions and policies in the Philippines made by the
 Inter-Agency Task Force for the Management of Emerging Infectious
 Diseases (IATF), 1 is the Omnibus Guidelines on the Implementation of
@@ -104,20 +105,20 @@ list_iatf_pages(base = "https://www.officialgazette.gov.ph/section/laws/other-is
   get_iatf_gazette()
 ```
 
-    #> # A tibble: 62 x 7
-    #>       id title              date       source type  url               checked   
-    #>    <dbl> <chr>              <date>     <chr>  <chr> <chr>             <date>    
-    #>  1    52 RESOLUTION NO. 52… 2020-07-06 IATF   reso… https://www.offi… 2020-07-07
-    #>  2    51 RESOLUTION NO. 51… 2020-07-02 IATF   reso… https://www.offi… 2020-07-07
-    #>  3    NA OMNIBUS GUIDELINE… 2020-07-02 IATF   reso… https://www.offi… 2020-07-07
-    #>  4    50 RESOLUTION NO. 50… 2020-06-29 IATF   reso… https://www.offi… 2020-07-07
-    #>  5    50 RESOLUTION NO. 50… 2020-06-29 IATF   reso… https://www.offi… 2020-07-07
-    #>  6    NA OMNIBUS GUIDELINE… 2020-06-25 IATF   reso… https://www.offi… 2020-07-07
-    #>  7    49 RESOLUTION NO. 49… 2020-06-25 IATF   reso… https://www.offi… 2020-07-07
-    #>  8    48 RESOLUTION NO. 48… 2020-06-22 IATF   reso… https://www.offi… 2020-07-07
-    #>  9    47 RESOLUTION NO. 47… 2020-06-19 IATF   reso… https://www.offi… 2020-07-07
-    #> 10    46 RESOLUTION NO. 46… 2020-06-15 IATF   reso… https://www.offi… 2020-07-07
-    #> # … with 52 more rows
+    #> # A tibble: 73 x 7
+    #>       id title                        date       source type   url    checked   
+    #>    <dbl> <chr>                        <date>     <chr>  <chr>  <list> <date>    
+    #>  1    60 RESOLUTION NO. 60-A, s 2020  2020-07-30 IATF   resol… <chr … 2020-08-01
+    #>  2    60 RESOLUTION NO. 60, s 2020    2020-07-30 IATF   resol… <chr … 2020-08-01
+    #>  3    59 RESOLUTION NO. 59, s 2020    2020-07-28 IATF   resol… <chr … 2020-08-01
+    #>  4    58 RESOLUTION NO. 58, s 2020    2020-07-23 IATF   resol… <chr … 2020-08-01
+    #>  5    57 RESOLUTION NO. 57, s 2020    2020-07-21 IATF   resol… <chr … 2020-08-01
+    #>  6    NA OMNIBUS GUIDELINES ON THE I… 2020-07-16 IATF   resol… <chr … 2020-08-01
+    #>  7    56 RESOLUTION NO. 56, s 2020    2020-07-16 IATF   resol… <chr … 2020-08-01
+    #>  8    55 RESOLUTION NO. 55-A, s 2020  2020-07-14 IATF   resol… <chr … 2020-08-01
+    #>  9    55 RESOLUTION NO. 55, s 2020    2020-07-14 IATF   resol… <chr … 2020-08-01
+    #> 10    54 RESOLUTION NO. 54, s 2020    2020-07-11 IATF   resol… <chr … 2020-08-01
+    #> # … with 63 more rows
 
 The actual PDF of the IATF resolutions/s can be downloaded using the
 `get_iatf_pdfs()` function. For example, to download IATF Resolution
@@ -126,7 +127,7 @@ No. 29, the following command is issued:
 ``` r
 get_iatf_pdfs(links = iatfLinks, id = 29)
 #>                                                                iatfResolution29 
-#> "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//RtmplDWg8B/file9fee64a946f5"
+#> "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//RtmpgZDXeh/filece2b2f80182b"
 ```
 
 The command downloads the PDF of the specified IATF Resolution into a
