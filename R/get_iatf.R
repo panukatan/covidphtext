@@ -23,7 +23,7 @@
 #'
 #' @examples
 #' \dontrun{
-#'   get_iatf_links(base = "http://www.doh.gov.ph/COVID-19/IATF-Resolutions/")
+#'   get_iatf_links()
 #' }
 #'
 #' @export
@@ -31,7 +31,7 @@
 #
 ################################################################################
 
-get_iatf_links <- function(base = "https://www.doh.gov.ph/COVID-19/IATF-Resolutions") {
+get_iatf_links <- function(base = base_urls[[1]]) {
   ## Get page table
   xx <- xml2::read_html(base) %>%
     rvest::html_nodes(css = ".panel .view-content .views-table") %>%
@@ -194,18 +194,102 @@ get_iatf_pdfs <- function(links, id) {
 #'   the Official Gazette
 #'
 #' @examples
-#' base <- "https://www.officialgazette.gov.ph/section/laws/other-issuances"
-#' agency <- "inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/"
-#' list_iatf_pages(base = paste(base, agency, sep = "/"), pages = 1:2)
+#' list_iatf_pages(pages = 1:2)
 #'
 #' @export
 #'
 #
 ################################################################################
 
-list_iatf_pages <- function(base, pages) {
-  paste(base, "page", pages, sep = "/")
+list_iatf_pages <- function(base = base_urls[[2]],
+                            pages) {
+  paste(base, "page/", pages, "/", sep = "")
 }
+
+
+################################################################################
+#
+#'
+#' Get contents of an IATF page from the Official Gazette
+#'
+#' @param page A URL of a page of the IATF Resolutions in the Official Gazette
+#'   website.
+#'
+#' @return A tibble containing absolute links to all the current IATF
+#'   resolutions from specified page at time of extraction from the Official
+#'   Gazette. The tibble contains the following information:
+#'
+#' \itemize{
+#'   \item \code{id}{Resolution number}
+#'   \item \code{title}{Title of resolution}
+#'   \item \code{date}{Date (in <YYYY-MM-DD> format) resolution was issued}
+#'   \item \code{source}{Source of resolution. This is by default from IATF}
+#'   \item \code{type}{Type of document. This is by default a resolution}
+#'   \item \code{url}{Absolute URL for the webpage of the resolution}
+#'   \item \code{checked}{Date (in <YYYY-MM-DD format) table was extracted. This
+#'     is by default provided by \code{Sys.Date()}}
+#' }
+#'
+#' @examples
+#' pages <- list_iatf_pages(pages = 1)
+#' get_iatf_pages(pages = pages)
+#'
+#' @export
+#'
+#
+################################################################################
+
+get_iatf_page <- function(page) {
+  ##
+  urlPage <- try(xml2::read_html(x = page))
+
+  ##
+  if(any(class(urlPage) == "try-error")) {
+    urlPage <- NA
+  } else {
+    ## Get current page resolutions Title
+    iatfTitle <- urlPage %>%
+      rvest::html_nodes(css = ".large-8 p") %>%
+      rvest::html_text()
+
+    ## Get current page resolutions id
+    iatfID <- urlPage %>%
+      rvest::html_nodes(css = ".large-8 .entry-title a") %>%
+      rvest::html_text() %>%
+      stringr::str_remove(pattern = "2020|2021|2022") %>%
+      stringr::str_extract(pattern = "[0-9]+") %>%
+      as.numeric()
+
+    iatfID <- ifelse(stringr::str_detect(string = iatfTitle,
+                                         pattern = "OMNIBUS"),
+                     NA, iatfID)
+
+    ## Get current page resolutions Date
+    iatfDate <- urlPage %>%
+      rvest::html_nodes(css = ".large-8 .published") %>%
+      rvest::html_text()
+
+    iatfDate <- lubridate::mdy(iatfDate)
+
+    ## Get current page resolutions URL
+    iatfURL <- urlPage %>%
+      rvest::html_nodes(css = ".large-8 .entry-title a") %>%
+      rvest::html_attr(name = "href")
+
+    ## Concatenate
+    iatfPage <- tibble::tibble(iatfID,
+                               iatfTitle,
+                               iatfDate,
+                               source = "IATF",
+                               type = "resolution",
+                               iatfURL,
+                               checked = Sys.Date())
+  }
+
+  ## Return iatfPage
+  return(iatfPage)
+}
+
 
 
 ################################################################################
@@ -232,9 +316,7 @@ list_iatf_pages <- function(base, pages) {
 #' }
 #'
 #' @examples
-#' base <- "https://www.officialgazette.gov.ph/section/laws/other-issuances"
-#' agency <- "inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/"
-#' pages <- list_iatf_pages(base = paste(base, agency, sep = "/"), pages = 1)
+#' pages <- list_iatf_pages(pages = 1)
 #' get_iatf_pages(pages = pages)
 #'
 #' @export
@@ -245,47 +327,7 @@ list_iatf_pages <- function(base, pages) {
 get_iatf_pages <- function(pages) {
   ##
   iatfPages <- lapply(X = pages,
-                      FUN = function(x) {
-                        ##
-                        urlPage <- xml2::read_html(x = x)
-
-                        ## Get current page resolutions Title
-                        iatfTitle <- urlPage %>%
-                          rvest::html_nodes(css = ".large-8 p") %>%
-                          rvest::html_text()
-
-                        ## Get current page resolutions id
-                        iatfID <- urlPage %>%
-                          rvest::html_nodes(css = ".large-8 .entry-title a") %>%
-                          rvest::html_text() %>%
-                          stringr::str_remove(pattern = "2020") %>%
-                          stringr::str_extract(pattern = "[0-9]+") %>%
-                          as.numeric()
-
-                        iatfID <- ifelse(stringr::str_detect(string = iatfTitle,
-                                                             pattern = "OMNIBUS"),
-                                         NA, iatfID)
-
-                        ## Get current page resolutions Date
-                        iatfDate <- urlPage %>%
-                          rvest::html_nodes(css = ".large-8 .published") %>%
-                          rvest::html_text()
-
-                        iatfDate <- lubridate::mdy(iatfDate)
-
-                        ## Get current page resolutions URL
-                        iatfURL <- urlPage %>%
-                          rvest::html_nodes(css = ".large-8 .entry-title a") %>%
-                          rvest::html_attr(name = "href")
-
-                        tibble::tibble(iatfID,
-                                       iatfTitle,
-                                       iatfDate,
-                                       source = "IATF",
-                                       type = "resolution",
-                                       iatfURL,
-                                       checked = Sys.Date())
-                      })
+                      FUN = get_iatf_page)
 
   ## Unlist
   iatfPages <- dplyr::bind_rows(iatfPages, .id = NULL)
@@ -323,11 +365,7 @@ get_iatf_pages <- function(pages) {
 #'
 #' @examples
 #' \dontrun{
-#'   base <- "https://www.officialgazette.gov.ph/section/laws/other-issuances"
-#'   agency1 <- "inter-agency-task-force-for-the-management-"
-#'   agency2 <- "of-emerging-infectious-diseases-resolutions/"
-#'   pages <- list_iatf_pages(base = paste(base, agency1, agency2, sep = "/"),
-#'                            pages = 1)
+#'   pages <- list_iatf_pages(pages = 1)
 #'   iatfPages <- get_iatf_pages(pages = pages)
 #'   get_iatf_gazette(iatfPages)
 #' }
