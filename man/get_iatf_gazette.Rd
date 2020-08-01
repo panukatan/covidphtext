@@ -29,10 +29,14 @@ A tibble containing absolute links to the PDF of the current IATF
 Get list of links to IATF resolutions from Philippines Official Gazette
 }
 \examples{
-base <- "https://www.officialgazette.gov.ph/section/laws/other-issuances"
-agency <- "inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/"
-pages <- list_iatf_pages(base = paste(base, agency, sep = "/"), pages = 1)
-iatfPages <- get_iatf_pages(pages = pages)
-get_iatf_gazette(iatfPages)
+\dontrun{
+  base <- "https://www.officialgazette.gov.ph/section/laws/other-issuances"
+  agency1 <- "inter-agency-task-force-for-the-management-"
+  agency2 <- "of-emerging-infectious-diseases-resolutions/"
+  pages <- list_iatf_pages(base = paste(base, agency1, agency2, sep = "/"),
+                           pages = 1)
+  iatfPages <- get_iatf_pages(pages = pages)
+  get_iatf_gazette(iatfPages)
+}
 
 }
