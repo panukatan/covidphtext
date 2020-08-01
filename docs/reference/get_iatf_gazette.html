@@ -159,34 +159,15 @@
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>base</span> <span class='kw'>&lt;-</span> <span class='st'>"https://www.officialgazette.gov.ph/section/laws/other-issuances"</span>
-<span class='no'>agency</span> <span class='kw'>&lt;-</span> <span class='st'>"inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/"</span>
-<span class='no'>pages</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='list_iatf_pages.html'>list_iatf_pages</a></span>(<span class='kw'>base</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span>(<span class='no'>base</span>, <span class='no'>agency</span>, <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>"/"</span>), <span class='kw'>pages</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>2</span>)
-<span class='no'>iatfPages</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='get_iatf_pages.html'>get_iatf_pages</a></span>(<span class='kw'>pages</span> <span class='kw'>=</span> <span class='no'>pages</span>)
-<span class='fu'>get_iatf_gazette</span>(<span class='no'>iatfPages</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 20 x 7</span><span>
-#&gt;       id title                        date       source type   url    checked   
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                        </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;list&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>    
-#&gt; </span><span style='color: #555555;'> 1</span><span>    53 RESOLUTION NO. 53, s 2020    2020-07-09 IATF   resol… </span><span style='color: #555555;'>&lt;chr </span><span>… 2020-07-14
-#&gt; </span><span style='color: #555555;'> 2</span><span>    52 RESOLUTION NO. 52, s 2020    2020-07-06 IATF   resol… </span><span style='color: #555555;'>&lt;chr </span><span>… 2020-07-14
-#&gt; </span><span style='color: #555555;'> 3</span><span>    51 RESOLUTION NO. 51, s 2020    2020-07-02 IATF   resol… </span><span style='color: #555555;'>&lt;chr </span><span>… 2020-07-14
-#&gt; </span><span style='color: #555555;'> 4</span><span>    </span><span style='color: #BB0000;'>NA</span><span> OMNIBUS GUIDELINES ON THE I… 2020-07-02 IATF   resol… </span><span style='color: #555555;'>&lt;chr </span><span>… 2020-07-14
-#&gt; </span><span style='color: #555555;'> 5</span><span>    50 RESOLUTION NO. 50-A, s. 2020 2020-06-29 IATF   resol… </span><span style='color: #555555;'>&lt;chr </span><span>… 2020-07-14
-#&gt; </span><span style='color: #555555;'> 6</span><span>    50 RESOLUTION NO. 50, s 2020    2020-06-29 IATF   resol… </span><span style='color: #555555;'>&lt;chr </span><span>… 2020-07-14
-#&gt; </span><span style='color: #555555;'> 7</span><span>    </span><span style='color: #BB0000;'>NA</span><span> OMNIBUS GUIDELINES ON THE I… 2020-06-25 IATF   resol… </span><span style='color: #555555;'>&lt;chr </span><span>… 2020-07-14
-#&gt; </span><span style='color: #555555;'> 8</span><span>    49 RESOLUTION NO. 49, s 2020    2020-06-25 IATF   resol… </span><span style='color: #555555;'>&lt;chr </span><span>… 2020-07-14
-#&gt; </span><span style='color: #555555;'> 9</span><span>    48 RESOLUTION NO. 48, s 2020    2020-06-22 IATF   resol… </span><span style='color: #555555;'>&lt;chr </span><span>… 2020-07-14
-#&gt; </span><span style='color: #555555;'>10</span><span>    47 RESOLUTION NO. 47, s 2020    2020-06-19 IATF   resol… </span><span style='color: #555555;'>&lt;chr </span><span>… 2020-07-14
-#&gt; </span><span style='color: #555555;'>11</span><span>    46 RESOLUTION NO. 46-A, s 2020  2020-06-15 IATF   resol… </span><span style='color: #555555;'>&lt;chr </span><span>… 2020-07-14
-#&gt; </span><span style='color: #555555;'>12</span><span>    46 RESOLUTION NO. 46, s 2020    2020-06-15 IATF   resol… </span><span style='color: #555555;'>&lt;chr </span><span>… 2020-07-14
-#&gt; </span><span style='color: #555555;'>13</span><span>    45 RESOLUTION NO. 45, s 2020    2020-06-10 IATF   resol… </span><span style='color: #555555;'>&lt;chr </span><span>… 2020-07-14
-#&gt; </span><span style='color: #555555;'>14</span><span>    44 RESOLUTION NO. 44, s 2020    2020-06-08 IATF   resol… </span><span style='color: #555555;'>&lt;chr </span><span>… 2020-07-14
-#&gt; </span><span style='color: #555555;'>15</span><span>    </span><span style='color: #BB0000;'>NA</span><span> OMNIBUS GUIDELINES ON THE I… 2020-06-03 IATF   resol… </span><span style='color: #555555;'>&lt;chr </span><span>… 2020-07-14
-#&gt; </span><span style='color: #555555;'>16</span><span>    43 RESOLUTION NO. 43, s 2020    2020-06-03 IATF   resol… </span><span style='color: #555555;'>&lt;chr </span><span>… 2020-07-14
-#&gt; </span><span style='color: #555555;'>17</span><span>    42 RESOLUTION NO. 42, s 2020    2020-06-01 IATF   resol… </span><span style='color: #555555;'>&lt;chr </span><span>… 2020-07-14
-#&gt; </span><span style='color: #555555;'>18</span><span>    41 RESOLUTION NO. 41, s 2020    2020-05-29 IATF   resol… </span><span style='color: #555555;'>&lt;chr </span><span>… 2020-07-14
-#&gt; </span><span style='color: #555555;'>19</span><span>    40 RESOLUTION NO. 40, s 2020    2020-05-27 IATF   resol… </span><span style='color: #555555;'>&lt;chr </span><span>… 2020-07-14
-#&gt; </span><span style='color: #555555;'>20</span><span>    </span><span style='color: #BB0000;'>NA</span><span> OMNIBUS GUIDELINES ON THE I… 2020-05-22 IATF   resol… </span><span style='color: #555555;'>&lt;chr </span><span>… 2020-07-14</div><div class='input'>
-</div></span></pre>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+  <span class='no'>base</span> <span class='kw'>&lt;-</span> <span class='st'>"https://www.officialgazette.gov.ph/section/laws/other-issuances"</span>
+  <span class='no'>agency1</span> <span class='kw'>&lt;-</span> <span class='st'>"inter-agency-task-force-for-the-management-"</span>
+  <span class='no'>agency2</span> <span class='kw'>&lt;-</span> <span class='st'>"of-emerging-infectious-diseases-resolutions/"</span>
+  <span class='no'>pages</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='list_iatf_pages.html'>list_iatf_pages</a></span>(<span class='kw'>base</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span>(<span class='no'>base</span>, <span class='no'>agency1</span>, <span class='no'>agency2</span>, <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>"/"</span>),
+                           <span class='kw'>pages</span> <span class='kw'>=</span> <span class='fl'>1</span>)
+  <span class='no'>iatfPages</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='get_iatf_pages.html'>get_iatf_pages</a></span>(<span class='kw'>pages</span> <span class='kw'>=</span> <span class='no'>pages</span>)
+  <span class='fu'>get_iatf_gazette</span>(<span class='no'>iatfPages</span>[<span class='fl'>1</span>, ])
+}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

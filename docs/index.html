@@ -109,20 +109,20 @@
 <p>The IATF resolutions are officially available from two online sources: 1) The Department of Health (DoH) <a href="http://www.doh.gov.ph/COVID-19/IATF-Resolutions/">website</a>; and, 2) The Philippines Official Gazette <a href="https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/">website</a>. The DOH website currently only holds IATF resolutions starting from resolution number 9 and later. The Official Gazette on the other hand contains resolutions 1 to the most current.</p>
 <p>To get a list of the IATF resolutions that are available from the DOH website, the function <code><a href="reference/get_iatf_links.html">get_iatf_links()</a></code> can be used as follows:</p>
 <div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="reference/get_iatf_links.html">get_iatf_links</a></span>()
-<span class="co">#&gt; # A tibble: 59 x 7</span>
+<span class="co">#&gt; # A tibble: 61 x 7</span>
 <span class="co">#&gt;       id title              date       source type  url               checked   </span>
 <span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;              &lt;date&gt;     &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;             &lt;date&gt;    </span>
-<span class="co">#&gt;  1     9 Recommendations f… 2020-03-03 IATF   reso… https://doh.gov.… 2020-07-14</span>
-<span class="co">#&gt;  2    10 Recommendations f… 2020-03-09 IATF   reso… https://doh.gov.… 2020-07-14</span>
-<span class="co">#&gt;  3    11 Recommendations f… 2020-03-12 IATF   reso… https://doh.gov.… 2020-07-14</span>
-<span class="co">#&gt;  4    12 Recommendations f… 2020-03-13 IATF   reso… https://doh.gov.… 2020-07-14</span>
-<span class="co">#&gt;  5    13 Recommendations f… 2020-03-17 IATF   reso… https://doh.gov.… 2020-07-14</span>
-<span class="co">#&gt;  6    14 Resolutions Relat… 2020-03-20 IATF   reso… https://doh.gov.… 2020-07-14</span>
-<span class="co">#&gt;  7    15 Resolutions Relat… 2020-03-25 IATF   reso… https://doh.gov.… 2020-07-14</span>
-<span class="co">#&gt;  8    16 Additional Guidel… 2020-03-30 IATF   reso… https://doh.gov.… 2020-07-14</span>
-<span class="co">#&gt;  9    17 Recommendations R… 2020-03-30 IATF   reso… https://doh.gov.… 2020-07-14</span>
-<span class="co">#&gt; 10    18 Recommendations R… 2020-04-01 IATF   reso… https://doh.gov.… 2020-07-14</span>
-<span class="co">#&gt; # … with 49 more rows</span></pre></div>
+<span class="co">#&gt;  1     9 Recommendations f… 2020-03-03 IATF   reso… https://doh.gov.… 2020-07-16</span>
+<span class="co">#&gt;  2    10 Recommendations f… 2020-03-09 IATF   reso… https://doh.gov.… 2020-07-16</span>
+<span class="co">#&gt;  3    11 Recommendations f… 2020-03-12 IATF   reso… https://doh.gov.… 2020-07-16</span>
+<span class="co">#&gt;  4    12 Recommendations f… 2020-03-13 IATF   reso… https://doh.gov.… 2020-07-16</span>
+<span class="co">#&gt;  5    13 Recommendations f… 2020-03-17 IATF   reso… https://doh.gov.… 2020-07-16</span>
+<span class="co">#&gt;  6    14 Resolutions Relat… 2020-03-20 IATF   reso… https://doh.gov.… 2020-07-16</span>
+<span class="co">#&gt;  7    15 Resolutions Relat… 2020-03-25 IATF   reso… https://doh.gov.… 2020-07-16</span>
+<span class="co">#&gt;  8    16 Additional Guidel… 2020-03-30 IATF   reso… https://doh.gov.… 2020-07-16</span>
+<span class="co">#&gt;  9    17 Recommendations R… 2020-03-30 IATF   reso… https://doh.gov.… 2020-07-16</span>
+<span class="co">#&gt; 10    18 Recommendations R… 2020-04-01 IATF   reso… https://doh.gov.… 2020-07-16</span>
+<span class="co">#&gt; # … with 51 more rows</span></pre></div>
 <p>Given that the DOH website doesn’t have the first 8 resolutions, this function will soon be deprecated in favour of the newer function below that interfaces with the Official Gazette.</p>
 <p>A table of all the IATF resolutions and the URLs to download them can be generated using the newer function <code><a href="reference/get_iatf_gazette.html">get_iatf_gazette()</a></code> as follows:</p>
 <div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="reference/list_iatf_pages.html">list_iatf_pages</a></span>(<span class="kw">base</span> <span class="kw">=</span> <span class="st">"https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/"</span>,
@@ -145,8 +145,8 @@
 <span id="cb5-14"><a href="#cb5-14"></a><span class="co">#&gt; # … with 52 more rows</span></span></code></pre></div>
 <p>The actual PDF of the IATF resolutions/s can be downloaded using the <code><a href="reference/get_iatf_pdf.html">get_iatf_pdf()</a></code> function. For example, to download IATF Resolution No. 29, the following command is issued:</p>
 <div class="sourceCode" id="cb6"><pre class="r"><span class="fu"><a href="reference/get_iatf_pdf.html">get_iatf_pdf</a></span>(<span class="kw">links</span> <span class="kw">=</span> <span class="no">iatfLinks</span>, <span class="kw">id</span> <span class="kw">=</span> <span class="fl">29</span>)
-<span class="co">#&gt;                                                                 iatfResolution29 </span>
-<span class="co">#&gt; "/var/folders/fk/s0yv8hhn2cs_nfsmzhm4dmhc0000gn/T//RtmpGF2ok7/file170865ea5b270"</span></pre></div>
+<span class="co">#&gt;                                                               iatfResolution29 </span>
+<span class="co">#&gt; "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//Rtmpcp8QbW/file4c947abe8dd"</span></pre></div>
 <p>The command downloads the PDF of the specified IATF Resolution into a temporary directory (using <code><a href="https://rdrr.io/r/base/tempfile.html">tempdir()</a></code> function). The output of the <code><a href="reference/get_iatf_pdf.html">get_iatf_pdf()</a></code> function is a named character vector of directory path/s to downloaded PDFs as shown above. The names of the character vector correspond to the resolution number. These paths can then be used when working with these files.</p>
 <p>The <code><a href="reference/get_iatf_pdf.html">get_iatf_pdf()</a></code> function interfaces with both the DOH and The Official Gazette website.</p>
 </div>
@@ -244,9 +244,14 @@
 <h2>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="Lifecycle: maturing"></a></li>
+<li><a href="https://CRAN.R-project.org/package=covidphtext"><img src="https://www.r-pkg.org/badges/version/covidphtext" alt="CRAN status"></a></li>
+<li><a href="https://CRAN.R-project.org/package=covidphtext"><img src="https://img.shields.io/cran/l/covidphtext.svg" alt="CRAN"></a></li>
+<li><a href="https://CRAN.R-project.org/package=covidphtext"><img src="http://cranlogs.r-pkg.org/badges/covidphtext" alt="CRAN"></a></li>
+<li><a href="https://CRAN.R-project.org/package=covidphtext"><img src="http://cranlogs.r-pkg.org/badges/grand-total/covidphtext" alt="CRAN"></a></li>
 <li><a href="https://github.com/como-ph/covidphtext/actions"><img src="https://github.com/como-ph/covidphtext/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
 <li><a href="https://github.com/como-ph/covidphtext/actions?query=workflow%3Atest-coverage"><img src="https://github.com/como-ph/covidphtext/workflows/test-coverage/badge.svg" alt="test-coverage"></a></li>
 <li><a href="https://codecov.io/gh/como-ph/covidphtext"><img src="https://codecov.io/gh/como-ph/covidphtext/branch/master/graph/badge.svg" alt="codecov"></a></li>
+<li><a href="https://www.codefactor.io/repository/github/como-ph/covidphtext"><img src="https://www.codefactor.io/repository/github/como-ph/covidphtext/badge" alt="CodeFactor"></a></li>
 <li><a href="https://zenodo.org/badge/latestdoi/265376181"><img src="https://zenodo.org/badge/265376181.svg" alt="DOI"></a></li>
 </ul>
 </div>
