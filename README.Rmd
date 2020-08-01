@@ -26,7 +26,7 @@ knitr::opts_chunk$set(
 [![CRAN](http://cranlogs.r-pkg.org/badges/grand-total/covidphtext)](https://CRAN.R-project.org/package=covidphtext)
 [![R build status](https://github.com/como-ph/covidphtext/workflows/R-CMD-check/badge.svg)](https://github.com/como-ph/covidphtext/actions)
 [![test-coverage](https://github.com/como-ph/covidphtext/workflows/test-coverage/badge.svg)](https://github.com/como-ph/covidphtext/actions?query=workflow%3Atest-coverage)
-[![codecov](https://codecov.io/gh/como-ph/covidphtext/branch/master/graph/badge.svg)](https://codecov.io/gh/como-ph/covidphtext)
+[![Codecov test coverage](https://codecov.io/gh/como-ph/covidphtext/branch/master/graph/badge.svg)](https://codecov.io/gh/como-ph/covidphtext?branch=master)
 [![CodeFactor](https://www.codefactor.io/repository/github/como-ph/covidphtext/badge)](https://www.codefactor.io/repository/github/como-ph/covidphtext)
 [![DOI](https://zenodo.org/badge/265376181.svg)](https://zenodo.org/badge/latestdoi/265376181)
 <!-- badges: end -->
