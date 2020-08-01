@@ -7,8 +7,8 @@
 get_iatf_links(base = base_urls[[1]])
 }
 \arguments{
-\item{base}{URL to the IATF resolutions webpage. This is currently at
-\url{http://www.doh.gov.ph/COVID-19/IATF-Resolutions/}}
+\item{base}{URL to the Department of Health IATF resolutions webpage. This
+is currently at \url{http://www.doh.gov.ph/COVID-19/IATF-Resolutions/}}
 }
 \value{
 A tibble containing absolute links to all the current IATF
@@ -30,6 +30,7 @@ A tibble containing absolute links to all the current IATF
 Get list of links to IATF resolutions from Department of Health website
 }
 \examples{
-get_iatf_links()
+get_iatf_links(base = system.file("extdata", "iatf.html",
+                                  package = "covidphtext"))
 
 }
