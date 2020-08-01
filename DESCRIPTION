@@ -33,7 +33,8 @@ Imports:
     dplyr
 Suggests: 
     testthat,
-    covr
+    covr,
+    httr
 Encoding: UTF-8
 Language: en-gb
 LazyData: true
