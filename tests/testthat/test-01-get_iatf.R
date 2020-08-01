@@ -85,6 +85,18 @@ test_that("url is a url", {
 })
 
 
-test_that("errors and returns NA", {
+test_that("x is NA", {
   expect_true(is.na(get_iatf_page(page = list_iatf_pages(pages = 9))))
+})
+
+pages <- list_iatf_pages(pages = 9)
+iatfPages <- get_iatf_page(page = pages)
+
+pages <- list_iatf_pages(pages = 1)
+iatfPages <- rbind(iatfPages, get_iatf_pages(pages = pages))
+
+x <- get_iatf_gazette(iatfPages)
+
+test_that("x is NA", {
+  expect_true(any(is.na(x$url)))
 })
