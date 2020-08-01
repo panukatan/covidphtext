@@ -22,7 +22,8 @@
 #' }
 #'
 #' @examples
-#' get_iatf_links()
+#' base <- system.file("extdata", "iatf.html", package = "covidphtext")
+#' get_iatf_links(base = base)
 #'
 #' @export
 #'
@@ -125,7 +126,7 @@ get_iatf_pdf <- function(link) {
 #'   pointing to a temporary file/s for PDF of IATF resolution/s required
 #'
 #' @examples
-#' get_iatf_pdfs(links = iatfLinksGazette, id = 29)
+#' get_iatf_pdfs(links = iatfLinksGazette, id = 1)
 #'
 #' @export
 #'
