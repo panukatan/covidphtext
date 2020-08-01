@@ -20,6 +20,8 @@ A temporary directory path or a vector of temporary directory paths
 Get a specific IATF resolution PDF file
 }
 \examples{
-get_iatf_pdfs(links = iatfLinksGazette, id = 29)
+\dontrun{
+  get_iatf_pdfs(links = iatfLinksGazette, id = 29)
+}
 
 }
