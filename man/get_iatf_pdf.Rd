@@ -16,6 +16,6 @@ A temporary directory path for PDF of IATF resolution specified
 Get a specific IATF resolution PDF file given a link
 }
 \examples{
-get_iatf_pdf(link = iatfLinksGazette$url)
+get_iatf_pdf(link = iatfLinksGazette$url[1])
 
 }

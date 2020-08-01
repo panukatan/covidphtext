@@ -7,7 +7,7 @@
 get_iatf_gazette(iatfPages)
 }
 \arguments{
-\item{iatfPages}{A tibble created by a call to \code{get_iatf_pages}.}
+\item{iatfPages}{A tibble created by a call to \link{get_iatf_pages}.}
 }
 \value{
 A tibble containing absolute links to the PDF of the current IATF
@@ -22,17 +22,16 @@ A tibble containing absolute links to the PDF of the current IATF
   \item \code{type}{Type of document. This is by default a resolution}
   \item \code{url}{Absolute URL for PDF of resolution}
   \item \code{checked}{Date (in <YYYY-MM-DD format) table was extracted. This
-    is by default provided by \code{Sys.Date()}}
+    is by default provided by \link{Sys.Date}}
 }
 }
 \description{
 Get list of links to IATF resolutions from Philippines Official Gazette
 }
 \examples{
-\dontrun{
-  pages <- list_iatf_pages(pages = 1)
-  iatfPages <- get_iatf_pages(pages = pages)
-  get_iatf_gazette(iatfPages)
-}
+pages <- list_iatf_pages(pages = 1)
+iatfPages <- get_iatf_pages(pages = pages)
+get_iatf_gazette(iatfPages[1, ])
+
 
 }
