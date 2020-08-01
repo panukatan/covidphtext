@@ -2,9 +2,7 @@ library(httr)
 set_config(config(ssl_verifypeer = 0L))
 
 ## Test get_iatf_links #########################################################
-base <- "http://www.doh.gov.ph/COVID-19/IATF-Resolutions/"
-
-x <- get_iatf_links(base = base)
+x <- get_iatf_links()
 
 test_that("x is a tibble", {
   expect_is(x, "tbl")
@@ -58,9 +56,7 @@ test_that("message shows", {
 
 
 ## Test get_iatf_gazette #######################################################
-base <- "https://www.officialgazette.gov.ph/section/laws/other-issuances"
-agency <- "inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/"
-pages <- list_iatf_pages(base = paste(base, agency, sep = "/"), pages = 1)
+pages <- list_iatf_pages(pages = 1)
 iatfPages <- get_iatf_pages(pages = pages)
 x <- get_iatf_gazette(iatfPages)
 
