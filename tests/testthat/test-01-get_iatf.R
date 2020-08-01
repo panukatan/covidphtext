@@ -46,8 +46,16 @@ test_that("name of filename vector is correct", {
 })
 
 test_that("error message shows", {
-  expect_error(get_iatf_pdfs(links = links, id = "1"))
+  expect_error(get_iatf_pdfs(links = iatfLinks, id = "1"))
+  expect_error(get_iatf_pdfs(links = iatfLinks, id = 1))
+  expect_warning(get_iatf_pdfs(links = iatfLinks, id = c(1, 10)))
 })
+
+
+test_that("message shows", {
+  expect_message(get_iatf_pdf(link = "https://doh.gov"))
+})
+
 
 ## Test get_iatf_gazette #######################################################
 base <- "https://www.officialgazette.gov.ph/section/laws/other-issuances"
