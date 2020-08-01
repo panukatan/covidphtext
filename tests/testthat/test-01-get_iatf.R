@@ -83,3 +83,8 @@ test_that("source is iatf", {
 test_that("url is a url", {
   expect_true(all(stringr::str_detect(x$url, "http")))
 })
+
+
+test_that("errors and returns NA", {
+  expect_true(is.na(get_iatf_page(page = list_iatf_pages(pages = 9))))
+})
