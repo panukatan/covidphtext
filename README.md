@@ -74,20 +74,20 @@ website, the function `get_iatf_links()` can be used as follows:
 
 ``` r
 get_iatf_links()
-#> # A tibble: 61 x 7
+#> # A tibble: 74 x 7
 #>       id title              date       source type  url               checked   
 #>    <dbl> <chr>              <date>     <chr>  <chr> <chr>             <date>    
-#>  1     9 Recommendations f… 2020-03-03 IATF   reso… https://doh.gov.… 2020-07-16
-#>  2    10 Recommendations f… 2020-03-09 IATF   reso… https://doh.gov.… 2020-07-16
-#>  3    11 Recommendations f… 2020-03-12 IATF   reso… https://doh.gov.… 2020-07-16
-#>  4    12 Recommendations f… 2020-03-13 IATF   reso… https://doh.gov.… 2020-07-16
-#>  5    13 Recommendations f… 2020-03-17 IATF   reso… https://doh.gov.… 2020-07-16
-#>  6    14 Resolutions Relat… 2020-03-20 IATF   reso… https://doh.gov.… 2020-07-16
-#>  7    15 Resolutions Relat… 2020-03-25 IATF   reso… https://doh.gov.… 2020-07-16
-#>  8    16 Additional Guidel… 2020-03-30 IATF   reso… https://doh.gov.… 2020-07-16
-#>  9    17 Recommendations R… 2020-03-30 IATF   reso… https://doh.gov.… 2020-07-16
-#> 10    18 Recommendations R… 2020-04-01 IATF   reso… https://doh.gov.… 2020-07-16
-#> # … with 51 more rows
+#>  1     9 Recommendations f… 2020-03-03 IATF   reso… https://doh.gov.… 2020-08-01
+#>  2    10 Recommendations f… 2020-03-09 IATF   reso… https://doh.gov.… 2020-08-01
+#>  3    11 Recommendations f… 2020-03-12 IATF   reso… https://doh.gov.… 2020-08-01
+#>  4    12 Recommendations f… 2020-03-13 IATF   reso… https://doh.gov.… 2020-08-01
+#>  5    13 Recommendations f… 2020-03-17 IATF   reso… https://doh.gov.… 2020-08-01
+#>  6    14 Resolutions Relat… 2020-03-20 IATF   reso… https://doh.gov.… 2020-08-01
+#>  7    15 Resolutions Relat… 2020-03-25 IATF   reso… https://doh.gov.… 2020-08-01
+#>  8    16 Additional Guidel… 2020-03-30 IATF   reso… https://doh.gov.… 2020-08-01
+#>  9    17 Recommendations R… 2020-03-30 IATF   reso… https://doh.gov.… 2020-08-01
+#> 10    18 Recommendations R… 2020-04-01 IATF   reso… https://doh.gov.… 2020-08-01
+#> # … with 64 more rows
 ```
 
 Given that the DOH website doesn’t have the first 8 resolutions, this
@@ -120,23 +120,23 @@ list_iatf_pages(base = "https://www.officialgazette.gov.ph/section/laws/other-is
     #> # … with 52 more rows
 
 The actual PDF of the IATF resolutions/s can be downloaded using the
-`get_iatf_pdf()` function. For example, to download IATF Resolution
+`get_iatf_pdfs()` function. For example, to download IATF Resolution
 No. 29, the following command is issued:
 
 ``` r
-get_iatf_pdf(links = iatfLinks, id = 29)
-#>                                                               iatfResolution29 
-#> "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//Rtmpcp8QbW/file4c947abe8dd"
+get_iatf_pdfs(links = iatfLinks, id = 29)
+#>                                                                iatfResolution29 
+#> "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//RtmplDWg8B/file9fee64a946f5"
 ```
 
 The command downloads the PDF of the specified IATF Resolution into a
 temporary directory (using `tempdir()` function). The output of the
-`get_iatf_pdf()` function is a named character vector of directory
+`get_iatf_pdfs()` function is a named character vector of directory
 path/s to downloaded PDFs as shown above. The names of the character
 vector correspond to the resolution number. These paths can then be used
 when working with these files.
 
-The `get_iatf_pdf()` function interfaces with both the DOH and The
+The `get_iatf_pdfs()` function interfaces with both the DOH and The
 Official Gazette website.
 
 ### Concatenating text datasets

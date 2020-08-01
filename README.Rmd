@@ -79,15 +79,15 @@ list_iatf_pages(base = "https://www.officialgazette.gov.ph/section/laws/other-is
 iatfLinksGazette
 ```
 
-The actual PDF of the IATF resolutions/s can be downloaded using the `get_iatf_pdf()` function. For example, to download IATF Resolution No. 29, the following command is issued:
+The actual PDF of the IATF resolutions/s can be downloaded using the `get_iatf_pdfs()` function. For example, to download IATF Resolution No. 29, the following command is issued:
 
 ```{r usage3, echo = TRUE, eval = TRUE}
-get_iatf_pdf(links = iatfLinks, id = 29)
+get_iatf_pdfs(links = iatfLinks, id = 29)
 ```
 
-The command downloads the PDF of the specified IATF Resolution into a temporary directory (using `tempdir()` function). The output of the `get_iatf_pdf()` function is a named character vector of directory path/s to downloaded PDFs as shown above. The names of the character vector correspond to the resolution number. These paths can then be used when working with these files.
+The command downloads the PDF of the specified IATF Resolution into a temporary directory (using `tempdir()` function). The output of the `get_iatf_pdfs()` function is a named character vector of directory path/s to downloaded PDFs as shown above. The names of the character vector correspond to the resolution number. These paths can then be used when working with these files.
 
-The `get_iatf_pdf()` function interfaces with both the DOH and The Official Gazette website.
+The `get_iatf_pdfs()` function interfaces with both the DOH and The Official Gazette website.
 
 ### Concatenating text datasets
 
