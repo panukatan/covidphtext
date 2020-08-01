@@ -27,6 +27,7 @@ reference:
   - get_iatf_pages
   - get_iatf_gazette
   - get_iatf_pdf
+  - get_iatf_pdfs
 
 - title: Combine
   contents:
