@@ -2,7 +2,11 @@
 
 * Re-assigned linenumbers to concatenated datasets when using `combine_` functions
 
-* Added new resolutions up to 30 June 2020
+* Re-worked some get functions to fail gracefully when connection with webpage fails
+
+* Added `get_iatf_pdfs` and `get_iatf_page` functions
+
+* Added new resolutions up to 1 August 2020
 
 * Added `codefactor` check
 
