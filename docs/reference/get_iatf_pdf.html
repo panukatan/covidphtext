@@ -146,7 +146,8 @@
     <p>A temporary directory path for PDF of IATF resolution specified</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>get_iatf_pdf</span>(<span class='kw'>link</span> <span class='kw'>=</span> <span class='no'>iatfLinksGazette</span>$<span class='no'>url</span>)</div><div class='output co'>#&gt; [1] "/var/folders/rx/nr32tl5n6f3d_86tn0tc7kc00000gp/T//Rtmpz9TM0Z/file9f014834337"</div><div class='input'>
+    <pre class="examples"><div class='input'><span class='fu'>get_iatf_pdf</span>(<span class='kw'>link</span> <span class='kw'>=</span> <span class='no'>iatfLinksGazette</span>$<span class='no'>url</span>)</div><div class='output co'>#&gt; Error in curl::curl_download(url = link, destfile = destfile, handle = handle) : 
+#&gt;   Argument 'url' must be string.</div><div class='output co'>#&gt; <span class='message'>Unable to download PDF. Returning NA.</span></div><div class='output co'>#&gt; [1] NA</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
