@@ -8,3 +8,11 @@ names(z) <- c("Department of Health", "Official Gazette")
 base_urls <- z
 
 usethis::use_data(base_urls, overwrite = TRUE, internal = TRUE)
+
+
+##
+iatfPages <- list_iatf_pages(pages = 1:8) %>%
+  get_iatf_pages()
+
+usethis::use_data(iatfPages, overwrite = TRUE, compress = "xz")
+
