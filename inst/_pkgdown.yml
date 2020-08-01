@@ -27,6 +27,7 @@ reference:
   contents:
   - get_iatf_links
   - list_iatf_pages
+  - get_iatf_page
   - get_iatf_pages
   - get_iatf_gazette
   - get_iatf_pdf

@@ -4,7 +4,7 @@
 \alias{list_iatf_pages}
 \title{List the URL of all pages of the IATF Resolutions in the Official Gazette}
 \usage{
-list_iatf_pages(base, pages)
+list_iatf_pages(base = base_urls[[2]], pages)
 }
 \arguments{
 \item{base}{URL to the IATF resolutions webpage in the Official Gazette.
@@ -22,8 +22,6 @@ A character vector of URLs of all pages of the IATF Resolutions in
 List the URL of all pages of the IATF Resolutions in the Official Gazette
 }
 \examples{
-base <- "https://www.officialgazette.gov.ph/section/laws/other-issuances"
-agency <- "inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/"
-list_iatf_pages(base = paste(base, agency, sep = "/"), pages = 1:2)
+list_iatf_pages(pages = 1:2)
 
 }
