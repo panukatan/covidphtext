@@ -22,8 +22,8 @@
 #' }
 #'
 #' @examples
-#' get_iatf_links(base = system.file("extdata", "iatf.html",
-#'                                   package = "covidphtext"))
+#' base <- system.file("extdata", "iatf.html", package = "covidphtext")
+#' get_iatf_links(base = base)
 #'
 #' @export
 #'
