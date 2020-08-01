@@ -127,7 +127,9 @@ get_iatf_pdf <- function(link) {
 #'   pointing to a temporary file/s for PDF of IATF resolution/s required
 #'
 #' @examples
-#' get_iatf_pdfs(links = iatfLinksGazette, id = 29)
+#' \dontrun{
+#'   get_iatf_pdfs(links = iatfLinksGazette, id = 29)
+#' }
 #'
 #' @export
 #'
@@ -382,11 +384,16 @@ get_iatf_gazette <- function(iatfPages) {
   ##
   pdfLink <- lapply(X = iatfURL,
                     FUN = function(x) {
-                      resolutionPage <- xml2::read_html(x = x)
+                      resolutionPage <- try(xml2::read_html(x = x))
 
-                      pdfLink <- resolutionPage %>%
-                        rvest::html_nodes(css = "#resource a") %>%
-                        rvest::html_attr(name = "href")
+                      if(any(class(resolutionPage) == "try-error")) {
+                        resolutionPage <- NA
+                      } else {
+
+                        pdfLink <- resolutionPage %>%
+                          rvest::html_nodes(css = "#resource a") %>%
+                          rvest::html_attr(name = "href")
+                      }
 
                       pdfLink <- pdfLink[1]
                     })
