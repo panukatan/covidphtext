@@ -399,7 +399,7 @@ get_iatf_gazette <- function(iatfPages) {
                     })
 
   ##
-  iatfPages$url <- pdfLink
+  iatfPages$url <- pdfLink[[1]]
 
   ## Return iatfPages
   return(iatfPages)
