@@ -247,7 +247,7 @@ get_iatf_page <- function(page) {
 
   ##
   if(any(class(urlPage) == "try-error")) {
-    urlPage <- NA
+    iatfPage <- NA
   } else {
     ## Get current page resolutions Title
     iatfTitle <- urlPage %>%
@@ -387,7 +387,7 @@ get_iatf_gazette <- function(iatfPages) {
                       resolutionPage <- try(xml2::read_html(x = x))
 
                       if(any(class(resolutionPage) == "try-error")) {
-                        resolutionPage <- NA
+                        pdfLink <- NA
                       } else {
 
                         pdfLink <- resolutionPage %>%
