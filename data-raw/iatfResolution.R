@@ -13,7 +13,7 @@ usethis::use_data(iatfLinks, overwrite = TRUE, compress = "xz")
 
 ## Resolutions table ###########################################################
 
-iatfLinksGazette <- list_iatf_pages(base = "https://www.officialgazette.gov.ph/section/laws/other-issuances/inter-agency-task-force-for-the-management-of-emerging-infectious-diseases-resolutions/",
+iatfLinksGazette <- list_iatf_pages(base = base_urls[[2]],
                 pages = 1:8) %>%
   get_iatf_pages() %>%
   get_iatf_gazette()
@@ -3348,6 +3348,228 @@ usethis::use_data(iatfResolution51, overwrite = TRUE, compress = "xz")
 
 y <- iatfLinksGazette %>%
   get_iatf_pdf(id = 52) %>%
+  pdf_ocr_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
+
+## Restructure text
+y <- y[c(2:4, 6:8, 9:50, 58:88, 96:127)]
+y <- y[y != ""]
+
+y[1:3] <- c("Republic of the Philippines",
+            "Inter-Agency Task Force",
+            "for the Management of Emerging Infectious Diseases")
+
+y <- y %>%
+  stringr::str_replace_all(pattern = "\\[ATF", replacement = "IATF") %>%
+  stringr::str_replace_all(pattern = "as \\|", replacement = "as") %>%
+  stringr::str_replace_all(pattern = "Tourism\\; \\|", replacement = "Tourism;") %>%
+  stringr::str_replace_all(pattern = "and \\|", replacement = "and") %>%
+  stringr::str_replace_all(pattern = "restrictions\\; \\|", replacement = "restrictions;") %>%
+  stringr::str_replace_all(pattern = "travelling\\, \\|", replacement = "travelling,") %>%
+  stringr::str_replace_all(pattern = "the \\|", replacement = "the") %>%
+  stringr::str_replace_all(pattern = "NTF\\)\\. \\|", replacement = "NTF).") %>%
+  stringr::str_replace_all(pattern = "of \\|", replacement = "of") %>%
+  stringr::str_replace_all(pattern = "departure\\. \\|", replacement = "departure.") %>%
+  stringr::str_replace_all(pattern = "approved\\. \\|", replacement = "approved.") %>%
+  stringr::str_replace_all(pattern = "conference\\. \\|", replacement = "conference.")
+
+y[65] <- "Francisco T. Duque III       Karlo Alexei B. Nograles"
+y[66] <- "Secretary, Department of Health     Cabinet Secretary, Office of the Cabinet Secretary"
+y[67] <- "IATF Chairperson         IATF Co-Chairperson"
+y[70] <- "1. I am presently an Assistant Secretary of the Department of Health;"
+y[71] <- "2. I am the designated Head of the Secretariat of the Inter-Agency Task Force (IATF)"
+y[78] <- "5. In the Regular Meeting of the IATF held on 6th July 2020 via"
+y[80] <- "Resolution No. 52 was unanimously approved and adopted;"
+y[83] <- "7. The aforesaid resolution has not been altered, modified nor revoked and the same is"
+y[86] <- "In witness whereof, I have hereunto affixed my signature this 7th day of July"
+y[88] <- "KENNETH G. RONQUILLO, MD, MPHM"
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:6]              <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
+
+y <- data.frame(linenumber = 1:length(y),
+                text = y,
+                source = "IATF",
+                type = "resolution",
+                id = 52,
+                section = section,
+                date = as.Date("06/07/2020", format = "%d/%m/%y"),
+                stringsAsFactors = FALSE)
+
+iatfResolution52 <- tibble::tibble(y)
+
+usethis::use_data(iatfResolution52, overwrite = TRUE, compress = "xz")
+
+
+## Resolution 53 ###############################################################
+
+y <- iatfLinksGazette %>%
+  get_iatf_pdfs(id = 53) %>%
+  pdf_ocr_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
+
+## Restructure text
+y <- y[c(1:3, 5:7, 9:49, 56:86)]
+y <- y[y != ""]
+
+y[1:3] <- c("Republic of the Philippines",
+            "Inter-Agency Task Force",
+            "for the Management of Emerging Infectious Diseases")
+
+y <- y %>%
+  stringr::str_replace_all(pattern = "\\[ATF", replacement = "IATF")
+
+y[35] <- "Francisco T. Duque III       Karlo Alexei B. Nograles"
+y[36] <- "Secretary, Department of Health     Cabinet Secretary, Office of the Cabinet Secretary"
+y[48] <- "5. In the Regular Meeting of the IATF held on 9th July 2020 via"
+y[50] <- "Resolution No. 53 was unanimously approved and adopted;"
+y[56] <- "In witness whereof, I have hereunto affixed my signature this 9th day of July"
+y[58] <- "KENNETH G. RONQUILLO, MD, MPHM"
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:6]              <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
+
+y <- data.frame(linenumber = 1:length(y),
+                text = y,
+                source = "IATF",
+                type = "resolution",
+                id = 53,
+                section = section,
+                date = as.Date("09/07/2020", format = "%d/%m/%y"),
+                stringsAsFactors = FALSE)
+
+iatfResolution53 <- tibble::tibble(y)
+
+usethis::use_data(iatfResolution53, overwrite = TRUE, compress = "xz")
+
+## Resolution 54 ###############################################################
+
+y <- iatfLinksGazette %>%
+  get_iatf_pdfs(id = 54) %>%
+  pdf_ocr_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
+
+## Restructure text
+y <- y[c(2:4, 6:8, 10:49, 58:94, 102:146, 154:182, 190:221)]
+y <- y[y != ""]
+
+y[1:3] <- c("Republic of the Philippines",
+            "Inter-Agency Task Force",
+            "for the Management of Emerging Infectious Diseases")
+
+y <- y %>%
+  stringr::str_replace_all(pattern = "\\[ATF", replacement = "IATF")
+
+y[128] <- "Francisco T. Duque III       Karlo Alexei B. Nograles"
+y[141] <- "5. In the Special Meeting of the IATF held on 11th July 2020 via"
+y[143] <- "Resolution No. 54 was unanimously approved and adopted;"
+y[149] <- "In witness whereof, I have hereunto affixed my signature this 11th day of"
+y[150] <- "July 2020, Manila"
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:6]              <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
+
+y <- data.frame(linenumber = 1:length(y),
+                text = y,
+                source = "IATF",
+                type = "resolution",
+                id = 54,
+                section = section,
+                date = as.Date("11/07/2020", format = "%d/%m/%y"),
+                stringsAsFactors = FALSE)
+
+iatfResolution54 <- tibble::tibble(y)
+
+usethis::use_data(iatfResolution54, overwrite = TRUE, compress = "xz")
+
+## Resolution 55 ###############################################################
+
+y <- iatfLinksGazette$url[iatfLinksGazette$id %in% 55][2] %>%
+  get_iatf_pdf() %>%
+  pdf_ocr_text() %>%
+  stringr::str_split(pattern = "\n") %>%
+  unlist()
+
+## Restructure text
+y <- y[c(1:3, 5:7, 9:49, 56:78)]
+y <- y[y != ""]
+
+y[1:3] <- c("Republic of the Philippines",
+            "Inter-Agency Task Force",
+            "for the Management of Emerging Infectious Diseases")
+
+y <- y %>%
+  stringr::str_replace_all(pattern = "\\[ATF", replacement = "IATF")
+
+y[32] <- "Francisco T. Duque III       Karlo Alexei B. Nograles"
+y[33] <- "Secretary, Department of Health     Cabinet Secretary, Office of the Cabinet Secretary"
+y[45] <- "5. In the Regular Meeting of the IATF held on 14th July 2020 via"
+y[47] <- "Resolution No. 55 was unanimously approved and adopted;"
+y[53] <- "In witness whereof, I have hereunto affixed my signature this 14th day of July"
+
+## Add section
+pStart <- which(stringr::str_detect(string = y, pattern = "WHEREAS"))[1]
+oStart <- which(stringr::str_detect(string = y, pattern = "RESOLVED"))[1]
+pEnd   <- oStart - 1
+eStart <- which(stringr::str_detect(string = y, pattern = "APPROVED"))[1]
+oEnd   <- eStart - 1
+
+section <- NULL
+section[1:6]              <- "heading"
+section[pStart:pEnd]      <- "preamble"
+section[oStart:oEnd]      <- "operative"
+section[eStart:length(y)] <- "endorsement"
+
+y <- data.frame(linenumber = 1:length(y),
+                text = y,
+                source = "IATF",
+                type = "resolution",
+                id = 55,
+                section = section,
+                date = as.Date("14/07/2020", format = "%d/%m/%y"),
+                stringsAsFactors = FALSE)
+
+iatfResolution55 <- tibble::tibble(y)
+
+usethis::use_data(iatfResolution55, overwrite = TRUE, compress = "xz")
+
+## Resolution 56 ###############################################################
+
+y <- iatfLinksGazette %>%
+  get_iatf_pdfs(id = 56) %>%
   pdf_ocr_text() %>%
   stringr::str_split(pattern = "\n") %>%
   unlist()
