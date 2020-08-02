@@ -4,10 +4,10 @@
 \alias{get_iatf_gazette}
 \title{Get list of links to IATF resolutions from Philippines Official Gazette}
 \usage{
-get_iatf_gazette(iatfPages)
+get_iatf_gazette(pages)
 }
 \arguments{
-\item{iatfPages}{A tibble created by a call to \link{get_iatf_pages}.}
+\item{pages}{A tibble created by a call to \link{get_iatf_pages}.}
 }
 \value{
 A tibble containing absolute links to the PDF of the current IATF

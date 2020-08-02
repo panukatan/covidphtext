@@ -6,7 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>IATF resolutions URLs — iatfLinks • covidphtext</title>
+<title>COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
+Diseases Resolution Number 57 — iatfResolution57 • covidphtext</title>
 
 
 <!-- jquery -->
@@ -39,8 +40,10 @@
 
 
 
-<meta property="og:title" content="IATF resolutions URLs — iatfLinks" />
-<meta property="og:description" content="IATF resolutions URLs" />
+<meta property="og:title" content="COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
+Diseases Resolution Number 57 — iatfResolution57" />
+<meta property="og:description" content="COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
+Diseases Resolution Number 57" />
 
 
 
@@ -121,52 +124,53 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>IATF resolutions URLs</h1>
+    <h1>COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
+Diseases Resolution Number 57</h1>
     <small class="dont-index">Source: <a href='https://github.com/como-ph/covidphtext/blob/master/R/data.R'><code>R/data.R</code></a></small>
-    <div class="hidden name"><code>iatfLinks.Rd</code></div>
+    <div class="hidden name"><code>iatfResolution57.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>IATF resolutions URLs</p>
+    <p>COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
+Diseases Resolution Number 57</p>
     </div>
 
-    <pre class="usage"><span class='no'>iatfLinks</span></pre>
+    <pre class="usage"><span class='no'>iatfResolution57</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A tibble with 74 rows and 7 columns:</p><dl'>
-  <dt><code>id</code></dt><dd><p>Unique identifier</p></dd>
-  <dt><code>title</code></dt><dd><p>Title of resolution</p></dd>
-  <dt><code>date</code></dt><dd><p>Date resolution released. Format &lt;YYYY-MM-DD&gt;</p></dd>
-  <dt><code>source</code></dt><dd><p>Issuing agency. IATF by default</p></dd>
-  <dt><code>type</code></dt><dd><p>Type of issuance. Resolution by default</p></dd>
-  <dt><code>link</code></dt><dd><p>Absolute URL of IATF resolution</p></dd>
-  <dt><code>checked</code></dt><dd><p>Date (in &lt;YYYY-MM_DD&gt; format) information was
-    extracted. Default is <code><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date()</a></code></p></dd>
+    <p>A tibble with 103 rows and 7 columns:</p><dl'>
+  <dt><code>linenumber</code></dt><dd><p>Linenumber</p></dd>
+  <dt><code>text</code></dt><dd><p>Character string of text about 70 characters</p></dd>
+  <dt><code>source</code></dt><dd><p>Issuer of resolution</p></dd>
+  <dt><code>type</code></dt><dd><p>Type of document</p></dd>
+  <dt><code>id</code></dt><dd><p>Text document identifier</p></dd>
+  <dt><code>section</code></dt><dd><p>Resolution section - heading, preamble, operative,
+    endorsement, or certification</p></dd>
+  <dt><code>date</code></dt><dd><p>Date in &lt;YYYY-MM-DD&gt; format when resolution was made</p></dd>
 
 </dl>
 
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p><a href='http://www.doh.gov.ph/COVID-19/IATF-Resolutions/'>http://www.doh.gov.ph/COVID-19/IATF-Resolutions/</a>. Updated
-  as of 1 August 2020.</p>
+    <p>The Official Gazette of the Republic of the Philippines</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>iatfLinks</span></div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 74 x 7</span><span>
-#&gt;       id title              date       source type  url               checked   
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>              </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>    
-#&gt; </span><span style='color: #555555;'> 1</span><span>     9 Recommendations f… 2020-03-03 IATF   reso… https://doh.gov.… 2020-08-02
-#&gt; </span><span style='color: #555555;'> 2</span><span>    10 Recommendations f… 2020-03-09 IATF   reso… https://doh.gov.… 2020-08-02
-#&gt; </span><span style='color: #555555;'> 3</span><span>    11 Recommendations f… 2020-03-12 IATF   reso… https://doh.gov.… 2020-08-02
-#&gt; </span><span style='color: #555555;'> 4</span><span>    12 Recommendations f… 2020-03-13 IATF   reso… https://doh.gov.… 2020-08-02
-#&gt; </span><span style='color: #555555;'> 5</span><span>    13 Recommendations f… 2020-03-17 IATF   reso… https://doh.gov.… 2020-08-02
-#&gt; </span><span style='color: #555555;'> 6</span><span>    14 Resolutions Relat… 2020-03-20 IATF   reso… https://doh.gov.… 2020-08-02
-#&gt; </span><span style='color: #555555;'> 7</span><span>    15 Resolutions Relat… 2020-03-25 IATF   reso… https://doh.gov.… 2020-08-02
-#&gt; </span><span style='color: #555555;'> 8</span><span>    16 Additional Guidel… 2020-03-30 IATF   reso… https://doh.gov.… 2020-08-02
-#&gt; </span><span style='color: #555555;'> 9</span><span>    17 Recommendations R… 2020-03-30 IATF   reso… https://doh.gov.… 2020-08-02
-#&gt; </span><span style='color: #555555;'>10</span><span>    18 Recommendations R… 2020-04-01 IATF   reso… https://doh.gov.… 2020-08-02
-#&gt; </span><span style='color: #555555;'># … with 64 more rows</span><span></div><div class='input'>
+    <pre class="examples"><div class='input'><span class='no'>iatfResolution57</span></div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 103 x 7</span><span>
+#&gt;    linenumber text                        source type      id section date      
+#&gt;         </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                       </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>    
+#&gt; </span><span style='color: #555555;'> 1</span><span>          1 Republic of the Philippines IATF   resol…    57 heading 2020-07-21
+#&gt; </span><span style='color: #555555;'> 2</span><span>          2 Inter-Agency Task Force     IATF   resol…    57 heading 2020-07-21
+#&gt; </span><span style='color: #555555;'> 3</span><span>          3 for the Management of Emer… IATF   resol…    57 heading 2020-07-21
+#&gt; </span><span style='color: #555555;'> 4</span><span>          4 RESOLUTION NO. 57           IATF   resol…    57 heading 2020-07-21
+#&gt; </span><span style='color: #555555;'> 5</span><span>          5 Series of 2020              IATF   resol…    57 heading 2020-07-21
+#&gt; </span><span style='color: #555555;'> 6</span><span>          6 July 21, 2020               IATF   resol…    57 heading 2020-07-21
+#&gt; </span><span style='color: #555555;'> 7</span><span>          7 WHEREAS, on April 30, 2020… IATF   resol…    57 preamb… 2020-07-21
+#&gt; </span><span style='color: #555555;'> 8</span><span>          8 Order (E.O.) No. 112 Impos… IATF   resol…    57 preamb… 2020-07-21
+#&gt; </span><span style='color: #555555;'> 9</span><span>          9 Areas of the Philippines a… IATF   resol…    57 preamb… 2020-07-21
+#&gt; </span><span style='color: #555555;'>10</span><span>         10 01 To 15 May 2020, Adoptin… IATF   resol…    57 preamb… 2020-07-21
+#&gt; </span><span style='color: #555555;'># … with 93 more rows</span><span></div><div class='input'>
 </div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
