@@ -1595,6 +1595,93 @@
 #
 #'
 #' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
+#' Diseases Resolution Number 53
+#'
+#' @format A tibble with 60 rows and 7 columns:
+#' \describe{
+#'   \item{\code{linenumber}}{Linenumber}
+#'   \item{\code{text}}{Character string of text about 70 characters}
+#'   \item{\code{source}}{Issuer of resolution}
+#'   \item{\code{type}}{Type of document}
+#'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
+#'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
+#' }
+#'
+#' @examples
+#' iatfResolution53
+#'
+#' @source The Official Gazette of the Republic of the Philippines
+#'
+#'
+#
+################################################################################
+"iatfResolution53"
+
+
+################################################################################
+#
+#'
+#' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
+#' Diseases Resolution Number 54
+#'
+#' @format A tibble with 153 rows and 7 columns:
+#' \describe{
+#'   \item{\code{linenumber}}{Linenumber}
+#'   \item{\code{text}}{Character string of text about 70 characters}
+#'   \item{\code{source}}{Issuer of resolution}
+#'   \item{\code{type}}{Type of document}
+#'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
+#'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
+#' }
+#'
+#' @examples
+#' iatfResolution54
+#'
+#' @source The Official Gazette of the Republic of the Philippines
+#'
+#'
+#
+################################################################################
+"iatfResolution54"
+
+
+################################################################################
+#
+#'
+#' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
+#' Diseases Resolution Number 55
+#'
+#' @format A tibble with 57 rows and 7 columns:
+#' \describe{
+#'   \item{\code{linenumber}}{Linenumber}
+#'   \item{\code{text}}{Character string of text about 70 characters}
+#'   \item{\code{source}}{Issuer of resolution}
+#'   \item{\code{type}}{Type of document}
+#'   \item{\code{id}}{Text document identifier}
+#'   \item{\code{section}}{Resolution section - heading, preamble, operative,
+#'     endorsement, or certification}
+#'   \item{\code{date}}{Date in <YYYY-MM-DD> format when resolution was made}
+#' }
+#'
+#' @examples
+#' iatfResolution55
+#'
+#' @source The Official Gazette of the Republic of the Philippines
+#'
+#'
+#
+################################################################################
+"iatfResolution55"
+
+
+################################################################################
+#
+#'
+#' COVID-19 Inter-Agency Task Force for the Management of Emerging Infectious
 #' Diseases Guideline Omnibus
 #'
 #' @format A tibble with 753 rows and 6 columns:
