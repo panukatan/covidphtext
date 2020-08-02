@@ -254,7 +254,7 @@ get_iatf_page <- function(page) {
     iatfID <- urlPage %>%
       rvest::html_nodes(css = ".large-8 .entry-title a") %>%
       rvest::html_text() %>%
-      stringr::str_remove(pattern = "2020|2021|2022") %>%
+      stringr::str_remove(pattern = "2020") %>%
       stringr::str_extract(pattern = "[0-9]+") %>%
       as.numeric()
 
@@ -344,7 +344,7 @@ get_iatf_pages <- function(pages) {
 #'
 #' Get list of links to IATF resolutions from Philippines Official Gazette
 #'
-#' @param iatfPages A tibble created by a call to \link{get_iatf_pages}.
+#' @param pages A tibble created by a call to \link{get_iatf_pages}.
 #'
 #' @return A tibble containing absolute links to the PDF of the current IATF
 #'   resolutions at time of extraction from the Official Gazette. The tibble
@@ -370,9 +370,9 @@ get_iatf_pages <- function(pages) {
 #
 ################################################################################
 
-get_iatf_gazette <- function(iatfPages) {
+get_iatf_gazette <- function(pages) {
   ## Get URLs
-  iatfURL <- iatfPages$url
+  iatfURL <- pages$url
 
   ##
   pdfLink <- lapply(X = iatfURL,
@@ -389,11 +389,13 @@ get_iatf_gazette <- function(iatfPages) {
                       }
 
                       pdfLink <- pdfLink[1]
+
+                      return(pdfLink)
                     })
 
   ##
-  iatfPages$url <- pdfLink[[1]]
+  pages$url <- unlist(pdfLink)
 
-  ## Return iatfPages
-  return(iatfPages)
+  ## Return pages
+  return(pages)
 }
