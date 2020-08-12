@@ -34,10 +34,11 @@ Imports:
 Suggests: 
     testthat,
     covr,
-    httr
+    httr,
+    spelling
 Encoding: UTF-8
-Language: en-gb
+Language: en-GB
 LazyData: true
 RoxygenNote: 7.1.1
-URL: https://github.com/como-ph/covidphtext, https://como-ph.github.io/covidphtext
+URL: https://github.com/como-ph/covidphtext
 BugReports: https://github.com/como-ph/covidphtext/issues
